@@ -1,19 +1,24 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <div class="home__title">ВЫБЕРИТЕ СВОЙ АВТОМОБИЛЬ</div>
-    <div class="home__title_price">123 456 780 ₽</div>
+    <router-view />
+      <Loader v-if="showLoader"/>
+      <div class="home__title">ВЫБЕРИТЕ СВОЙ АВТОМОБИЛЬ</div>
+      <div class="home__title_price">123 456 780 ₽</div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Loader from '@/components/app/Loader.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Loader
+  },
+  data() {
+    return {
+      showLoader: false
+    }
   }
 }
 </script>
