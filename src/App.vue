@@ -1,29 +1,29 @@
 <template>
   <div id="app">
-    <router-view />
-      <Loader v-if="showLoader"/>
-      <div class="home__title">ВЫБЕРИТЕ СВОЙ АВТОМОБИЛЬ</div>
-      <div class="home__title_price">123 456 780 ₽</div>
+    <MainLayout />
+      <router-view/>
   </div>
 </template>
 
 <script>
-import Loader from '@/components/app/Loader.vue'
+import MainLayout from '@/layouts/MainLayout.vue'
 
 export default {
   name: 'App',
   components: {
-    Loader
+    MainLayout
   },
   data() {
     return {
-      showLoader: false
+      showLoader: true
     }
-  }
+  },
 }
+
 </script>
 
 <style lang="scss">
+// @import 'assets/index';
 #app {
   font-family: Inter;
   -webkit-font-smoothing: antialiased;
