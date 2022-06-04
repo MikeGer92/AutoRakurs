@@ -33,8 +33,13 @@
         <p class="home__main_oldprice">Успейте забрать по старой цене и получите<br>
         <span class="home__main_oldprice-orange">ДОПОЛНИТЕЛЬНОЕ<br>ОБОРУДОВАНИЕ</span></p>
         <p class="home__main_gift">НА <span class="home__main_gift-blue">50 000</span><br>В ПОДАРОК<span class="home__main_gift-black">*</span></p>
-
       </div>
+      <div class="home__divider">
+        <div class="home__divider_line"></div>
+        <div class="home__divider_text">НОВЫЕ ПОПУЛЯРНЫЕ АВТО В АВТОСАЛОНЕ</div>
+        <div class="home__divider_line"></div>
+      </div>
+      <div class="home__cars"></div>
     </div>
   </div>
 </template>
@@ -200,6 +205,36 @@ export default {
         color: #000000;
       }
     }
+  }
+  &__divider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    width: 1892px;
+    height: 94px;
+    &_line {
+      display: flex;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to right,  #FFF 0%, #10205E  20%, #FFF 100%);
+      // background: linear-gradient(0deg, #FFF, #10205E, #FFF);
+    }
+    &_text {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 44.7037px;
+      line-height: 54px;
+      color: #10205E;
+    }
+  }
+  &__cars {
+    width: 1903px;
+    height: 2200px;
+    margin: 0 auto;
+    // margin: 42px 81px; // оригинальные отступы
+    background-color: rgb(241, 234, 234)
   }
 }
 </style>
