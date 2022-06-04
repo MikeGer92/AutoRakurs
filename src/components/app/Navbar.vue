@@ -99,16 +99,18 @@ export default {
 	}
     &_pages {
       display: flex;
+      width: 100%;
       align-items: center;
+      justify-content: space-between;
       &-link {
         display: flex;
         align-items: center;
-        margin-left: 64px;
+        margin-left: 46px; // add TODO отступ 60 мощит элементы меню на 1920
         height: 77px;
         font-style: normal;
         font-weight: 700;
         font-size: 16px;
-        line-height: 19px;
+        line-height: 19px;  
         color: #828282;
         text-decoration: none;
         &-active {
@@ -120,7 +122,7 @@ export default {
         display: flex;
         width: 21px;
         height: 9px;
-        margin: 0 66px;
+        margin: 0 60px;
       }
     }
     &_callback {
