@@ -39,7 +39,9 @@
         <div class="home__divider_text">НОВЫЕ ПОПУЛЯРНЫЕ АВТО В АВТОСАЛОНЕ</div>
         <div class="home__divider_line"></div>
       </div>
-      <div class="home__cars"></div>
+      <div class="home__cars">
+        <HomeCar />
+      </div>
     </div>
   </div>
 </template>
@@ -47,9 +49,10 @@
 
 <script>
 import Loader from '@/components/app/Loader.vue'
+import HomeCar from '@/components/HomeCar.vue'
 export default {
   name: 'Home',
-  components: { Loader },
+  components: { Loader, HomeCar },
   data() {
     return {
       showLoader: false
