@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="actions">
     <Loader v-if="showLoader" />
     <h1>АКЦИИ</h1>
   </div>
@@ -20,4 +20,9 @@ export default {
 }
 </script>
 <style lang="scss">
+.actions {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="credit">
     <Loader v-if="showLoader" />
     <h1>КРЕДИТ</h1>
   </div>
@@ -20,4 +20,9 @@ export default {
 }
 </script>
 <style lang="scss">
+.credit {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 </style>

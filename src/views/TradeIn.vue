@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="tradein">
     <Loader v-if="showLoader" />
     <h1>TRADE-IN</h1>
   </div>
@@ -20,4 +20,9 @@ export default {
 }
 </script>
 <style lang="scss">
+.tradein {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 </style>
