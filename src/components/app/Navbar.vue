@@ -30,6 +30,10 @@
             <img src="@/assets/images/page-icon.png"  class="header__wrapper_pages-icon">
           </a>
         </router-link>
+        <div class="header__wrapper_callback">
+          <img class="header__wrapper_callback-img" src="@/assets/images/header-phone.png">
+          <div class="header__wrapper_callback-info">+7 (495) 085-71-54</div>
+        </div>
       </div>
 		</div>
 	</div>
@@ -64,11 +68,8 @@ export default {
 }
 .header {
 	display: flex;
-	position: absolute;
 	width: 2065px;
 	height: 156px;
-	left: 0px;
-	top: 0px;
 	background: #FFFFFF;
   &__logo {
     margin: 14px 46px 13px 30px;
@@ -81,14 +82,14 @@ export default {
     display: flex;
     flex-direction: column;
     &_contact {
-      margin-left: 17px;
-      width: 100%;
+      margin: 0 8px 0 17px;
       display: flex;
       justify-content: space-between;
       &-left, &-right {
         display: flex;
       }
       &-info {
+        margin-right: 15px;
         font-style: normal;
         font-weight: 900;
         font-size: 13px;
@@ -121,6 +122,28 @@ export default {
         height: 9px;
         margin: 0 66px;
       }
+    }
+    &_callback {
+      display: flex;
+      height: 77px;
+      align-items: center;
+      background: linear-gradient(236.93deg, #FFFFFF -1.96%, #12609E 92.96%);
+      backdrop-filter: blur(12px);
+      border-radius: 45px;
+      &-img {
+        width: 32px;
+        height: 32px;
+        margin: 0 14px 0 20px;
+      }
+      &-info {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 17.7451px;
+        line-height: 21px;
+        color: #FFFFFF;
+        margin-right: 19px;
+      }
+
     }
   }
 }

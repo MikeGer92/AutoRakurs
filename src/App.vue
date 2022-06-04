@@ -28,9 +28,10 @@ export default {
   font-family: Inter;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  width: 100%;
+  max-width: 2065px;
+  margin: 0 auto;
   color: #2c3e50;
-  margin-top: 60px;
 }
 .home__title {
   font-style: normal;

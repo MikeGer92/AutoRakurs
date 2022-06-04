@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="about">
     <Loader v-if="showLoader" />
     <h1>О КОМПАНИИ</h1>
   </div>
@@ -19,5 +19,10 @@ export default {
 
 }
 </script>
-<style lang="sass">
+<style lang="scss">
+.about {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 </style>
