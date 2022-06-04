@@ -122,7 +122,7 @@ export default {
         display: flex;
         width: 21px;
         height: 9px;
-        margin: 0 60px;
+        margin: 0 58px; // add TODO отступ 66 мощит элементы меню на 1920
       }
     }
     &_callback {

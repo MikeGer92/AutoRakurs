@@ -28,6 +28,13 @@
           </div>
         </div>
       </div>
+      <div class="home__main">
+        <h2 class="home__main_title">ВРЕМЯ <span class="home__main_title-orange">ВКЛАДЫВАТЬСЯ</span><br><span class="home__main_title-blue">В АВТОМОБИЛЬ</span></h2>
+        <p class="home__main_oldprice">Успейте забрать по старой цене и получите<br>
+        <span class="home__main_oldprice-orange">ДОПОЛНИТЕЛЬНОЕ<br>ОБОРУДОВАНИЕ</span></p>
+        <p class="home__main_gift">НА <span class="home__main_gift-blue">50 000</span><br>В ПОДАРОК<span class="home__main_gift-black">*</span></p>
+
+      </div>
     </div>
   </div>
 </template>
@@ -57,6 +64,7 @@ export default {
   &__header {
     width: 100%;
     height: 180px;
+    margin: 22px 0 11px 0;
     &_block {
       display: flex;
       align-self: center;
@@ -116,6 +124,80 @@ export default {
             color: #FFFFFF;
           }
         }
+      }
+    }
+  }
+  &__main {
+    display: flex;
+    width: 100%;
+    height: 796px;
+    flex-direction: column;
+    background: url('../assets/images/home-banner.png') no-repeat;
+    background-size: contain;
+    &_title {
+      margin: 84px 0 0 60px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 30px;
+      line-height: 44px;
+      color: #000000;
+      &-orange {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 54px;
+        line-height: 44px;
+        color: #FFA724;
+      }
+      &-blue {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 54px;
+        line-height: 44px;
+        color: #10205F;
+      }
+    }
+    &_oldprice {
+      margin: 120px 0 0 60px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 23.6547px;
+      line-height: 141.9%;
+      color: #000000;
+      &-orange {
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 32px;
+        line-height: 34px;
+        color: #FFA724;
+
+      }
+    }
+    &_gift {
+      margin: 54px 0 0 60px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 71.5973px;
+      line-height: 87px;
+      color: #FFA724;
+      &-blue {
+        color: #10205F;
+      }
+      &-black {
+        position: relative;
+        top: -20px;
+        left: 10px;
+        font-family: 'Montserrat';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 42.3075px;
+        line-height: 52px;
+        color: #000000;
       }
     }
   }
