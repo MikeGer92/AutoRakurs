@@ -40,8 +40,10 @@
         <div class="home__divider_line"></div>
       </div>
       <div class="home__cars">
-        <HomeCar />
+        <CarCard v-for="(item, idx) in carsList" :key="idx" :car="item" />
       </div>
+      <div class="home__bottom-divider"></div>
+      <div class="home__benefit"></div>
     </div>
   </div>
 </template>
@@ -49,13 +51,79 @@
 
 <script>
 import Loader from '@/components/app/Loader.vue'
-import HomeCar from '@/components/HomeCar.vue'
+import CarCard from '@/components/CarCard.vue'
 export default {
   name: 'Home',
-  components: { Loader, HomeCar },
+  components: { Loader, CarCard },
   data() {
     return {
-      showLoader: false
+      showLoader: false,
+      carsList: [
+        {
+        id: 1,
+        brand: 'HUINDAI',
+        model: 'Santa Fe - 1',
+        image: require('@/assets/images/home-car.png'),
+        price: '1 546 050',
+        discount: '50 000',
+        payment: '15 845'
+      },
+      {
+        id: 1,
+        brand: 'HUINDAI',
+        model: 'Santa Fe - 2',
+        image: require('@/assets/images/home-car.png'),
+        price: '1 546 050',
+        discount: '50 000',
+        payment: '15 845'
+      },
+      {
+        id: 1,
+        brand: 'HUINDAI',
+        model: 'Santa Fe - 3',
+        image: require('@/assets/images/home-car.png'),
+        price: '1 546 050',
+        discount: '50 000',
+        payment: '15 845'
+      },
+      {
+        id: 1,
+        brand: 'HUINDAI',
+        model: 'Santa Fe - 4',
+        image: require('@/assets/images/home-car.png'),
+        price: '1 546 050',
+        discount: '50 000',
+        payment: '15 845'
+      },
+      {
+        id: 1,
+        brand: 'HUINDAI',
+        model: 'Santa Fe - 5',
+        image: require('@/assets/images/home-car.png'),
+        price: '1 546 050',
+        discount: '50 000',
+        payment: '15 845'
+      },
+      {
+        id: 1,
+        brand: 'HUINDAI',
+        model: 'Santa Fe - 6',
+        image: require('@/assets/images/home-car.png'),
+        price: '1 546 050',
+        discount: '50 000',
+        payment: '15 845'
+      },
+
+      ],
+        testCar: {
+        id: 1,
+        brand: 'HUINDAI',
+        model: 'Santa Fe',
+        image: require('@/assets/images/home-car.png'),
+        price: '1 546 050',
+        discount: '50 000',
+        payment: '15 845'
+      }
     }
   }
 
@@ -216,12 +284,12 @@ export default {
     text-align: center;
     width: 1892px;
     height: 94px;
+    margin: 0 auto;
     &_line {
       display: flex;
       width: 100%;
       height: 3px;
       background: linear-gradient(to right,  #FFF 0%, #10205E  20%, #FFF 100%);
-      // background: linear-gradient(0deg, #FFF, #10205E, #FFF);
     }
     &_text {
       font-family: 'Inter';
@@ -234,10 +302,27 @@ export default {
   }
   &__cars {
     width: 1903px;
-    height: 2200px;
+    // height: 2200px;
     margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     // margin: 42px 81px; // оригинальные отступы
-    background-color: rgb(241, 234, 234)
+    // background-color: rgb(241, 234, 234)
+  }
+  &__bottom-divider {
+    width: 1952px;
+    height: 60px;
+    margin: 104px auto 81px auto;
+    background: url('../assets/images/cars-bottom-divider.png') no-repeat;
+    background-size: cover;
+  }
+  &__benefit {
+    width: 100%;
+    height: 1328px;
+    display: flex;
+    background: #D9D9D9;
+
   }
 }
 </style>
