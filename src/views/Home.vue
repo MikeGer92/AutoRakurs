@@ -352,7 +352,7 @@ export default {
     height: 2200px;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: wrap;
     // margin: 42px 81px; // оригинальные отступы
   }
@@ -370,14 +370,20 @@ export default {
     background: #D9D9D9;
     &_wrapper {
       display: flex;
-      justify-content: space-between;
+      justify-content: space-around;
       flex-wrap: wrap;
       width: 100%;
-      padding: 77px 50px 0px 50px;
+      margin: 77px auto 0px auto;
     }
     &_divider {
       width: 1891px;
       height: 94px;
+      &-line {
+        display: flex;
+        width: 100%;
+        height: 3px;
+        background: linear-gradient(to right,  #D9D9D9 0%, #10205E  20%, #D9D9D9 100%); 
+      }
       &-text {
         margin: 19px 0 35px 0;
         text-align: center;
