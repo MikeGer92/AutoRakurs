@@ -20,6 +20,8 @@ export default {
 
 <style lang="scss">
 .main-layout-body{
+  width: 100%;
+  max-width: 2065px;
 	display: flex;
   flex-direction: column;
 	background: #FFF
