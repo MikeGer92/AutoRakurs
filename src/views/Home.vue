@@ -170,7 +170,7 @@ export default {
         descr: 'Выгода до 200 000 рублей на покупку нового авто',
         image: require('../assets/images/kasko.png'),
         button: 'Получить выгоду'
-      }
+      },
     }
   }
 
