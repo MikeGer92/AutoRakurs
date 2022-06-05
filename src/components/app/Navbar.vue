@@ -68,7 +68,8 @@ export default {
 }
 .header {
 	display: flex;
-	width: 2065px;
+  width: 100%;
+	max-width: 2065px;
 	height: 156px;
 	background: #FFFFFF;
   &__logo {
