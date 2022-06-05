@@ -43,7 +43,17 @@
         <CarCard v-for="(item, idx) in carsList" :key="idx" :car="item" />
       </div>
       <div class="home__bottom-divider"></div>
-      <div class="home__benefit"></div>
+      <div class="home__benefit">
+        <div class="home__benefit_wrapper">
+          <BenefitCard v-for="(benefit, idx) in benefitsList" :key="idx" :benefitCard="benefit"/>
+          <div class="home__benefit_divider">
+            <div class="home__benefit_divider-line home__divider_line"></div>
+            <div class="home__benefit_divider-text">ПРОДАЖА АВТОМОБИЛЕЙ С ОЧЕВИДНОЙ ВЫГОДНОЙ ДЛЯ ПОКУПАТЕЛЯ</div>
+            <div class="home__benefit_divider-line home__divider_line"></div>
+          </div>
+          <BenefitCard v-for="(option, idx) in optionsList" :key="idx" :benefitCard="option"/>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -52,77 +62,114 @@
 <script>
 import Loader from '@/components/app/Loader.vue'
 import CarCard from '@/components/CarCard.vue'
+import BenefitCard from '@/components/BenefitCard.vue'
 export default {
   name: 'Home',
-  components: { Loader, CarCard },
+  components: { Loader, CarCard, BenefitCard },
   data() {
     return {
       showLoader: false,
       carsList: [
         {
-        id: 1,
-        brand: 'HUINDAI',
-        model: 'Santa Fe - 1',
-        image: require('@/assets/images/home-car.png'),
-        price: '1 546 050',
-        discount: '50 000',
-        payment: '15 845'
-      },
-      {
-        id: 1,
-        brand: 'HUINDAI',
-        model: 'Santa Fe - 2',
-        image: require('@/assets/images/home-car.png'),
-        price: '1 546 050',
-        discount: '50 000',
-        payment: '15 845'
-      },
-      {
-        id: 1,
-        brand: 'HUINDAI',
-        model: 'Santa Fe - 3',
-        image: require('@/assets/images/home-car.png'),
-        price: '1 546 050',
-        discount: '50 000',
-        payment: '15 845'
-      },
-      {
-        id: 1,
-        brand: 'HUINDAI',
-        model: 'Santa Fe - 4',
-        image: require('@/assets/images/home-car.png'),
-        price: '1 546 050',
-        discount: '50 000',
-        payment: '15 845'
-      },
-      {
-        id: 1,
-        brand: 'HUINDAI',
-        model: 'Santa Fe - 5',
-        image: require('@/assets/images/home-car.png'),
-        price: '1 546 050',
-        discount: '50 000',
-        payment: '15 845'
-      },
-      {
-        id: 1,
-        brand: 'HUINDAI',
-        model: 'Santa Fe - 6',
-        image: require('@/assets/images/home-car.png'),
-        price: '1 546 050',
-        discount: '50 000',
-        payment: '15 845'
-      },
-
+          id: 1,
+          brand: 'HUINDAI',
+          model: 'Santa Fe - 1',
+          image: require('@/assets/images/home-car.png'),
+          price: '1 546 050',
+          discount: '50 000',
+          payment: '15 845'
+        },
+        {
+          id: 1,
+          brand: 'HUINDAI',
+          model: 'Santa Fe - 2',
+          image: require('@/assets/images/home-car.png'),
+          price: '1 546 050',
+          discount: '50 000',
+          payment: '15 845'
+        },
+        {
+          id: 1,
+          brand: 'HUINDAI',
+          model: 'Santa Fe - 3',
+          image: require('@/assets/images/home-car.png'),
+          price: '1 546 050',
+          discount: '50 000',
+          payment: '15 845'
+        },
+        {
+          id: 1,
+          brand: 'HUINDAI',
+          model: 'Santa Fe - 4',
+          image: require('@/assets/images/home-car.png'),
+          price: '1 546 050',
+          discount: '50 000',
+          payment: '15 845'
+        },
+        {
+          id: 1,
+          brand: 'HUINDAI',
+          model: 'Santa Fe - 5',
+          image: require('@/assets/images/home-car.png'),
+          price: '1 546 050',
+          discount: '50 000',
+          payment: '15 845'
+        },
+        {
+          id: 1,
+          brand: 'HUINDAI',
+          model: 'Santa Fe - 6',
+          image: require('@/assets/images/home-car.png'),
+          price: '1 546 050',
+          discount: '50 000',
+          payment: '15 845'
+        },
       ],
-        testCar: {
-        id: 1,
-        brand: 'HUINDAI',
-        model: 'Santa Fe',
-        image: require('@/assets/images/home-car.png'),
-        price: '1 546 050',
-        discount: '50 000',
-        payment: '15 845'
+      benefitsList: [
+        {
+          title: 'КАСКО',
+          descr: 'При покупке автомобиля в кредит',
+          image: require('../assets/images/kasko.png'),
+          button: 'Получить подарок'
+        },
+        {
+          title: 'ТРИ ТО',
+          descr: 'При покупке автомобиля в кредит',
+          image: require('../assets/images/three-to.png'),
+          button: 'Получить подарок'
+        },
+        {
+          title: 'ТРИ ПЛАТЕЖА ПО КРЕДИТУ',
+          descr: 'При покупке автомобиля в кредит',
+          image: require('../assets/images/three-payments.png'),
+          button: 'Получить подарок'
+        },
+      ],
+      optionsList: [
+        {
+          title: 'ЭКСПРЕСС-КРЕДИТ',
+          descr: 'Решение по кредиту за 15 минут',
+          image: require('../assets/images/express-credit.png'),
+          button: 'Получить условия'
+        },
+        {
+          title: 'ТЕСТ-ДРАЙВ',
+          descr: 'Попробуйте новый автомобиль в реальных условиях',
+          image: require('../assets/images/test-drive.png'),
+          button: 'Запись на тест-драйв'
+        },
+        {
+          title: 'TRADE-IN',
+          descr: 'Выгода до 200 000 рублей на покупку нового авто',
+          image: require('../assets/images/trade-in.png'),
+          button: 'Получить выгоду'
+        }
+      ],
+      benefit: {
+        title: 'TRADE-IN',
+        descr: 'Выгода до 200 000 рублей на покупку нового авто',
+        image: require('../assets/images/kasko.png'),
+        button: 'Получить выгоду'
       }
     }
   }
@@ -302,13 +349,12 @@ export default {
   }
   &__cars {
     width: 1903px;
-    // height: 2200px;
+    height: 2200px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     // margin: 42px 81px; // оригинальные отступы
-    // background-color: rgb(241, 234, 234)
   }
   &__bottom-divider {
     width: 1952px;
@@ -322,7 +368,27 @@ export default {
     height: 1328px;
     display: flex;
     background: #D9D9D9;
-
+    &_wrapper {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      width: 100%;
+      padding: 77px 50px 0px 50px;
+    }
+    &_divider {
+      width: 1891px;
+      height: 94px;
+      &-text {
+        margin: 19px 0 35px 0;
+        text-align: center;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 33.3333px;
+        line-height: 40px;
+        color: #10205E;
+      }
+    }
   }
 }
 </style>
