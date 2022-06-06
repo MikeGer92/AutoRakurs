@@ -13,8 +13,10 @@
 export default {
   name: 'BenefitCard',
     props: {
-    benefitCard: Object,
-    default: () => {}
+    benefitCard: {
+      type: Object,
+      default: () => {}
+    }
   },
   data() {
     return {

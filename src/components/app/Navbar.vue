@@ -23,7 +23,8 @@
           :exact="link.exact"
           >
           <a href="#"
-            class="header__wrapper_pages-link "
+            class="header__wrapper_pages-link"
+            @mouseover="isMain(link.title)"
             :class="{'header__wrapper_pages-link-active': $route.path === `${link.url}`}"
           >
             {{ link.title }}
@@ -51,6 +52,17 @@ export default {
         {title: 'АКЦИИ', url: '/actions'},
         {title: 'О КОМПАНИИ', url: '/about'},
       ]
+    }
+  },
+  methods: {
+    modal() {
+      console.log('OK')
+      this.$emit('modal')
+    },
+    isMain(title) {
+      if (title === 'НОВЫЕ АВТОМОБИЛИ') {
+        this.modal()
+      }
     }
   }
 }
