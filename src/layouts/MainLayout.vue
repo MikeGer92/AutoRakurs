@@ -1,7 +1,9 @@
 <template>
 	<div class="main-layout-body">
+    <ModalWindow />
     <Navbar></Navbar>
-    <router-view></router-view>
+    <BrandsWindow />
+    <!-- <router-view></router-view> -->
     <Footer :brands="brandList" />
     
 	</div>
@@ -10,9 +12,11 @@
 <script>
 import Navbar from '@/components/app/Navbar.vue'
 import Footer from '@/components/app/Footer.vue'
+import BrandsWindow from '@/components/modals/BrandsWindow.vue'
+import ModalWindow from '@/components/modals/ModalWindow.vue'
 export default {
 	name: 'main',
-  components: { Navbar, Footer },
+  components: { Navbar, Footer, BrandsWindow, ModalWindow },
   data() {
     return {
       brandList: [
