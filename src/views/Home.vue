@@ -68,6 +68,7 @@ export default {
   components: { Loader, CarCard, BenefitCard },
   data() {
     return {
+      showModal: true,
       showLoader: false,
       carsList: [
         {

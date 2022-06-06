@@ -1,7 +1,7 @@
 <template>
 	<div class="main-layout-body">
     <ModalWindow v-if="showModal"/>
-    <Navbar></Navbar>
+    <Navbar @modal="changeModal"></Navbar>
     <BrandsWindow v-if="showModal"/>
     <router-view v-else></router-view>
     <Footer :brands="brandList" />
@@ -57,6 +57,11 @@ export default {
         {name: 'FAW', logo: '../assets/images/brands-logo/faw.svg'},
         {name: 'HAIMA', logo: '../assets/images/brands-logo/haima.svg'}
       ]
+    }
+  },
+  methods: {
+    changeModal() {
+      this.showModal = !this.showModal
     }
   }
 }

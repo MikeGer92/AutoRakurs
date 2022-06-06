@@ -34,41 +34,41 @@ export default {
         'СЕДАНЫ', 'ХЭТЧБЕКИ', 'ПИКАПЫ', 'ВНЕДОРОЖНИКИ', 'УНИВЕРСАЛЫ', 'МИНИВЕНЫ', 'МИКРОАВТОБУСЫ',
       ],
       carsBrends: [
-        {name: 'KIA', logo: require('@/assets/images/brands-logo/kia.svg')},
-        {name: 'HYUNDAI', logo: require('@/assets/images/brands-logo/hundai.svg')},
-        {name: 'TOYOTA', logo: require('@/assets/images/brands-logo/toyota.svg')},
-        {name: 'SKODA', logo: require('@/assets/images/brands-logo/skoda.svg')},
-        {name: 'VOLKSWAGEN', logo: require('@/assets/images/brands-logo/volkswagen.svg')},
-        {name: 'FORD', logo: require('@/assets/images/brands-logo/ford.svg')},
-        {name: 'CHEVROLET', logo: require('@/assets/images/brands-logo/chevrolet.svg')},
-        {name: 'MITSUBISHI', logo: require('@/assets/images/brands-logo/mitsubishi.svg')},
-        {name: 'NISSAN', logo: require('@/assets/images/brands-logo/nissan.svg')},
-        {name: 'MAZDA', logo: require('@/assets/images/brands-logo/mazda.svg')},
-        {name: 'HONDA', logo: require('@/assets/images/brands-logo/honda.svg')},
-        {name: 'LADA', logo: require('@/assets/images/brands-logo/lada.svg')},
-        {name: 'OPEL', logo: require('@/assets/images/brands-logo/opel.svg')},
-        {name: 'RENAULT', logo: require('@/assets/images/brands-logo/renault.svg')},
-        {name: 'JAC', logo: require('@/assets/images/brands-logo/jac.svg')},
-        {name: 'SUZUKI', logo: require('@/assets/images/brands-logo/suzuki.svg')},
-        {name: 'PEUGEOT', logo: require('@/assets/images/brands-logo/peugeot.svg')},
-        {name: 'UAZ', logo: require('@/assets/images/brands-logo/uaz.svg')},
-        {name: 'SSANG YONG', logo: require('@/assets/images/brands-logo/ssangyong.svg')},
-        {name: 'HAVAL', logo: require('@/assets/images/brands-logo/haval.svg')},
-        {name: 'GEELY', logo: require('@/assets/images/brands-logo/geely.svg')},
-        {name: 'LIFAN', logo: require('@/assets/images/brands-logo/lifan.svg')},
-        {name: 'CHERY', logo: require('@/assets/images/brands-logo/chery.svg')},
-        {name: 'DATSUN', logo: require('@/assets/images/brands-logo/datsun.svg')},
-        {name: 'CITROEN', logo: require('@/assets/images/brands-logo/citroen.svg')},
-        {name: 'DONGFENG', logo: require('@/assets/images/brands-logo/dongfeng.svg')},
-        {name: 'CHANGAN', logo: require('@/assets/images/brands-logo/chagan.svg')},
-        {name: 'ZOTYE', logo: require('@/assets/images/brands-logo/zotve.svg')},
-        {name: 'DWHOWER', logo: require('@/assets/images/brands-logo/dwhover.svg')},
-        {name: 'FOTON', logo: require('@/assets/images/brands-logo/foton.svg')},
-        {name: 'GREAT WALL', logo: require('@/assets/images/brands-logo/great_wall.svg')},
-        {name: 'RAVON', logo: require('@/assets/images/brands-logo/ravon.svg')},
-        {name: 'BRILLIANCE', logo: require('@/assets/images/brands-logo/brilliance.svg')},
-        {name: 'FAW', logo: require('@/assets/images/brands-logo/faw.svg')},
-        {name: 'HAIMA', logo: require('@/assets/images/brands-logo/haima.svg')}
+        {name: 'KIA', logo: require('@/assets/images/brands-logo/kia.png')},
+        {name: 'HYUNDAI', logo: require('@/assets/images/brands-logo/huindai.png')},
+        {name: 'TOYOTA', logo: require('@/assets/images/brands-logo/toyota.png')},
+        {name: 'SKODA', logo: require('@/assets/images/brands-logo/skoda.png')},
+        {name: 'VOLKSWAGEN', logo: require('@/assets/images/brands-logo/volkswagen.png')},
+        {name: 'FORD', logo: require('@/assets/images/brands-logo/ford.png')},
+        {name: 'CHEVROLET', logo: require('@/assets/images/brands-logo/chevrolet.png')},
+        {name: 'MITSUBISHI', logo: require('@/assets/images/brands-logo/mitsubishi.png')},
+        {name: 'NISSAN', logo: require('@/assets/images/brands-logo/nissan.png')},
+        {name: 'MAZDA', logo: require('@/assets/images/brands-logo/mazda.png')},
+        {name: 'HONDA', logo: require('@/assets/images/brands-logo/honda.png')},
+        {name: 'LADA', logo: require('@/assets/images/brands-logo/lada.png')},
+        {name: 'OPEL', logo: require('@/assets/images/brands-logo/opel.png')},
+        {name: 'RENAULT', logo: require('@/assets/images/brands-logo/renault.png')},
+        {name: 'JAC', logo: require('@/assets/images/brands-logo/jac.png')},
+        {name: 'SUZUKI', logo: require('@/assets/images/brands-logo/suzuki.png')},
+        {name: 'PEUGEOT', logo: require('@/assets/images/brands-logo/peugeot.png')},
+        {name: 'UAZ', logo: require('@/assets/images/brands-logo/uaz.png')},
+        {name: 'SSANG YONG', logo: require('@/assets/images/brands-logo/ssangyong.png')},
+        {name: 'HAVAL', logo: require('@/assets/images/brands-logo/haval.png')},
+        {name: 'GEELY', logo: require('@/assets/images/brands-logo/geely.png')},
+        {name: 'LIFAN', logo: require('@/assets/images/brands-logo/lifan.png')},
+        {name: 'CHERY', logo: require('@/assets/images/brands-logo/chery.png')},
+        {name: 'DATSUN', logo: require('@/assets/images/brands-logo/datsun.png')},
+        {name: 'CITROEN', logo: require('@/assets/images/brands-logo/citroen.png')},
+        {name: 'DONGFENG', logo: require('@/assets/images/brands-logo/dongfeng.png')},
+        {name: 'CHANGAN', logo: require('@/assets/images/brands-logo/changan.png')},
+        {name: 'ZOTYE', logo: require('@/assets/images/brands-logo/zotye.png')},
+        {name: 'DWHOWER', logo: require('@/assets/images/brands-logo/hower.png')},
+        {name: 'FOTON', logo: require('@/assets/images/brands-logo/foton.png')},
+        {name: 'GREAT WALL', logo: require('@/assets/images/brands-logo/great_wall.png')},
+        {name: 'RAVON', logo: require('@/assets/images/brands-logo/ravon.png')},
+        {name: 'BRILLIANCE', logo: require('@/assets/images/brands-logo/brilliance.png')},
+        {name: 'FAW', logo: require('@/assets/images/brands-logo/faw.png')},
+        {name: 'HAIMA', logo: require('@/assets/images/brands-logo/haima.png')}
       ],
       // car: {name: 'KIA', logo: require('@/assets/images/brands-logo/kia.svg')},
 
@@ -140,20 +140,21 @@ export default {
         display: flex;
         max-width: 1524px;
         flex-wrap: wrap;
-        margin: 0 100px 0 55px;
+        margin: 0 0px 0 55px;
         &--item {
-          width: 304px;
+          width: 260px;
           height: 45px;
           display: flex;
           align-items: center;
           margin: 5px 0;
           &_logo {
             display: flex;
+            justify-content: center;
             width: 100px;
           }
           &_name {
-            width: 150px;
-            margin-left: 15px;
+            width: 120px;
+            // margin-left: 15px;
             font-family: 'Inter';
             font-style: normal;
             font-weight: 900;

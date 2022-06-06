@@ -1,6 +1,6 @@
 <template>
 	<div class="header">
-    <div class="header__logo">
+    <div class="header__logo" @click="modal">
 				<img src="@/assets/images/arlogo.png" alt="" class="header__wrapper_logo-img">
 		</div>
     <div class="header__wrapper">
@@ -51,6 +51,12 @@ export default {
         {title: 'АКЦИИ', url: '/actions'},
         {title: 'О КОМПАНИИ', url: '/about'},
       ]
+    }
+  },
+  methods: {
+    modal() {
+      console.log('OK')
+      this.$emit('modal')
     }
   }
 }
