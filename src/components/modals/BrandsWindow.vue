@@ -169,7 +169,7 @@ export default {
   &__add {
     width: 100%;
     min-width: 2065px;
-    height: 355px;
+    height: 0px;
     background: #FFF;
   }
 

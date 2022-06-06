@@ -76,7 +76,7 @@ export default {
     &_options {
       display: flex;
       flex-direction: column;
-      margin: 72px 0 105px 157px;
+      margin: 72px 0 72px 157px;
       &-bank, &-perc, &-gift {
         margin-bottom: 44px;
         display: flex;

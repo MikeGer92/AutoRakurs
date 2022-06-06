@@ -1,6 +1,6 @@
 <template>
 	<div class="header">
-    <div class="header__logo" @click="modal">
+    <div class="header__logo">
 				<img src="@/assets/images/arlogo.png" alt="" class="header__wrapper_logo-img">
 		</div>
     <div class="header__wrapper">
@@ -23,7 +23,8 @@
           :exact="link.exact"
           >
           <a href="#"
-            class="header__wrapper_pages-link "
+            class="header__wrapper_pages-link"
+            @mouseover="isMain(link.title)"
             :class="{'header__wrapper_pages-link-active': $route.path === `${link.url}`}"
           >
             {{ link.title }}
@@ -57,6 +58,11 @@ export default {
     modal() {
       console.log('OK')
       this.$emit('modal')
+    },
+    isMain(title) {
+      if (title === 'НОВЫЕ АВТОМОБИЛИ') {
+        this.modal()
+      }
     }
   }
 }
