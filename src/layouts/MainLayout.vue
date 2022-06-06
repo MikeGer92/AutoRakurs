@@ -1,9 +1,9 @@
 <template>
 	<div class="main-layout-body">
-    <ModalWindow />
+    <ModalWindow v-if="showModal"/>
     <Navbar></Navbar>
-    <BrandsWindow />
-    <!-- <router-view></router-view> -->
+    <BrandsWindow v-if="showModal"/>
+    <router-view v-else></router-view>
     <Footer :brands="brandList" />
     
 	</div>
@@ -19,6 +19,7 @@ export default {
   components: { Navbar, Footer, BrandsWindow, ModalWindow },
   data() {
     return {
+      showModal: false,
       brandList: [
         {name: 'KIA', logo: '../assets/images/brands-logo/kia.svg'},
         {name: 'HYUNDAI', logo: '../assets/images/brands-logo/hundai.svg'},

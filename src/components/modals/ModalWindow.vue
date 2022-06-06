@@ -16,11 +16,12 @@ export default {
 
 <style lang="scss">
 .modal {
-  position: absolute;
-  top: 164px;
   width: 100%;
   max-width: 2065px;
-  height: 100%;
+  height: 120%;
+  position: absolute;
+  top: 164px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   background: rgba(0, 0, 0, 0.5);
