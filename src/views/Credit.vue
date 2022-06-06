@@ -23,19 +23,34 @@
       <div class="credit__main"></div>
     </div>
     <h1>КРЕДИТ</h1>
+    <CustomSelect :options="carsList" @select="optionSelect" :selected="selected" />
   </div>
 </template>
 
 
 <script>
 import Loader from '@/components/app/Loader.vue'
+import CustomSelect from '@/components/CustomSelect.vue'
 export default {
   name: 'Home',
-  components: { Loader },
+  components: { Loader, CustomSelect },
   data() {
     return {
       model: '',
-      showLoader: false
+      showLoader: false,
+      selected: '',
+      carsList: [
+        {brand: 'HONDA', value: 'HONDA'},
+        {brand: 'HAVAL', value: 'HAVAL'},
+        {brand: 'MAZDA', value: 'MAZDA'},
+        {brand: 'CITROEN', value: 'CITROEN'},
+        {brand: 'LADA', value: 'LADA'},
+      ]
+    }
+  },
+  methods: {
+    optionSelect(option) {
+      this.selected = option.brand
     }
   }
 
