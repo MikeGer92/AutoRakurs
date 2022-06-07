@@ -16,7 +16,7 @@
       v-for="option in options" :key="option.value"
       @click="selectOption(option)"
     >
-      {{ option.brand }}</div>
+      {{ option.name }}</div>
   </div>
 </div>
   
@@ -33,6 +33,10 @@ export default {
     selected: {
       type: String,
       default: ''
+    },
+    defSelected: {
+      type: String,
+      default: ''
     }
   },
   data() {
@@ -42,11 +46,12 @@ export default {
   },
   computed: {
     select() {
-      return this.selected ? this.selected : 'МАРКА АВТО'
+      return this.selected ? this.selected : this.defSelected
     }
   },
   methods: {
     selectOption(option) {
+      console.log('OK')
       this.$emit('select', option)
       this.optionsVisible = false
     }
@@ -57,6 +62,7 @@ export default {
 
 <style lang="scss">
 .select-main {
+  position: relative;
   display: flex;
   flex-direction: column;
   &__field {
@@ -90,8 +96,11 @@ export default {
     }
   }
   &__options {
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    position: absolute;
+    top: 78px;
+    z-index: 2;
+    background: #FFF;
     &_option {
       margin-left: 28px;
       font-family: 'Inter';

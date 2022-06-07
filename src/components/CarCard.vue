@@ -4,7 +4,7 @@
       <div class="car__brand">{{ car.brand }}</div>
       <div class="car__model">{{ car.model }}</div>
       <div class="car__image">
-        <img class="car__image_img" :src="`${car.image}`" :alt="selectedDog">
+        <img class="car__image_img" :src="`${car.image}`">
       </div>
       <div class="car__offer">
         <div class="car__offer_day">
