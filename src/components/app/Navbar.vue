@@ -46,7 +46,7 @@ export default {
   data() {
     return {
       links: [
-        {title: 'НОВЫЕ АВТОМОБИЛИ', url: '/', exact: true},
+        {title: 'НОВЫЕ АВТОМОБИЛИ', url: '/index', exact: true},
         {title: 'КРЕДИТ', url: '/credit'},
         {title: 'TRADE-IN', url: '/tradein'},
         {title: 'АКЦИИ', url: '/actions'},
@@ -56,7 +56,6 @@ export default {
   },
   methods: {
     modal() {
-      console.log('OK')
       this.$emit('modal')
     },
     isMain(title) {

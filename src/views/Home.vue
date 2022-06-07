@@ -45,13 +45,13 @@
       <div class="home__bottom-divider"></div>
       <div class="home__benefit">
         <div class="home__benefit_wrapper">
-          <BenefitCard v-for="(benefit, ind) in benefitsList" :key="ind" :benefitCard="benefit"/>
+          <BenefitCard v-for="(benefit) in benefitsList" :key="benefit.title" :benefitCard="benefit"/>
           <div class="home__benefit_divider">
             <div class="home__benefit_divider-line home__divider_line"></div>
             <div class="home__benefit_divider-text">ПРОДАЖА АВТОМОБИЛЕЙ С ОЧЕВИДНОЙ ВЫГОДНОЙ ДЛЯ ПОКУПАТЕЛЯ</div>
             <div class="home__benefit_divider-line home__divider_line"></div>
           </div>
-          <BenefitCard v-for="(option, idn) in optionsList" :key="idn" :benefitCard="option"/>
+          <BenefitCard v-for="(option) in optionsList" :key="option.title" :benefitCard="option"/>
         </div>
       </div>
     </div>
