@@ -41,7 +41,8 @@
                     @select="carSelect" 
                     :selected="selectedCar" 
                     :defSelected="defSelectCar" 
-                    :style="`margin-bottom: 76px`" 
+                    :style="`margin-bottom: 76px`"
+                    :disable="false"
                   />
                   <CustomSelect 
                     :options="modelsList" 
@@ -49,12 +50,14 @@
                     :selected="selectedModel"
                     :defSelected="defSelectModel" 
                     :style="`margin-bottom: 76px`"
+                    :disable="disableModel"
                   />
                   <CustomSelect 
                     :options="complsList" 
                     @select="complSelect" 
                     :selected="selectedCompl" 
-                    :defSelected="defSelectCompl" 
+                    :defSelected="defSelectCompl"
+                    :disable="disableCompl"
                   />
                 </div>
                 <div class="credit__options_choise-right--main_right">
@@ -154,6 +157,7 @@ export default {
         {name: 'CITROEN', value: 'CITROEN'},
         {name: 'LADA', value: 'LADA'},
       ],
+      disableModel: true,
       defSelectModel: 'МОДЕЛЬ АВТО',
       selectedModel: '',
       modelsList: [
@@ -163,6 +167,7 @@ export default {
         {name: 'CROSSTOUR', value: 'CROSSTOUR'},
         {name: 'PILOT', value: 'PILOT'},
       ],
+      disableCompl: true,
       defSelectCompl: 'КОМПЛЕКТАЦИЯ',
       selectedCompl: '',
       complsList: [
@@ -178,9 +183,13 @@ export default {
   methods: {
     carSelect(option) {
       this.selectedCar = option.name
+      this.disableModel = false
     },
     modelSelect(option) {
-      this.selectedModel = option.name
+      if (this.selectedCar) {
+        this.selectedModel = option.name
+        this.disableCompl = false
+      }
     },
     complSelect(option) {
       this.selectedCompl = option.name

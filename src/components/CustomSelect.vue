@@ -1,18 +1,18 @@
 <template>
 <div class="select-main">
   <div 
-    class="select-main__field" 
-    @click="optionsVisible = !optionsVisible"
+    class="select-main__field"
+    @click="funcVisible"
   >
-    <div 
+    <div
       class="select-main__field_text"
-      :class="{'select-main__field_text-active': selected}"
+      :class="{'select-main__field_text-active': !disable}"
     >
       {{ select }}</div>
     <div class="select-main__field_icon"></div>
   </div>
   <div class="select-main__options" v-if="optionsVisible">
-    <div class="select-main__options_option" 
+    <div class="select-main__options_option"
       v-for="option in options" :key="option.value"
       @click="selectOption(option)"
     >
@@ -37,11 +37,15 @@ export default {
     defSelected: {
       type: String,
       default: ''
+    },
+    disable: {
+      type: Boolean,
+      default: true
     }
   },
   data() {
     return {
-      optionsVisible: false
+      optionsVisible: false,
     }
   },
   computed: {
@@ -50,8 +54,12 @@ export default {
     }
   },
   methods: {
+    funcVisible() {
+      if (!this.disable) {
+        this.optionsVisible = !this.optionsVisible
+      }
+    },
     selectOption(option) {
-      console.log('OK')
       this.$emit('select', option)
       this.optionsVisible = false
     }
