@@ -1,13 +1,12 @@
 <template>
   <div class="carousel">
-    <!-- <div class="image" v-for="image in imagesLis" :key="image.id">
-      <img :src="require(image.img)">
-    </div> -->
     <CarouselItem
       v-for="item in imagesList" 
       :key="item.id"
       :imageItem="item" 
     />
+    <button type="button" @click="nextSlide">NEXT SLIDE</button>
+    <button type="button" @click="prevSlide">PREV SLIDE</button>
 
   </div>
 </template>
@@ -22,6 +21,22 @@ export default {
       type: Array,
       default: () => []
     }
+  },
+  data() {
+    return {
+      currSliderIndex: 0
+    }
+  },
+  methods: {
+    prevSlide() {
+      if (this.currSliderIndex > 0) {
+        this.currSliderIndex--
+      }
+
+    },
+    nextSlide() {
+      this.currSliderIndex++
+    }
   }
 }
 </script>
@@ -29,6 +44,7 @@ export default {
 <style lang="scss">
 .carousel {
   display: flex;
+  justify-content: space-around;
   width: 100%;
   height: 100%;
 }

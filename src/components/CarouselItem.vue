@@ -19,7 +19,9 @@ export default {
 <style lang="scss">
 .carousel-item {
   display: flex;
-  width: 300px;
+  justify-content: center;
+  align-items: center;
+  width: 285px;
   height: 100%;
   & img {
     width: auto;
