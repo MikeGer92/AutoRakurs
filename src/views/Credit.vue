@@ -137,7 +137,7 @@
 import Loader from '@/components/app/Loader.vue'
 import CustomSelect from '@/components/CustomSelect.vue'
 export default {
-  name: 'Home',
+  name: 'Credit',
   components: { Loader, CustomSelect },
   data() {
     return {

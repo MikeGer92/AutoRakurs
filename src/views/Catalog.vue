@@ -1,7 +1,7 @@
 <template>
-  <div class="about">
+  <div class="catalog">
     <Loader v-if="showLoader" />
-    <h1>О КОМПАНИИ</h1>
+    <h1>TRADE-IN</h1>
   </div>
 </template>
 
@@ -9,7 +9,7 @@
 <script>
 import Loader from '@/components/app/Loader.vue'
 export default {
-  name: 'About',
+  name: 'Catalog',
   components: { Loader },
   data() {
     return {
@@ -20,7 +20,7 @@ export default {
 }
 </script>
 <style lang="scss">
-.about {
+.catalog {
   display: flex;
   justify-content: center;
   text-align: center;

@@ -12,6 +12,12 @@ const routes = [
     component: () => import('./views/Home.vue')
   },
   {
+    path: '/catalog',
+    name: 'catalog',
+    meta: {layout: 'main'},
+    component: () => import('./views/Catalog.vue')
+  },
+  {
     path: '/credit',
     name: 'credit',
     meta: {layout: 'main'},
