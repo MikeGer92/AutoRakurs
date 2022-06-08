@@ -68,7 +68,7 @@
           </div>
         </div>
       </div>
-      <Carousel :imagesLis="giftsImages" />
+      <Carousel :imagesList="giftsImages" />
     </div>
   </div>
 </template>
@@ -85,10 +85,10 @@ export default {
       showLoader: false,
       word: 'ЛЕТ',
       giftsImages: [
-        {id: 1, name: 'sale', img: '../../assets/images/card.png'},
-        {id: 2, name: 'sale', img: '../../assets/images/umbrella.png'},
-        {id: 3, name: 'sale', img: '../../assets/images/setting.png'},
-        {id: 4, name: 'sale', img: '../../assets/images/payment.png'},
+        {id: 1, name: 'sale', img: 'card.png'},
+        {id: 2, name: 'sale', img: 'umbrella.png'},
+        {id: 3, name: 'sale', img: 'setting.png'},
+        {id: 4, name: 'sale', img: 'payment.png'},
       ]
     }
   },

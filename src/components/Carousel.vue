@@ -1,6 +1,13 @@
 <template>
   <div class="carousel">
-    <CarouselItem v-for="item in imagesList" :key="item.id" :item="item" />
+    <!-- <div class="image" v-for="image in imagesLis" :key="image.id">
+      <img :src="require(image.img)">
+    </div> -->
+    <CarouselItem
+      v-for="item in imagesList" 
+      :key="item.id"
+      :imageItem="item" 
+    />
 
   </div>
 </template>
@@ -22,7 +29,7 @@ export default {
 <style lang="scss">
 .carousel {
   display: flex;
-  width: 2065px;
-  height: 300px;
+  width: 100%;
+  height: 100%;
 }
 </style>

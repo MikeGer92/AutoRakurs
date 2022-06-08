@@ -1,6 +1,6 @@
 <template>
   <div class="carousel-item">
-    <img :src="require(`${item.img}`)">
+    <img :src="require('../assets/images/'+imageItem.img)">
   </div>
 </template>
 
@@ -8,7 +8,7 @@
 export default {
   name: 'CarouselItem',
   props: {
-    item: {
+    imageItem: {
       type: Object,
       default: () => {}
     }
@@ -19,5 +19,11 @@ export default {
 <style lang="scss">
 .carousel-item {
   display: flex;
+  width: 300px;
+  height: 100%;
+  & img {
+    width: auto;
+    height: 100%;
+  }
 }
 </style>
