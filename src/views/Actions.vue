@@ -9,7 +9,7 @@
 <script>
 import Loader from '@/components/app/Loader.vue'
 export default {
-  name: 'Home',
+  name: 'Actions',
   components: { Loader },
   data() {
     return {
