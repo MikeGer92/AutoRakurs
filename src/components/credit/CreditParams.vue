@@ -80,7 +80,6 @@ export default {
   components: { Carousel},
   data() {
     return {
-      active: true,
       years: 7,
       summ: '200000',
       showLoader: false,
