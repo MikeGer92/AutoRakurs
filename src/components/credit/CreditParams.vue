@@ -68,100 +68,40 @@
           </div>
         </div>
       </div>
-      <div class="slider-wrapper">
-        <vue-slick-carousel
-          :centerMode="true"
-          :arrows="true"
-          :infinite="true"
-          :slides-to-show="4"
-          :dots="false"
-          class="carousel"
-          :style="{'display': flex, 'width': '1600px', 'align-items': 'center'}"
-        >
-          <div v-for="image in giftsImages" :key="image.id" class="carousel-sorce">
-            <img :src="require('../../assets/images/'+image.img)">
-          </div>
-        </vue-slick-carousel>
-      </div>
-      <!-- <Carousel :imagesList="giftsImages" /> -->
+      <Carousel />
     </div>
   </div>
 </template>
 
 <script>
- import VueSlickCarousel from 'vue-slick-carousel'
- import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-// import Carousel from '@/components/Carousel.vue'
+import Carousel from '@/components/Carousel.vue'
 export default {
   name: 'CreditParams',
-  components: { VueSlickCarousel},
+  components: { Carousel},
   data() {
     return {
+      active: true,
       years: 7,
       summ: '200000',
       showLoader: false,
       word: 'ЛЕТ',
-      giftsImages: [
-        {id: 1, name: 'sale', img: 'card.png'},
-        {id: 2, name: 'sale', img: 'umbrella.png'},
-        {id: 3, name: 'sale', img: 'setting.png'},
-        {id: 4, name: 'sale', img: 'payment.png'},
-        {id: 1, name: 'sale', img: 'card.png'},
-        {id: 2, name: 'sale', img: 'umbrella.png'},
-        {id: 3, name: 'sale', img: 'setting.png'},
-        {id: 4, name: 'sale', img: 'payment.png'},
-      ]
     }
   },
   methods: {
     checkYears() {
       this.word = (this.years == 1) ?  'ГОД' : (this.years == 0 || this.years >= 5) ? 'ЛЕТ' : 'ГОДА'
-    }
+    },
+    getIndex(index) {
+      console.log(index)
+    },
+    clickPrev(){
+      alert('Это я!!!')
+    },
   }
 }
 </script>
 
 <style lang="scss">
-.slider-wrapper {
-  display: flex;
-  width: 1600px;
-  height: 400px;
-}
-.slick-slide {
-  display: flex;
-}
-.carousel {
-  -webkit-appearance: none !important;
-  margin: auto 0;
-  width: 1600px;
-}
-.slick-slider[data-v-3d1a4f76] {
-  position: relative;
-  display: flex;
-  box-sizing: border-box;
-}
-.slick-track[data-v-e4caeaf8] {
-  display: flex;
-  align-items: center;
-}
-.carousel-sorce {
-  display: block;
-  justify-content: center;
-  align-items: center;
-}
-.slick-initialized .slick-slide[data-v-e4caeaf8] {
-  display: flex;
-  justify-content: center;
-}
-.slick-list[data-v-3d1a4f76] {
-  position: relative;
-  display: block;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  transform: translateZ(0);
-  width: 1600px;
-}
 .credit-params {
   display: flex;
   &__left {
