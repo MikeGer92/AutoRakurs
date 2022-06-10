@@ -12,13 +12,9 @@
             <div class="person__form_title">Персональные данные</div>
             <input type="text" class="person__form_name" placeholder="ФИО">
             <input type="phone" class="person__form_phone" placeholder="+7 (___)  ___-__-__">
-            <label class="person__form_radio">
-              <input class="person__form_radio-btn" id="radio" type="radio" name="radio" value="1">
-              <span></span>
-              <div class="person__form_radio-text">
-                Я соглашаюсь с <span>условиями обработки<br>и использования моих персональных данных.</span>
-              </div>
-            </label>
+
+            <CustomRadio />
+
             <button class="person__form_btn" type="button">Отправить заявку</button>
             <p class="person__form_info">После отправки заявки вам перезвонит сотрудник банка,<br>проконсультирует и примет недостающие данные по телефону.</p>
           </div>
@@ -48,8 +44,10 @@
 </template>
 
 <script>
+import CustomRadio from '@/components/CustomRadio.vue'
 export default {
-  name: 'PersonParams'
+  name: 'PersonParams',
+  components: { CustomRadio }
 }
 </script>
 
@@ -143,59 +141,6 @@ export default {
       line-height: 44px;
       color: #939393;
     }
-    &_radio {
-      margin-top: 36px;
-      display: flex;
-      width: 565px;
-      height: 46px;
-      cursor: pointer;
-      &-btn {
-        display: flex;
-        width: 44px;
-        height: 44px;
-        margin-left: 50px;
-        display: none;
-        + span {
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          width: 44px;
-          height: 44px;
-          background: #F0F0F0;
-          border-radius: 22px;
-          margin-left: 50px;
-        }
-        &:checked {
-          + span {
-            &::before {
-              content: "";
-              display: block;
-              width: 26px;
-              height: 26px;
-              border-radius: 50%;
-              background: #FFA724;
-            }
-          }
-        }
-      }
-      & span {
-        width: 44px;
-        height: 44px;
-      }
-      &-text {
-        margin-left: 24px;
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 300;
-        font-size: 18.4658px;
-        line-height: 106.52%;
-        color: #000000;
-        & span {
-          color: #12609E;
-          text-decoration: underline;
-        }
-      }
-    }
     &_btn {
       margin: 40px 0 0 50px;
       width: 644px;
@@ -209,6 +154,7 @@ export default {
       font-size: 36.3918px;
       line-height: 106.52%;
       color: #FFFFFF;
+      border: none;
       background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
       box-shadow: 0px 9.08375px 9.08375px rgba(0, 0, 0, 0.25);
       border-radius: 84.0247px;
