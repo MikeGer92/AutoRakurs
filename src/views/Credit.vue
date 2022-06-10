@@ -27,25 +27,10 @@
           <div class="credit__divider_line"></div>
         </div>
         <div class="credit__options">
-          <Choise />
+          <ChoiseParams />
           <CreditParams />
-          <div class="credit__options_choise">
-            <div class="credit__options_choise-left">
-              <div class="credit__options_choise-left--num">3</div>
-              <div class="credit__options_choise-left--border"></div>
-            </div>
-            <div class="credit__options_choise-right">
-              <div class="credit__options_choise-right--title">ЗАПОЛНИТЕ ПЕРСОНАЛЬНЫЕ ДАННЫЕ</div>
-              <div class="credit__options_choise-right--main">
-                <div class="credit__options_choise-right--main_left">
-   
-                </div>
-                <div class="credit__options_choise-right--main_right">
+          <PersonParams />
 
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     </div>
@@ -55,11 +40,12 @@
 
 <script>
 import Loader from '@/components/app/Loader.vue'
-import Choise from '@/components/credit/Choise.vue'
+import ChoiseParams from '@/components/credit/ChoiseParams.vue'
 import CreditParams from '@/components/credit/CreditParams.vue'
+import PersonParams from '@/components/credit/PersonParams.vue'
 export default {
   name: 'Credit',
-  components: { Loader, Choise, CreditParams},
+  components: { Loader, ChoiseParams, CreditParams, PersonParams},
   data() {
     return {
       showLoader: false
