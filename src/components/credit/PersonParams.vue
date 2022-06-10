@@ -209,6 +209,7 @@ export default {
       font-size: 36.3918px;
       line-height: 106.52%;
       color: #FFFFFF;
+      border: none;
       background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
       box-shadow: 0px 9.08375px 9.08375px rgba(0, 0, 0, 0.25);
       border-radius: 84.0247px;
