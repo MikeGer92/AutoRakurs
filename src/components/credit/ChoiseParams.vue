@@ -48,7 +48,7 @@
 <script>
 import CustomSelect from '@/components/CustomSelect.vue'
 export default {
-  name: 'Choise',
+  name: 'ChoiseParams',
   components: { CustomSelect },
   data() {
     return {

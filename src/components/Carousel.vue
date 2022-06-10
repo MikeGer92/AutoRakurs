@@ -109,6 +109,7 @@ export default {
   display: flex;
   flex-direction: column;
   &__title {
+    margin-left: 80px;
     display: flex;
     font-family: 'Inter';
     font-style: normal;
@@ -135,9 +136,9 @@ export default {
     background: #FFFFFF;
     box-shadow: 0px 5.92582px 16.296px rgba(0, 0, 0, 0.25);
     border-radius: 66.6654px;
-    object-fit: contain;
+    cursor: pointer;
     & img {
-    max-width: 290px;
+    max-width: 320px;
     height: auto;
     -webkit-transform:scale(1.35); /* Safari and Chrome */
     -moz-transform:scale(1.35); /* Firefox */
@@ -147,6 +148,7 @@ export default {
   }
 }
 .slider-wrapper {
+  margin: 45px 0 0 60px;
   display: flex;
   align-items: center;
 }
@@ -190,6 +192,7 @@ export default {
   border: none;
   background: url('../assets/images/next-btn.png');
   background-size: contain;
+  cursor: pointer;
 }
 .prev-btn {
   display: flex;
@@ -199,5 +202,6 @@ export default {
   border: none;
   background: url('../assets/images/prev-btn.png');
   background-size: contain;
+  cursor: pointer;
 }
 </style>
