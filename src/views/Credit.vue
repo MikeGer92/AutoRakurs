@@ -44,7 +44,7 @@ import Loader from '@/components/app/Loader.vue'
 import ChoiseParams from '@/components/credit/ChoiseParams.vue'
 import CreditParams from '@/components/credit/CreditParams.vue'
 import PersonParams from '@/components/credit/PersonParams.vue'
-import WhyUs from '@/components/credit/WhyUs.vue'
+import WhyUs from '@/components/WhyUs.vue'
 export default {
   name: 'Credit',
   components: { Loader, ChoiseParams, CreditParams, PersonParams, WhyUs},

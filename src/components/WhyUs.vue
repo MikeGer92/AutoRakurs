@@ -9,17 +9,17 @@
     <div class="whyus__title">АВТОРАКУРС</div>
     <div class="whyus__advants">
       <div class="whyus__advants_clients">
-        <div class="whyus__advants_clients-image"><img src="../../assets/images/whyus-cients.png"></div>
+        <div class="whyus__advants_clients-image"><img src="@/assets/images/whyus-cients.png"></div>
         <div class="whyus__advants_clients-title">БОЛЕЕ 8638</div>
         <div class="whyus__advants_clients-descr">клиентов стали счастливыми обладателями новых<br>автомобилей</div>
       </div>
       <div class="whyus__advants_banks">
-        <div class="whyus__advants_banks-image"><img src="../../assets/images/whyus-banks.png"></div>
+        <div class="whyus__advants_banks-image"><img src="@/assets/images/whyus-banks.png"></div>
         <div class="whyus__advants_banks-title">30 БАНКОВ</div>
         <div class="whyus__advants_banks-descr">30 банков партнеров с самыми выгодными программами кредитования</div>
       </div>
       <div class="whyus__advants_time">
-        <div class="whyus__advants_time-image"><img src="../../assets/images/whyus-time.png"></div>
+        <div class="whyus__advants_time-image"><img src="@/assets/images/whyus-time.png"></div>
         <div class="whyus__advants_time-title">БОЛЕЕ 15 ЛЕТ</div>
         <div class="whyus__advants_time-descr">успешной работы в области продажи и кредитования автомобилей</div>
       </div>
@@ -29,35 +29,17 @@
         <div class="whyus__divider_text">ПОЧЕМУ ВЫБИРАЮТ ИМЕННО НАС</div>
         <div class="whyus__divider_line"></div>
     </div>
-    <div class="whyus__market">
-      <div class="whyus__market_item">
-        <p class="whyus__market_item-text">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ!</p>
-        <p class="whyus__market_item-text">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ!</p>
-        <p class="whyus__market_item-text">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ!</p>
-      </div>
-        <div class="whyus__market_item">
-        <p class="whyus__market_item-text">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ!</p>
-        <p class="whyus__market_item-text">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ!</p>
-        <p class="whyus__market_item-text">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ!</p>
-      </div>
-        <div class="whyus__market_item">
-        <p class="whyus__market_item-text">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ!</p>
-        <p class="whyus__market_item-text">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ!</p>
-        <p class="whyus__market_item-text">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ!</p>
-      </div>
-        <div class="whyus__market_item">
-        <p class="whyus__market_item-text">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ!</p>
-        <p class="whyus__market_item-text">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ!</p>
-        <p class="whyus__market_item-text">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ!</p>
-      </div>
-    </div>
+    <MarketBlock />
+
   </div>
   
 </template>
 
 <script>
+import MarketBlock from '@/components/MarketBlock.vue'
 export default {
-  name: 'WhyUs'
+  name: 'WhyUs',
+  components: { MarketBlock }
   
 }
 </script>
@@ -147,28 +129,6 @@ export default {
         line-height: 31px;
         text-align: center;
         color: #000000;
-      }
-    }
-  }
-  &__market {
-    margin: 149px 0 230px 0;
-    display: flex;
-    flex-direction: column;
-    align-self: center;
-    &_item {
-      display: flex;
-      margin: 10px 0;
-      &-text {
-        margin: 0;
-        font-family: 'Abhaya Libre SemiBold', sans-serif;
-        font-style: normal;
-        font-weight: 600;
-        font-size: 34.3344px;
-        line-height: 41px;
-        color: #000000;
-        &:nth-child(2) {
-          margin: 0 20px;
-        }
       }
     }
   }
