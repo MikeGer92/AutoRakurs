@@ -12,6 +12,12 @@ const routes = [
     component: () => import('./views/Home.vue')
   },
   {
+    path: '/brand',
+    name: 'brand',
+    meta: {layout: 'main'},
+    component: () => import('./views/BrandPage.vue')
+  },
+  {
     path: '/catalog',
     name: 'catalog',
     meta: {layout: 'main'},

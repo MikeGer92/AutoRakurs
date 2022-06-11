@@ -27,9 +27,13 @@
           <div class="credit__divider_line"></div>
         </div>
         <div class="credit__options">
+
           <ChoiseParams />
+
           <CreditParams />
+
           <PersonParams />
+          
           <WhyUs />
 
         </div>
