@@ -7,24 +7,9 @@
           <h1 class="home__header_title">НОВЫЕ АВТО <br />ПО СТАРЫМ ЦЕНАМ</h1>
           <div class="home__header_timer">
             <p class="home__header_timer-title">ДО КОНЦА АКЦИИ:</p>
-            <div class="home__header_timer-count">
-              <div class="home__header_timer-count--item">
-                <div class="home__header_timer-count--item_num">-1</div>
-                <div class="home__header_timer-count--item_descr">ДНЕЙ</div>
-              </div>
-              <div class="home__header_timer-count--item">
-                <div class="home__header_timer-count--item_num">-8</div>
-                <div class="home__header_timer-count--item_descr">ЧАСОВ</div>
-              </div>
-              <div class="home__header_timer-count--item">
-                <div class="home__header_timer-count--item_num">-22</div>
-                <div class="home__header_timer-count--item_descr">МИНУТ</div>
-              </div>
-              <div class="home__header_timer-count--item">
-                <div class="home__header_timer-count--item_num">-32</div>
-                <div class="home__header_timer-count--item_descr">СЕКУНД</div>
-              </div>
-            </div>
+
+            <Timer />
+
           </div>
         </div>
       </div>
@@ -61,11 +46,12 @@
 
 <script>
 import Loader from '@/components/app/Loader.vue'
+import Timer from '@/components/Timer.vue'
 import CarCard from '@/components/CarCard.vue'
 import BenefitCard from '@/components/BenefitCard.vue'
 export default {
   name: 'Home',
-  components: { Loader, CarCard, BenefitCard },
+  components: { Loader, Timer, CarCard, BenefitCard },
   data() {
     return {
       showModal: true,
@@ -214,40 +200,6 @@ export default {
       font-size: 24.4694px;
       line-height: 30px;
       color: #FFFFFF;
-      }
-      &-count {
-        display: flex;
-        width: 375px;
-        height: 121px;
-        justify-content: space-around;
-        align-items: center;
-        background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
-        box-shadow: 0px 6.20628px 6.20628px rgba(0, 0, 0, 0.25);
-        border-radius: 37.1592px;
-        &--item {
-          padding: 0 17px;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          border-right: 1.28135px solid #FFFFFF;
-          &:last-child {
-            border-right: none;
-          }
-          &_num {
-            font-style: normal;
-            font-weight: 900;
-            font-size: 43.0495px;
-            line-height: 52px;
-            color: #FFFFFF;
-          }
-          &_descr {
-            font-style: normal;
-            font-weight: 700;
-            font-size: 14.4963px;
-            line-height: 18px;
-            color: #FFFFFF;
-          }
-        }
       }
     }
   }
