@@ -15,8 +15,12 @@ export default {
     return {
       showLoader: false
     }
+  },
+  mounted() {
+    console.log(window.location.href);
+    console.log(this.$route.path);
+    console.log(this.$router.history);
   }
-
 }
 </script>
 <style lang="scss">
