@@ -134,18 +134,20 @@
     </div>
     <div class="brandpage__tradein">
       <div class="brandpage__tradein_form">
-        <input type="text" class="brandpage__tradein_form-model" placeholder="МАРКА И МОДЕЛЬ АВТО">
-        <div class="brandpage__tradein_form-params">
-          <input class="brandpage__tradein_form-params--ways" placeholder="ПРОБЕГ">
-          <input class="brandpage__tradein_form-params--type" placeholder="КУЗОВ">
-          <input class="brandpage__tradein_form-params--years" placeholder="ГОД ВЫПУСКА">
+        <div class="brandpage__tradein_form-wrapper">
+          <input type="text" class="brandpage__tradein_form-model" placeholder="МАРКА И МОДЕЛЬ АВТО">
+          <div class="brandpage__tradein_form-params">
+            <input class="brandpage__tradein_form-params--way" placeholder="ПРОБЕГ">
+            <input class="brandpage__tradein_form-params--type" placeholder="КУЗОВ">
+            <input class="brandpage__tradein_form-params--year" placeholder="ГОД ВЫПУСКА">
+          </div>
+          <input class="brandpage__tradein_form-yourprice" placeholder="ВАША ЦЕНА">
+          <div class="brandpage__tradein_form-person">
+            <input type="text" class="brandpage__tradein_form-person--name" placeholder="ИМЯ">
+            <input type="phone" class="brandpage__tradein_form-person--phone" placeholder="ТЕЛЕФОН">
+          </div>
+          <button type="button">РАССЧИТАТЬ ВЫГОДУ</button>
         </div>
-        <input class="brandpage__tradein_form-yourprice" placeholder="ВАША ЦЕНА">
-        <div class="brandpage__tradein_form-person">
-          <input type="text" class="brandpage__tradein_form-person--name" placeholder="ИМЯ">
-          <input type="phone" class="brandpage__tradein_form-person--phone" placeholder="ТЕЛЕФОН">
-        </div>
-        <button type="button">РАССЧИТАТЬ ВЫГОДУ</button>
       </div>
     </div>
     <div class="brandpage__divider">
@@ -169,13 +171,15 @@
       <div class="brandpage__divider_line"></div>
     </div>
     <div class="brandpage__image"></div>
-    <MarketBlock />
+    <MarketBlock :style="{'margin': '85px 0 0 0'}" />
     <div class="brandpage__divider">
       <div class="brandpage__divider_line"></div>
       <div class="brandpage__divider_text">МАШИНЫ В ЭТУ СТОИМОСТЬ</div>
       <div class="brandpage__divider_line"></div>
     </div>
-    <CarCard />
+    <div class="brandpage__similar">
+      <CarCard v-for="car in thisPriceList" :key="car.id" :car="car" />
+    </div>
   </div>
 </template>
 
@@ -236,7 +240,36 @@ export default {
       modelBenef: { title: 'СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ НА HYUNDAI CRETA', benef: '60 000 ₽'},
       cashBenef: { title: 'СКИДКА ЗА НАЛИЧНЫЕ', benef: '60 000 ₽'},
       utilBenef: { title: 'ВЫГОДА ЗА УТИЛИЗАЦИЮ', benef: '60 000 ₽'},
-      govBenef: { title: 'СКИДКА ПО ГОС-ПРОГРАММЕ', benef: '-10% ОТ ЦЕНЫ АВТО'}
+      govBenef: { title: 'СКИДКА ПО ГОС-ПРОГРАММЕ', benef: '-10% ОТ ЦЕНЫ АВТО'},
+      thisPriceList: [
+        {
+          id: 0,
+          brand: 'HUINDAI',
+          model: 'Santa Fe - 1',
+          image: require('@/assets/images/home-car.png'),
+          price: '1 546 050',
+          discount: '50 000',
+          payment: '15 845'
+        },
+        {
+          id: 1,
+          brand: 'HUINDAI',
+          model: 'Santa Fe - 2',
+          image: require('@/assets/images/home-car.png'),
+          price: '1 546 050',
+          discount: '50 000',
+          payment: '15 845'
+        },
+        {
+          id: 2,
+          brand: 'HUINDAI',
+          model: 'Santa Fe - 3',
+          image: require('@/assets/images/home-car.png'),
+          price: '1 546 050',
+          discount: '50 000',
+          payment: '15 845'
+        }
+      ],
     }
   },
   methods: {
@@ -494,12 +527,206 @@ export default {
       width: 50%;
       display: flex;
       flex-direction: column;
+      margin-left: 165px;
       &-item {
         display: flex;
         width: 100%;
         align-items: center;
       }
     }
+    &_line {
+      display: flex;
+      margin-top: 65px;
+      width: 1px;
+      height: 459px;
+      align-self: center;
+      background: linear-gradient(to top, #FFF 0%, #7D8A98 20%, #7D8A98 80%, #FFF 100%);
+    }
+  }
+  &__benefit {
+    width: 100%;
+    max-width: 2065px;
+    margin: 41px 246px 0 289px;
+    display: flex;
+    flex-direction: column;
+    &_title {
+      margin-left: 260px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 400;
+      font-size: 20.9478px;
+      line-height: 25px;
+      color: #000000;
+    }
+    &_total {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &-sum {
+        margin-right: 300px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 121.163px;
+        line-height: 147px;
+        color: #10205E;
+      }
+      & button {
+        width: 612.71px;
+        height: 71.42px;
+        left: 1180.95px;
+        top: 598.55px;
+        background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
+        box-shadow: 0px 9.68919px 9.68919px rgba(0, 0, 0, 0.25);
+        border-radius: 89.625px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 24.882px;
+        line-height: 30px;
+        color: #FFFFFF;
+      }
+    }
+  }
+  &__tradein {
+    margin: 94px 63px 0 50px;
+    width: 100%;
+    max-width: 1952px;
+    height: 660px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    background: url('../assets/images/brand-tradein.png') no-repeat;
+    background-size: contain;
+    &_form {
+      margin-right: 76px;
+      display: flex;
+      width: 610px;
+      height: 344px;
+      background: #FFFFFF;
+      box-shadow: 0px 4px 58px rgba(0, 0, 0, 0.25);
+      border-radius: 41px;
+      &-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        margin: 36px 34px 8px 34px;
+      }
+      &-model {
+        display: flex;
+        align-items: center;
+        padding-left: 13px;
+        width: 271px;
+        height: 38px;
+        background: #F0F0F0;
+        border-radius: 63.4355px;
+        border: none;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12.9984px;
+        line-height: 16px;
+        color: #6C6C6C;
+      }
+      &-params {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 24px;
+        &--way, &--type, &--year {
+          display: flex;
+          align-items: center;
+          padding-left: 13px;
+          width: 163.25px;
+          height: 35px;
+          background: #F0F0F0;
+          border-radius: 63.4355px;
+          border: none;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12.9984px;
+          line-height: 16px;
+          color: #A8A8A8;
+        }
+      }
+      &-yourprice {
+        margin-top: 24px;
+        display: flex;
+        align-items: center;
+        padding-left: 13px;
+        width: 271.47px;
+        height: 38px;
+        background: #F0F0F0;
+        border-radius: 63.4355px;
+        border: none;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12.9984px;
+        line-height: 16px;
+        color: #6C6C6C;
+      }
+      &-person {
+        display: flex;
+        justify-content: space-between;
+        &--name, &--phone {
+          margin-top: 34px;
+          display: flex;
+          align-items: center;
+          padding-left: 13px;
+          width: 250.94px;
+          height: 35px;
+          background: #F0F0F0;
+          border-radius: 63.4355px;
+          border: none;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 12.9984px;
+          line-height: 16px;
+          color: #A8A8A8;
+        }
+      }
+      & button {
+        margin-top: 30px;
+        display: flex;
+        align-self: center;
+        align-items: center;
+        justify-content: center;
+        width: 250.94px;
+        height: 35px;
+        background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
+        box-shadow: 0px 4.51841px 4.51841px rgba(0, 0, 0, 0.25);
+        border-radius: 41.7953px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 12.9984px;
+        line-height: 16px;
+        color: #FFFFFF;
+      }
+    }
+  }
+  &__technical {
+    display: flex;
+    &_left, &_right {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+  &__image {
+    width: 100%;
+    max-width: 2065px;
+    height: 853px;
+    background: url('../assets/images/brand-footer-banner.png') no-repeat;
+  }
+  &__similar {
+    width: 100%;
+    max-width: 2065px;
+    display: flex;
+    justify-content: space-around;
   }
 }
 </style>

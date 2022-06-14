@@ -58,7 +58,7 @@ export default {
       showLoader: false,
       carsList: [
         {
-          id: 1,
+          id: 0,
           brand: 'HUINDAI',
           model: 'Santa Fe - 1',
           image: require('@/assets/images/home-car.png'),
@@ -76,7 +76,7 @@ export default {
           payment: '15 845'
         },
         {
-          id: 1,
+          id: 2,
           brand: 'HUINDAI',
           model: 'Santa Fe - 3',
           image: require('@/assets/images/home-car.png'),
@@ -85,7 +85,7 @@ export default {
           payment: '15 845'
         },
         {
-          id: 1,
+          id: 3,
           brand: 'HUINDAI',
           model: 'Santa Fe - 4',
           image: require('@/assets/images/home-car.png'),
@@ -94,7 +94,7 @@ export default {
           payment: '15 845'
         },
         {
-          id: 1,
+          id: 4,
           brand: 'HUINDAI',
           model: 'Santa Fe - 5',
           image: require('@/assets/images/home-car.png'),
@@ -103,7 +103,7 @@ export default {
           payment: '15 845'
         },
         {
-          id: 1,
+          id: 5,
           brand: 'HUINDAI',
           model: 'Santa Fe - 6',
           image: require('@/assets/images/home-car.png'),
