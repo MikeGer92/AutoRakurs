@@ -46,4 +46,7 @@ export default {
     color: #12609E;
   }
 }
+// @media screen and (max-width: 1900px) {
+//   #app { zoom: 80%; }
+// }
 </style>
