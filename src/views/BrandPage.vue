@@ -27,7 +27,19 @@
           </div>
           <div class="brandpage__main_left-head--image"></div>
         </div>
-        <div class="brandpage__main_left-gifts"></div>
+        <div class="brandpage__main_left-gifts">
+          <div class="brandpage__main_left-gifts--item" v-for="gift in gifts" :key="gift.id">
+            <div class="brandpage__main_left-gifts--item_wrapper">
+              <img class="brandpage__main_left-gifts--item_img" :src="`${gift.image}`">
+              <div class="brandpage__main_left-gifts--item_text">{{ gift.title }}</div>
+            </div>
+            <div 
+              v-if="gift.id!==gifts.length-1"
+              class="brandpage__main_left-gifts--item_border"
+            >
+            </div>
+          </div>
+        </div>
       </div>
       <div class="brandpage__main_right">
         <div class="brandpage__main_right-action">
@@ -55,13 +67,33 @@
         </div>
       </div>
     </div>
-    <div class="brandpage__choise"></div>
+    <div class="brandpage__choise">
+      <router-link
+        v-for="link in modelLinks"
+        :key="link.title"
+        tag="div"
+        active-class="brandpage__choise_link-active"
+        :to="link.url"
+        :exact="link.exact"
+        >
+        <a href="#"
+          class="brandpage__choise_link"
+          :class="{'brandpage__choise_link-active': $route.path === `${link.url}`}"
+        >
+          <img v-if="link.title==='ВЫБРАТЬ ДРУГУЮ МОДЕЛЬ'" src="@/assets/images/brand-prev.png"  class="brandpage__choise_prev">
+          {{ link.title }}
+          <img v-if="link.title!=='ВЫБРАТЬ ДРУГУЮ МОДЕЛЬ'" src="@/assets/images/page-icon.png"  class="brandpage__choise_icon">
+        </a>
+      </router-link>
+    </div>
     <div class="brandpage__divider">
       <div class="brandpage__divider_line"></div>
       <div class="brandpage__divider_text">КОМПЛЕКТАЦИИ И ЦЕНЫ HYUNDAI CRETA</div>
       <div class="brandpage__divider_line"></div>
     </div>
-    <Complectation />
+    <div class="brandpage__complectations">
+      <Complectation v-for="item in complList" :key="item.id" :compl="item" />
+    </div>
     <div class="brandpage__divider">
       <div class="brandpage__divider_line"></div>
       <div class="brandpage__divider_text">ЦЕНА HYUNDAI С УЧЕТОМ СПЕЦИАЛЬНЫХ ПРЕДЛОЖЕНИЙ</div>
@@ -69,15 +101,27 @@
     </div>
     <div class="brandpage__special">
       <div class="brandpage__special_left">
-        <div class="brandpage__special_left-item"></div>
-        <div class="brandpage__special_left-item"></div>
-        <div class="brandpage__special_left-item"></div>
+        <div class="brandpage__special_left-item">
+          <BrandRadioOrange :offer="tradeinBenef" />
+        </div>
+        <div class="brandpage__special_left-item">
+          <BrandRadioGray :offer="creditBenef" />
+        </div>
+        <div class="brandpage__special_left-item">
+          <BrandRadioOrange :offer="modelBenef" />
+        </div>
       </div>
       <div class="brandpage__special_line"></div>
       <div class="brandpage__special_right">
-        <div class="brandpage__special_right-item"></div>
-        <div class="brandpage__special_right-item"></div>
-        <div class="brandpage__special_right-item"></div>
+        <div class="brandpage__special_right-item">
+          <BrandRadioOrange :offer="cashBenef" />
+        </div>
+        <div class="brandpage__special_right-item">
+          <BrandRadioGray :offer="utilBenef" />
+        </div>
+        <div class="brandpage__special_right-item">
+          <BrandRadioOrange :offer="govBenef" />
+        </div>
       </div>
     </div>
     <div class="brandpage__divider_line"></div>
@@ -141,11 +185,13 @@ import Loader from '@/components/app/Loader.vue'
 import Complectation from '@/components/Complectation.vue'
 import Timer from '@/components/Timer.vue'
 import CustomSelect from '@/components/CustomSelect.vue'
+import BrandRadioOrange from '@/components/BrandRadioOrange.vue'
+import BrandRadioGray from '@/components/BrandRadioGray.vue'
 import MarketBlock from '@/components/MarketBlock.vue'
 import CarCard from '@/components/CarCard.vue'
 export default {
   name: 'BrandPage',
-  components: { Loader, Timer, Complectation, CustomSelect, MarketBlock, CarCard },
+  components: { Loader, Timer, Complectation, CustomSelect, MarketBlock, CarCard, BrandRadioOrange, BrandRadioGray },
   data() {
     return {
       showLoader: false,
@@ -160,7 +206,37 @@ export default {
         {id: 7, name: 'red', color: '#F9192B'},
         {id: 8, name: 'darkBlue', color: '#10205E'},
         {id: 9, name: 'silver', color: '#CDCDCD'}
-      ]
+      ], 
+      gifts: [
+        {id: 0, image: require('@/assets/images/brand-list.png'), title: '3 ТО в подарок'},
+        {id: 1, image: require('@/assets/images/brand-car.png'), title: 'Каско в подарок'},
+        {id: 2, image: require('@/assets/images/brand-percent.png'), title: 'Выгодный кредит от 8%'},
+        {id: 3, image: require('@/assets/images/brand-setting.png'), title: 'Комплект доп. оборудования'},
+        {id: 4, image: require('@/assets/images/brand-cash.png'), title: '3 платежа по кредиту в подарок'},
+      ],
+      modelLinks: [
+        {title: 'ВЫБРАТЬ ДРУГУЮ МОДЕЛЬ', url: '/brand', exact: true},
+        {title: 'КОМПЛЕКТАЦИИ', url: '/complect'},
+        {title: 'ГАЛЕРЕЯ', url: 'galary'},
+        {title: 'ОПИСАНИЕ', url: '/about'},
+        {title: 'АВТО В ЭТУ СТОИМОСТЬ', url: 'other'},
+      ], 
+      complList: [
+        {id: 0, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
+        {id: 0, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
+        {id: 0, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
+        {id: 0, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
+        {id: 0, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
+        {id: 0, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
+        {id: 0, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
+        {id: 0, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
+      ],
+      tradeinBenef: { title: 'ВЫГОДА ЗА TRADE-IN', benef: '200 000 ₽'},
+      creditBenef: { title: 'СКИДКА ПРИОФОРММЛЕНИИ АВТО КРЕДИТ', benef: '70 000 ₽'},
+      modelBenef: { title: 'СПЕЦИАЛЬНОЕ ПРЕДЛОЖЕНИЕ НА HYUNDAI CRETA', benef: '60 000 ₽'},
+      cashBenef: { title: 'СКИДКА ЗА НАЛИЧНЫЕ', benef: '60 000 ₽'},
+      utilBenef: { title: 'ВЫГОДА ЗА УТИЛИЗАЦИЮ', benef: '60 000 ₽'},
+      govBenef: { title: 'СКИДКА ПО ГОС-ПРОГРАММЕ', benef: '-10% ОТ ЦЕНЫ АВТО'}
     }
   },
   methods: {
@@ -187,8 +263,9 @@ export default {
     display: flex;
     &_left {
       display: flex;
+      flex-direction: column;
       margin: 0 45px 0 102px;
-      justify-content: space-between;
+      // justify-content: space-between;
       &-head {
         display: flex;
         justify-content: space-between;
@@ -288,6 +365,44 @@ export default {
           background: url('../assets/images/creta.png');
         }
       }
+      &-gifts {
+        margin-top: 25px;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+
+        &--item {
+          display: flex;
+          &_wrapper {
+            margin: 0 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+          &_text {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            width: 185px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 300;
+            font-size: 20.3096px;
+            line-height: 25px;
+            color: #000000;
+          }
+          &_border {
+            width: 1px;
+            height: 155px;
+            background: linear-gradient(to top, #FFF 0%, #7D8A98 20%, #7D8A98 80%,#FFF 100%);
+            &:nth-last-child(4) {
+              background: transparent;
+            }
+          }
+        }
+      }
     }
     &_right {
       display: flex;
@@ -299,6 +414,90 @@ export default {
       &-action {
         display: flex;
         flex-direction: column;
+      }
+    }
+  }
+  &__choise {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 100%;
+    max-width: 2065px;
+    margin: 0 185px 0 103px;
+    &_link {
+      display: flex;
+      align-items: center;
+      height: 57px;
+      margin: 0 40px;
+      text-decoration: none;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 300;
+      font-size: 20.3096px;
+      line-height: 25px;
+      text-align: center;
+      color: #000000;
+      &-active {
+        background: linear-gradient(108.07deg, #10205E -83.42%, #12609E 175.95%);
+        border-radius: 72.775px;
+        color: #FFF;
+      }
+    }
+    &_prev {
+      display: flex;
+      width: 15px;
+      height: 31px;
+      margin-right: 40px;
+    }
+    &_icon {
+      width: 15px;
+      height: 8px;
+      display: flex;
+      margin-left: 16px;
+      }
+
+  }
+  &__divider {
+    margin-top: 80px;
+    width: 100%;
+    max-width: 1891px;
+    text-align: center;
+    &_line {
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to right, #FFF 0%, #10205E 20%, #10205E 80%,#FFF 100%);
+    }
+    &_text {
+      margin: 19px 0 21px 0;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 44.7037px;
+      line-height: 54px;
+      color: #10205E;
+    }
+  }
+  &__complectations {
+    margin: 40px 68px 0 63px;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 2065px;
+    flex-wrap: wrap;
+  }
+  &__special {
+    margin: 0px 0 85px 0;
+    display: flex;
+    width: 100%;
+    max-width: 2065px;
+    &_left, &_right {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      &-item {
+        display: flex;
+        width: 100%;
+        align-items: center;
       }
     }
   }

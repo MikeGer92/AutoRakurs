@@ -1,17 +1,17 @@
 <template>
 <div class="complect">
   <div class="complect__main">
-    <div class="complect__main_title">1.6 MT SMART</div>
+    <div class="complect__main_title">{{ compl.title }}</div>
     <div class="complect__main_divider">
       <div class="complect__main_divider-line"></div>
       <div class="complect__main_divider-block">
-        <div class="complect__main_divider-block--item">МКПП 6</div>
+        <div class="complect__main_divider-block--item">{{ compl.trans }}</div>
         <div class="complect__main_divider-block--border"></div>
-        <div class="complect__main_divider-block--item">БЕНЗИН АИ-92</div>
+        <div class="complect__main_divider-block--item">{{ compl.petr }}</div>
         <div class="complect__main_divider-block--border"></div>
-        <div class="complect__main_divider-block--item">ПЕРЕДНИЙ</div>
+        <div class="complect__main_divider-block--item">{{ compl.drive }}</div>
         <div class="complect__main_divider-block--border"></div>
-        <div class="complect__main_divider-block--item">123 (90)/6300 Л.С.</div>
+        <div class="complect__main_divider-block--item">{{ compl.pow }}</div>
       </div>
       <div class="complect__main_divider-line"></div>
     </div>
@@ -25,7 +25,12 @@
       <div class="complect__main_detail-item">&nbsp;&nbsp;&nbsp;ОБОРУДОВАНИЕ<br>САЛОНА / ИНТЕРЬЕР</div>
     </div>
     <div class="complect__main_divider-line"></div>
-    <div class="complect__main_price">733 000 ₽</div>
+    <div class="complect__main_price">{{ compl.price }}</div>
+  </div>
+  <div class="complect__buttons">
+    <div class="complect__buttons_getspecial">ПОЛУЧИТЬ СПЕЦ ЦЕНУ</div>
+    <div class="complect__buttons_divider"></div>
+    <div class="complect__buttons_getcredit">РАССЧИТАТЬ КРЕДИТ</div>
   </div>
 </div>
   
@@ -34,9 +39,15 @@
 <script>
 export default {
   name: 'Complectation',
+  props: {
+    compl: {
+      type: Object,
+      default: () => {}
+    }
+  },
   data() {
     return {
-      showDetailBlock: true
+      showDetailBlock: true,
     }
   },
   methods: {
@@ -50,6 +61,9 @@ export default {
 <style lang="scss">
 .complect {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 29px;
   &__main {
     margin-bottom: 22px;
     width: 425px;
@@ -89,7 +103,7 @@ export default {
       &-block {
         width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
         &--item {
           margin: 19px 0 21px 0;
@@ -120,6 +134,7 @@ export default {
         height: 31px;
         display: flex;
         margin-right: 21px;
+        transform: rotate(270deg);
       }
       &-text {
         font-family: 'Inter';
@@ -159,6 +174,31 @@ export default {
       line-height: 75px;
       color: #12609E;
       align-self: center;
+    }
+  }
+  &__buttons {
+    width: 425px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-bottom: 86px;
+    background: linear-gradient(90.43deg, #12609E 17.96%, #10205E 83.93%);
+    box-shadow: 0px 6.72639px 6.72639px rgba(0, 0, 0, 0.25);
+    border-radius: 62.2191px;
+    &_getspecial, &_getcredit {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 900;
+      font-size: 11.1099px;
+      line-height: 13px;
+      color: #FFFFFF;
+    }
+    &_divider {
+      width: 1.3px;
+      height: 48px;
+      background: linear-gradient(to top, transparent 0%, #FFF 25%, #FFF 75%, transparent 100%);
+
     }
   }
 }

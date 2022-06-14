@@ -35,15 +35,6 @@ export default {
   },
   data() {
     return {
-      // testCar: {
-      //   id: 1,
-      //   brand: 'HUINDAI',
-      //   model: 'Santa Fe',
-      //   image: require('@/assets/images/home-car.png'),
-      //   price: '1 546 050',
-      //   discount: '50 000',
-      //   payment: '15 845'
-      // }
     }
   }
 }
