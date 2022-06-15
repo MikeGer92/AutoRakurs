@@ -1,7 +1,7 @@
 <template>
     <div class="person">
     <div class="person__left">
-      <div class="person__left_num">3</div>
+      <div class="person__left_num">{{ blockNum }}</div>
       <div class="person__left_border"></div>
     </div>
     <div class="person__right">
@@ -47,7 +47,13 @@
 import CustomRadio from '@/components/CustomRadio.vue'
 export default {
   name: 'PersonParams',
-  components: { CustomRadio }
+  components: { CustomRadio },
+  props: {
+    blockNum: {
+      type: String,
+      default:() => ''
+    }
+  },
 }
 </script>
 

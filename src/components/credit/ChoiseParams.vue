@@ -1,7 +1,7 @@
 <template>
   <div class="choise">
     <div class="choise__left">
-      <div class="choise__left_num">1</div>
+      <div class="choise__left_num">{{ blockNum }}</div>
       <div class="choise__left_border"></div>
     </div>
     <div class="choise__right">
@@ -50,6 +50,12 @@ import CustomSelect from '@/components/CustomSelect.vue'
 export default {
   name: 'ChoiseParams',
   components: { CustomSelect },
+  props: {
+    blockNum: {
+      type: String,
+      default:() => ''
+    }
+  },
   data() {
     return {
       model: '',
