@@ -1,23 +1,60 @@
 <template>
-  <div class="credit-params">
-    <div class="credit-params__left">
-      <div class="credit-params__left_num">{{ blockNum }}</div>
-      <div class="credit-params__left_border"></div>
+  <div class="oldcar-params">
+    <div class="oldcar-params__left">
+      <div class="oldcar-params__left_num">{{ blockNum }}</div>
+      <div class="oldcar-params__left_border"></div>
     </div>
-    <div class="credit-params__right">
-      <div class="credit-params__right_title">СТАРЫЙ АВТОМОБИЛЬ</div>
-      <div class="credit-params__right_main">
-        <div class="credit-params__right_main-left"></div>
-        <div class="credit-params__right_main-left"></div>
+    <div class="oldcar-params__right">
+      <div class="oldcar-params__right_title">СТАРЫЙ АВТОМОБИЛЬ</div>
+      <div class="oldcar-params__right_main">
+        <div class="oldcar-params__right_main-left">
+          <CustomSelect 
+            :options="oldCarList" 
+            @select="oldSelect" 
+            :selected="selectedOld" 
+            :defSelected="defSelectOld"
+            :style="{'margin-bottom': '70px',  'width': '638px', 'height': '75px'}" 
+
+            :disable="false"
+          />
+          <CustomSelect 
+            :options="yearsList" 
+            @select="yearSelect" 
+            :selected="selectedYear" 
+            :defSelected="defSelectYear" 
+            :style="{'margin-bottom': '70px',  'width': '638px', 'height': '75px'}" 
+            :disable="disableYears"
+          />
+        </div>
+        <div class="oldcar-params__right_main-right">
+          <CustomSelect 
+            :options="waysList" 
+            @select="waySelect" 
+            :selected="selectedWay" 
+            :defSelected="defSelectWay"
+            :style="{'margin-bottom': '70px',  'width': '638px', 'height': '75px'}" 
+
+            :disable="false"
+          />
+          <CustomSelect 
+            :options="transList" 
+            @select="transSelect" 
+            :selected="selectedTrans" 
+            :defSelected="defSelectTrans" 
+            :style="{'margin-bottom': '70px',  'width': '638px', 'height': '75px'}" 
+            :disable="disableTrans"
+          />
+        </div>
       </div>
     </div>
   </div>
 </template>
 
 <script>
+import CustomSelect from '@/components/CustomSelect.vue'
 export default {
   name: 'OldCarParams',
-  components: {},
+  components: {CustomSelect},
   props: {
     blockNum: {
       type: String,
@@ -26,15 +63,66 @@ export default {
   },
   data() {
     return {
+      defSelectOld: 'МАРКА АВТО',
+      selectedOld: '',
+      oldCarList: [
+        {name: 'HONDA', value: 'HONDA'},
+        {name: 'HAVAL', value: 'HAVAL'},
+        {name: 'MAZDA', value: 'MAZDA'},
+        {name: 'CITROEN', value: 'CITROEN'},
+        {name: 'LADA', value: 'LADA'},
+      ],
+      disableYears: true,
+      defSelectYear: 'ГОД ВЫПУСКА',
+      selectedYear: '',
+      yearsList: [
+        {name: '2010', value: '2010'},
+        {name: '2011', value: '2011'},
+        {name: '2012', value: '2012'},
+        {name: '2013', value: '2013'},
+        {name: '2014', value: '2014'},
+      ],
+      defSelectWay: 'ПРОБЕГ',
+      selectedWay: '',
+      waysList: [
+        {name: 'до 100 000 км', value: 'до 100 000 км'},
+        {name: '100 000 - 200 000 км', value: '100 000 - 200 000 км'},
+        {name: '200 000 - 300 000 км', value: '200 000 - 300 000 км'},
+        {name: 'более 300 000 км', value: 'более 300 000 км'},
+      ],
+      disableTrans: true,
+      defSelectTrans: 'КОРОБКА ПЕРЕДАЧ',
+      selectedTrans: '',
+      transList: [
+        {name: 'МТ', value: 'МТ'},
+        {name: 'АТ', value: 'АТ'},
+        {name: 'РОБОТ', value: 'РОБОТ'},
+        {name: 'ВАРИАТОР', value: 'ВАРИАТОР'},
+        {name: 'DSG', value: 'DSG'},
+      ],
     }
   },
   methods: {
+    oldSelect(option) {
+      this.selectedOld = option.name
+      this.disableYears = false
+    },
+    yearSelect(option) {
+      this.selectedYear = option.name
+    },
+    waySelect(option) {
+      this.selectedWay = option.name
+      this.disableTrans = false
+    },
+    transSelect(option) {
+      this.selectedTrans = option.name
+    }
   }
 }
 </script>
 
 <style lang="scss">
-.credit-params {
+.oldcar-params {
   display: flex;
   &__left {
     margin-top: 40px;
@@ -96,64 +184,9 @@ export default {
           line-height: 37px;
           color: #000000;
         }
-        &--display {
-          margin: 15px 0 46px 0;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          width: 755px;
-          height: 70px;
-          background: #F0F0F0;
-          border-radius: 115.921px;
-          &_num, &_text {
-            margin: 0 36px 0 30px;
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 30.6865px;
-            line-height: 37px;
-            color: #000000;
-
-          }
-        }
-        &--time, &--payment {
-          input[type='range'] {
-            width: 740px;
-            -webkit-appearance: none !important;
-            background:linear-gradient(to right, #12609E, #348AD2, #FFF);
-            height:7px;
-            &::-webkit-slider-thumb {
-              -webkit-appearance: none !important;
-              width: 18px;
-              height: 18px;
-              border-radius: 100%;
-              background: #12609E;
-              border: 6px solid #F0F0F0;
-              cursor: pointer;
-              &:active {
-                width: 24px;
-                height: 24px;
-              }
-            }
-          }
-        }
-        &--scale {
-          margin-top: 44px;
-          width: 740px;
-          display: flex;
-          justify-content: space-between;
-          &_item {
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 700;
-            font-size: 30.6865px;
-            line-height: 37px;
-            color: #C5C5C5;
-            &-active {
-              color: #000000;
-            }
-          }
-        }
+      }
+      &-right {
+        margin-left: 85px;
       }
     }
   }
