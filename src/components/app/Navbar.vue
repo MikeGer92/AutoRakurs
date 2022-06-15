@@ -50,6 +50,8 @@ export default {
         {title: 'КРЕДИТ', url: '/credit'},
         {title: 'TRADE-IN', url: '/tradein'},
         {title: 'АКЦИИ', url: '/actions'},
+        {title: 'МАРКА', url: '/brand'}, // временная страница
+        {title: 'КАТАЛОГ', url: '/catalog'}, // временная страница
         {title: 'О КОМПАНИИ', url: '/about'},
       ]
     }
@@ -117,7 +119,7 @@ export default {
       &-link {
         display: flex;
         align-items: center;
-        margin-left: 46px; // add TODO отступ 60 мощит элементы меню на 1920
+        margin-left: 26px; // add TODO отступ 60 моpщит элементы меню на 1920 сделал 46px
         height: 77px;
         font-style: normal;
         font-weight: 700;
@@ -134,7 +136,7 @@ export default {
         display: flex;
         width: 21px;
         height: 9px;
-        margin: 0 58px; // add TODO отступ 66 мощит элементы меню на 1920
+        margin: 0 28px; // add TODO отступ 66 мощит элементы меню на 1920 сделал 58px
       }
     }
     &_callback {
