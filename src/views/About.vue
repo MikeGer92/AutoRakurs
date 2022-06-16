@@ -55,31 +55,6 @@ export default {
     console.log(this.$route.path);
     console.log(this.$router.history);
   },
-  // methods: {
-  //   init() {
-  //     const myMap = new ymaps.Map("map", {
-  //       center: [55.75,37.6], // Координаты центра карты
-  //       zoom: 9.5 // Маштаб карты
-  //     })
-
-  //     myMap.controls.add(
-  //       new ymaps.control.ZoomControl()  // Добавление элемента управления картой
-  //     )
-  //     const myPlacemark = new ymaps.Placemark([55.58308, 37.681275], { // Координаты метки объекта
-  //     // balloonContent: "<div class='ya_map'>JAC-motors</div>" // Подсказка метки
-  //   }, 
-  //   {
-  //     iconLayout: "default#image",
-  //     iconImageHref: "/src/img/place-vector.png", // Ссылка на изображение 
-  //     iconImageSize: [28, 36], // Размер изображения 
-  //     iconImageOffset: [-3, -42] // Положение изображения 
-  //   })
-
-  //   myMap.geoObjects.add(myPlacemark)
-  //   myPlacemark.balloon.close()
-      
-  //   }
-  // }
 }
 </script>
 <style lang="scss">
@@ -114,7 +89,8 @@ export default {
     display: flex;
     width: 100%;
     max-width: 2065px;
-    height: 1260px;
+    height: 600px;
+    margin-bottom: 90px;
     &_wrapper {
       display: flex;
       margin: 0 54px 0 66px;
