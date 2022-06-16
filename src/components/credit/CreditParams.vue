@@ -1,7 +1,7 @@
 <template>
   <div class="credit-params">
     <div class="credit-params__left">
-      <div class="credit-params__left_num">2</div>
+      <div class="credit-params__left_num">{{ blockNum }}</div>
       <div class="credit-params__left_border"></div>
     </div>
     <div class="credit-params__right">
@@ -78,6 +78,12 @@ import Carousel from '@/components/Carousel.vue'
 export default {
   name: 'CreditParams',
   components: { Carousel},
+  props: {
+    blockNum: {
+      type: String,
+      default:() => ''
+    }
+  },
   data() {
     return {
       years: 7,

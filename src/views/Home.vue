@@ -36,7 +36,7 @@
             <div class="home__benefit_divider-text">ПРОДАЖА АВТОМОБИЛЕЙ С ОЧЕВИДНОЙ ВЫГОДНОЙ ДЛЯ ПОКУПАТЕЛЯ</div>
             <div class="home__benefit_divider-line home__divider_line"></div>
           </div>
-          <BenefitCard v-for="(option) in optionsList" :key="option.title" :benefitCard="option"/>
+          <BenefitCard v-for="option in optionsList" :key="option.title" :benefitCard="option"/>
         </div>
       </div>
     </div>

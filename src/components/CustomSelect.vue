@@ -72,10 +72,12 @@ export default {
 .select-main {
   position: relative;
   display: flex;
+  width: 544px;
+  height: 77px;
   flex-direction: column;
   &__field {
-    width: 544px;
-    height: 77px;
+    width: 100%;
+    height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -106,6 +108,7 @@ export default {
   &__options {
     width: 100%;
     position: absolute;
+    text-align: left;
     top: 78px;
     z-index: 2;
     background: #FFF;

@@ -28,11 +28,11 @@
         </div>
         <div class="credit__options">
 
-          <ChoiseParams />
+          <ChoiseParams :blockNum="'1'" />
 
-          <CreditParams />
+          <CreditParams :blockNum="'2'" />
 
-          <PersonParams />
+          <PersonParams :blockNum="'3'" />
           
           <WhyUs />
 

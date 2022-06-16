@@ -44,22 +44,25 @@
       <div class="brandpage__main_right">
         <div class="brandpage__main_right-action">
           <div class="brandpage__main_right-action--title">ДО КОНЦА АКЦИИ ОСТАЛОСЬ:</div>
-          <Timer />
+          <Timer 
+            :style="{'margin-bottom': '53px', 'width': '371px', 'height': '119px'}"
+          />
           <CustomSelect 
-            :options="carsList" 
-            @select="carSelect" 
-            :selected="selectedCar" 
-            :defSelected="defSelectCar" 
-            :style="`margin-bottom: 76px`"
+            :options="complectations" 
+            @select="complSelect" 
+            :selected="selectedCompl" 
+            :defSelected="defSelectCompl"
+            :style="{'margin-bottom': '25px',  'width': '375px', 'height': '65px'}" 
+
             :disable="false"
           />
           <CustomSelect 
-            :options="carsList" 
-            @select="carSelect" 
-            :selected="selectedCar" 
-            :defSelected="defSelectCar" 
-            :style="`margin-bottom: 76px`"
-            :disable="false"
+            :options="giftsList" 
+            @select="giftSelect" 
+            :selected="selectedGift" 
+            :defSelected="defSelectGift" 
+            :style="{'margin-bottom': '32px',  'width': '375px', 'height': '65px'}" 
+            :disable="disableGifts"
           />
           <input type="text" class="brandpage__main_right-action--name" placeholder="ИМЯ">
           <input type="phone" class="brandpage__main_right-action--phone" placeholder="ТЕЛЕФОН">
@@ -156,13 +159,57 @@
       <div class="brandpage__divider_line"></div>
     </div>
     <div class="brandpage__technical">
-      <div class="brandpage__technical_left">
-        <div class="brandpage__technical_left-size">ГАБАРИТЫ</div>
-        <div class="brandpage__technical_left-eng">ДВИГАТЕЛЬ</div>
+      <div class="brandpage__technical_head">
+        <div class="brandpage__technical_head-size">ГАБАРИТЫ
+          <div class="brandpage__technical_head-size--item">
+            <div class="brandpage__technical_head-size--icon"><img src="../assets/images/brand-tech-list.png"></div>
+            <div class="brandpage__technical_head-size--text">Размеры и вес</div>
+          </div>
+          <div class="brandpage__technical_head-size--item">
+            <div class="brandpage__technical_head-size--icon"><img src="../assets/images/brand-tech-list.png"></div>
+            <div class="brandpage__technical_head-size--text">Объем багажника</div>
+          </div>
+        </div>
+        <div class="brandpage__technical_head-chas">ХОДОВАЯ ЧАСТЬ
+          <div class="brandpage__technical_head-size--item">
+            <div class="brandpage__technical_head-size--icon"><img src="../assets/images/brand-tech-list.png"></div>
+            <div class="brandpage__technical_head-size--text">Криленс</div>
+          </div>
+        </div>
       </div>
-      <div class="brandpage__technical_right">
-        <div class="brandpage__technical_right-chas">ХОДОВАЯ ЧАСТЬ</div>
-        <div class="brandpage__technical_right-petr">ТОПЛИВО</div>
+      <div class="brandpage__technical_bottom">
+        <div class="brandpage__technical_bottom-eng">ДВИГАТЕЛЬ
+          <div class="brandpage__technical_bottom-size--item">
+            <div class="brandpage__technical_bottom-size--icon"><img src="../assets/images/brand-tech-list.png"></div>
+            <div class="brandpage__technical_bottom-size--text">Размеры и вес</div>
+          </div>
+          <div class="brandpage__technical_bottom-size--item">
+            <div class="brandpage__technical_bottom-size--icon"><img src="../assets/images/brand-tech-list.png"></div>
+            <div class="brandpage__technical_bottom-size--text">Максимальная скорость</div>
+          </div>
+          <div class="brandpage__technical_bottom-size--item">
+            <div class="brandpage__technical_bottom-size--icon"><img src="../assets/images/brand-tech-list.png"></div>
+            <div class="brandpage__technical_bottom-size--text">Разгон до 100</div>
+          </div>
+        </div>
+        <div class="brandpage__technical_bottom-petr">ТОПЛИВО
+          <div class="brandpage__technical_bottom-size--item">
+            <div class="brandpage__technical_bottom-size--icon"><img src="../assets/images/brand-tech-list.png"></div>
+            <div class="brandpage__technical_bottom-size--text">Объем топливного бака</div>
+          </div>
+          <div class="brandpage__technical_bottom-size--item">
+            <div class="brandpage__technical_bottom-size--icon"><img src="../assets/images/brand-tech-list.png"></div>
+            <div class="brandpage__technical_bottom-size--text">Расход топлива, л/100 км</div>
+          </div>
+          <div class="brandpage__technical_bottom-size--item">
+            <div class="brandpage__technical_bottom-size--icon"><img src="../assets/images/brand-tech-list.png"></div>
+            <div class="brandpage__technical_bottom-size--text">Расход топлива в смешанном цикле, л/100 км</div>
+          </div>
+          <div class="brandpage__technical_bottom-size--item">
+            <div class="brandpage__technical_bottom-size--icon"><img src="../assets/images/brand-tech-list.png"></div>
+            <div class="brandpage__technical_bottom-size--text">Расход топлива за городом, л/100 км</div>
+          </div>
+        </div>
       </div>
     </div>
     <div class="brandpage__divider">
@@ -189,8 +236,8 @@ import Loader from '@/components/app/Loader.vue'
 import Complectation from '@/components/Complectation.vue'
 import Timer from '@/components/Timer.vue'
 import CustomSelect from '@/components/CustomSelect.vue'
-import BrandRadioOrange from '@/components/BrandRadioOrange.vue'
-import BrandRadioGray from '@/components/BrandRadioGray.vue'
+import BrandRadioOrange from '@/components/brand/BrandRadioOrange.vue'
+import BrandRadioGray from '@/components/brand/BrandRadioGray.vue'
 import MarketBlock from '@/components/MarketBlock.vue'
 import CarCard from '@/components/CarCard.vue'
 export default {
@@ -227,13 +274,13 @@ export default {
       ], 
       complList: [
         {id: 0, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
-        {id: 0, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
-        {id: 0, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
-        {id: 0, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
-        {id: 0, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
-        {id: 0, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
-        {id: 0, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
-        {id: 0, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
+        {id: 1, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
+        {id: 2, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
+        {id: 3, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
+        {id: 4, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
+        {id: 5, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
+        {id: 6, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
+        {id: 7, title: '1.6 MT SMART', trans: 'МКПП 6', petr: 'БЕНЗИН АИ-92', drive: 'ПЕРЕДНИЙ', pow: '123 (90)/6300 Л.С.', price: '733 000 ₽'},
       ],
       tradeinBenef: { title: 'ВЫГОДА ЗА TRADE-IN', benef: '200 000 ₽'},
       creditBenef: { title: 'СКИДКА ПРИОФОРММЛЕНИИ АВТО КРЕДИТ', benef: '70 000 ₽'},
@@ -270,17 +317,74 @@ export default {
           payment: '15 845'
         }
       ],
+      defSelectCompl: 'КОМПЛЕКТАЦИЯ',
+      selectedCompl: '',
+      complectations: [
+        {name: '1.6 MT SMART', value: '1.6 MT SMART'},
+        {name: '1.6 AT SMART', value: '1.6 AT SMART'},
+        {name: '2.0 MT SMART', value: '2.0 MT SMART'},
+        {name: '2.0 AT SMART', value: '2.0 AT SMART'},
+        {name: '2.0 AT LUXE', value: '2.0 AT LUXE'},
+      ],
+      disableGifts: true,
+      defSelectGift: 'ВЫБЕРИТЕ ПОДАРОК',
+      selectedGift: '',
+      giftsList: [
+        {name: '3 ТО', value: '3 ТО'},
+        {name: 'КАСКО', value: 'КАСКО'},
+        {name: 'ВЫГОДНЫЙ ПРОЦЕНТ', value: 'ВЫГОДНЫЙ ПРОЦЕНТ'},
+        {name: 'ДОП. ОБОРУДОВАНИЕ', value: 'ДОП. ОБОРУДОВАНИЕ'},
+        {name: '3 ПЛАТЕЖА', value: '3 ПЛАТЕЖА'},
+      ],
     }
   },
   methods: {
     activateColor(color) {
       this.activeColor = color
       console.log(color)
+    },
+    complSelect(option) {
+      this.selectedCompl = option.name
+      this.disableGifts = false
+    },
+    giftSelect(option) {
+      this.selectedGift = option.name
     }
   }
 }
 </script>
 <style lang="scss">
+.select-main {
+  &__field {
+    &_text {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20.7984px;
+      line-height: 25px;
+      color: #6C6C6C;
+    }
+  }
+  &__options {
+    width: 100%;
+    position: absolute;
+    top: 78px;
+    z-index: 2;
+    background: #FFF;
+    &_option {
+      margin-left: 28px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 25px;
+      color: #000;
+      &:hover {
+        background: #F0F0F0;
+      }
+    }
+  }
+}
 .brandpage {
   width: 100%;
   max-width: 2065px;
@@ -291,6 +395,7 @@ export default {
   align-items: center;
   &__main {
     width: 100%;
+    max-width: 2065px;
     height: 721px;
     margin: 45px 0 60px 0;
     display: flex;
@@ -298,7 +403,6 @@ export default {
       display: flex;
       flex-direction: column;
       margin: 0 45px 0 102px;
-      // justify-content: space-between;
       &-head {
         display: flex;
         justify-content: space-between;
@@ -438,15 +542,62 @@ export default {
       }
     }
     &_right {
+      width: 100%;
+      max-width: 417px;
+      height: 721px;
       display: flex;
-      width: 417px;
+      justify-content: center;
       margin: 0 90px 0 45px;
-      background: url('../assets/images/homecar-border.png') no-repeat;
-      background-size: contain;
-
+      background: url('../assets/images/brand-action.png') no-repeat;
+      background-size: cover;
       &-action {
         display: flex;
         flex-direction: column;
+        align-items: center;
+        &--title {
+          margin: 37px 0 26px 0;
+          display: flex;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 900;
+          font-size: 19.2071px;
+          line-height: 23px;
+          color: #6C6C6C;
+        }
+        &--name, &--phone {
+          display: flex;
+          max-width: 345px;
+          height: 63px;
+          padding-left: 28px;
+          background: #F0F0F0;
+          border-radius: 88.6582px;
+          border: none;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 500;
+          font-size: 25.977px;
+          line-height: 31px;
+          color: #A8A8A8;
+        }
+        &--phone {
+          margin: 32px 0 20px 0;
+        }
+        & button {
+          margin-bottom: 41px;
+          width: 350px;
+          height: 48px;
+          background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
+          box-shadow: 0px 6.31499px 6.31499px rgba(0, 0, 0, 0.25);
+          border-radius: 58.4137px;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 900;
+          font-size: 18.1668px;
+          line-height: 22px;
+          color: #FFFFFF;
+          border: none;
+          cursor: pointer;
+        }
       }
     }
   }
@@ -580,12 +731,14 @@ export default {
         background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
         box-shadow: 0px 9.68919px 9.68919px rgba(0, 0, 0, 0.25);
         border-radius: 89.625px;
+        border: none;
         font-family: 'Inter';
         font-style: normal;
         font-weight: 900;
         font-size: 24.882px;
         line-height: 30px;
         color: #FFFFFF;
+        cursor: pointer;
       }
     }
   }
@@ -638,7 +791,7 @@ export default {
           display: flex;
           align-items: center;
           padding-left: 13px;
-          width: 163.25px;
+          width: 150px;
           height: 35px;
           background: #F0F0F0;
           border-radius: 63.4355px;
@@ -656,7 +809,7 @@ export default {
         display: flex;
         align-items: center;
         padding-left: 13px;
-        width: 271.47px;
+        width: 258px;
         height: 38px;
         background: #F0F0F0;
         border-radius: 63.4355px;
@@ -676,7 +829,7 @@ export default {
           display: flex;
           align-items: center;
           padding-left: 13px;
-          width: 250.94px;
+          width: 237px;
           height: 35px;
           background: #F0F0F0;
           border-radius: 63.4355px;
@@ -706,14 +859,44 @@ export default {
         font-size: 12.9984px;
         line-height: 16px;
         color: #FFFFFF;
+        cursor: pointer;
       }
     }
   }
   &__technical {
     display: flex;
-    &_left, &_right {
+    flex-direction: column;
+    &_head, &_bottom {
       display: flex;
-      flex-direction: column;
+      &-size, &-eng, &-chas, &-petr {
+        width: 50%;
+        margin: 88px 0 91px 0;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 44.1374px;
+        line-height: 53px;
+        color: #000000;
+        &--item {
+          margin-top: 33px;
+          display: flex;
+          align-items: center;
+        }
+        &--icon {
+          width: 22px;
+          height: 22px;
+          display: flex;
+        }
+        &--text {
+          margin-left: 25px;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 400;
+          font-size: 21.2188px;
+          line-height: 26px;
+          color: #000000;
+        }
+      }
     }
   }
   &__image {
