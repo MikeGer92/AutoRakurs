@@ -25,13 +25,13 @@
         <div class="tradein__divider_line"></div>
     </div>
 
-    <OldCarParams :blockNum="1" />
+    <OldCarParams :blockNum="'1'" />
 
-    <ChoiseParams :blockNum="2" />
+    <ChoiseParams :blockNum="'2'" />
 
-    <CreditParams :blockNum="3" />
+    <CreditParams :blockNum="'3'" />
 
-    <PersonParams :blockNum="4" />
+    <PersonParams :blockNum="'4'" />
 
     <WhyUs />
 

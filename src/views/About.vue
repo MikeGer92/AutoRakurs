@@ -32,7 +32,22 @@
           <button type="button">ПОСТРОИТЬ МАРШРУТ</button>
         </div>
         <div class="about__main_right">
-          <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6c72159406a316910542ef90d8623eccdc58994702f16607089f14242f0d26a5&amp;source=constructor" width="1150" height="570" frameborder="0"></iframe>
+          <yandex-map 
+            :settings="mySet"
+            ref="map"
+            :coords="[55.576874, 37.697145]"
+            zoom="14"
+            :style="{'width': '1150px',  'height': '570px'}"
+            :controls="[]"
+          >
+            <ymap-marker 
+              marker-type="placemark"
+              :coords="mapCoordsStart"
+              marker-id="1" 
+              :icon="marker"
+            >
+            </ymap-marker>
+          </yandex-map>
         </div>
       </div>
     </div>
@@ -41,13 +56,29 @@
 
 
 <script>
+import { yandexMap, ymapMarker } from 'vue-yandex-maps'
 import Loader from '@/components/app/Loader.vue'
 export default {
   name: 'About',
-  components: { Loader },
+  components: { Loader, yandexMap, ymapMarker  },
   data() {
     return {
-      showLoader: false
+      showLoader: false,
+      mapCoordsStart: [55.578666, 37.699562],
+      mySet: {
+        apiKey: '',
+        lang: 'ru_RU',
+        coordorder: 'latlong',
+        enterprise: false,
+        version: '2.1',
+        coords: [55.576874, 37.697145]
+      },
+      marker: {
+        layout: 'default#image',
+        imageHref: require('../assets/images/about-map-place.png'),
+        imageSize: [139, 139],
+        imageOffset: [0, 0],
+      }
     }
   },
   mounted() {
@@ -58,8 +89,17 @@ export default {
 }
 </script>
 <style lang="scss">
-.map-circle-placemark {
-  background: url('../assets/images/about-map-place.png');
+[class*="ymaps-2"][class*="-ground-pane"] {
+filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
+/* Firefox 3.5+ */
+-webkit-filter: grayscale(100%);
+/* Chrome 19+ & Safari 6+ */
+}
+.ymaps-2-1-79-map-copyrights-promo {
+  display: none;
+}
+.ymaps-2-1-79-copyright__link {
+  display: none;
 }
 .about {
   display: flex;
@@ -178,7 +218,7 @@ export default {
       width: 100%;
       max-width: 1150px;
       height: 570px;
-      filter: grayscale(1);
+      // filter: grayscale(1);
     }
   }
 }

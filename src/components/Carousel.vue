@@ -12,7 +12,7 @@
           :slides-to-show="4"
           :dots="false"
           class="carousel"
-          :style="{'display': flex, 'width': '1500px', 'align-items': 'center'}"
+          :style="{ 'width': '1500px', 'align-items': 'center'}"
         >
           <div class="slider__item"
             :class="{'slider_item-active': currentPage===0 }"
