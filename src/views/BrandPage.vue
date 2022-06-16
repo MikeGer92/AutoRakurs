@@ -395,6 +395,7 @@ export default {
   align-items: center;
   &__main {
     width: 100%;
+    max-width: 2065px;
     height: 721px;
     margin: 45px 0 60px 0;
     display: flex;
@@ -730,12 +731,14 @@ export default {
         background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
         box-shadow: 0px 9.68919px 9.68919px rgba(0, 0, 0, 0.25);
         border-radius: 89.625px;
+        border: none;
         font-family: 'Inter';
         font-style: normal;
         font-weight: 900;
         font-size: 24.882px;
         line-height: 30px;
         color: #FFFFFF;
+        cursor: pointer;
       }
     }
   }

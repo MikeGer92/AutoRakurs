@@ -20,20 +20,21 @@
       </div>
     </div>
     <div class="tradein__divider">
-      <div class="tradein__divider_line"></div>
-      <div class="tradein__divider_text">TRADE-IN</div>
-      <div class="tradein__divider_line"></div>
-
-      <OldCarParams :blockNum="1" />
-
-          <ChoiseParams :blockNum="2" />
-
-          <CreditParams :blockNum="3" />
-
-          <PersonParams :blockNum="4" />
-
-          <WhyUs />
+        <div class="tradein__divider_line"></div>
+        <div class="tradein__divider_text">TRADE-IN</div>
+        <div class="tradein__divider_line"></div>
     </div>
+
+    <OldCarParams :blockNum="1" />
+
+    <ChoiseParams :blockNum="2" />
+
+    <CreditParams :blockNum="3" />
+
+    <PersonParams :blockNum="4" />
+
+    <WhyUs />
+
   </div>
 </template>
 
