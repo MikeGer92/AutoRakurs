@@ -18,7 +18,16 @@
       <div class="catalog__divider_text">ЛИНЕЙКА АВТОМОБИЛЕЙ HUYNDAI</div>
       <div class="catalog__divider_line"></div>
     </div>
-    <MarketBlock />
+    <MarketBlock 
+      :style="{'margin': '61px 0 191px 0'}"
+    />
+    <div class="catalog__bottom">
+      <div class="catalog__bottom_logo"><img src="../assets/images/mits-logo.png"></div>
+      <div class="catalog__bottom_image"><img src="../assets/images/mits-car.png"></div>
+    </div>
+    <div class="catalog__gift">
+      <div class="catalog__gift_title">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ!</div>
+    </div>
   </div>
 </template>
 
@@ -206,6 +215,44 @@ export default {
       display: flex;
       max-width: 437px;
       max-height: 672px;
+    }
+  }
+  &__bottom {
+    display: flex;
+    width: 100%;
+    max-width: 2065px;
+    height: 450px;
+    background: url('../assets/images/catalog-bottom-banner.png');
+    &_logo {
+      width: 622px;
+      margin-left: 30px;
+    }
+    &_image {
+          margin-left: -225px;
+      display: flex;
+      & img {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+  &__gift {
+    margin-top: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 2065px;
+    height: 123px;
+    background: url('../assets/images/catalog-gift.png');
+    &_title {
+      display: flex;
+      font-family: 'Abhaya Libre SemiBold', sans-serif;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 41.9643px;
+      line-height: 50px;
+      color: #FFFFFF;
     }
   }
 }
