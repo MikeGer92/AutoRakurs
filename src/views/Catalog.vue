@@ -2,7 +2,13 @@
   <div class="catalog">
     <Loader v-if="showLoader" />
     <div class="catalog__main">
-      <div class="catalog__logo"><img src="../assets/images/kia-logo.png"></div>
+      <div class="catalog__logo">
+        <img src="../assets/images/kia-logo.png">
+        <div class="catalog__logo_timer">
+          <div class="catalog__logo_timer-title">До конца акции осталось:</div>
+          <CatalogTimer />
+        </div>
+      </div>
       <div class="catalog__image"><img src="../assets/images/kia-car.png"></div>
       <CatalogPersonForm 
         :style="{'margin': '32px 111px 32px 0'}"
@@ -25,7 +31,13 @@
       :style="{'margin': '61px 0 191px 0'}"
     />
     <div class="catalog__bottom">
-      <div class="catalog__bottom_logo"><img src="../assets/images/mits-logo.png"></div>
+      <div class="catalog__bottom_logo">
+        <img src="../assets/images/mits-logo.png">
+          <div class="catalog__bottom_logo-timer">
+          <div class="catalog__bottom_logo-timer--title">До конца акции осталось:</div>
+          <CatalogTimer />
+        </div>
+        </div>
       <div class="catalog__bottom_image"><img src="../assets/images/mits-car.png"></div>
       <BestOfferForm 
         :style="{'margin': '31px 0 33px 130px'}"
@@ -47,10 +59,11 @@ import MarketBlock from '@/components/MarketBlock.vue'
 import BenefitCard from '@/components/BenefitCard.vue'
 import CatalogPersonForm from '@/components/catalog/CatalogPersonForm.vue'
 import BestOfferForm from '@/components/catalog/BestOfferForm.vue'
+import CatalogTimer from '@/components/catalog/CatalogTimer.vue'
 import Loader from '@/components/app/Loader.vue'
 export default {
   name: 'Catalog',
-  components: { Loader, CatalogCar, MarketBlock, BenefitCard, CatalogPersonForm, BestOfferForm },
+  components: { Loader, CatalogCar, MarketBlock, BenefitCard, CatalogPersonForm, BestOfferForm, CatalogTimer },
   data() {
     return {
       showLoader: false,
@@ -206,11 +219,24 @@ export default {
   &__logo {
     margin: 45px 0 0 83px;
     display: flex;
+    flex-direction: column;
     width: 284px;
     height: 114px;
     & img {
       width: 100%;
       height: auto;
+    }
+    &_timer {
+      margin-top: 92px;
+      &-title {
+        margin-bottom: 50px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 20px;
+        line-height: 24px;
+        color: #10205E;
+      }
     }
   }
   &__image {
@@ -258,6 +284,21 @@ export default {
     &_logo {
       width: 622px;
       margin-left: 30px;
+      display: flex;
+      flex-direction: column;
+      &-timer {
+        display: flex;
+        flex-direction: column;
+        &--title {
+          margin: 19px 0 30px 0;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 900;
+          font-size: 20px;
+          line-height: 24px;
+          color: #FFFFFF;
+        }
+      }
     }
     &_image {
           margin-left: -225px;
