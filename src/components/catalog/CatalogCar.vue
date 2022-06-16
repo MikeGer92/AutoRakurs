@@ -52,7 +52,7 @@ export default {
   // height: 100%;
   display: flex;
   flex-direction: column;
-  background: url('../assets/images/catalog-border.png') no-repeat;
+  background: url('../../assets/images/catalog-border.png') no-repeat;
   background-position: 10px 0px;
   background-size: contain;
   // background-color: #fff;

@@ -4,6 +4,9 @@
     <div class="catalog__main">
       <div class="catalog__logo"><img src="../assets/images/kia-logo.png"></div>
       <div class="catalog__image"><img src="../assets/images/kia-car.png"></div>
+      <CatalogPersonForm 
+        :style="{'margin': '32px 111px 32px 0'}"
+      />
     </div>
     <div class="catalog__divider">
       <div class="catalog__divider_line"></div>
@@ -24,21 +27,30 @@
     <div class="catalog__bottom">
       <div class="catalog__bottom_logo"><img src="../assets/images/mits-logo.png"></div>
       <div class="catalog__bottom_image"><img src="../assets/images/mits-car.png"></div>
+      <BestOfferForm 
+        :style="{'margin': '31px 0 33px 130px'}"
+      />
     </div>
     <div class="catalog__gift">
       <div class="catalog__gift_title">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ!</div>
+    </div>
+    <div class="catalog__offers">
+      <BenefitCard v-for="gift in giftsList" :key="gift.title" :benefitCard="gift"/>
     </div>
   </div>
 </template>
 
 
 <script>
-import CatalogCar from '@/components/CatalogCar.vue'
+import CatalogCar from '@/components/catalog/CatalogCar.vue'
 import MarketBlock from '@/components/MarketBlock.vue'
+import BenefitCard from '@/components/BenefitCard.vue'
+import CatalogPersonForm from '@/components/catalog/CatalogPersonForm.vue'
+import BestOfferForm from '@/components/catalog/BestOfferForm.vue'
 import Loader from '@/components/app/Loader.vue'
 export default {
   name: 'Catalog',
-  components: { Loader, CatalogCar, MarketBlock },
+  components: { Loader, CatalogCar, MarketBlock, BenefitCard, CatalogPersonForm, BestOfferForm },
   data() {
     return {
       showLoader: false,
@@ -152,6 +164,26 @@ export default {
           payment: '15 845'
         },
       ],
+      giftsList: [
+        {
+          title: 'КАСКО',
+          descr: 'При покупке автомобиля в кредит',
+          image: require('../assets/images/kasko.png'),
+          button: 'Получить подарок'
+        },
+        {
+          title: 'ТРИ ТО',
+          descr: 'При покупке автомобиля в кредит',
+          image: require('../assets/images/three-to.png'),
+          button: 'Получить подарок'
+        },
+        {
+          title: 'ТРИ ПЛАТЕЖА ПО КРЕДИТУ',
+          descr: 'При покупке автомобиля в кредит',
+          image: require('../assets/images/three-payments.png'),
+          button: 'Получить подарок'
+        },
+      ],
     }
   }
 
@@ -254,6 +286,15 @@ export default {
       line-height: 50px;
       color: #FFFFFF;
     }
+  }
+  &__offers {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    width: 100%;
+    max-width: 2065px;
+    height: 680px;
+    background: #D9D9D9;
   }
 }
 </style>
