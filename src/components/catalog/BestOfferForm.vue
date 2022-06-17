@@ -32,7 +32,7 @@ export default {
   },
   methods: {
     checkForm(e) {
-      if (this.formName && this.formPhone) {
+      if (this.formName && this.formPhone && this.formPhone.length===16) {
         this.clearForm()
         return true;
       }
@@ -40,7 +40,7 @@ export default {
       if (!this.formName) {
         this.errors.push('Требуется указать имя');
       }
-      if (!this.formPhone) {
+      if (!this.formPhone && !this.formPhone.length===16) {
         this.errors.push('Требуется указать телефон');
       }
       e.preventDefault();
