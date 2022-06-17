@@ -19,7 +19,15 @@
             :class="{'slider_item-active': currentPage===item.id }"
             @click="getGiftName(item.name)"
           >
-            <img v-if="currentPage===item.id" :src="item.active_img">
+            <div v-if="currentPage===item.id">
+              <img :src="item.active_img">
+              <div 
+                class="slider__item-active--text"
+                :style="{'display': 'flex', 'justify-content': 'center','font-family': 'Inter','font-style': 'normal', 'font-weight': 700,'font-size': '40px', 'line-height': '50px', 'color': '#000000', 'margin-bottom': '20px'}"
+              >
+                {{ item.name }}
+            </div>
+            </div>
             <img v-else :src="item.img">
           </div>
         </vue-slick-carousel>
@@ -97,24 +105,30 @@ export default {
 }
 .slider__item {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  align-self: center;
   max-width: 300px;
   height: 300px;
   & img {
-      width: 280px;
+      width: 300px;
       height: auto;
     }
   }
 .slider_item-active {
-  display: flex;
-    max-width: 350px;
-    height: 300px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 330px;
+    height: 380px;
     background: #FFFFFF;
     box-shadow: 0px 5.92582px 16.296px rgba(0, 0, 0, 0.25);
     border-radius: 66.6654px;
     cursor: pointer;
     & img {
-    max-width: 320px;
+    width: 320px;
     height: auto;
     -webkit-transform:scale(1.35); /* Safari and Chrome */
     -moz-transform:scale(1.35); /* Firefox */
@@ -127,6 +141,7 @@ export default {
   margin: 45px 0 0 60px;
   display: flex;
   align-items: center;
+  height: 420px;
 }
 .slick-initialized .slick-slide[data-v-e4caeaf8] {
   display: flex;
@@ -160,6 +175,10 @@ export default {
       background-color: green;
     }
   }
+}
+.slick-track.slick-center[data-v-e4caeaf8] {
+  display: flex;
+  align-items: center;
 }
 .next-btn {
   width: 104px;
