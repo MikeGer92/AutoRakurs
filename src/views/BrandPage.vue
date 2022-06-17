@@ -1,7 +1,6 @@
 <template>
   <div class="brandpage">
     <Loader v-if="showLoader" />
-    <!-- <h1>BRAND</h1> -->
     <div class="brandpage__main">
       <div class="brandpage__main_left">
         <div class="brandpage__main_left-head">
@@ -45,6 +44,7 @@
         <div class="brandpage__main_right-action">
           <div class="brandpage__main_right-action--title">ДО КОНЦА АКЦИИ ОСТАЛОСЬ:</div>
           <Timer 
+            :deadline="actionFinish"
             :style="{'margin-bottom': '53px', 'width': '371px', 'height': '119px'}"
           />
           <CustomSelect 
@@ -245,6 +245,7 @@ export default {
   components: { Loader, Timer, Complectation, CustomSelect, MarketBlock, CarCard, BrandRadioOrange, BrandRadioGray },
   data() {
     return {
+      actionFinish: '2022-09-20 23:59:59',
       showLoader: false,
       activeColor: 'black',
       colors: [

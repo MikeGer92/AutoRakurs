@@ -6,7 +6,7 @@
         <img src="../assets/images/kia-logo.png">
         <div class="catalog__logo_timer">
           <div class="catalog__logo_timer-title">До конца акции осталось:</div>
-          <CatalogTimer />
+          <CatalogTimer :deadline="actionEnd" />
         </div>
       </div>
       <div class="catalog__image"><img src="../assets/images/kia-car.png"></div>
@@ -35,7 +35,7 @@
         <img src="../assets/images/mits-logo.png">
           <div class="catalog__bottom_logo-timer">
           <div class="catalog__bottom_logo-timer--title">До конца акции осталось:</div>
-          <CatalogTimer />
+          <CatalogTimer :deadline="actionEnd" />
         </div>
         </div>
       <div class="catalog__bottom_image"><img src="../assets/images/mits-car.png"></div>
@@ -66,6 +66,7 @@ export default {
   components: { Loader, CatalogCar, MarketBlock, BenefitCard, CatalogPersonForm, BestOfferForm, CatalogTimer },
   data() {
     return {
+      actionEnd: '2022-07-31 23:59:59',
       showLoader: false,
       modelsList: [
         {

@@ -8,7 +8,7 @@
           <div class="home__header_timer">
             <p class="home__header_timer-title">ДО КОНЦА АКЦИИ:</p>
 
-            <Timer />
+            <Timer :deadline="actionFinish" />
 
           </div>
         </div>
@@ -54,6 +54,7 @@ export default {
   components: { Loader, Timer, CarCard, BenefitCard },
   data() {
     return {
+      actionFinish: '2022-09-20 23:59:59',
       showModal: true,
       showLoader: false,
       carsList: [

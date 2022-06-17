@@ -1,19 +1,19 @@
 <template>
   <div class="count">
   <div class="count__item">
-    <div class="count__item_num">-1</div>
+    <div class="count__item_num">{{ days }}</div>
     <div class="count__item_descr">ДНЕЙ</div>
   </div>
   <div class="count__item">
-    <div class="count__item_num">-8</div>
+    <div class="count__item_num">{{ hours }}</div>
     <div class="count__item_descr">ЧАСОВ</div>
   </div>
   <div class="count__item">
-    <div class="count__item_num">-22</div>
+    <div class="count__item_num">{{ minutes }}</div>
     <div class="count__item_descr">МИНУТ</div>
   </div>
   <div class="count__item">
-    <div class="count__item_num">-32</div>
+    <div class="count__item_num">{{ second }}</div>
     <div class="count__item_descr">СЕКУНД</div>
   </div>
 </div>
@@ -21,7 +21,51 @@
 
 <script>
 export default {
-  name: 'Timer'
+  name: 'Timer',
+  props: {
+    deadline: {
+      type: String,
+      default:() => ''
+    }
+  },
+  data() {
+    return {
+      days: '2',
+      hours: '3',
+      minutes: '4',
+      second: '',
+      total: ''
+    }
+  },
+  mounted() {
+    setInterval(() => {
+      this.updateClock(this.deadline)
+    }, 1000)
+  },
+  methods: {
+    getTimeRemaining(endtime) {
+      this.total = Date.parse(endtime) - Date.parse(new Date())
+      this.second = Math.floor((this.total/1000) % 60)
+      if (this.second < 10) {
+        this.second = '0'+ this.second
+      }
+      this.minutes = Math.floor((this.total/1000/60) % 60)
+      if (this.minutes < 10) {
+        this.minutes = '0'+ this.minutes
+      }
+      this.hours = Math.floor((this.total/(1000*60*60)%24))
+      if (this.hours < 10) {
+        this.hours = '0'+ this.hours
+      }
+      this.days = Math.floor((this.total/(1000*60*60*24)))
+      if (this.days < 10) {
+        this.days = '0'+ this.days
+      }
+    },
+    updateClock(endtime) {
+      this.total = this.getTimeRemaining(endtime);
+    },
+  }
 
 }
 </script>
