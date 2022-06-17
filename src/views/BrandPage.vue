@@ -47,8 +47,8 @@
             :deadline="actionFinish"
             :style="{'margin-bottom': '53px', 'width': '371px', 'height': '119px'}"
           />
-          <div class="person-form__errors" v-if="errors.length">
-            <b>Пожалуйста исправьте указанные ошибки:</b>
+          <div class="brandpage__main_right-form--errors" v-if="errors.length">
+            <b>Ошибки при заполнении формы:</b>
               <ul>
                 <li v-for="error in errors" :key="error">{{ error }}</li>
               </ul>
@@ -156,6 +156,12 @@
             <input class="brandpage__tradein_form-params--year" placeholder="ГОД ВЫПУСКА">
           </div>
           <input class="brandpage__tradein_form-yourprice" placeholder="ВАША ЦЕНА">
+          <div class="brandpage__main_right-form--errors" v-if="errors.length">
+            <b>Ошибки при заполнении формы:</b>
+              <!-- <ul>
+                <li v-for="error in errors" :key="error">{{ error }}</li>
+              </ul> -->
+            </div>
           <div class="brandpage__tradein_form-person">
             <input type="text" class="brandpage__tradein_form-person--name" placeholder="ИМЯ" v-model="formName">
             <input type="phone" 
@@ -371,16 +377,16 @@ export default {
       this.selectedGift = option.name
     },
     checkForm(e) {
-      if (this.formName && this.formPhone && this.formPhone.length===16) {
+      if (this.formName && this.formPhone && this.formPhone.length===18) {
         this.clearForm()
         return true;
       }
       this.errors = [];
       if (!this.formName) {
-        this.errors.push('Требуется указать имя');
+        this.errors.push('Введите имя');
       }
-      if (!this.formPhone && !this.formPhone.length===16) {
-        this.errors.push('Требуется указать телефон');
+      if (!this.formPhone || this.formPhone.length<18) {
+        this.errors.push('Введите телефон');
       }
       e.preventDefault();
     },
@@ -604,6 +610,21 @@ export default {
           line-height: 23px;
           color: #6C6C6C;
         }
+        &--errors {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-self: center;
+          & b {
+            font-weight: 900;
+            color: red;
+          }
+          & ul {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+          }
+        }
         &--name, &--phone {
           display: flex;
           max-width: 345px;
@@ -796,7 +817,6 @@ export default {
       margin-right: 76px;
       display: flex;
       width: 610px;
-      height: 344px;
       background: #FFFFFF;
       box-shadow: 0px 4px 58px rgba(0, 0, 0, 0.25);
       border-radius: 41px;

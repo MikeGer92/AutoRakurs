@@ -3,6 +3,12 @@
       <div class="bestoffer-form__wrapper">
         <div class="bestoffer-form__title">УЛУЧШИМ ЛЮБЫЕ<br>УСЛОВИЯ КОНКУРЕНТОВ!</div>
         <div class="bestoffer-form__subtitle">Оставьте заявку и получите самое выгодное<br>предложение на рынке!</div>
+        <div class="bestoffer-form__errors" v-if="errors.length">
+          <b>Ошибки при заполнении формы:</b>
+            <!-- <ul>
+              <li v-for="error in errors" :key="error">{{ error }}</li>
+            </ul> -->
+        </div>
         <input type="text" class="bestoffer-form__name" placeholder="ФИО" v-model="formName">
         <input type="phone" 
           class="bestoffer-form__phone" 
@@ -13,7 +19,7 @@
 
         <CatalogRadioOrange  />
 
-        <button class="bestoffer-form__btn" type="button">Отправить заявку</button>
+        <button class="bestoffer-form__btn" type="button" @click="checkForm(e)">Отправить заявку</button>
         <p class="bestoffer-form__info">После отправки заявки вам перезвонит сотрудник банка,<br>проконсультирует и примет недостающие данные по телефону.</p>
     </div>
   </div>
@@ -27,12 +33,13 @@ export default {
   data() {
     return {
       formName: '',
-      formPhone: ''
+      formPhone: '',
+      errors: []
     }
   },
   methods: {
     checkForm(e) {
-      if (this.formName && this.formPhone && this.formPhone.length===16) {
+      if (this.formName && this.formPhone && this.formPhone.length===18) {
         this.clearForm()
         return true;
       }
@@ -40,7 +47,7 @@ export default {
       if (!this.formName) {
         this.errors.push('Требуется указать имя');
       }
-      if (!this.formPhone && !this.formPhone.length===16) {
+      if (!this.formPhone || this.formPhone.length<18) {
         this.errors.push('Требуется указать телефон');
       }
       e.preventDefault();
@@ -59,7 +66,7 @@ export default {
 <style lang="scss">
  .bestoffer-form {
     max-width: 356px;
-    max-height: 386px;
+    // max-height: 386px;
     display: flex;
     flex-direction: column;
     background: #FFFFFF;
@@ -87,6 +94,20 @@ export default {
       font-size: 10.0219px;
       line-height: 12px;
       color: #000000;
+    }
+    &__errors {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      & b {
+        font-weight: 900;
+        color: red;
+      }
+      & ul {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+      }
     }
     &__name, &__phone {
       display: flex;
