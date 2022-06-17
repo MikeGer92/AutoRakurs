@@ -15,52 +15,12 @@
           :style="{ 'width': '1500px', 'align-items': 'center'}"
         >
           <div class="slider__item"
-            :class="{'slider_item-active': currentPage===0 }"
+            v-for="item in giftsList" :key="item"
+            :class="{'slider_item-active': currentPage===item.id }"
+            @click="getGiftName(item.name)"
           >
-            <img v-if="currentPage===0" :src="require('@/assets/images/card-active.png')">
-            <img v-else :src="require('@/assets/images/card.png')">
-          </div>
-          <div class="slider__item"
-            :class="{'slider_item-active': currentPage===1 }"
-          >
-            <img v-if="currentPage===1" :src="require('@/assets/images/umbrella-active.png')">
-            <img v-else :src="require('@/assets/images/umbrella.png')">
-          </div>
-          <div class="slider__item"
-            :class="{'slider_item-active': currentPage===2 }"
-          >
-            <img v-if="currentPage===2" :src="require('@/assets/images/setting-active.png')">
-            <img v-else :src="require('@/assets/images/setting.png')">
-          </div>
-          <div class="slider__item"
-            :class="{'slider_item-active': currentPage===3 }"
-          >
-            <img v-if="currentPage===3" :src="require('@/assets/images/payment-active.png')">
-            <img v-else :src="require('@/assets/images/payment.png')">
-          </div>
-          <div class="slider__item"
-            :class="{'slider_item-active': currentPage===4 }"
-          >
-            <img v-if="currentPage===4" :src="require('@/assets/images/card-active.png')">
-            <img v-else :src="require('@/assets/images/card.png')">
-          </div>
-          <div class="slider__item"
-            :class="{'slider_item-active': currentPage===5 }"
-          >
-            <img v-if="currentPage===5" :src="require('@/assets/images/umbrella-active.png')">
-            <img v-else :src="require('@/assets/images/umbrella.png')">
-          </div>
-          <div class="slider__item"
-            :class="{'slider_item-active': currentPage===6 }"
-          >
-            <img v-if="currentPage===6" :src="require('@/assets/images/setting-active.png')">
-            <img v-else :src="require('@/assets/images/setting.png')">
-          </div>
-          <div class="slider__item"
-            :class="{'slider_item-active': currentPage===7 }"
-          >
-            <img v-if="currentPage===7" :src="require('@/assets/images/payment-active.png')">
-            <img v-else :src="require('@/assets/images/payment.png')">
+            <img v-if="currentPage===item.id" :src="item.active_img">
+            <img v-else :src="item.img">
           </div>
         </vue-slick-carousel>
         <button class="next-btn" @click="showNext"></button>
@@ -76,9 +36,21 @@ export default {
   components: { VueSlickCarousel },
   data() {
     return {
+      choosedGift: '',
       active: true,
       activeImage: 'paySystems',
-      sliderPageIndex: 0
+      sliderPageIndex: 0,
+      gift: '',
+      giftsList: [
+        {id:0, name: 'КЕШБЭК', img: require('@/assets/images/card.png'), active_img: require('@/assets/images/card-active.png')},
+        {id:1, name: 'КАСКО', img: require('@/assets/images/umbrella.png'), active_img: require('@/assets/images/umbrella-active.png')},
+        {id:2, name: '3 ТО', img: require('@/assets/images/setting.png'), active_img: require('@/assets/images/setting-active.png')},
+        {id:3, name: '3 ПЛАТЕЖА', img: require('@/assets/images/payment.png'), active_img: require('@/assets/images/payment-active.png')},
+        {id:4, name: 'КЕШБЭК', img: require('@/assets/images/card.png'), active_img: require('@/assets/images/card-active.png')},
+        {id:5, name: 'КАСКО', img: require('@/assets/images/umbrella.png'), active_img: require('@/assets/images/umbrella-active.png')},
+        {id:6, name: '3 ТО', img: require('@/assets/images/setting.png'), active_img: require('@/assets/images/setting-active.png')},
+        {id:7, name: '3 ПЛАТЕЖА', img: require('@/assets/images/payment.png'), active_img: require('@/assets/images/payment-active.png')},
+      ]
     }
   },
   computed: {
@@ -98,7 +70,11 @@ export default {
     },
     afterPageChange(page) {
       this.sliderPageIndex = page;
-  }
+    }, 
+    getGiftName(name) {
+      this.choosedGift = name
+      alert(`ПОЗДРАВЛЯЕМ ВЫ ВЫБРАЛИ ПОДАРОК - ${name}!!!`)
+    }
   }
 }
 </script>
