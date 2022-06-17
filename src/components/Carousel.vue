@@ -17,16 +17,15 @@
           <div class="slider__item"
             v-for="item in giftsList" :key="item"
             :class="{'slider_item-active': currentPage===item.id }"
-            @click="getGiftName(item.name)"
           >
-            <div v-if="currentPage===item.id">
+            <div v-if="currentPage===item.id" @click="getGiftName(item.name)">
               <img :src="item.active_img">
               <div 
                 class="slider__item-active--text"
                 :style="{'display': 'flex', 'justify-content': 'center','font-family': 'Inter','font-style': 'normal', 'font-weight': 700,'font-size': '40px', 'line-height': '50px', 'color': '#000000', 'margin-bottom': '20px'}"
               >
                 {{ item.name }}
-            </div>
+              </div>
             </div>
             <img v-else :src="item.img">
           </div>
@@ -121,7 +120,7 @@ export default {
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    width: 330px;
+    width: 360px;
     height: 380px;
     background: #FFFFFF;
     box-shadow: 0px 5.92582px 16.296px rgba(0, 0, 0, 0.25);

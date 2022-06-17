@@ -1,9 +1,15 @@
 <template>
-    <div class="catalog-form">
+    <div class="catalog-form" id="catalog-person-form">
       <div class="catalog-form__wrapper">
         <div class="catalog-form__title">Ваше персональное<br> предложение на покупку<br> автомобиля уже ждет Вас!</div>
-        <input type="text" class="catalog-form__name" placeholder="ФИО">
-        <input type="phone" class="catalog-form__phone" placeholder="+7 (___)  ___-__-__">
+        <input type="text" class="catalog-form__name" placeholder="ФИО" v-model="formName">
+        <input 
+          type="phone" 
+          class="catalog-form__phone" 
+          placeholder="+7 (___)  ___-__-__" 
+          v-model="formPhone" required
+          v-phone
+        >
         <button class="catalog-form__btn" type="button">Отправить заявку</button>
 
         <CatalogRadioBlue />
@@ -19,7 +25,31 @@ export default {
   components: { CatalogRadioBlue },
   data() {
     return {
+      formName: '',
+      formPhone: ''
 
+    }
+  },
+  methods: {
+    checkForm(e) {
+      if (this.formName && this.formPhone) {
+        this.clearForm()
+        return true;
+      }
+      this.errors = [];
+      if (!this.formName) {
+        this.errors.push('Требуется указать имя');
+      }
+      if (!this.formPhone) {
+        this.errors.push('Требуется указать телефон');
+      }
+      e.preventDefault();
+    },
+    clearForm() {
+      this.errors = [],
+      this.formName = ''
+      this.formPhone = ''
+      alert('Данные успешно отправлены!')
     }
   }
 }

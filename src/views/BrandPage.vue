@@ -41,12 +41,18 @@
         </div>
       </div>
       <div class="brandpage__main_right">
-        <div class="brandpage__main_right-action">
-          <div class="brandpage__main_right-action--title">ДО КОНЦА АКЦИИ ОСТАЛОСЬ:</div>
+        <div class="brandpage__main_right-form" id="brandpage-header-form">
+          <div class="brandpage__main_right-form--title">ДО КОНЦА АКЦИИ ОСТАЛОСЬ:</div>
           <Timer 
             :deadline="actionFinish"
             :style="{'margin-bottom': '53px', 'width': '371px', 'height': '119px'}"
           />
+          <div class="person-form__errors" v-if="errors.length">
+            <b>Пожалуйста исправьте указанные ошибки:</b>
+              <ul>
+                <li v-for="error in errors" :key="error">{{ error }}</li>
+              </ul>
+          </div>
           <CustomSelect 
             :options="complectations" 
             @select="complSelect" 
@@ -64,9 +70,14 @@
             :style="{'margin-bottom': '32px',  'width': '375px', 'height': '65px'}" 
             :disable="disableGifts"
           />
-          <input type="text" class="brandpage__main_right-action--name" placeholder="ИМЯ">
-          <input type="phone" class="brandpage__main_right-action--phone" placeholder="ТЕЛЕФОН">
-          <button type="button">ПОЛУЧИТЬ СПЕЦ ЦЕНУ</button>
+          <input type="text" class="brandpage__main_right-form--name" placeholder="ИМЯ" v-model="formName">
+          <input type="phone" 
+            class="brandpage__main_right-form--phone" 
+            placeholder="ТЕЛЕФОН" 
+            v-model="formPhone" required
+            v-phone
+          >
+          <button type="button" @click="checkForm(e)">ПОЛУЧИТЬ СПЕЦ ЦЕНУ</button>
         </div>
       </div>
     </div>
@@ -136,7 +147,7 @@
       </div>
     </div>
     <div class="brandpage__tradein">
-      <div class="brandpage__tradein_form">
+      <div class="brandpage__tradein_form" id="brandpage-tradein-form">
         <div class="brandpage__tradein_form-wrapper">
           <input type="text" class="brandpage__tradein_form-model" placeholder="МАРКА И МОДЕЛЬ АВТО">
           <div class="brandpage__tradein_form-params">
@@ -146,10 +157,15 @@
           </div>
           <input class="brandpage__tradein_form-yourprice" placeholder="ВАША ЦЕНА">
           <div class="brandpage__tradein_form-person">
-            <input type="text" class="brandpage__tradein_form-person--name" placeholder="ИМЯ">
-            <input type="phone" class="brandpage__tradein_form-person--phone" placeholder="ТЕЛЕФОН">
+            <input type="text" class="brandpage__tradein_form-person--name" placeholder="ИМЯ" v-model="formName">
+            <input type="phone" 
+              class="brandpage__tradein_form-person--phone" 
+              placeholder="ТЕЛЕФОН" 
+              v-model="formPhone" required
+              v-phone
+            >
           </div>
-          <button type="button">РАССЧИТАТЬ ВЫГОДУ</button>
+          <button type="button" @click="checkForm(e)">РАССЧИТАТЬ ВЫГОДУ</button>
         </div>
       </div>
     </div>
@@ -248,6 +264,9 @@ export default {
       actionFinish: '2022-09-20 23:59:59',
       showLoader: false,
       activeColor: 'black',
+      formName: '',
+      formPhone: '',
+      errors: [],
       colors: [
         {id: 1, name: 'black', color: '#000'},
         {id: 2, name: 'beige', color: '#95807B'},
@@ -350,6 +369,26 @@ export default {
     },
     giftSelect(option) {
       this.selectedGift = option.name
+    },
+    checkForm(e) {
+      if (this.formName && this.formPhone) {
+        this.clearForm()
+        return true;
+      }
+      this.errors = [];
+      if (!this.formName) {
+        this.errors.push('Требуется указать имя');
+      }
+      if (!this.formPhone) {
+        this.errors.push('Требуется указать телефон');
+      }
+      e.preventDefault();
+    },
+    clearForm() {
+      this.errors = [],
+      this.formName = ''
+      this.formPhone = ''
+      alert('Данные успешно отправлены!')
     }
   }
 }
@@ -551,7 +590,7 @@ export default {
       margin: 0 90px 0 45px;
       background: url('../assets/images/brand-action.png') no-repeat;
       background-size: cover;
-      &-action {
+      &-form {
         display: flex;
         flex-direction: column;
         align-items: center;

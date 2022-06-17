@@ -1,10 +1,15 @@
 <template>
-    <div class="bestoffer-form">
+    <div class="bestoffer-form" id="bestoffer-form">
       <div class="bestoffer-form__wrapper">
         <div class="bestoffer-form__title">УЛУЧШИМ ЛЮБЫЕ<br>УСЛОВИЯ КОНКУРЕНТОВ!</div>
         <div class="bestoffer-form__subtitle">Оставьте заявку и получите самое выгодное<br>предложение на рынке!</div>
-        <input type="text" class="bestoffer-form__name" placeholder="ФИО">
-        <input type="phone" class="bestoffer-form__phone" placeholder="+7 (___)  ___-__-__">
+        <input type="text" class="bestoffer-form__name" placeholder="ФИО" v-model="formName">
+        <input type="phone" 
+          class="bestoffer-form__phone" 
+          placeholder="+7 (___)  ___-__-__" 
+          v-model="formPhone" required
+          v-phone
+        >
 
         <CatalogRadioOrange  />
 
@@ -21,7 +26,30 @@ export default {
   components: { CatalogRadioOrange  },
   data() {
     return {
-
+      formName: '',
+      formPhone: ''
+    }
+  },
+  methods: {
+    checkForm(e) {
+      if (this.formName && this.formPhone) {
+        this.clearForm()
+        return true;
+      }
+      this.errors = [];
+      if (!this.formName) {
+        this.errors.push('Требуется указать имя');
+      }
+      if (!this.formPhone) {
+        this.errors.push('Требуется указать телефон');
+      }
+      e.preventDefault();
+    },
+    clearForm() {
+      this.errors = [],
+      this.formName = ''
+      this.formPhone = ''
+      alert('Данные успешно отправлены!')
     }
   }
   
