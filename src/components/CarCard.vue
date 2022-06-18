@@ -77,8 +77,7 @@ export default {
     background-clip: text;
   }
   &__model {
-    margin-top: -30px;
-    margin-left: 42px;
+    margin: -30px 0 0 42px;
     font-style: normal;
     font-weight: 700;
     font-size: 69.4102px;
@@ -144,10 +143,11 @@ export default {
 
   }
   &__divider {
-    width: 591px;
+    width: 99%;
+    max-width: 591px;
     height: 2px;
     margin: 0 auto;
-    background: linear-gradient(to right,  #FFF 0%, #10205E  20%, #FFF 100%);
+    background: linear-gradient(to right,  #D9D9D9 0%, #10205E  20%, #D9D9D9 100%);
   }
   &__coast {
     margin: 11px 24px 14px 24px;
@@ -165,9 +165,10 @@ export default {
 .homecar-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 22px;
+  margin: 22px 0 0 0;
   &_btn {
-    width: 288px;
+    width: 100%;
+    max-width: 288px;
     height: 51px;
     display: flex;
     justify-content: center;
@@ -186,5 +187,81 @@ export default {
     }
   }
 }
+@media (max-width: 390px) {
+  .homecar-main {
+    max-width: 336px;
+    margin-top: 0;
+  }
+  .car {
+    margin-top: 45px;
+    &:first-child {
+      margin-top: 0;
+    }
+    &__brand {
+      margin: 0 21px;
+      font-size: 63.06px;
+      line-height: 76px;
+    }
+    &__model {
+      margin: 0 0 0 24px;
+      font-size: 39.1918px;
+      line-height: 47px;
+    }
+    &__image {
+      max-width: 336px;
+    }
+    &__offer {
+      &_day {
+        margin: 15px 11px 12px 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        border: 2.30305px solid #FFA724;
+        border-radius: 36.8488px;
+        &-off {
+          // display: flex;
+          padding: 12px 12px 0 12px ;
+          font-size: 10.1986px;
+          line-height: 12px;
+        }
+        &-disc {
+          padding: 0 12px 12px 12px;
+          font-size: 11.1947px;
+          line-height: 14px;
+        }
+      }
+      &_payment {
+        &-sum {
+          font-size: 23.7503px;
+          line-height: 24px;
+        }
+        &-period {
+          font-size: 18.4244px;
+          line-height: 18px;
+        }
+      }
+    }
+    &__divider {
+      height: 1px;
+    }
+    &__coast {
+      font-size: 38px;
+      line-height: 46px;
+      margin: 6px 13px 9px 13px;
+    }
+  }
+  .homecar-buttons {
+    margin: 13px 0 45px 0;
+    width: 100%;
+    max-width: 330px;
+    &_btn {
+      max-width: 162px;
+      height: 29px;
+      font-size: 9.11438px;
+      line-height: 11px;
+    }
+  }
 
+}
 </style>

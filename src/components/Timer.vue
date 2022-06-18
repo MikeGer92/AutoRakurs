@@ -105,5 +105,21 @@ export default {
     }
   }
 }
-
+@media (max-width: 390px) {
+  .count {
+    max-width: 80px;
+    max-height: 26px;
+    &__item {
+      padding: 0 4px;
+      &_num {
+        font-size: 9.18703px;
+        line-height: 11px;
+      }
+      &_descr {
+        font-size: 3.09359px;
+        line-height: 4px;
+      }
+    }
+  }
+}
 </style>

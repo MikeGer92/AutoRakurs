@@ -1,5 +1,5 @@
 <template>
-  <div class="benefit" :style="`background: url(${benefitCard.image}) no-repeat`">
+  <div class="benefit" :style="[screen > 390 ? {'background': `url(${benefitCard.image}) no-repeat`}: {'background': `url(${benefitCard.image_small}) no-repeat`, 'background-size': 'contain'}]">
     <div class="benefit__header">
       <div class="benefit__header_title">{{ benefitCard.title }}</div>
       <div class="benefit__header_descr">{{ benefitCard.descr }}</div>
@@ -20,8 +20,17 @@ export default {
   },
   data() {
     return {
-
+      screen: 0
     }
+  },
+  created() {
+    window.addEventListener('resize', this.updateWidth);
+  },
+  methods: {
+    updateWidth() {
+      this.screen = window.innerWidth;
+      console.log(this.screen)
+    },
   }
 }
 </script>
@@ -79,5 +88,32 @@ export default {
     cursor: pointer;
   }
 } 
-  
+@media (max-width: 390px) { 
+  .benefit {
+    width: 323px;
+    height: 286px;
+    margin: 36px 0 0 0;
+    border-radius: 14.8966px;
+    
+    &__header {
+      &_title {
+        margin: 17px 0 0 21px;
+        font-size: 19.8621px;
+        line-height: 23px;
+      }
+      &_descr {
+        font-size: 11.5862px;
+        line-height: 14px;
+        max-width: 130px;
+      }
+    }
+    &__button {
+      width: 167px;
+      height: 29px;
+      font-size: 9.93103px;
+      line-height: 12px;
+    }
+
+  }
+}
 </style>
