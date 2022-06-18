@@ -28,10 +28,10 @@ export default {
 
 <style lang="scss">
 .benefit{
+  margin: 35px 0;
   width: 100%;
   max-width: 600px;
-  height: 100%;
-  max-height: 416px;
+  height: 416px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;

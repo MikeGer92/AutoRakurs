@@ -78,16 +78,16 @@ export default {
 .footer {
   display: flex;
   flex-direction: column;
-  width: 2065px;
-  height: 598px;
+  width: 100%;
+  max-width: 2065px;
   background: #000000;
   &__main {
     width: 100%;
-    min-width: 2065px;
-    height: 443px;
     display: flex;
+    flex-wrap: wrap;
     &_left {
       display: flex;
+      flex-wrap: wrap;
       &-salon {
         display: flex;
         flex-direction: column;
@@ -160,7 +160,7 @@ export default {
       &-list {
         display: flex;
         flex-wrap: wrap;
-        margin: 12px 170px 64px 0;
+        margin: 12px auto 64px 0;
         &--item {
           margin: 12px 0;
           width: 192px;
@@ -181,9 +181,10 @@ export default {
     border-top: 1px solid #FFFFFF;
     display: flex;
     justify-content: space-between;
+    // flex-wrap: wrap;
     &_left {
       width: 100%;
-      min-width: 430px;
+      max-width: 430px;
       margin: 26px 0 64px 120px;
       &-title {
         font-family: 'Inter';
@@ -205,8 +206,8 @@ export default {
     }
     &_right {
       width: 100%;
-      min-width: 1026px;
-      margin: 45px 175px 0 71px;
+      max-width: 1026px;
+      margin: 45px auto 0 71px;
       font-family: 'Inter';
       font-style: normal;
       font-weight: 500;

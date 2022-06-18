@@ -73,8 +73,8 @@ export default {
 <style lang="scss">
 .count {
   display: flex;
-  width: 375px;
-  height: 121px;
+  max-width: 375px;
+  max-height: 121px;
   justify-content: space-around;
   align-items: center;
   background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);

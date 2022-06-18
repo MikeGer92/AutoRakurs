@@ -50,10 +50,9 @@ export default {
 }
 .car {
   width: 100%;
-  max-width: 596px;
-  height: 100%;
-  max-height: 914px;
-  display: flex;
+  // max-width: 596px;
+  // height: 100%;
+  // max-height: 914px;
   flex-direction: column;
   background: url('../assets/images/homecar-border.png') no-repeat;
   background-size: contain;
@@ -88,9 +87,11 @@ export default {
   }
   &__image {
     display: flex;
-    height: 414px;
+    max-width: 595px;
+    // height: 414px;
     &_img {
-      height: 100%;
+      width: 100%;
+      height: auto;
     }
 
   }
