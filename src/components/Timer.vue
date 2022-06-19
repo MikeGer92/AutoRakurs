@@ -30,10 +30,10 @@ export default {
   },
   data() {
     return {
-      days: '2',
-      hours: '3',
-      minutes: '4',
-      second: '',
+      days: 2,
+      hours: 3,
+      minutes: 4,
+      second: 10,
       total: ''
     }
   },
@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     getTimeRemaining(endtime) {
-      this.total = Date.parse(endtime) - Date.parse(new Date())
+      this.total = new Date(endtime) - Date.parse(new Date())
       this.second = Math.floor((this.total/1000) % 60)
       if (this.second < 10) {
         this.second = '0'+ this.second

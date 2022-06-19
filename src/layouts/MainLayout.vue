@@ -1,7 +1,7 @@
 <template>
 	<div class="main-layout-body">
-    <!-- <ModalWindow v-if="showModal"/>
-    <Navbar @modal="changeModal"></Navbar> -->
+    <ModalWindow v-if="showModal"/>
+    <Navbar @modal="changeModal"></Navbar>
     <BrandsWindow v-if="showModal"/>
     <router-view v-else></router-view>
     <Footer :brands="brandList" />
@@ -9,13 +9,13 @@
 </template>
 
 <script>
-// import Navbar from '@/components/app/Navbar.vue'
+import Navbar from '@/components/app/Navbar.vue'
 import Footer from '@/components/app/Footer.vue'
 import BrandsWindow from '@/components/modals/BrandsWindow.vue'
-// import ModalWindow from '@/components/modals/ModalWindow.vue'
+import ModalWindow from '@/components/modals/ModalWindow.vue'
 export default {
 	name: 'main',
-  components: {  Footer, BrandsWindow },
+  components: {  Footer, BrandsWindow, Navbar, ModalWindow },
   data() {
     return {
       showModal: false,

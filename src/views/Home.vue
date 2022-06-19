@@ -31,14 +31,14 @@
       </div>
       <div class="home__bottom-divider"></div>
       <div class="home__divider_add">
-        <div class="home__divider_line"></div>
-        <div class="home__divider_text">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ</div>
+        <div class="home__divider_add-line"></div>
+        <div class="home__divider_add-text">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ</div>
       <div class="home__divider_add-line"></div>
       </div>
       <div class="home__benefit">
         <div class="home__benefit_wrapper">
           <div class="home__benefit_block">
-            <BenefitCard v-for="(benefit) in benefitsList" :key="benefit.title" :benefitCard="benefit" :screen="scale" @resize="updateWidth" />
+            <BenefitCard v-for="benefit in benefitsList" :key="benefit.title" :benefitCard="benefit"  />
           </div>
           <div class="home__benefit_divider">
             <div class="home__benefit_divider-line home__divider_line"></div>
@@ -46,7 +46,7 @@
             <div class="home__benefit_divider-line home__divider_line"></div>
           </div>
           <div class="home__benefit_options">
-            <BenefitCard v-for="option in optionsList" :key="option.title" :benefitCard="option" :screen="screenWidth"/>
+            <BenefitCard v-for="option in optionsList" :key="option.title" :benefitCard="option" />
           </div>
         </div>
       </div>
@@ -524,18 +524,43 @@ export default {
         font-family: 'Inter';
         font-style: normal;
         font-weight: 700;
-        font-size: 44.7037px;
-        line-height: 54px;
+        font-size: 15px;
+        line-height: 18px;
         color: #10205E;
       }
     }
     &__benefit {
       margin-top: 29px;
       background: white;
-      background: url('../assets/images/benefit-back.png');
+      background: url('../assets/images/benefit-back.png') no-repeat;
       background-size: contain;
       &_wrapper {
         margin: 0 36px 38px 36px;
+      }
+      &_divider {
+        margin: 45px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1892px;
+        &-line {
+          display: flex;
+          width: 100%;
+          height: 1px;
+          background: linear-gradient(to right, #FFF 0%, #10205E 20%, #10205E 80%,#FFF 100%);
+        }
+        &-text {
+          margin: 4px 0 4px 0;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 13px;
+          line-height: 16px;
+          color: #10205E;
+        }
       }
     }
   }

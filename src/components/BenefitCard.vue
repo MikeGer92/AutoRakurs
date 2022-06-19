@@ -1,12 +1,20 @@
 <template>
-  <div class="benefit" :style="[screenWidth ? {'background': `url(${benefitCard.image_small}) no-repeat`, 'background-size': 'contain'} : {'background': `url(${benefitCard.image}) no-repeat`}]">
-    <div class="benefit__header">
-      <div class="benefit__header_title">{{ benefitCard.title }}</div>
-      <div class="benefit__header_descr">{{ benefitCard.descr }}</div>
+  <div class="benefit-wrapper">
+    <div class="benefit" :style="{'background': `url(${benefitCard.image}) no-repeat`}">
+      <div class="benefit__header">
+        <div class="benefit__header_title">{{ benefitCard.title }}</div>
+        <div class="benefit__header_descr">{{ benefitCard.descr }}</div>
+      </div>
+      <div class="benefit__button">{{ benefitCard.button }}</div>
     </div>
-    <div class="benefit__button">{{ benefitCard.button }}</div>
-  </div>
-  
+    <div class="benefit-small" :style="{'background': `url(${benefitCard.image_small}) no-repeat`, 'background-size': 'contain'}">
+      <div class="benefit-small__header">
+        <div class="benefit-small__header_title">{{ benefitCard.title }}</div>
+        <div class="benefit-small__header_descr">{{ benefitCard.descr }}</div>
+      </div>
+      <div class="benefit-small__button">{{ benefitCard.button }}</div>
+    </div>
+  </div> 
 </template>
 
 <script>
@@ -48,10 +56,9 @@ export default {
 </script>
 
 <style lang="scss">
-.benefit{
+.benefit, .benefit-small {
   margin: 35px 0;
-  width: 100%;
-  max-width: 600px;
+  width: 600px;
   height: 416px;
   display: flex;
   flex-direction: column;
@@ -99,14 +106,20 @@ export default {
     color: #FFFFFF;
     cursor: pointer;
   }
-} 
+}
+.benefit-small {
+  display: none;
+}
 @media (max-width: 605px) {
   .benefit {
+    display: none;
+  }
+  .benefit-small {
+    display: flex;
     width: 323px;
     height: 286px;
     margin: 36px 0 0 0;
     border-radius: 14.8966px;
-    
     &__header {
       &_title {
         margin: 17px 0 0 21px;
@@ -125,7 +138,6 @@ export default {
       font-size: 9.93103px;
       line-height: 12px;
     }
-
   }
-}
+} 
 </style>
