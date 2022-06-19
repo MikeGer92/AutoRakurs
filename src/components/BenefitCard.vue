@@ -1,12 +1,20 @@
 <template>
-  <div class="benefit" :style="`background: url(${benefitCard.image}) no-repeat`">
-    <div class="benefit__header">
-      <div class="benefit__header_title">{{ benefitCard.title }}</div>
-      <div class="benefit__header_descr">{{ benefitCard.descr }}</div>
+  <div class="benefit-wrapper">
+    <div class="benefit" :style="{'background': `url(${benefitCard.image}) no-repeat`}">
+      <div class="benefit__header">
+        <div class="benefit__header_title">{{ benefitCard.title }}</div>
+        <div class="benefit__header_descr">{{ benefitCard.descr }}</div>
+      </div>
+      <div class="benefit__button">{{ benefitCard.button }}</div>
     </div>
-    <div class="benefit__button">{{ benefitCard.button }}</div>
-  </div>
-  
+    <div class="benefit-small" :style="{'background': `url(${benefitCard.image_small}) no-repeat`, 'background-size': 'contain'}">
+      <div class="benefit-small__header">
+        <div class="benefit-small__header_title">{{ benefitCard.title }}</div>
+        <div class="benefit-small__header_descr">{{ benefitCard.descr }}</div>
+      </div>
+      <div class="benefit-small__button">{{ benefitCard.button }}</div>
+    </div>
+  </div> 
 </template>
 
 <script>
@@ -16,22 +24,42 @@ export default {
     benefitCard: {
       type: Object,
       default: () => {}
-    }
+    },
   },
   data() {
     return {
-
+      screen: 0,
+      screenWidth: false
+    }
+  },
+  created() {
+    window.addEventListener('resize', this.updateWidth);
+  },
+  methods: {
+    updateWidth() {
+      this.screen = window.innerWidth;
+      if (this.screen < 600) {
+        this.screenWidth = true
+      } 
+      console.log(this.screen)
+    },
+    elementStyle(){
+      this.updateWidth()
+      if (this.screen < 600) {
+        return true
+      } else {
+        return false
+      }
     }
   }
 }
 </script>
 
 <style lang="scss">
-.benefit{
-  width: 100%;
-  max-width: 600px;
-  height: 100%;
-  max-height: 416px;
+.benefit, .benefit-small {
+  margin: 35px 0;
+  width: 600px;
+  height: 416px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -78,6 +106,38 @@ export default {
     color: #FFFFFF;
     cursor: pointer;
   }
+}
+.benefit-small {
+  display: none;
+}
+@media (max-width: 605px) {
+  .benefit {
+    display: none;
+  }
+  .benefit-small {
+    display: flex;
+    width: 323px;
+    height: 286px;
+    margin: 36px 0 0 0;
+    border-radius: 14.8966px;
+    &__header {
+      &_title {
+        margin: 17px 0 0 21px;
+        font-size: 19.8621px;
+        line-height: 23px;
+      }
+      &_descr {
+        font-size: 11.5862px;
+        line-height: 14px;
+        max-width: 130px;
+      }
+    }
+    &__button {
+      width: 167px;
+      height: 29px;
+      font-size: 9.93103px;
+      line-height: 12px;
+    }
+  }
 } 
-  
 </style>

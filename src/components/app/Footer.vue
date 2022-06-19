@@ -19,10 +19,9 @@
               <li>info@auto-racurs.ru</li>
             </ul>
           </div>
-        </div>
-        <div class="footer__main_left-credits">
-          <div class="footer__main_left-credits--title">КРЕДИТЫ</div>
-          <ul class="footer__main_left-credits--list">
+          <div class="footer__main_left-salon--credits">
+          <div class="footer__main_left-salon--credits_title">КРЕДИТЫ</div>
+          <ul class="footer__main_left-salon--credits_list">
             <li>АВТОКРЕДИТ</li>
             <li>TRADE-IN</li>
             <li>ПЕРВЫЙ АВТОМОБИЛЬ</li>
@@ -30,10 +29,23 @@
             <li>УТИЛИЗАЦИЯ</li>
           </ul>
         </div>
+        </div>
       </div>
       <div class="footer__main_right">
-        <div class="footer__main_right-title">АВТОМОБИЛИ В НАЛИЧИИ</div>
-        <div class="footer__main_right-list">
+        <div class="footer__main_right-title">
+          <div 
+          class="footer__main_right-title--wrapp" 
+          @click="showBrands = !showBrands"
+        >
+          АВТОМОБИЛИ В НАЛИЧИИ
+          <img 
+            class="footer__main_right-title--img"
+            :class="{'footer__main_right-title--img-active': showBrands}" 
+            src="../../assets/images/footer-show-brands.png"
+          >
+        </div>
+        </div>
+        <div class="footer__main_right-list" v-if="showBrands">
           <div class="footer__main_right-list--item" v-for="(brand, idx) in brands" :key="idx">{{ brand.name }}</div>
         </div>
       </div>
@@ -59,6 +71,7 @@ export default {
   },
   data() {
     return {
+      showBrands: true,
       marks: [
         {name: 'HYUNDAI', logo: '../assets/images/brands-logo/hundai.svg'},
         {name: 'HYUNDAI', logo: '../assets/images/brands-logo/hundai.svg'},
@@ -78,21 +91,27 @@ export default {
 .footer {
   display: flex;
   flex-direction: column;
-  width: 2065px;
-  height: 598px;
+  width: 100%;
+  max-width: 2065px;
+  // height: 444px;
   background: #000000;
   &__main {
     width: 100%;
-    min-width: 2065px;
-    height: 443px;
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
     &_left {
       display: flex;
+      flex-flow: column wrap;
       &-salon {
         display: flex;
-        flex-direction: column;
         margin: 44px 0 0 117px;
-        &--info, &--contact {
+        flex-wrap: wrap;
+        max-width: 580px;
+        justify-content: space-between;
+        &--info, &--contact, &--credits {
+          display: flex;
+          flex-direction: column;
           &_title {
             font-family: 'Inter';
             font-style: normal;
@@ -116,30 +135,15 @@ export default {
             }
           }
         }
-      }
-      &-credits {
-        margin: 44px 182px 0 -45px;
-        &--title {
-          font-family: 'Inter';
-          font-style: normal;
-          font-weight: 900;
-          font-size: 29.0757px;
-          line-height: 35px;
-          color: #FFFFFF;
+        &--info {
+          order: 0;
         }
-        & ul {
-          padding-left: 0;
-          list-style: none;
-          font-family: 'Inter';
-          font-style: normal;
-          font-weight: 500;
-          font-size: 15.7924px;
-          line-height: 19px;
-          color: #FFFFFF;
-          & li {
-            width: 220px;
-            margin: 24px 0;
-          }
+        &--contact {
+          order: 2;
+          margin-top: -55px;
+        }
+        &--credits {
+          order: 1;
         }
       }
     }
@@ -149,6 +153,7 @@ export default {
       width: 100%;
       max-width: 1132px;
       &-title {
+        display: flex;
         margin-top: 44px;
         font-family: 'Inter';
         font-style: normal;
@@ -156,11 +161,16 @@ export default {
         font-size: 29.0757px;
         line-height: 35px;
         color: #FFFFFF;
+        &--wrapp {
+        }
+        &--img {
+          display: none;
+        }
       }
       &-list {
         display: flex;
         flex-wrap: wrap;
-        margin: 12px 170px 64px 0;
+        margin: 12px auto 64px 0;
         &--item {
           margin: 12px 0;
           width: 192px;
@@ -171,7 +181,6 @@ export default {
           line-height: 19px;
           color: #FFFFFF;
         }
-        
       }
     }
   }
@@ -181,9 +190,10 @@ export default {
     border-top: 1px solid #FFFFFF;
     display: flex;
     justify-content: space-between;
+    // flex-wrap: wrap;
     &_left {
       width: 100%;
-      min-width: 430px;
+      max-width: 430px;
       margin: 26px 0 64px 120px;
       &-title {
         font-family: 'Inter';
@@ -205,14 +215,74 @@ export default {
     }
     &_right {
       width: 100%;
-      min-width: 1026px;
-      margin: 45px 175px 0 71px;
+      max-width: 1026px;
+      margin: 45px auto 0 71px;
       font-family: 'Inter';
       font-style: normal;
       font-weight: 500;
       font-size: 15.7924px;
       line-height: 19px;
       color: #FFFFFF;
+    }
+  }
+}
+@media (max-width: 605px) {
+  .footer {
+    &__main {
+      flex-direction: column;
+      margin: 24px 0 0 45px;
+      &_left {
+        order: 2;
+        &-salon {
+          margin: 42px 0 0 0;
+          &--contact, &--credits {
+            margin: 16px 0 0 0;
+            & ul {
+              & li {
+                max-width: 281px;
+              }
+            }
+          }
+        }
+      }
+      &_right {
+        order: 1;
+        &-title {
+          margin-top: 23px;
+          &--wrapp {
+          }
+          &--img {
+            display: inline-flex;
+            margin-left: 9px;
+            cursor: pointer;
+            &-active {
+              transform: rotate(180deg);
+            }
+          }
+        }
+        &-list {
+          margin: 0;
+          &--item {
+            width: 180px;
+          }
+        }
+      }
+    }
+    &__bottom {
+      margin: 32px 0 23px 15px;
+      &_left {
+        margin: 0;
+        max-width: 343px;
+        &-title {
+          margin: 23px 0 6px 0;
+        }
+        &_confirm {
+          display: flex;
+        }
+      }
+      &_right {
+        display: none;
+      }
     }
   }
 }

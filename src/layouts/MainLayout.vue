@@ -5,7 +5,6 @@
     <BrandsWindow v-if="showModal"/>
     <router-view v-else></router-view>
     <Footer :brands="brandList" />
-    
 	</div>
 </template>
 
@@ -16,7 +15,7 @@ import BrandsWindow from '@/components/modals/BrandsWindow.vue'
 import ModalWindow from '@/components/modals/ModalWindow.vue'
 export default {
 	name: 'main',
-  components: { Navbar, Footer, BrandsWindow, ModalWindow },
+  components: {  Footer, BrandsWindow, Navbar, ModalWindow },
   data() {
     return {
       showModal: false,

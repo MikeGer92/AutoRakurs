@@ -2,21 +2,23 @@
   <div class="home">
     <Loader v-if="showLoader" />
     <div class="home__wrapper">
-      <div class="home__header" :style="`background: url(${require('../assets/images/home-mask.png')}) no-repeat`">
+      <div class="home__header" :style="{'background': `url(${require('../assets/images/home-mask.png')}) no-repeat`, 'background-size': 'cover'}">
         <div class="home__header_block">
           <h1 class="home__header_title">НОВЫЕ АВТО <br />ПО СТАРЫМ ЦЕНАМ</h1>
           <div class="home__header_timer">
             <p class="home__header_timer-title">ДО КОНЦА АКЦИИ:</p>
 
-            <Timer />
+            <Timer :deadline="actionFinish" />
 
           </div>
         </div>
       </div>
       <div class="home__main">
         <h2 class="home__main_title">ВРЕМЯ <span class="home__main_title-orange">ВКЛАДЫВАТЬСЯ</span><br><span class="home__main_title-blue">В АВТОМОБИЛЬ</span></h2>
-        <p class="home__main_oldprice">Успейте забрать по старой цене и получите<br>
-        <span class="home__main_oldprice-orange">ДОПОЛНИТЕЛЬНОЕ<br>ОБОРУДОВАНИЕ</span></p>
+        <p class="home__main_oldprice">
+        <span class="home__main_oldprice-black">Успейте забрать по старой цене и получите<br></span>
+        <span class="home__main_oldprice-orange">ДОПОЛНИТЕЛЬНОЕ<br>ОБОРУДОВАНИЕ</span>        
+        <span class="home__main_oldprice-blue">ДОПОЛНИТЕЛЬНОЕ<br>ОБОРУДОВАНИЕ</span></p>
         <p class="home__main_gift">НА <span class="home__main_gift-blue">50 000</span><br>В ПОДАРОК<span class="home__main_gift-black">*</span></p>
       </div>
       <div class="home__divider">
@@ -28,15 +30,24 @@
         <CarCard v-for="(item, idx) in carsList" :key="idx" :car="item" />
       </div>
       <div class="home__bottom-divider"></div>
+      <div class="home__divider_add">
+        <div class="home__divider_add-line"></div>
+        <div class="home__divider_add-text">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ</div>
+      <div class="home__divider_add-line"></div>
+      </div>
       <div class="home__benefit">
         <div class="home__benefit_wrapper">
-          <BenefitCard v-for="(benefit) in benefitsList" :key="benefit.title" :benefitCard="benefit"/>
+          <div class="home__benefit_block">
+            <BenefitCard v-for="benefit in benefitsList" :key="benefit.title" :benefitCard="benefit"  />
+          </div>
           <div class="home__benefit_divider">
             <div class="home__benefit_divider-line home__divider_line"></div>
             <div class="home__benefit_divider-text">ПРОДАЖА АВТОМОБИЛЕЙ С ОЧЕВИДНОЙ ВЫГОДНОЙ ДЛЯ ПОКУПАТЕЛЯ</div>
             <div class="home__benefit_divider-line home__divider_line"></div>
           </div>
-          <BenefitCard v-for="option in optionsList" :key="option.title" :benefitCard="option"/>
+          <div class="home__benefit_options">
+            <BenefitCard v-for="option in optionsList" :key="option.title" :benefitCard="option" />
+          </div>
         </div>
       </div>
     </div>
@@ -51,9 +62,11 @@ import CarCard from '@/components/CarCard.vue'
 import BenefitCard from '@/components/BenefitCard.vue'
 export default {
   name: 'Home',
-  components: { Loader, Timer, CarCard, BenefitCard },
+  components: { Loader, Timer,  CarCard, BenefitCard },
   data() {
     return {
+      screenWidth: false,
+      actionFinish: '2022-09-20 23:59:59',
       showModal: true,
       showLoader: false,
       carsList: [
@@ -117,18 +130,21 @@ export default {
           title: 'КАСКО',
           descr: 'При покупке автомобиля в кредит',
           image: require('../assets/images/kasko.png'),
+          image_small: require('../assets/images/kasko-small.png'),
           button: 'Получить подарок'
         },
         {
           title: 'ТРИ ТО',
           descr: 'При покупке автомобиля в кредит',
           image: require('../assets/images/three-to.png'),
+          image_small: require('../assets/images/three-to-small.png'),
           button: 'Получить подарок'
         },
         {
           title: 'ТРИ ПЛАТЕЖА ПО КРЕДИТУ',
           descr: 'При покупке автомобиля в кредит',
           image: require('../assets/images/three-payments.png'),
+          image_small: require('../assets/images/three-payments-small.png'),
           button: 'Получить подарок'
         },
       ],
@@ -137,18 +153,21 @@ export default {
           title: 'ЭКСПРЕСС-КРЕДИТ',
           descr: 'Решение по кредиту за 15 минут',
           image: require('../assets/images/express-credit.png'),
+          image_small: require('../assets/images/express-credit-small.png'),
           button: 'Получить условия'
         },
         {
           title: 'ТЕСТ-ДРАЙВ',
           descr: 'Попробуйте новый автомобиль в реальных условиях',
           image: require('../assets/images/test-drive.png'),
+          image_small: require('../assets/images/test-drive-small.png'),
           button: 'Запись на тест-драйв'
         },
         {
           title: 'TRADE-IN',
           descr: 'Выгода до 200 000 рублей на покупку нового авто',
           image: require('../assets/images/trade-in.png'),
+          image_small: require('../assets/images/trade-in-small.png'),
           button: 'Получить выгоду'
         }
       ],
@@ -159,6 +178,25 @@ export default {
         button: 'Получить выгоду'
       },
     }
+  },
+  created() {
+    window.addEventListener('resize', this.updateWidth);
+  },
+  mounted() {
+    console.log(window.innerWidth)
+  },
+  computed: {
+    scale() {
+      return window.innerWidth < 600
+    }
+  },
+  methods: {
+    updateWidth() {
+      if (window.innerWidth < 600) {
+        this.screenWidth = true
+      }
+      console.log(window.innerWidth)
+    },
   }
 
 }
@@ -166,22 +204,29 @@ export default {
 <style lang="scss">
 .home {
   display: flex;
+  margin: 0 auto;
+  padding: 0 auto;
   &__wrapper {
     width: 100%;
+    max-width: 2065px;
     display: flex;
     flex-direction: column;
   }
   &__header {
     width: 100%;
-    height: 180px;
+    display: flex;
+    max-width: 2065px;
+    max-height: 180px;
     margin: 22px 0 11px 0;
     &_block {
       display: flex;
+      width: 100%;
       align-self: center;
       justify-content: space-between;
       margin: 0 76px 0 60px;
     }
     &_title {
+      display: flex;
       font-style: normal;
       font-weight: 700;
       font-size: 45.88px;
@@ -206,10 +251,10 @@ export default {
   &__main {
     display: flex;
     width: 100%;
-    height: 796px;
+    max-width: 2065px;
     flex-direction: column;
     background: url('../assets/images/home-banner.png') no-repeat;
-    background-size: contain;
+    background-size: cover;
     &_title {
       margin: 84px 0 0 60px;
       font-family: 'Montserrat';
@@ -237,12 +282,14 @@ export default {
     }
     &_oldprice {
       margin: 120px 0 0 60px;
-      font-family: 'Inter';
-      font-style: normal;
-      font-weight: 500;
-      font-size: 23.6547px;
-      line-height: 141.9%;
-      color: #000000;
+      &-black {
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 23.6547px;
+        line-height: 141.9%;
+        color: #000000;
+      }
       &-orange {
         font-family: 'Montserrat';
         font-style: normal;
@@ -250,7 +297,15 @@ export default {
         font-size: 32px;
         line-height: 34px;
         color: #FFA724;
-
+      }
+      &-blue {
+        display: none;
+          font-family: 'Montserrat';
+          font-style: normal;
+          font-weight: 900;
+          font-size: 32px;
+          line-height: 34px;
+          color: #10205E;
       }
     }
     &_gift {
@@ -280,18 +335,19 @@ export default {
   &__divider {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    text-align: center;
-    width: 1892px;
-    height: 94px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1892px;
     &_line {
       display: flex;
       width: 100%;
       height: 3px;
-      background: linear-gradient(to right,  #FFF 0%, #10205E  20%, #FFF 100%);
+      background: linear-gradient(to right, #FFF 0%, #10205E 20%, #10205E 80%,#FFF 100%);
     }
     &_text {
+      margin: 19px 0 21px 0;
+      display: flex;
+      justify-content: center;
+      width: 100%;
       font-family: 'Inter';
       font-style: normal;
       font-weight: 700;
@@ -301,8 +357,7 @@ export default {
     }
   }
   &__cars {
-    width: 1903px;
-    height: 2200px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
@@ -310,27 +365,39 @@ export default {
     // margin: 42px 81px; // оригинальные отступы
   }
   &__bottom-divider {
-    width: 1952px;
+    display: flex;
+    width: 100%;
+    max-width: 1952px;
     height: 60px;
     margin: 104px auto 81px auto;
     background: url('../assets/images/cars-bottom-divider.png') no-repeat;
     background-size: cover;
   }
+  &__divider_add {
+    display: none;
+  }
   &__benefit {
-    width: 100%;
-    height: 1328px;
     display: flex;
+    width: 100%;
+    max-width: 2065px;
     background: #D9D9D9;
     &_wrapper {
       display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin: 77px auto 87px auto;
+    }
+    &_block, &_options {
+      display: flex;
       justify-content: space-around;
       flex-wrap: wrap;
-      width: 100%;
-      margin: 77px auto 0px auto;
     }
     &_divider {
-      width: 1891px;
-      height: 94px;
+      margin: 93px 0 67px 0;
+      width: 100%;
+      max-width: 1891px;
+      display: flex;
+      flex-direction: column;
       &-line {
         display: flex;
         width: 100%;
@@ -338,6 +405,9 @@ export default {
         background: linear-gradient(to right,  #D9D9D9 0%, #10205E  20%, #D9D9D9 100%); 
       }
       &-text {
+        display: flex;
+        justify-content: center;
+        width: 100%;
         margin: 19px 0 35px 0;
         text-align: center;
         font-family: 'Inter';
@@ -346,6 +416,151 @@ export default {
         font-size: 33.3333px;
         line-height: 40px;
         color: #10205E;
+      }
+    }
+  }
+}
+@media (max-width: 605px) {
+  .home {
+    &__header {
+      margin: 12px 0 0 0;
+      max-height: 38px;
+      &_block {
+        margin: 5px;
+      }
+      &_title {
+        max-width: 116px;
+        font-size: 11.1934px;
+        line-height: 14px;
+      }
+      &_timer {
+        max-width: 80px;
+        &-title {margin: 0 0 2px 0;
+          font-size: 4.48606px;
+          line-height: 5px;
+        }
+      }
+    }
+    &__main {
+      &_title {
+        margin: 5px 0 0 8px;
+        max-width: 130px;
+        font-size: 17.2969px;
+        line-height: 21px;
+        color: #10205E;
+        text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        &-orange {
+          font-size: 14px;
+          line-height: 17px; 
+          text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+        &-blue {
+          font-weight: 600;
+          font-size: 14px;
+          line-height: 17px;
+          text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        }
+      }
+      &_oldprice {
+        margin: 15px 0 0 8px;
+        &-black {
+          display: none;
+        }
+        &-orange {
+          display: none;
+        }
+        &-blue {
+          display: flex;
+          font-size: 8px;
+          line-height: 10px;
+        }
+      }
+      &_gift {
+        margin: 5px 0 25px 8px;
+        font-size: 14px;
+        line-height: 17px;
+        &-black {
+          font-size: 14px;
+          line-height: 17px;
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+    &__divider {
+        margin: 9px 0 15px 0;
+      &_line {
+        height: 1px;
+      }
+      &_text {
+        margin: 1px 0 1px 0;
+        font-size: 15px;
+        line-height: 18px;
+      }
+    }
+    &__bottom-divider {
+      margin: 0 0 28px 0;
+      max-width: 336px;
+      height: 16px;
+      background-size: contain;
+      align-self: center;
+    }
+    &__divider_add {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      max-width: 1892px;
+      &-line {
+        display: flex;
+        width: 100%;
+        height: 1px;
+        background: linear-gradient(to right, #FFF 0%, #10205E 20%, #10205E 80%,#FFF 100%);
+      }
+      &-text {
+        margin: 4px 0 4px 0;
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        line-height: 18px;
+        color: #10205E;
+      }
+    }
+    &__benefit {
+      margin-top: 29px;
+      background: white;
+      background: url('../assets/images/benefit-back.png') no-repeat;
+      background-size: contain;
+      &_wrapper {
+        margin: 0 36px 38px 36px;
+      }
+      &_divider {
+        margin: 45px 0 0 0;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 1892px;
+        &-line {
+          display: flex;
+          width: 100%;
+          height: 1px;
+          background: linear-gradient(to right, #FFF 0%, #10205E 20%, #10205E 80%,#FFF 100%);
+        }
+        &-text {
+          margin: 4px 0 4px 0;
+          display: flex;
+          justify-content: center;
+          width: 100%;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 13px;
+          line-height: 16px;
+          color: #10205E;
+        }
       }
     }
   }

@@ -1,43 +1,84 @@
 <template>
-	<div class="header">
-    <div class="header__logo">
-				<img src="@/assets/images/arlogo.png" alt="" class="header__wrapper_logo-img">
-		</div>
-    <div class="header__wrapper">
-      <div class="header__wrapper_contact">
-        <div class="header__wrapper_contact-left">
-          <p class="header__wrapper_contact-info">Москва, Ближние Прудищи, вл. 1, стр. 1</p>
+  <div class="header-wrapper">
+    <div class="header">
+      <div class="header__logo">
+          <img src="@/assets/images/arlogo.png" alt="" class="header__wrapper_logo-img">
+      </div>
+      <div class="header__wrapper">
+        <div class="header__wrapper_contact">
+          <div class="header__wrapper_contact-left">
+            <p class="header__wrapper_contact-info">Москва, Ближние Прудищи, вл. 1, стр. 1</p>
+          </div>
+          <div class="header__wrapper_contact-right">
+            <p class="header__wrapper_contact-info">ЕЖЕДНЕВНО  БЕЗ ВЫХОДНЫХ</p>
+            <p class="header__wrapper_contact-info">С 8:00 ДО 21:00</p>
+          </div>
         </div>
-        <div class="header__wrapper_contact-right">
-          <p class="header__wrapper_contact-info">ЕЖЕДНЕВНО  БЕЗ ВЫХОДНЫХ</p>
-          <p class="header__wrapper_contact-info">С 8:00 ДО 21:00</p>
+        <div class="header__wrapper_pages">
+          <router-link
+            v-for="link in links"
+            :key="link.url"
+            tag="div"
+            active-class="active"
+            :to="link.url"
+            :exact="link.exact"
+            >
+            <a href="#"
+              class="header__wrapper_pages-link"
+              @mouseover="isMain(link.title)"
+              :class="{'header__wrapper_pages-link-active': $route.path === `${link.url}`}"
+            >
+              {{ link.title }}
+              <img src="@/assets/images/page-icon.png"  class="header__wrapper_pages-icon">
+            </a>
+          </router-link>
+          <div class="header__wrapper_callback">
+            <img class="header__wrapper_callback-img" src="@/assets/images/header-phone.png">
+            <div class="header__wrapper_callback-info">+7 (495) 085-71-54</div>
+          </div>
         </div>
       </div>
-      <div class="header__wrapper_pages">
-        <router-link
-          v-for="link in links"
-          :key="link.url"
-          tag="div"
-          active-class="active"
-          :to="link.url"
-          :exact="link.exact"
-          >
-          <a href="#"
-            class="header__wrapper_pages-link"
-            @mouseover="isMain(link.title)"
-            :class="{'header__wrapper_pages-link-active': $route.path === `${link.url}`}"
-          >
-            {{ link.title }}
-            <img src="@/assets/images/page-icon.png"  class="header__wrapper_pages-icon">
-          </a>
-        </router-link>
-        <div class="header__wrapper_callback">
-          <img class="header__wrapper_callback-img" src="@/assets/images/header-phone.png">
-          <div class="header__wrapper_callback-info">+7 (495) 085-71-54</div>
+    </div>
+    <div class="header-small">
+      <div class="header-small__logo">
+          <img src="@/assets/images/arlogo.png" alt="" class="header__wrapper_logo-img">
+      </div>
+      <div class="header-small__wrapper">
+        <div class="header-small__wrapper_contact">
+          <div class="header-small__wrapper_contact-left">
+            <p class="header-small__wrapper_contact-info">Москва, Ближние Прудищи, вл. 1, стр. 1</p>
+          </div>
+          <div class="header-small__wrapper_contact-right">
+            <p class="header-small__wrapper_contact-info">ЕЖЕДНЕВНО  БЕЗ ВЫХОДНЫХ</p>
+            <p class="header-small__wrapper_contact-info">С 8:00 ДО 21:00</p>
+          </div>
+        </div>
+        <div class="header-small__wrapper_pages">
+          <router-link
+            v-for="link in links"
+            :key="link.url"
+            tag="div"
+            active-class="active"
+            :to="link.url"
+            :exact="link.exact"
+            >
+            <a href="#"
+              class="header-small__wrapper_pages-link"
+              @mouseover="isMain(link.title)"
+              :class="{'header-small__wrapper_pages-link-active': $route.path === `${link.url}`}"
+            >
+              {{ link.title }}
+              <img src="@/assets/images/page-icon.png"  class="header__wrapper_pages-icon">
+            </a>
+          </router-link>
+          <div class="header-small__wrapper_callback">
+            <img class="header-small__wrapper_callback-img" src="@/assets/images/header-phone.png">
+            <div class="header-small__wrapper_callback-info">+7 (495) 085-71-54</div>
+          </div>
         </div>
       </div>
-		</div>
-	</div>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -79,7 +120,7 @@ export default {
   border-radius: 45px;
   color: #FFFFFF;
 }
-.header {
+.header, .header-small {
 	display: flex;
   width: 100%;
 	max-width: 2065px;
@@ -162,5 +203,8 @@ export default {
 
     }
   }
+}
+.header-small {
+  display: none;
 }
 </style>

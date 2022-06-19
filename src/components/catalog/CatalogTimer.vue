@@ -2,32 +2,32 @@
   <div class="catalog-count">
   <div class="catalog-count__item">
     <div class="catalog-count__item_number">
-      <div class="catalog-count__item_number-num">0</div>
-      <div class="catalog-count__item_number-num">4</div>
+      <div class="catalog-count__item_number-num">{{ ddays}}</div>
+      <div class="catalog-count__item_number-num">{{ days}}</div>
       <div class="catalog-count__item_number-div"></div>
     </div>
     <div class="catalog-count__item_descr">ДНИ</div>
   </div>
   <div class="catalog-count__item">
     <div class="catalog-count__item_number">
-      <div class="catalog-count__item_number-num">0</div>
-      <div class="catalog-count__item_number-num">4</div>
+      <div class="catalog-count__item_number-num">{{ dhours }}</div>
+      <div class="catalog-count__item_number-num">{{ hours }}</div>
       <div class="catalog-count__item_number-div"></div>
     </div>
     <div class="catalog-count__item_descr">ЧАСЫ</div>
   </div>
   <div class="catalog-count__item">
     <div class="catalog-count__item_number">
-      <div class="catalog-count__item_number-num">0</div>
-      <div class="catalog-count__item_number-num">4</div>
+      <div class="catalog-count__item_number-num">{{ dminutes }}</div>
+      <div class="catalog-count__item_number-num">{{ minutes }}</div>
       <div class="catalog-count__item_number-div"></div>
     </div>
     <div class="catalog-count__item_descr">МИНУТЫ</div>
   </div>
   <div class="catalog-count__item">
     <div class="catalog-count__item_number">
-      <div class="catalog-count__item_number-num">0</div>
-      <div class="catalog-count__item_number-num">4</div>
+      <div class="catalog-count__item_number-num">{{ dsecond }}</div>
+      <div class="catalog-count__item_number-num">{{ second }}</div>
     </div>
     <div class="catalog-count__item_descr">СЕКУНДЫ</div>
   </div>
@@ -36,8 +36,47 @@
 
 <script>
 export default {
-  name: 'CatalogTimer'
-
+  name: 'CatalogTimer',
+  props: {
+    deadline: {
+      type: String,
+      default:() => ''
+    }
+  },
+  data() {
+    return {
+      ddays: '1',
+      days: '2',
+      dhours: '1',
+      hours: '3',
+      dminutes: '1',
+      minutes: '4',
+      dsecond: '1',
+      second: '',
+      total: ''
+    }
+  },
+  mounted() {
+    setInterval(() => {
+      this.updateClock(this.deadline)
+    }, 1000)
+  },
+  methods: {
+    getTimeRemaining(endtime) {
+      this.total = Date.parse(endtime) - Date.parse(new Date())
+      this.second = Math.floor((this.total/1000) % 60)%10
+      this.dsecond = Math.floor(((this.total/1000) % 60)/10)
+      this.minutes = Math.floor((this.total/1000/60) % 60)%10
+      this.dminutes = Math.floor(((this.total/1000/60) % 60)/10)
+      this.hours = Math.floor((this.total/(1000*60*60)%24))%10
+      this.dhours = Math.floor((this.total/(1000*60*60)%24)/10);
+      this.days = Math.floor((this.total/(1000*60*60*24)))%10
+      this.ddays = Math.floor((this.total/(1000*60*60*24))/10)
+    },
+    updateClock(endtime) {
+      this.total = this.getTimeRemaining(endtime);
+    }
+  }
 }
 </script>
 

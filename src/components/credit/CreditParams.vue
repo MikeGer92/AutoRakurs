@@ -10,7 +10,13 @@
         <div class="credit-params__right_main-left">
           <div class="credit-params__right_main-left--title">СРОК КРЕДИТА</div>
           <div class="credit-params__right_main-left--display">
-            <div class="credit-params__right_main-left--display_num">{{ years }}</div>
+            <input 
+              type="number"
+              class="credit-params__right_main-left--display_num" 
+              v-model="years"
+              @change="checkYears"
+            >
+            <div class="credit-params__right_main-left--display_err" v-if="!yearsValid">ВВЕДИТЕ ЧИСЛО!!!</div>
             <div class="credit-params__right_main-left--display_num">{{ word }}</div>
           </div>
           <div class="credit-params__right_main-left--time">
@@ -53,7 +59,12 @@
         <div class="credit-params__right_main-right">
           <div class="credit-params__right_main-right--title">ПЕРВОНЧАЛЬНЫЙ ВЗНОС</div>
           <div class="credit-params__right_main-right--display">
-            <div class="credit-params__right_main-left--display_num">{{ summ }}</div>
+            <input 
+              type="number"
+              class="credit-params__right_main-left--display_num" 
+              v-model="summ"
+            >
+            <div class="credit-params__right_main-left--display_err" v-if="!summValid">ВВЕДИТЕ ЧИСЛО!!!</div>
             <div class="credit-params__right_main-left--display_num">₽</div>
           </div>
           <div class="credit-params__right_main-right--payment">
@@ -90,6 +101,14 @@ export default {
       summ: '200000',
       showLoader: false,
       word: 'ЛЕТ',
+    }
+  },
+    computed: {
+      yearsValid() {
+        return /^[\d/.]+$/.test(this.years);
+      },
+      summValid() {
+        return /^[\d/.]+$/.test(this.summ);
     }
   },
   methods: {
@@ -186,7 +205,22 @@ export default {
             font-size: 30.6865px;
             line-height: 37px;
             color: #000000;
-
+            border: none;
+            background: #F0F0F0;
+            &:hover {
+              outline:none;
+            }
+            &:focus {
+              outline:none;
+            }
+            &:active {
+              outline:none;
+            }
+          }
+          &_err {
+            display: flex;
+            font-size: 25px;
+            color: red;
           }
         }
         &--time, &--payment {

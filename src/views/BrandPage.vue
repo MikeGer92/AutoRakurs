@@ -1,7 +1,6 @@
 <template>
   <div class="brandpage">
     <Loader v-if="showLoader" />
-    <!-- <h1>BRAND</h1> -->
     <div class="brandpage__main">
       <div class="brandpage__main_left">
         <div class="brandpage__main_left-head">
@@ -42,11 +41,18 @@
         </div>
       </div>
       <div class="brandpage__main_right">
-        <div class="brandpage__main_right-action">
-          <div class="brandpage__main_right-action--title">ДО КОНЦА АКЦИИ ОСТАЛОСЬ:</div>
+        <div class="brandpage__main_right-form" id="brandpage-header-form">
+          <div class="brandpage__main_right-form--title">ДО КОНЦА АКЦИИ ОСТАЛОСЬ:</div>
           <Timer 
+            :deadline="actionFinish"
             :style="{'margin-bottom': '53px', 'width': '371px', 'height': '119px'}"
           />
+          <div class="brandpage__main_right-form--errors" v-if="errors.length">
+            <b>Ошибки при заполнении формы:</b>
+              <ul>
+                <li v-for="error in errors" :key="error">{{ error }}</li>
+              </ul>
+          </div>
           <CustomSelect 
             :options="complectations" 
             @select="complSelect" 
@@ -64,9 +70,14 @@
             :style="{'margin-bottom': '32px',  'width': '375px', 'height': '65px'}" 
             :disable="disableGifts"
           />
-          <input type="text" class="brandpage__main_right-action--name" placeholder="ИМЯ">
-          <input type="phone" class="brandpage__main_right-action--phone" placeholder="ТЕЛЕФОН">
-          <button type="button">ПОЛУЧИТЬ СПЕЦ ЦЕНУ</button>
+          <input type="text" class="brandpage__main_right-form--name" placeholder="ИМЯ" v-model="formName">
+          <input type="phone" 
+            class="brandpage__main_right-form--phone" 
+            placeholder="ТЕЛЕФОН" 
+            v-model="formPhone" required
+            v-phone
+          >
+          <button type="button" @click="checkForm(e)">ПОЛУЧИТЬ СПЕЦ ЦЕНУ</button>
         </div>
       </div>
     </div>
@@ -136,7 +147,7 @@
       </div>
     </div>
     <div class="brandpage__tradein">
-      <div class="brandpage__tradein_form">
+      <div class="brandpage__tradein_form" id="brandpage-tradein-form">
         <div class="brandpage__tradein_form-wrapper">
           <input type="text" class="brandpage__tradein_form-model" placeholder="МАРКА И МОДЕЛЬ АВТО">
           <div class="brandpage__tradein_form-params">
@@ -145,11 +156,22 @@
             <input class="brandpage__tradein_form-params--year" placeholder="ГОД ВЫПУСКА">
           </div>
           <input class="brandpage__tradein_form-yourprice" placeholder="ВАША ЦЕНА">
+          <div class="brandpage__main_right-form--errors" v-if="errors.length">
+            <b>Ошибки при заполнении формы:</b>
+              <!-- <ul>
+                <li v-for="error in errors" :key="error">{{ error }}</li>
+              </ul> -->
+            </div>
           <div class="brandpage__tradein_form-person">
-            <input type="text" class="brandpage__tradein_form-person--name" placeholder="ИМЯ">
-            <input type="phone" class="brandpage__tradein_form-person--phone" placeholder="ТЕЛЕФОН">
+            <input type="text" class="brandpage__tradein_form-person--name" placeholder="ИМЯ" v-model="formName">
+            <input type="phone" 
+              class="brandpage__tradein_form-person--phone" 
+              placeholder="ТЕЛЕФОН" 
+              v-model="formPhone" required
+              v-phone
+            >
           </div>
-          <button type="button">РАССЧИТАТЬ ВЫГОДУ</button>
+          <button type="button" @click="checkForm(e)">РАССЧИТАТЬ ВЫГОДУ</button>
         </div>
       </div>
     </div>
@@ -245,8 +267,12 @@ export default {
   components: { Loader, Timer, Complectation, CustomSelect, MarketBlock, CarCard, BrandRadioOrange, BrandRadioGray },
   data() {
     return {
+      actionFinish: '2022-09-20 23:59:59',
       showLoader: false,
       activeColor: 'black',
+      formName: '',
+      formPhone: '',
+      errors: [],
       colors: [
         {id: 1, name: 'black', color: '#000'},
         {id: 2, name: 'beige', color: '#95807B'},
@@ -349,6 +375,26 @@ export default {
     },
     giftSelect(option) {
       this.selectedGift = option.name
+    },
+    checkForm(e) {
+      if (this.formName && this.formPhone && this.formPhone.length===18) {
+        this.clearForm()
+        return true;
+      }
+      this.errors = [];
+      if (!this.formName) {
+        this.errors.push('Введите имя');
+      }
+      if (!this.formPhone || this.formPhone.length<18) {
+        this.errors.push('Введите телефон');
+      }
+      e.preventDefault();
+    },
+    clearForm() {
+      this.errors = [],
+      this.formName = ''
+      this.formPhone = ''
+      alert('Данные успешно отправлены!')
     }
   }
 }
@@ -550,7 +596,7 @@ export default {
       margin: 0 90px 0 45px;
       background: url('../assets/images/brand-action.png') no-repeat;
       background-size: cover;
-      &-action {
+      &-form {
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -563,6 +609,21 @@ export default {
           font-size: 19.2071px;
           line-height: 23px;
           color: #6C6C6C;
+        }
+        &--errors {
+          width: 100%;
+          display: flex;
+          flex-direction: column;
+          align-self: center;
+          & b {
+            font-weight: 900;
+            color: red;
+          }
+          & ul {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+          }
         }
         &--name, &--phone {
           display: flex;
@@ -756,7 +817,6 @@ export default {
       margin-right: 76px;
       display: flex;
       width: 610px;
-      height: 344px;
       background: #FFFFFF;
       box-shadow: 0px 4px 58px rgba(0, 0, 0, 0.25);
       border-radius: 41px;

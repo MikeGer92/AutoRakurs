@@ -15,52 +15,19 @@
           :style="{ 'width': '1500px', 'align-items': 'center'}"
         >
           <div class="slider__item"
-            :class="{'slider_item-active': currentPage===0 }"
+            v-for="item in giftsList" :key="item"
+            :class="{'slider_item-active': currentPage===item.id }"
           >
-            <img v-if="currentPage===0" :src="require('@/assets/images/card-active.png')">
-            <img v-else :src="require('@/assets/images/card.png')">
-          </div>
-          <div class="slider__item"
-            :class="{'slider_item-active': currentPage===1 }"
-          >
-            <img v-if="currentPage===1" :src="require('@/assets/images/umbrella-active.png')">
-            <img v-else :src="require('@/assets/images/umbrella.png')">
-          </div>
-          <div class="slider__item"
-            :class="{'slider_item-active': currentPage===2 }"
-          >
-            <img v-if="currentPage===2" :src="require('@/assets/images/setting-active.png')">
-            <img v-else :src="require('@/assets/images/setting.png')">
-          </div>
-          <div class="slider__item"
-            :class="{'slider_item-active': currentPage===3 }"
-          >
-            <img v-if="currentPage===3" :src="require('@/assets/images/payment-active.png')">
-            <img v-else :src="require('@/assets/images/payment.png')">
-          </div>
-          <div class="slider__item"
-            :class="{'slider_item-active': currentPage===4 }"
-          >
-            <img v-if="currentPage===4" :src="require('@/assets/images/card-active.png')">
-            <img v-else :src="require('@/assets/images/card.png')">
-          </div>
-          <div class="slider__item"
-            :class="{'slider_item-active': currentPage===5 }"
-          >
-            <img v-if="currentPage===5" :src="require('@/assets/images/umbrella-active.png')">
-            <img v-else :src="require('@/assets/images/umbrella.png')">
-          </div>
-          <div class="slider__item"
-            :class="{'slider_item-active': currentPage===6 }"
-          >
-            <img v-if="currentPage===6" :src="require('@/assets/images/setting-active.png')">
-            <img v-else :src="require('@/assets/images/setting.png')">
-          </div>
-          <div class="slider__item"
-            :class="{'slider_item-active': currentPage===7 }"
-          >
-            <img v-if="currentPage===7" :src="require('@/assets/images/payment-active.png')">
-            <img v-else :src="require('@/assets/images/payment.png')">
+            <div v-if="currentPage===item.id" @click="getGiftName(item.name)">
+              <img :src="item.active_img">
+              <div 
+                class="slider__item-active--text"
+                :style="{'display': 'flex', 'justify-content': 'center','font-family': 'Inter','font-style': 'normal', 'font-weight': 700,'font-size': '40px', 'line-height': '50px', 'color': '#000000', 'margin-bottom': '20px'}"
+              >
+                {{ item.name }}
+              </div>
+            </div>
+            <img v-else :src="item.img">
           </div>
         </vue-slick-carousel>
         <button class="next-btn" @click="showNext"></button>
@@ -76,9 +43,21 @@ export default {
   components: { VueSlickCarousel },
   data() {
     return {
+      choosedGift: '',
       active: true,
       activeImage: 'paySystems',
-      sliderPageIndex: 0
+      sliderPageIndex: 0,
+      gift: '',
+      giftsList: [
+        {id:0, name: 'КЕШБЭК', img: require('@/assets/images/card.png'), active_img: require('@/assets/images/card-active.png')},
+        {id:1, name: 'КАСКО', img: require('@/assets/images/umbrella.png'), active_img: require('@/assets/images/umbrella-active.png')},
+        {id:2, name: '3 ТО', img: require('@/assets/images/setting.png'), active_img: require('@/assets/images/setting-active.png')},
+        {id:3, name: '3 ПЛАТЕЖА', img: require('@/assets/images/payment.png'), active_img: require('@/assets/images/payment-active.png')},
+        {id:4, name: 'КЕШБЭК', img: require('@/assets/images/card.png'), active_img: require('@/assets/images/card-active.png')},
+        {id:5, name: 'КАСКО', img: require('@/assets/images/umbrella.png'), active_img: require('@/assets/images/umbrella-active.png')},
+        {id:6, name: '3 ТО', img: require('@/assets/images/setting.png'), active_img: require('@/assets/images/setting-active.png')},
+        {id:7, name: '3 ПЛАТЕЖА', img: require('@/assets/images/payment.png'), active_img: require('@/assets/images/payment-active.png')},
+      ]
     }
   },
   computed: {
@@ -98,7 +77,11 @@ export default {
     },
     afterPageChange(page) {
       this.sliderPageIndex = page;
-  }
+    }, 
+    getGiftName(name) {
+      this.choosedGift = name
+      alert(`ПОЗДРАВЛЯЕМ ВЫ ВЫБРАЛИ ПОДАРОК - ${name}!!!`)
+    }
   }
 }
 </script>
@@ -121,24 +104,30 @@ export default {
 }
 .slider__item {
   display: flex;
+  flex-direction: column;
   align-items: center;
+  align-self: center;
   max-width: 300px;
   height: 300px;
   & img {
-      width: 280px;
+      width: 300px;
       height: auto;
     }
   }
 .slider_item-active {
-  display: flex;
-    max-width: 350px;
-    height: 300px;
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    width: 360px;
+    height: 380px;
     background: #FFFFFF;
     box-shadow: 0px 5.92582px 16.296px rgba(0, 0, 0, 0.25);
     border-radius: 66.6654px;
     cursor: pointer;
     & img {
-    max-width: 320px;
+    width: 320px;
     height: auto;
     -webkit-transform:scale(1.35); /* Safari and Chrome */
     -moz-transform:scale(1.35); /* Firefox */
@@ -151,6 +140,7 @@ export default {
   margin: 45px 0 0 60px;
   display: flex;
   align-items: center;
+  height: 420px;
 }
 .slick-initialized .slick-slide[data-v-e4caeaf8] {
   display: flex;
@@ -184,6 +174,10 @@ export default {
       background-color: green;
     }
   }
+}
+.slick-track.slick-center[data-v-e4caeaf8] {
+  display: flex;
+  align-items: center;
 }
 .next-btn {
   width: 104px;

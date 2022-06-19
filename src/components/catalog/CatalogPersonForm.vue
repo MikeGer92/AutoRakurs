@@ -1,10 +1,22 @@
 <template>
-    <div class="catalog-form">
+    <div class="catalog-form" id="catalog-person-form">
       <div class="catalog-form__wrapper">
         <div class="catalog-form__title">Ваше персональное<br> предложение на покупку<br> автомобиля уже ждет Вас!</div>
-        <input type="text" class="catalog-form__name" placeholder="ФИО">
-        <input type="phone" class="catalog-form__phone" placeholder="+7 (___)  ___-__-__">
-        <button class="catalog-form__btn" type="button">Отправить заявку</button>
+        <div class="catalog-form__errors" v-if="errors.length">
+          <b>Ошибки при заполнения формы:</b>
+            <!-- <ul>
+              <li v-for="error in errors" :key="error">{{ error }}</li>
+            </ul> -->
+        </div>
+        <input type="text" class="catalog-form__name" placeholder="ФИО" v-model="formName">
+        <input 
+          type="phone" 
+          class="catalog-form__phone" 
+          placeholder="+7 (___)  ___-__-__" 
+          v-model="formPhone" required
+          v-phone
+        >
+        <button class="catalog-form__btn" type="button" @click="checkForm(e)">Отправить заявку</button>
 
         <CatalogRadioBlue />
 
@@ -19,7 +31,32 @@ export default {
   components: { CatalogRadioBlue },
   data() {
     return {
+      formName: '',
+      formPhone: '',
+      errors: []
 
+    }
+  },
+  methods: {
+    checkForm(e) {
+      if (this.formName && this.formPhone && this.formPhone.length===18) {
+        this.clearForm()
+        return true;
+      }
+      this.errors = [];
+      if (!this.formName) {
+        this.errors.push('Требуется указать имя');
+      }
+      if (!this.formPhone || this.formPhone.length<18) {
+        this.errors.push('Требуется указать телефон');
+      }
+      e.preventDefault();
+    },
+    clearForm() {
+      this.errors = [],
+      this.formName = ''
+      this.formPhone = ''
+      alert('Данные успешно отправлены!')
     }
   }
 }
@@ -28,7 +65,7 @@ export default {
 <style lang="scss">
  .catalog-form {
     max-width: 458px;
-    max-height: 386px;
+    // max-height: 386px;
     display: flex;
     flex-direction: column;
     background: #FFFFFF;
@@ -47,6 +84,20 @@ export default {
       font-size: 23.3333px;
       line-height: 28px;
       color: #FFA724;
+    }
+    &__errors {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      & b {
+        font-weight: 900;
+        color: red;
+      }
+      & ul {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+      }
     }
     &__name, &__phone {
       display: flex;

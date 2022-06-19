@@ -1,12 +1,24 @@
 <template>
-    <div class="person-form">
+    <div class="person-form" id="person-form">
     <div class="person-form__title">Персональные данные</div>
-    <input type="text" class="person-form__name" placeholder="ФИО">
-    <input type="phone" class="person-form__phone" placeholder="+7 (___)  ___-__-__">
+    <div class="person-form__errors" v-if="errors.length">
+      <b>Пожалуйста исправьте указанные ошибки:</b>
+        <ul>
+          <li v-for="error in errors" :key="error">{{ error }}</li>
+        </ul>
+    </div>
+    <input type="text" class="person-form__name" placeholder="ФИО" v-model="formName">
+    <input type="phone" v-phone class="person-form__phone" placeholder="+7 (___)  ___-__-__" v-model="formPhone" required>
 
     <CustomRadio />
 
-    <button class="person-form__btn" type="button">Отправить заявку</button>
+    <button 
+      class="person-form__btn" 
+      type="button"
+      @click="checkForm(e)"
+    >
+      Отправить заявку
+    </button>
     <p class="person-form__info">После отправки заявки вам перезвонит сотрудник банка,<br>проконсультирует и примет недостающие данные по телефону.</p>
   </div>
 </template>
@@ -18,10 +30,33 @@ export default {
   components: { CustomRadio },
   data() {
     return {
-
+      formName: '',
+      formPhone: '',
+      errors: []
+    }
+  },
+  methods: {
+    checkForm(e) {
+      if (this.formName && this.formPhone && this.formPhone.length===18) {
+        this.clearForm()
+        return true;
+      }
+      this.errors = [];
+      if (!this.formName) {
+        this.errors.push('Требуется указать имя');
+      }
+      if (!this.formPhone || this.formPhone.length<18) {
+        this.errors.push('Требуется указать телефон');
+      }
+      e.preventDefault();
+    },
+    clearForm() {
+      this.errors = [],
+      this.formName = ''
+      this.formPhone = ''
+      alert('Данные успешно отправлены!')
     }
   }
-  
 }
 </script>
 
@@ -43,6 +78,20 @@ export default {
       font-size: 49.8225px;
       line-height: 60px;
       color: #000000;
+    }
+    &__errors {
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+      & b {
+        font-weight: 900;
+        color: red;
+      }
+      & ul {
+        display: flex;
+        flex-direction: column;
+        align-self: center;
+      }
     }
     &__name, &__phone {
       display: flex;
