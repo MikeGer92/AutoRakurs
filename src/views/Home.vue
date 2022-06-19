@@ -38,7 +38,7 @@
       <div class="home__benefit">
         <div class="home__benefit_wrapper">
           <div class="home__benefit_block">
-            <BenefitCard v-for="(benefit) in benefitsList" :key="benefit.title" :benefitCard="benefit"/>
+            <BenefitCard v-for="(benefit) in benefitsList" :key="benefit.title" :benefitCard="benefit" :screen="scale" @resize="updateWidth" />
           </div>
           <div class="home__benefit_divider">
             <div class="home__benefit_divider-line home__divider_line"></div>
@@ -46,7 +46,7 @@
             <div class="home__benefit_divider-line home__divider_line"></div>
           </div>
           <div class="home__benefit_options">
-            <BenefitCard v-for="option in optionsList" :key="option.title" :benefitCard="option"/>
+            <BenefitCard v-for="option in optionsList" :key="option.title" :benefitCard="option" :screen="screenWidth"/>
           </div>
         </div>
       </div>
@@ -65,6 +65,7 @@ export default {
   components: { Loader, Timer,  CarCard, BenefitCard },
   data() {
     return {
+      screenWidth: false,
       actionFinish: '2022-09-20 23:59:59',
       showModal: true,
       showLoader: false,
@@ -177,6 +178,25 @@ export default {
         button: 'Получить выгоду'
       },
     }
+  },
+  created() {
+    window.addEventListener('resize', this.updateWidth);
+  },
+  mounted() {
+    console.log(window.innerWidth)
+  },
+  computed: {
+    scale() {
+      return window.innerWidth < 600
+    }
+  },
+  methods: {
+    updateWidth() {
+      if (window.innerWidth < 600) {
+        this.screenWidth = true
+      }
+      console.log(window.innerWidth)
+    },
   }
 
 }
@@ -400,7 +420,7 @@ export default {
     }
   }
 }
-@media (max-width: 390px) {
+@media (max-width: 605px) {
   .home {
     &__header {
       margin: 12px 0 0 0;

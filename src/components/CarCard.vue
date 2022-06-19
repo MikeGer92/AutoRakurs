@@ -187,7 +187,7 @@ export default {
     }
   }
 }
-@media (max-width: 390px) {
+@media (max-width: 605px) {
   .homecar-main {
     max-width: 336px;
     margin-top: 0;

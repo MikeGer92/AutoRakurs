@@ -1,5 +1,5 @@
 <template>
-  <div class="benefit" :style="[screen > 390 ? {'background': `url(${benefitCard.image}) no-repeat`}: {'background': `url(${benefitCard.image_small}) no-repeat`, 'background-size': 'contain'}]">
+  <div class="benefit" :style="[screenWidth ? {'background': `url(${benefitCard.image_small}) no-repeat`, 'background-size': 'contain'} : {'background': `url(${benefitCard.image}) no-repeat`}]">
     <div class="benefit__header">
       <div class="benefit__header_title">{{ benefitCard.title }}</div>
       <div class="benefit__header_descr">{{ benefitCard.descr }}</div>
@@ -16,11 +16,12 @@ export default {
     benefitCard: {
       type: Object,
       default: () => {}
-    }
+    },
   },
   data() {
     return {
-      screen: 0
+      screen: 0,
+      screenWidth: false
     }
   },
   created() {
@@ -29,8 +30,19 @@ export default {
   methods: {
     updateWidth() {
       this.screen = window.innerWidth;
+      if (this.screen < 600) {
+        this.screenWidth = true
+      } 
       console.log(this.screen)
     },
+    elementStyle(){
+      this.updateWidth()
+      if (this.screen < 600) {
+        return true
+      } else {
+        return false
+      }
+    }
   }
 }
 </script>
@@ -88,7 +100,7 @@ export default {
     cursor: pointer;
   }
 } 
-@media (max-width: 390px) { 
+@media (max-width: 605px) {
   .benefit {
     width: 323px;
     height: 286px;

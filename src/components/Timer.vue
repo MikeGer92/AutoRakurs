@@ -105,7 +105,7 @@ export default {
     }
   }
 }
-@media (max-width: 390px) {
+@media (max-width: 605px) {
   .count {
     max-width: 80px;
     max-height: 26px;
