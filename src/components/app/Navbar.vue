@@ -76,7 +76,7 @@
             >
             <a href="#"
               class="header-small__popup_pages-link"
-              @mouseover="isMain(link.title)"
+              @click="showPopup = false"
               :class="{'header-small__popup_pages-link--active': $route.path === `${link.url}`}"
             >
               {{ link.title }}
