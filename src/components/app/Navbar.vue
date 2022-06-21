@@ -246,14 +246,15 @@ export default {
     height: 38px;
     align-items: center;
     &__popup {
-      position: absolute;
-      margin: 12px 10px;
+      // position: absolute;
+      // margin: 10px 12px;
       &_btn {
+        margin: 12px;
         display: block;
         width: 23px;
         height: 20px;
         &-active {
-          margin-top: 18px;
+          margin-top: 22px;
         }
         &-item {
           display: block;
@@ -285,13 +286,13 @@ export default {
         z-index: 2;
         background-color: #fff;
         position: absolute;
-        left: -11px;
+        left: 6px;
         top: 39px;
         &-link {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          width: 170px;
+          width: 165px;
           height: 38px;
           margin-left: 12px;
           font-size: 12.4343px;
@@ -317,7 +318,7 @@ export default {
       display: flex;
       width: 67px;
       height: 33px;
-      margin: 3px 0 3px 44px;
+      margin: 3px 0 3px 0px;
     }
     &__wrapper {
       display: flex;

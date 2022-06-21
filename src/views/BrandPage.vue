@@ -116,8 +116,8 @@
           :class="{'brandpage__choise_link-active': $route.path === `${link.url}`}"
         >
           <img v-if="link.title==='ВЫБРАТЬ ДРУГУЮ МОДЕЛЬ'" src="@/assets/images/brand-prev.png"  class="brandpage__choise_prev">
+          <img v-else src="@/assets/images/page-icon.png"  class="brandpage__choise_icon">
           {{ link.title }}
-          <img v-if="link.title!=='ВЫБРАТЬ ДРУГУЮ МОДЕЛЬ'" src="@/assets/images/page-icon.png"  class="brandpage__choise_icon">
         </a>
       </router-link>
     </div>
@@ -772,6 +772,7 @@ export default {
       line-height: 25px;
       text-align: center;
       color: #000000;
+      cursor: pointer;
       &-active {
         background: linear-gradient(108.07deg, #10205E -83.42%, #12609E 175.95%);
         border-radius: 72.775px;
@@ -788,7 +789,7 @@ export default {
       width: 15px;
       height: 8px;
       display: flex;
-      margin-left: 16px;
+      margin: 0 16px;
       }
 
   }
@@ -1193,7 +1194,50 @@ export default {
       }
     }
     &__choise {
-
+      margin: 0;
+      max-width: 600px;
+      height: 49px;
+      background: linear-gradient(90.43deg, rgba(18, 96, 158, 0.3) 17.96%, rgba(16, 32, 94, 0.3) 83.93%);
+      box-shadow: 0px 4.66418px 4.66418px rgba(0, 0, 0, 0.25);
+      &_link {
+        font-size: 8.24317px;
+        line-height: 10px;
+        color: #FFFFFF;
+        margin: 0 7px;
+        &-active {
+          display: flex;
+          width: 27px;
+          height: 27px;
+          background: linear-gradient(108.07deg, #10205E -83.42%, #12609E 175.95%);
+          border-radius: 50%;
+          color: transparent;
+        }
+      }
+      &_prev {
+        width: 14px;
+        height: 7px;
+        margin-left: 7px;
+      }
+      &_icon {
+        width: 8px;
+        height: 4px;
+        margin: 0 7px;
+      }
+    }
+    &__divider {
+      margin-top: 14px;
+      max-width: 600px;
+      &_line {
+        height: 1px;
+      }
+      &_text {
+        margin: 4px 0;
+        font-size: 15px;
+        line-height: 18px;
+      }
+    }
+    &__complectations {
+      margin: 17px 52px -10px 52px;
       max-width: 600px;
     }
   }
