@@ -29,7 +29,6 @@
               <div class="about__main_left-contacts--mail_text">info@auto-racurs.ru</div>
             </div>
           </div>
-          <button type="button">ПОСТРОИТЬ МАРШРУТ</button>
         </div>
         <div class="about__main_right">
           <yandex-map 
@@ -50,6 +49,9 @@
           </yandex-map>
         </div>
       </div>
+    </div>
+    <div class="about__main_btn">
+      <button type="button">ПОСТРОИТЬ МАРШРУТ</button>
     </div>
   </div>
 </template>
@@ -129,15 +131,20 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
     display: flex;
     width: 100%;
     max-width: 2065px;
-    height: 600px;
     margin-bottom: 90px;
     &_wrapper {
       display: flex;
-      margin: 0 54px 0 66px;
+      justify-content: space-between;
+      width: 100%;
+      // margin: 0 54px 0 66px;// оригинальные отступы
+      margin: 0 21px;
+      flex-wrap: wrap;
     }
     &_left {
       display: flex;
       flex-direction: column;
+      width: 100%;
+      max-width: 690px;
       &-title {
         margin-top: 38px;
         font-family: 'Inter';
@@ -157,7 +164,6 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
         color: #E0E0E0;
       }
       &-operate, &-contacts {
-        margin-top: 17px;
         display: flex;
         flex-direction: column;
         &--title {
@@ -196,8 +202,20 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
           }
         }
       }
+    }
+    &_right {
+      padding: 23px 0px 0 0px;
+      display: flex;
+      // width: 100%;
+      max-width: 1150px;
+      // height: 570px;
+      // filter: grayscale(1);
+    }
+    &_btn {
+      display: flex;
+      align-self: flex-start;
       & button {
-        margin-top: 50px;
+        margin: -200px 0 0 20px;
         width: 501px;
         height: 77px;
         font-family: 'Inter';
@@ -212,13 +230,15 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
         border-radius: 111.186px;
       }
     }
-    &_right {
-      margin: 23px 0 0 103px;
-      display: flex;
-      width: 100%;
-      max-width: 1150px;
-      height: 570px;
-      // filter: grayscale(1);
+  }
+}
+@media (max-width: 605px) {
+  .about {
+    &__divider {
+      display: none;
+    }
+    &__main {
+      flex-direction: column;
     }
   }
 }
