@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     getTimeRemaining(endtime) {
-      this.total = new Date(endtime) - Date.parse(new Date())
+      this.total = new Date(endtime) - new Date()
       this.second = Math.floor((this.total/1000) % 60)
       if (this.second < 10) {
         this.second = '0'+ this.second
