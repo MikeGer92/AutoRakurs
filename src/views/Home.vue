@@ -66,7 +66,7 @@ export default {
   data() {
     return {
       screenWidth: false,
-      actionFinish: '2022-09-20 23:59:59',
+      actionFinish: ['2022', '09', '20', '23', '59', '59'],
       showModal: true,
       showLoader: false,
       carsList: [
