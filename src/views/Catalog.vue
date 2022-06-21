@@ -66,7 +66,7 @@ export default {
   components: { Loader, CatalogCar, MarketBlock, BenefitCard, CatalogPersonForm, BestOfferForm, CatalogTimer },
   data() {
     return {
-      actionEnd: '2022-07-31 23:59:59',
+      actionEnd: ['2022', '07', '31', '23', '59', '59'],
       showLoader: false,
       modelsList: [
         {
