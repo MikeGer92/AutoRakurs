@@ -40,21 +40,33 @@
       </div>
     </div>
     <div class="header-small">
-      <div class="header-small__logo">
-          <img src="@/assets/images/arlogo.png" alt="" class="header__wrapper_logo-img">
-      </div>
-      <div class="header-small__wrapper">
-        <div class="header-small__wrapper_contact">
-          <div class="header-small__wrapper_contact-left">
-            <p class="header-small__wrapper_contact-info">Москва, Ближние Прудищи, вл. 1, стр. 1</p>
+      <div class="header-small__popup">
+        <div 
+          class="header-small__popup_btn"
+          :class="{'header-small__popup_btn-active': showPopup}"
+          @click="showPopup = !showPopup"
+        >
+          <div 
+            class="header-small__popup_btn-item"
+            :class="{'header-small__popup_btn-item--active': showPopup}"
+          >
           </div>
-          <div class="header-small__wrapper_contact-right">
-            <p class="header-small__wrapper_contact-info">ЕЖЕДНЕВНО  БЕЗ ВЫХОДНЫХ</p>
-            <p class="header-small__wrapper_contact-info">С 8:00 ДО 21:00</p>
+          <div 
+            class="header-small__popup_btn-item"
+            :class="{'header-small__popup_btn-item--active': showPopup}"
+          >
+          </div>
+          <div 
+            class="header-small__popup_btn-item"
+            :class="{'header-small__popup_btn-item--active': showPopup}"
+          >
           </div>
         </div>
-        <div class="header-small__wrapper_pages">
-          <router-link
+        <div 
+          class="header-small__popup_pages" 
+          v-if="showPopup"
+        >
+           <router-link
             v-for="link in links"
             :key="link.url"
             tag="div"
@@ -63,18 +75,29 @@
             :exact="link.exact"
             >
             <a href="#"
-              class="header-small__wrapper_pages-link"
-              @mouseover="isMain(link.title)"
-              :class="{'header-small__wrapper_pages-link-active': $route.path === `${link.url}`}"
+              class="header-small__popup_pages-link"
+              @click="showPopup = false"
+              :class="{'header-small__popup_pages-link--active': $route.path === `${link.url}`}"
             >
               {{ link.title }}
-              <img src="@/assets/images/page-icon.png"  class="header__wrapper_pages-icon">
+              <img src="@/assets/images/page-icon.png"  class="header__popup_pages-icon">
             </a>
           </router-link>
-          <div class="header-small__wrapper_callback">
-            <img class="header-small__wrapper_callback-img" src="@/assets/images/header-phone.png">
-            <div class="header-small__wrapper_callback-info">+7 (495) 085-71-54</div>
+        </div>
+      </div>
+      <div class="header-small__logo">
+          <img src="@/assets/images/small-logo.png" alt="" class="header__wrapper_logo-img">
+      </div>
+      <div class="header-small__wrapper">
+        <div class="header-small__wrapper_contact">
+          +7 (495) 085-71-54
+        </div>
+        <div class="header-small__wrapper_info">
+          <div class="header-small__wrapper_info-days">
+            ЕЖЕДНЕВНО
           </div>
+          <div class="header-small__wrapper_info-hours">
+            С 8:00 ДО 21:00</div>
         </div>
       </div>
     </div>
@@ -86,6 +109,7 @@ export default {
   name: 'Navbar',
   data() {
     return {
+      showPopup: false,
       links: [
         {title: 'НОВЫЕ АВТОМОБИЛИ', url: '/', exact: true},
         {title: 'КРЕДИТ', url: '/credit'},
@@ -206,5 +230,127 @@ export default {
 }
 .header-small {
   display: none;
+}
+@media (max-width: 605px) {
+  .active {
+    height: 38px;
+    border-radius: 19px;
+  }
+  .header {
+    display: none;
+  }
+  .header-small {
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    height: 38px;
+    align-items: center;
+    &__popup {
+      position: absolute;
+      margin: 12px 10px;
+      &_btn {
+        display: block;
+        width: 23px;
+        height: 20px;
+        &-active {
+          margin-top: 18px;
+        }
+        &-item {
+          display: block;
+          width: 24px;
+          height: 4px;
+          margin-bottom: 4px;
+          background: #FFA724;
+          border-radius: 50px;
+          &:last-child {
+            margin-bottom: 0;
+          }
+          &--active {
+            &:nth-child(1) {
+              margin: -4px 0;
+              transform: rotate(-45deg);
+            }
+            &:nth-child(2) {
+              display: none;
+            }
+            &:nth-child(3) {
+              margin: -4px 0;
+              transform: rotate(45deg);
+            }
+          }
+        }
+      }
+      &_pages {
+        width: 200px;
+        z-index: 2;
+        background-color: #fff;
+        position: absolute;
+        left: -11px;
+        top: 39px;
+        &-link {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          width: 170px;
+          height: 38px;
+          margin-left: 12px;
+          font-size: 12.4343px;
+          line-height: 15px;
+          font-weight: 700;
+          color: #828282;
+          text-decoration: none;
+          &--active {
+            // width: 200px;
+            height: 38px;
+            color: #fff;
+            text-decoration: none;
+          }
+        }
+        & img {
+          width: 14px;
+          height: 6px;
+          margin-left: 12px;
+        }
+      }
+    }
+    &__logo {
+      display: flex;
+      width: 67px;
+      height: 33px;
+      margin: 3px 0 3px 44px;
+    }
+    &__wrapper {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-left: 30px;
+      &_contact {
+        display: flex;
+        align-items: center;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 12.4343px;
+        line-height: 15px;
+        color: #10205F;
+      }
+      &_info {
+        display: flex;
+        flex-direction: column;
+        &-days, &-hours {
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 900;
+          font-size: 8.55323px;
+          line-height: 10px;
+          text-align: right;
+          color: #FFA724;
+
+        }
+
+      }
+    }
+
+  }
 }
 </style>
