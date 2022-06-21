@@ -527,7 +527,7 @@ export default {
                 display: flex;
                 width: 24px;
                 height: 24px;
-                border: 13px solid #FFFFFF;
+                border: 12px solid #FFFFFF;
                 border-radius: 50%;
                 background: #000;
                 &_active {
@@ -971,5 +971,44 @@ export default {
     display: flex;
     justify-content: space-around;
   }
+}
+@media (max-width: 605px) {
+  .select-main {
+    &__field {
+
+    }
+    &__options {
+      &_option {
+
+      }
+    }
+  }
+  .brandpage {
+    margin: 0;
+    &__main {
+      margin: 0;
+      &_left {
+        margin: 0;
+        &-head {
+          &--info {
+            margin: 0;
+            &_hot {
+              order: 5;
+            }
+            &_title {
+              order: 1;
+            }
+            &_border {
+              order: 2;
+            }
+            &_price {
+              order: 3
+            }
+          }
+        }
+      }
+    }
+  }
+
 }
 </style>
