@@ -45,6 +45,7 @@
             </div>
           </div>
           <div class="brandpage__main_left-head--image"></div>
+          <button type="button" class="brandpage__main_left-head--btn">Получить предложение</button>
         </div>
         <div class="brandpage__main_left-gifts">
           <div class="brandpage__main_left-gifts--item" v-for="gift in gifts" :key="gift.id">
@@ -462,7 +463,7 @@ export default {
   &__main {
     width: 100%;
     max-width: 2065px;
-    height: 721px;
+    // height: 721px;
     margin: 45px 0 60px 0;
     display: flex;
     &_left {
@@ -529,6 +530,7 @@ export default {
         }
         &--params {
           display: flex;
+          margin-left: 15px;
         }
         &--technics {
           display: none;
@@ -618,7 +620,22 @@ export default {
           width: 941px;
           height: 547px;
           display: flex;
-          background: url('../assets/images/creta.png');
+          background: url('../assets/images/creta.png') no-repeat;
+        }
+        &--btn {
+          display: none;
+          width: 358px;
+          height: 33px;
+          background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
+          box-shadow: 0px 1.76795px 1.76795px rgba(0, 0, 0, 0.25);
+          border-radius: 16.3535px;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 17.9542px;
+          line-height: 106.52%;
+          color: #FFFFFF;
+
         }
       }
       &-gifts {
@@ -1063,9 +1080,29 @@ export default {
       &_left {
         margin: 0;
         &-head {
+          width: 100%;
+          max-width: 600px;
+          height: 471px;
+          // padding-bottom: 50px;
+          flex-wrap: wrap;
+          background: url('../assets/images/brand-small-main-back.png') no-repeat;
           &--wrapp {
             margin: 15px;
             flex-direction: row;
+          }
+          &--image {
+            margin: -35px 0px 0 -20px;
+            width: 100%;
+            max-width: 595px;
+            height: 243px;
+            background-size: contain;
+          }
+          &--btn {
+            margin: 0 0 20px 15px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
           }
           &--info {
             margin: 0;
@@ -1096,23 +1133,25 @@ export default {
           }
           &--technics {
             display: flex;
+            margin-top: 30px;
           }
           &--colors {
-            margin: 113px 0 0 -115px;
+            margin: 105px 0 0 -115px;
             width: 239px;
             height: 37px;
             transform: rotate(90deg);
             border-radius: 41.5139px;
+            background: #DBDBDB;
             &-item {
-              width: 26px;
-              height: 26px;
+              width: 27px;
+              height: 27px;
               &--active {
                 border: 1px solid #12609E;
               }
               &--black {
                 width: 12px;
                 height: 12px;
-                border: 6px solid #FFFFFF;
+                border: 6px solid #DBDBDB;;
                 &_active {
                   width: 18px;
                   height: 18px;
@@ -1122,7 +1161,40 @@ export default {
             }
           }
         }
+        &-gifts {
+          display: flex;
+          justify-content: center;
+          margin-top: 0;
+          max-width: 390px;
+          flex-wrap: wrap;
+          &--item {
+            &_wrapper {
+              margin: 0 12px;
+            }
+            &_text {
+              margin-top: 20px;
+              display: flex;
+              max-width: 103px;
+              font-size: 11.1105px;
+              line-height: 13px;
+            }
+            &_img {
+              width: 30px;
+            }
+            &_border {
+              height: 85px;
+
+            }
+          }
+        }
       }
+      &_right {
+        display: none;
+      }
+    }
+    &__choise {
+
+      max-width: 600px;
     }
   }
 
