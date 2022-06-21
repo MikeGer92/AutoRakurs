@@ -66,7 +66,7 @@ export default {
   data() {
     return {
       showLoader: false,
-      mapCoordsStart: [55.578666, 37.699562],
+      mapCoordsStart: [55.576874, 37.697145],
       mySet: {
         apiKey: '',
         lang: 'ru_RU',
@@ -206,7 +206,6 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
     &_right {
       padding: 23px 0px 0 0px;
       display: flex;
-      // width: 100%;
       max-width: 1150px;
       // height: 570px;
       // filter: grayscale(1);
@@ -239,6 +238,50 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
     }
     &__main {
       flex-direction: column;
+      &_wrapper {
+        margin: 10px;
+      }
+      &_left {
+        &-title {
+          font-size: 26.5976px;
+          line-height: 32px;
+        }
+        &-subtitle {
+          font-size: 12.3452px;
+          line-height: 15px;
+        }
+        &-operate, &-contacts {
+          &--title {
+            font-size: 12.3452px;
+            line-height: 15px;
+          }
+          &--hours {
+            font-size: 19.3359px;
+            line-height: 23px;
+          }
+          &--phone, &--addr, &--mail {
+            &_text {
+              font-size: 12.3452px;
+              line-height: 15px;
+            }
+
+          }
+        }
+      }
+      &_right {
+        width: 95%;
+        // max-width: 360px;
+      }
+      &_btn {
+        align-self: center;
+        & button {
+          margin: -55px 0 30px 0;
+          width: 307.73px;
+          height: 47.09px;
+          font-size: 17.3504px;
+          line-height: 21px;
+        }
+      }
     }
   }
 }
