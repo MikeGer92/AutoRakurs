@@ -238,11 +238,13 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
     }
     &__main {
       flex-direction: column;
+      margin-bottom: 0;
       &_wrapper {
-        margin: 10px;
+        margin: 10px 10px 0 10px;
       }
       &_left {
         &-title {
+          margin-top: 0px;
           font-size: 26.5976px;
           line-height: 32px;
         }
@@ -256,10 +258,12 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
             line-height: 15px;
           }
           &--hours {
+            margin: 6px 0 20px 0;
             font-size: 19.3359px;
             line-height: 23px;
           }
           &--phone, &--addr, &--mail {
+            margin-top: 8px;
             &_text {
               font-size: 12.3452px;
               line-height: 15px;
@@ -269,13 +273,14 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
         }
       }
       &_right {
-        width: 95%;
-        // max-width: 360px;
+        padding: 20px 0px 19px 0px;
+        width: 98%;
+        max-width: 98%;
       }
       &_btn {
         align-self: center;
         & button {
-          margin: -55px 0 30px 0;
+          margin: 0px 0 20px 0;
           width: 307.73px;
           height: 47.09px;
           font-size: 17.3504px;

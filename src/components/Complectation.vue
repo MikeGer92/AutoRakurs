@@ -202,5 +202,73 @@ export default {
     }
   }
 }
+@media (max-width: 605px) {
+  .complect {
+    &__main {
+      width: 295px;
+      height: 200px;
+      &_title {
+        font-size: 28px;
+        line-height: 34px;
+        margin: 8px 0 8px 0;
+      }
+      &_divider {
+        align-items: center;
+        justify-content: center;
+        &-line {
+          width: 256px;
+          height: 1px;
+        }
+        &-block {
+          &--item {
+            margin: 10px 0 10px 0;
+            font-size: 7.88277px;
+            line-height: 10px;
+          }
+        }
+      }
+      &_about {
+        margin: 10px 0;
+        &-image {
+          width: 13px;
+          height: 13px;
+          margin-right: 13px;
+        }
+        &-text {
+          font-size: 15.0701px;
+          line-height: 18px;
+        }
+
+      }
+      &_detail {
+        margin-bottom: 10px;
+        &-item {
+          width: 85px;
+          height: 24px;
+          background: #D9D9D9;
+          border-radius: 80px;
+          font-size: 5.23129px;
+          line-height: 6px;
+        }
+      }
+      &_price {
+        margin: 2px 0 2px 0;
+        font-size: 36px;
+        line-height: 40px;
+      }
+    }
+    &__buttons {
+      width: 295px;
+      height: 35px;
+      border-radius: 43.1437px;
+      margin-bottom: 40px;
+      &_getspecial, &_getcredit {
+        font-size: 7.70376px;
+        line-height: 9px;
+        text-align: center;
+      }
+    }
+  }
+}
 
 </style>

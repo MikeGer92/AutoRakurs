@@ -24,8 +24,8 @@ export default {
   name: 'Timer',
   props: {
     deadline: {
-      type: String,
-      default:() => ''
+      type: Array,
+      default:() => []
     }
   },
   data() {
@@ -44,7 +44,7 @@ export default {
   },
   methods: {
     getTimeRemaining(endtime) {
-      this.total = new Date(endtime) - Date.parse(new Date())
+      this.total = new Date(+endtime[0],+endtime[1]-1,+endtime[2],+endtime[3],+endtime[4],+endtime[5],) - new Date()
       this.second = Math.floor((this.total/1000) % 60)
       if (this.second < 10) {
         this.second = '0'+ this.second
