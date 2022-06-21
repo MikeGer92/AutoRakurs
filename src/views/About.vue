@@ -269,8 +269,8 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
         }
       }
       &_right {
-        width: 95%;
-        // max-width: 360px;
+        width: 98%;
+        max-width: 98%;
       }
       &_btn {
         align-self: center;
