@@ -4,22 +4,42 @@
     <div class="brandpage__main">
       <div class="brandpage__main_left">
         <div class="brandpage__main_left-head">
-          <div class="brandpage__main_left-head--info">
-            <div class="brandpage__main_left-head--info_hot">ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ</div>
-            <div class="brandpage__main_left-head--info_title">HYUNDAI CRETA</div>
-            <div class="brandpage__main_left-head--info_border"></div>
-            <div class="brandpage__main_left-head--info_price">от 724 150 руб.</div>
-            <div class="brandpage__main_left-head--info_colors">
-              <div v-for="color in colors" :key="color.id"
-                :class="{'brandpage__main_left-head--info_colors-item': true,
-                'brandpage__main_left-head--info_colors-item--active': activeColor===`${color.name}`}"
-                @click="activateColor(color.name)"
-              >
-                <div 
-                  :class="{'brandpage__main_left-head--info_colors-item--black':true,
-                  'brandpage__main_left-head--info_colors-item--black_active': activeColor===`${color.name}`}"
-                  :style="{'background': `${color.color}`}"
+          <div class="brandpage__main_left-head--wrapp">
+            <div class="brandpage__main_left-head--info">
+              <div class="brandpage__main_left-head--info_hot">ГОРЯЧЕЕ ПРЕДЛОЖЕНИЕ</div>
+              <div class="brandpage__main_left-head--info_title">HYUNDAI CRETA</div>
+              <div class="brandpage__main_left-head--info_border"></div>
+              <div class="brandpage__main_left-head--info_price">от 724 150 руб.</div>
+            </div>
+            <div class="brandpage__main_left-head--params">
+              <div class="brandpage__main_left-head--technics">
+                <div class="brandpage__main_left-head--technics_power">
+                  <div class="brandpage__main_left-head--technics_power-icon"><img src="../assets/images/brand-small-power.png"></div>
+                  <div class="brandpage__main_left-head--technics_power-text"><span>123 л.с.</span>Мощность<br>двигателя</div>
+                  <div class="brandpage__main_left-head--technics_divider"></div>
+                </div>
+                <div class="brandpage__main_left-head--technics_drive">
+                  <div class="brandpage__main_left-head--technics_drive-icon"><img src="../assets/images/brand-small-drive.png"></div>
+                  <div class="brandpage__main_left-head--technics_drive-text"><span>Передний</span>Привод</div>
+                  <div class="brandpage__main_left-head--technics_divider"></div>
+                </div>
+                <div class="brandpage__main_left-head--technics_trans">
+                  <div class="brandpage__main_left-head--technics_trans-icon"><img src="../assets/images/brand-small-trans.png"></div>
+                  <div class="brandpage__main_left-head--technics_trans-text"><span>МКПП 6</span>Коробка</div>
+                </div>
+              </div>
+              <div class="brandpage__main_left-head--colors">
+                <div v-for="color in colors" :key="color.id"
+                  :class="{'brandpage__main_left-head--colors-item': true,
+                  'brandpage__main_left-head--colors-item--active': activeColor===`${color.name}`}"
+                  @click="activateColor(color.name)"
                 >
+                  <div 
+                    :class="{'brandpage__main_left-head--colors-item--black':true,
+                    'brandpage__main_left-head--colors-item--black_active': activeColor===`${color.name}`}"
+                    :style="{'background': `${color.color}`}"
+                  >
+                  </div>
                 </div>
               </div>
             </div>
@@ -456,12 +476,16 @@ export default {
         height: 553px;
         background: url('../assets/images/brand-main-back.png') no-repeat;
         background-size: contain;
-        &--info {
+        &--wrapp {
           display: flex;
           flex-direction: column;
           margin: 54px 0 0 43px;
+        }
+        &--info {
+          display: flex;
+          flex-direction: column;
           &_hot {
-            margin-left: -15px;
+            margin: 0 0 0 -15px;
             width: 318px;
             height: 50px;
             display: flex;
@@ -502,40 +526,89 @@ export default {
             line-height: 38px;
             color: #FFFFFF;
           }
-          &_colors {
-            margin: 60px 0 0 -20px;
-            padding: 0 11px;
+        }
+        &--params {
+          display: flex;
+        }
+        &--technics {
+          display: none;
+          flex-direction: column;
+          align-items: center;
+          width: 77px;
+          &_power, &_drive, &_trans {
             display: flex;
-            align-items: center;
-            justify-content: space-around;
-            width: 457px;
-            height: 71px;
-            background: #FFFFFF;
-            backdrop-filter: blur(28.6546px);
-            border-radius: 79.4513px;
-            &-item {
+            flex-direction: column;
+            &-icon {
               display: flex;
-              justify-content: center;
-              align-items: center;
-              width: 50px;
-              height: 50px;
-              border-radius: 50%;
-              &--active {
-                border: 2px solid #12609E;
+              align-self: center;
+              width: 17px;
+              height: 17px;
+              & img {
+                width: auto;
+                height: 100%;
               }
-              &--black {
-                display: flex;
-                width: 24px;
-                height: 24px;
-                border: 12px solid #FFFFFF;
+            }
+            &-text {
+              display: flex;
+              flex-direction: column;
+              align-items: center;
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 7.10094px;
+              line-height: 9px;
+              text-align: center;
+              color: #000000;
+              & span {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 700;
+                font-size: 7.10094px;
+                line-height: 9px;
+                text-align: center;
+              }
+            }
+          }
+          &_divider {
+            margin: 8px 0;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(to right, #FFF 0%, #7D8A98 20%, #7D8A98 80%,#FFF 100%);
+          }
+        }
+        &--colors {
+          margin: 60px 0 0 -20px;
+          padding: 0 11px;
+          display: flex;
+          align-items: center;
+          justify-content: space-around;
+          width: 457px;
+          height: 71px;
+          background: #FFFFFF;
+          backdrop-filter: blur(28.6546px);
+          border-radius: 79.4513px;
+          &-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            &--active {
+              border: 2px solid #12609E;
+            }
+            &--black {
+              display: flex;
+              width: 24px;
+              height: 24px;
+              border: 12px solid #FFFFFF;
+              border-radius: 50%;
+              background: #000;
+              &_active {
+                width: 35px;
+                height: 35px;
+                border: 7px solid #FFFFFF;
                 border-radius: 50%;
-                background: #000;
-                &_active {
-                  width: 35px;
-                  height: 35px;
-                  border: 7px solid #FFFFFF;
-                  border-radius: 50%;
-                }
               }
             }
           }
@@ -986,23 +1059,66 @@ export default {
   .brandpage {
     margin: 0;
     &__main {
-      margin: 0;
+      margin: 2px;
       &_left {
         margin: 0;
         &-head {
+          &--wrapp {
+            margin: 15px;
+            flex-direction: row;
+          }
           &--info {
             margin: 0;
             &_hot {
+              margin: 9px 0 0 -5px;
+              width: 114px;
+              height: 18px;
+              font-size: 6.88893px;
+              line-height: 8px;
               order: 5;
             }
             &_title {
+              margin-top: 0;
+              width: 234px;
+              font-size: 27.0865px;
+              line-height: 33px;
               order: 1;
             }
             &_border {
               order: 2;
             }
             &_price {
+              margin-top: 8px;
+              font-size: 22.6352px;
+              line-height: 27px;
               order: 3
+            }
+          }
+          &--technics {
+            display: flex;
+          }
+          &--colors {
+            margin: 113px 0 0 -115px;
+            width: 239px;
+            height: 37px;
+            transform: rotate(90deg);
+            border-radius: 41.5139px;
+            &-item {
+              width: 26px;
+              height: 26px;
+              &--active {
+                border: 1px solid #12609E;
+              }
+              &--black {
+                width: 12px;
+                height: 12px;
+                border: 6px solid #FFFFFF;
+                &_active {
+                  width: 18px;
+                  height: 18px;
+                  border: 4px;
+                }
+              }
             }
           }
         }
