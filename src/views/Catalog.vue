@@ -3,16 +3,23 @@
     <Loader v-if="showLoader" />
     <div class="catalog__main">
       <div class="catalog__logo">
-        <img src="../assets/images/kia-logo.png">
+        <img class="catalog__logo_big" src="../assets/images/kia-logo.png">
+        <img class="catalog__logo_small" src="../assets/images/kia-logo-small.png">
         <div class="catalog__logo_timer">
           <div class="catalog__logo_timer-title">До конца акции осталось:</div>
           <CatalogTimer :deadline="actionEnd" />
         </div>
       </div>
-      <div class="catalog__image"><img src="../assets/images/kia-car.png"></div>
-      <CatalogPersonForm 
+      <div class="catalog__image_big"><img src="../assets/images/kia-car.png"></div>
+      <div class="catalog__image_small"><img src="../assets/images/kia-car-small.png"></div>
+      <CatalogPersonForm
+        class="catalog__person-form" 
         :style="{'margin': '32px 111px 32px 0'}"
       />
+      <div class="catalog__main-bottom">
+        <div class="catalog__main-bottom_title">Ваше персональное предложение на покупку автомобиля уже ждет Вас!</div>
+        <button type="button" class="catalog__main-bottom_btn">Получить предложение</button>
+      </div>
     </div>
     <div class="catalog__divider">
       <div class="catalog__divider_line"></div>
@@ -20,26 +27,40 @@
       <div class="catalog__divider_line"></div>
     </div>
     <div class="catalog__models">
-        <CatalogCar v-for="model in modelsList" :key="model.id" :car="model" />
+      <CatalogCar  v-for="model in modelsList" :key="model.id" :car="model" />
     </div>
+    <div class="catalog__models-small">
+      <CarCard v-for="model in modelsList" :key="model.id" :car="model" />
+    </div>
+    <div class="catalog__divider-bottom"></div>
     <div class="catalog__divider">
       <div class="catalog__divider_line"></div>
-      <div class="catalog__divider_text">ЛИНЕЙКА АВТОМОБИЛЕЙ HUYNDAI</div>
+      <div class="catalog__divider_text-big">ЛИНЕЙКА АВТОМОБИЛЕЙ HUYNDAI</div>
+      <div class="catalog__divider_text-small">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИI</div>
       <div class="catalog__divider_line"></div>
     </div>
     <MarketBlock 
+      class="catalog__market-block"
       :style="{'margin': '61px 0 191px 0'}"
     />
     <div class="catalog__bottom">
       <div class="catalog__bottom_logo">
-        <img src="../assets/images/mits-logo.png">
-          <div class="catalog__bottom_logo-timer">
+        <img class="catalog__bottom_logo-img" src="../assets/images/mits-logo.png">
+        <div class="catalog__bottom_logo-header">
+          <div class="catalog__bottom_logo-header--title"></div>
+          <div class="catalog__bottom_logo-header--descr"></div>
+          <button type="button"></button>
+        </div>
+        <div class="catalog__bottom_logo-timer">
           <div class="catalog__bottom_logo-timer--title">До конца акции осталось:</div>
           <CatalogTimer :deadline="actionEnd" />
         </div>
-        </div>
-      <div class="catalog__bottom_image"><img src="../assets/images/mits-car.png"></div>
-      <BestOfferForm 
+      </div>
+      <div class="catalog__bottom_image">
+        <img class="catalog__bottom_image-big" src="../assets/images/mits-car.png">
+        <img class="catalog__bottom_image-small" src="../assets/images/mits-car-small.png"></div>
+      <BestOfferForm
+        class="catalog__bottom_form" 
         :style="{'margin': '31px 0 33px 130px'}"
       />
     </div>
@@ -55,6 +76,7 @@
 
 <script>
 import CatalogCar from '@/components/catalog/CatalogCar.vue'
+import CarCard from '@/components/CarCard.vue'
 import MarketBlock from '@/components/MarketBlock.vue'
 import BenefitCard from '@/components/BenefitCard.vue'
 import CatalogPersonForm from '@/components/catalog/CatalogPersonForm.vue'
@@ -63,9 +85,10 @@ import CatalogTimer from '@/components/catalog/CatalogTimer.vue'
 import Loader from '@/components/app/Loader.vue'
 export default {
   name: 'Catalog',
-  components: { Loader, CatalogCar, MarketBlock, BenefitCard, CatalogPersonForm, BestOfferForm, CatalogTimer },
+  components: { Loader, CatalogCar, CarCard, MarketBlock, BenefitCard, CatalogPersonForm, BestOfferForm, CatalogTimer },
   data() {
     return {
+      fullSize: true,
       actionEnd: ['2022', '07', '31', '23', '59', '59'],
       showLoader: false,
       modelsList: [
@@ -199,6 +222,25 @@ export default {
         },
       ],
     }
+  },
+  created() {
+    window.addEventListener('resize', this.updateWidth);
+  },
+  mounted() {
+    console.log(window.innerWidth)
+  },
+  computed: {
+    scale() {
+      return window.innerWidth > 600
+    }
+  },
+  methods: {
+    updateWidth() {
+      if (window.innerWidth < 600) {
+        this.fullSize = false
+      }
+      console.log(window.innerWidth)
+    },
   }
 
 }
@@ -213,7 +255,6 @@ export default {
   &__main {
     display: flex;
     width: 100%;
-    max-width: 2065px;
     height: 450px;
     background: url('../assets/images/catalog-banner.png');
   }
@@ -223,12 +264,15 @@ export default {
     flex-direction: column;
     width: 284px;
     height: 114px;
+    &_small {
+      display: none;
+    }
     & img {
       width: 100%;
       height: auto;
     }
     &_timer {
-      margin-top: 92px;
+      margin: 92px 0 0 0;
       &-title {
         margin-bottom: 50px;
         font-family: 'Inter';
@@ -242,18 +286,26 @@ export default {
   }
   &__image {
     margin-left: 160px;
+    &_small {
+      display: none;
+    }
+  }
+  &__main-bottom {
+    display: none;
   }
   &__divider {
+    display: flex;
+    flex-direction: column;
     margin-top: 99px;
     width: 100%;
     max-width: 1891px;
-    text-align: center;
+    align-items: center;
     &_line {
       width: 100%;
       height: 3px;
       background: linear-gradient(to right, #FFF 0%, #10205E 20%, #10205E 80%,#FFF 100%);
     }
-    &_text {
+    &_text, &_text-big, &_text-small {
       margin: 19px 0 21px 0;
       font-family: 'Inter';
       font-style: normal;
@@ -261,6 +313,9 @@ export default {
       font-size: 44.7037px;
       line-height: 54px;
       color: #10205E;
+    }
+    &_text-small {
+      display: none;
     }
   }
   &__models {
@@ -276,6 +331,23 @@ export default {
       max-height: 672px;
     }
   }
+  &__models-small {
+    margin-top: 43px;
+    display: flex;
+    width: 100%;
+    max-width: 600px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    display: none;
+    &_item {
+      display: flex;
+      max-width: 336px;
+      max-height: 516px;
+    }
+  }
+  &__divider-bottom {
+    display: none;
+  }
   &__bottom {
     display: flex;
     width: 100%;
@@ -283,13 +355,16 @@ export default {
     height: 450px;
     background: url('../assets/images/catalog-bottom-banner.png');
     &_logo {
-      width: 622px;
-      margin-left: 30px;
       display: flex;
       flex-direction: column;
+      &-img {
+        width: 622px;
+        margin-left: 30px;
+      }
       &-timer {
         display: flex;
         flex-direction: column;
+        margin: 0 0 14px 22px;
         &--title {
           margin: 19px 0 30px 0;
           font-family: 'Inter';
@@ -300,14 +375,23 @@ export default {
           color: #FFFFFF;
         }
       }
+      &-header {
+        display: none;
+      }
     }
     &_image {
-          margin-left: -225px;
-      display: flex;
-      & img {
-        width: 100%;
-        height: auto;
+      &-big {
+        margin-left: -225px;
+        display: flex;
+        & img {
+          width: 100%;
+          height: auto;
+        }
       }
+      &-small {
+        display: none;
+      }
+
     }
   }
   &__gift {
@@ -338,5 +422,160 @@ export default {
     height: 680px;
     background: #D9D9D9;
   }
+}
+@media (max-width: 605px) {
+  .catalog {
+    max-width: 600px;
+    &__main {
+      height: 360px;
+      background: url('../assets/images/catalog-main-small.png');
+      flex-wrap: wrap;
+    }
+    &__logo {
+      flex-direction: row;
+      margin: 21px 0 0 21px;
+      width: 80px;
+      height: 32px;
+      &_big {
+        display: none;
+      }
+      &_small {
+        display: flex;
+      }
+      &_timer {
+        width: 218px;
+        height: 74px;
+        margin: -8px 24px 0 46px;
+        &-title {
+          width: 100%;
+          font-size: 13.3231px;
+          line-height: 16px;
+          color: #FFFFFF;
+          margin: 0 0 0 25px;
+          padding-bottom: 18px;
+        }
+      }
+    }
+    &__image {
+      &_big {
+        display: none;
+      }
+      &_small {
+        display: flex;
+        width: 366px;
+        height: 213px;
+        margin: 10px 0 0 15px;
+        background-image: no-repeat;
+      }
+    }
+    &__person-form {
+      display: none;
+    }
+    &__main-bottom {
+      display: flex;
+      flex-direction: column;
+      margin: -25px 0 0 13px;
+      &_title {
+        display: flex;
+        max-width: 304px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 15.2759px;
+        line-height: 18px;
+        color: #FFFFFF;
+      }
+      &_btn {
+        margin: 12px 19px 29px 0px;
+        width: 358px;
+        height: 33px;
+        background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
+        box-shadow: 0px 1.76795px 1.76795px rgba(0, 0, 0, 0.25);
+        border: none;
+        border-radius: 16.3535px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 17.9542px;
+        line-height: 106.52%;
+        color: #FFFFFF;
+      }
+    }
+    &__divider {
+      margin-top: 7px;
+      max-width: 600px;
+      justify-content: center;
+      &_line {
+        height: 1px;
+      }
+      &_text, &_text-small {
+        margin: 4px 0;
+        font-size: 15px;
+        line-height: 18px;
+      }
+      &_text-big {
+        display: none;
+      }
+      &_text-small {
+        display: flex;
+      }
+    }
+    &__models {
+      display: none;
+    }
+    &__models-small {
+      display: flex;
+      margin-top: 9px;
+      justify-content: center;
+    }
+    &__divider-bottom {
+      margin-bottom: 18px;
+      display: flex;
+      width: 338px;
+      height: 15px;
+      background: url('../assets/images/cars-bottom-divider.png') no-repeat;
+    background-size: contain;
+    }
+    &__market-block {
+      display: none;
+    }
+    &__bottom {
+      max-width: 600px;
+      height: 360px;
+      background: url('../assets/images/catalog-bottom-small.png');
+      &_logo {
+        &-img {
+          display: none;
+        }
+        &-header {
+          display: flex;
+          flex-direction: column;
+        }
+        &-timer {
+          margin: 280px 0 14px 22px;
+          &--title {
+            margin: 0 0 13px 0;
+            font-size: 8.40337px;
+            line-height: 10px;
+          }
+        }
+      }
+      &_image {
+        width: 373px;
+        height: 229px;
+        &-big {
+          display: none;
+        }
+        &-small {
+          display: flex;
+          margin: 115px 0 0 -190px;
+        }
+      }
+      &_form {
+        display: none;
+      }
+    }
+  }
+
 }
 </style>

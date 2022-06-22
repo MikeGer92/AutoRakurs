@@ -36,19 +36,21 @@ export default {
   data() {
     return {
     }
-  }
+  },
 }
 </script>
 
 <style lang="scss">
 .catalogcar-main {
-  width: 438px;
-  height: 672px;
+  max-width: 438px;
+  // height: 672px;
   display: flex;
   flex-direction: column;
   margin: 64px 0 64px 0;
 }
+
 .catalogcar {
+  width: 100%;
   // height: 100%;
   display: flex;
   flex-direction: column;
@@ -189,5 +191,9 @@ export default {
     }
   }
 }
-
+@media (max-width: 605px) { 
+  .catalogcar-main {
+    max-width: 336px;
+  }
+}
 </style>
