@@ -3,15 +3,15 @@
     <Loader v-if="showLoader" />
     <div class="catalog__main">
       <div class="catalog__logo">
-        <img class="catalog__logo_big" src="../assets/images/kia-logo.png">
-        <img class="catalog__logo_small" src="../assets/images/kia-logo-small.png">
+        <img class="catalog__logo_big" src="@/assets/images/kia-logo.png">
+        <img class="catalog__logo_small" src="@/assets/images/kia-logo-small.png">
         <div class="catalog__logo_timer">
           <div class="catalog__logo_timer-title">До конца акции осталось:</div>
           <CatalogTimer :deadline="actionEnd" />
         </div>
       </div>
-      <div class="catalog__image_big"><img src="../assets/images/kia-car.png"></div>
-      <div class="catalog__image_small"><img src="../assets/images/kia-car-small.png"></div>
+      <div class="catalog__image_big"><img src="@/assets/images/kia-car.png"></div>
+      <div class="catalog__image_small"><img src="@/assets/images/kia-car-small.png"></div>
       <CatalogPersonForm
         class="catalog__person-form" 
         :style="{'margin': '32px 111px 32px 0'}"
@@ -45,7 +45,7 @@
     />
     <div class="catalog__bottom">
       <div class="catalog__bottom_logo">
-        <img class="catalog__bottom_logo-img" src="../assets/images/mits-logo.png">
+        <img class="catalog__bottom_logo-img" src="@/assets/images/mits-logo.png">
         <div class="catalog__bottom_logo-header">
           <div class="catalog__bottom_logo-header--title">УЛУЧШИМ ЛЮБЫЕ УСЛОВИЯ КОНКУРЕНТОВ!</div>
           <div class="catalog__bottom_logo-header--descr">Оставьте заявку и получите самое выгодное предложение на рынке!</div>
@@ -57,13 +57,13 @@
         </div>
       </div>
       <div class="catalog__bottom_image">
-        <img class="catalog__bottom_image-big" src="../assets/images/mits-car.png">
-        <img class="catalog__bottom_image-small" src="../assets/images/mits-car-small.png"></div>
+        <img class="catalog__bottom_image-big" src="@/assets/images/mits-car.png">
+        <img class="catalog__bottom_image-small" src="@/assets/images/mits-car-small.png"></div>
       <BestOfferForm
         class="catalog__bottom_form" 
         :style="{'margin': '31px 0 33px 130px'}"
       />
-      <img class="catalog__bottom_logo-img--small" src="../assets/images/mits-logo.png">
+      <img class="catalog__bottom_logo-img--small" src="@/assets/images/mits-logo.png">
     </div>
     <div class="catalog__gift">
       <div class="catalog__gift_title">ВРЕМЯ ВЫБИРАТЬ <span>ПОДАРКИ!</span></div>

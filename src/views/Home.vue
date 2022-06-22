@@ -533,7 +533,7 @@ export default {
       margin-top: 29px;
       background: white;
       background: url('../assets/images/benefit-back.png') no-repeat;
-      background-size: contain;
+      background-size: cover;
       &_wrapper {
         margin: 0 36px 38px 36px;
       }

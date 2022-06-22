@@ -1087,6 +1087,7 @@ export default {
           // padding-bottom: 50px;
           flex-wrap: wrap;
           background: url('../assets/images/brand-small-main-back.png') no-repeat;
+          background-size: cover;
           &--wrapp {
             margin: 15px;
             flex-direction: row;
@@ -1286,7 +1287,7 @@ export default {
       margin: 10px 0 6px 0;
       max-width: 600px;
       background: url('../assets/images/brand-small-tradein.png') no-repeat;
-      background-size: contain;
+      background-size: cover;
       justify-content: center;
       &_form {
         margin-top: 70px;
