@@ -427,7 +427,6 @@ export default {
     justify-content: space-around;
     width: 100%;
     max-width: 2065px;
-    // height: 680px;
     background: #D9D9D9;
   }
 }
@@ -436,7 +435,8 @@ export default {
     max-width: 600px;
     &__main {
       height: 360px;
-      background: url('../assets/images/catalog-main-small.png');
+      background: url('../assets/images/catalog-main-small.png') no-repeat;
+      background-size: cover;
       flex-wrap: wrap;
     }
     &__logo {
@@ -551,7 +551,8 @@ export default {
       margin-top: 36px;
       max-width: 600px;
       height: 360px;
-      background: url('../assets/images/catalog-bottom-small.png');
+      background: url('../assets/images/catalog-bottom-small.png') no-repeat;
+      background-size: cover;
       &_logo {
         &-img {
           display: none;
@@ -622,6 +623,7 @@ export default {
           display: flex;
           margin: 120px 0 0 -200px;
           width: 310px;
+          background-image: no-repeat;
         }
       }
       &_form {
@@ -631,8 +633,8 @@ export default {
     &__gift {
       margin-top: 19px;
       max-width: 600px;
-      background: url('../assets/images/catalog-gift-small.png');
-      background-size: contain;
+      background: url('../assets/images/catalog-gift-small.png') no-repeat;
+      background-size: cover;
       justify-content: flex-start;
       &_title {
         max-width: 173px;
