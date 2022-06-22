@@ -260,8 +260,13 @@
       <div class="brandpage__divider_text">ФОТО HYUNDAI CRETA</div>
       <div class="brandpage__divider_line"></div>
     </div>
-    <div class="brandpage__image"></div>
-    <MarketBlock :style="{'margin': '85px 0 0 0'}" />
+    <div class="brandpage__image">
+      <div class="brandpage__image_content"></div>
+    </div>
+    <MarketBlock 
+    class="brandpage__market-block"
+      :style="{'margin': '85px 0 0 0'}" 
+    />
     <div class="brandpage__divider">
       <div class="brandpage__divider_line"></div>
       <div class="brandpage__divider_text">МАШИНЫ В ЭТУ СТОИМОСТЬ</div>
@@ -1050,10 +1055,16 @@ export default {
     }
   }
   &__image {
+    display: flex;
     width: 100%;
     max-width: 2065px;
-    height: 853px;
-    background: url('../assets/images/brand-footer-banner.png') no-repeat;
+    &_content {
+      width: 100%;
+      max-width: 2065px;
+      height: 853px;
+      // display: flex;
+      background: url('../assets/images/brand-footer-banner.png') no-repeat;
+    }
   }
   &__similar {
     width: 100%;
@@ -1334,8 +1345,54 @@ export default {
           line-height: 19px;
           align-self: flex-start;
         }
-
       }
+    }
+    &__technical {
+      margin: 15px 0 0 0;
+      &_head, &_bottom { 
+        flex-wrap: wrap;
+        &-size, &-eng, &-chas, &-petr {
+          width: 100%;
+          margin: 17px 25px;
+          font-size: 29.2226px;
+          line-height: 35px;
+          &--item {
+            margin-top: 22px;
+          }
+          &--icon {
+            width: 15px;
+            height: 15px;
+
+          }
+          &--text {
+            margin-left: 16px;
+            font-size: 14.0486px;
+            line-height: 17px;
+          }
+        }
+      }
+    }
+    &__image {
+      width: 704px;
+      height: 291px;
+      background-size: cover;
+      overflow-x: scroll;
+      margin: 0 0 0 280px;
+      &_content {
+        width: 704px;
+        height: 291px;
+        background-size: contain;
+        overflow: hidden;
+      }
+    }
+    &__market-block {
+      display: none;
+    }
+    &__similar {
+      margin-top: 22px;
+      max-width: 600px;
+      justify-content: center;
+      flex-wrap: wrap;
     }
   }
 
