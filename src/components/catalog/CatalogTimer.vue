@@ -131,5 +131,33 @@ export default {
     }
   }
 }
-
+@media (max-width: 605px) {
+  .catalog-count {
+    width: 218px;
+    height: 38px;
+    &__item {
+      padding: 0 6px 0 0;
+      width: 50px;
+      &_number {
+        &-num {
+          width: 20px;
+          height: 26px;
+          margin-right: 3px;
+          font-size: 15.3868px;
+          line-height: 19px;
+          border-radius: 4.12185px;
+        }
+        &-div {
+          margin-left: 3px;
+          width: 1px;
+          height: 26px;
+        }
+      }
+      &_descr {
+        font-size: 6.38142px;
+        line-height: 8px;
+    }
+    }
+  }
+}
 </style>

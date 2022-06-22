@@ -287,7 +287,7 @@ export default {
         background-color: #fff;
         position: absolute;
         left: 6px;
-        top: 39px;
+        top: 42px;
         &-link {
           display: flex;
           align-items: center;

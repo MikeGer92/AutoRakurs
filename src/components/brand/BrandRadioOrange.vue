@@ -94,5 +94,45 @@ export default {
     }
   }
 }
-
+@media (max-width: 605px) {
+  .radio-main-orange {
+    &__radio {
+      margin-top: 35px;
+      &_btn {
+        width: 25px;
+        height: 25px;
+        margin-left: 0px;
+        + span {
+          width: 22px;
+          height: 22px;
+          border-radius: 11px;
+          margin-left: 31px;
+        }
+        &:checked {
+          + span {
+            &::before {
+              width: 14px;
+              height: 14px;
+            }
+          }
+        }
+      }
+      & span {
+        width: 25px;
+        height: 25px;
+      }
+      &_text {
+        margin-left: 10px;
+        &-title {
+          font-size: 9.08692px;
+          line-height: 11px;
+        }
+        &-benef {
+          font-size: 18.9018px;
+          line-height: 23px;    
+        }
+      }
+    }
+  }
+}
 </style>
