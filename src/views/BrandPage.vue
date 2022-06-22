@@ -288,7 +288,7 @@ export default {
   components: { Loader, Timer, Complectation, CustomSelect, MarketBlock, CarCard, BrandRadioOrange, BrandRadioGray },
   data() {
     return {
-      actionFinish: '2022-09-20 23:59:59',
+      actionFinish: ['2022','09','20','23','59','59'],
       showLoader: false,
       activeColor: 'black',
       formName: '',
@@ -878,8 +878,6 @@ export default {
       & button {
         width: 612.71px;
         height: 71.42px;
-        left: 1180.95px;
-        top: 598.55px;
         background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
         box-shadow: 0px 9.68919px 9.68919px rgba(0, 0, 0, 0.25);
         border-radius: 89.625px;
@@ -956,7 +954,7 @@ export default {
         }
       }
       &-yourprice {
-        margin-top: 24px;
+        margin: 24px 0 0 0;
         display: flex;
         align-items: center;
         padding-left: 13px;
@@ -976,7 +974,7 @@ export default {
         display: flex;
         justify-content: space-between;
         &--name, &--phone {
-          margin-top: 34px;
+          margin: 34px 0 0 0;
           display: flex;
           align-items: center;
           padding-left: 13px;
@@ -1003,6 +1001,7 @@ export default {
         height: 35px;
         background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
         box-shadow: 0px 4.51841px 4.51841px rgba(0, 0, 0, 0.25);
+        border: none;
         border-radius: 41.7953px;
         font-family: 'Inter';
         font-style: normal;
@@ -1064,16 +1063,6 @@ export default {
   }
 }
 @media (max-width: 605px) {
-  .select-main {
-    &__field {
-
-    }
-    &__options {
-      &_option {
-
-      }
-    }
-  }
   .brandpage {
     margin: 0;
     &__main {
@@ -1239,6 +1228,114 @@ export default {
     &__complectations {
       margin: 17px 52px -10px 52px;
       max-width: 600px;
+    }
+    &__special {
+      margin: 0;
+      max-width: 600px;
+      flex-wrap: wrap;
+      &_left {
+        margin: 0;
+        width: 100%;
+      }
+      &_line {
+        display: none;
+      }
+      &_right {
+        margin: 0;
+        width: 100%;
+      }
+    }
+    &__benefit {
+      max-width: 600px;
+      margin: 35px 36px;
+      &_title {
+        margin-left: 31px;
+        font-size: 25.3906px;
+        line-height: 31px;
+      }
+      &_total {
+        margin: 0;
+        justify-content: flex-start;
+        flex-direction: column;
+        &-sum {
+          margin-right: 0;
+          font-size: 61.6503px;
+          line-height: 75px;
+        }
+        & button {
+          margin-top: 20px;
+          width: 372px;
+          height: 43px;
+          font-size: 15.1068px;
+          line-height: 18px;
+        }
+      }
+    }
+    &__tradein {
+      margin: 10px 0 6px 0;
+      max-width: 600px;
+      background: url('../assets/images/brand-small-tradein.png') no-repeat;
+      background-size: contain;
+      justify-content: center;
+      &_form {
+        margin-top: 70px;
+        margin-right: 0;
+        width: 95%;
+        align-self: center;
+        &-wrapper {
+          margin: 26px 0 23px 26px;
+        }
+        &-model {
+          width: 284px;
+          height: 40px;
+          font-size: 13.5986px;
+          line-height: 16px;
+          border-radius: 66.3643px;
+        }
+        &-params {
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          max-width: 100%;
+          &--way, &--type, &--year {
+            width: 170px;
+            height: 36px;
+            border-radius: 66.3643px;
+            margin: 0 26px 17px 0;
+            font-size: 13.5986px;
+            line-height: 16px;
+          }
+        }
+        &-yourprice {
+          margin: 10px 0 24px 0;
+          width: 284px;
+          height: 40px;
+          border-radius: 66.3643px;
+          font-size: 13.5986px;
+          line-height: 16px;
+        }
+        &-person {
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          &--name, &--phone {
+            margin: 0 0 17px 0;
+            width: 263px;
+            height: 36px;
+            border-radius: 66.3643px;
+            font-size: 13.5986px;
+            line-height: 16px;
+          }
+        }
+        & button {
+          margin-top: 0;
+          width: 309px;
+          height: 43px;
+          border-radius: 51.4824px;
+          font-size: 16.0111px;
+          line-height: 19px;
+          align-self: flex-start;
+        }
+
+      }
     }
   }
 
