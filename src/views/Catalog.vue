@@ -47,9 +47,9 @@
       <div class="catalog__bottom_logo">
         <img class="catalog__bottom_logo-img" src="../assets/images/mits-logo.png">
         <div class="catalog__bottom_logo-header">
-          <div class="catalog__bottom_logo-header--title"></div>
-          <div class="catalog__bottom_logo-header--descr"></div>
-          <button type="button"></button>
+          <div class="catalog__bottom_logo-header--title">УЛУЧШИМ ЛЮБЫЕ УСЛОВИЯ КОНКУРЕНТОВ!</div>
+          <div class="catalog__bottom_logo-header--descr">Оставьте заявку и получите самое выгодное предложение на рынке!</div>
+          <button type="button">Получить предложение</button>
         </div>
         <div class="catalog__bottom_logo-timer">
           <div class="catalog__bottom_logo-timer--title">До конца акции осталось:</div>
@@ -63,9 +63,10 @@
         class="catalog__bottom_form" 
         :style="{'margin': '31px 0 33px 130px'}"
       />
+      <img class="catalog__bottom_logo-img--small" src="../assets/images/mits-logo.png">
     </div>
     <div class="catalog__gift">
-      <div class="catalog__gift_title">ВРЕМЯ ВЫБИРАТЬ ПОДАРКИ!</div>
+      <div class="catalog__gift_title">ВРЕМЯ ВЫБИРАТЬ <span>ПОДАРКИ!</span></div>
     </div>
     <div class="catalog__offers">
       <BenefitCard v-for="gift in giftsList" :key="gift.title" :benefitCard="gift"/>
@@ -206,18 +207,21 @@ export default {
           title: 'КАСКО',
           descr: 'При покупке автомобиля в кредит',
           image: require('../assets/images/kasko.png'),
+          image_small: require('../assets/images/kasko-small.png'),
           button: 'Получить подарок'
         },
         {
           title: 'ТРИ ТО',
           descr: 'При покупке автомобиля в кредит',
           image: require('../assets/images/three-to.png'),
+          image_small: require('../assets/images/three-to-small.png'),
           button: 'Получить подарок'
         },
         {
           title: 'ТРИ ПЛАТЕЖА ПО КРЕДИТУ',
           descr: 'При покупке автомобиля в кредит',
           image: require('../assets/images/three-payments.png'),
+          image_small: require('../assets/images/three-payments-small.png'),
           button: 'Получить подарок'
         },
       ],
@@ -360,6 +364,9 @@ export default {
       &-img {
         width: 622px;
         margin-left: 30px;
+        &--small {
+          display: none;
+        }
       }
       &-timer {
         display: flex;
@@ -414,12 +421,13 @@ export default {
     }
   }
   &__offers {
+    padding: 125px 0;
     display: flex;
     align-items: center;
     justify-content: space-around;
     width: 100%;
     max-width: 2065px;
-    height: 680px;
+    // height: 680px;
     background: #D9D9D9;
   }
 }
@@ -540,19 +548,63 @@ export default {
       display: none;
     }
     &__bottom {
+      margin-top: 36px;
       max-width: 600px;
       height: 360px;
       background: url('../assets/images/catalog-bottom-small.png');
       &_logo {
         &-img {
           display: none;
+          &--small {
+            display: flex;
+            width: 130px;
+            height: 52px;
+            margin: 315px 0 0 -90px;
+          }
+
         }
         &-header {
           display: flex;
           flex-direction: column;
+          margin: 7px 0 0 17px;
+          &--title {
+            display: flex;
+            width: 243px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 900;
+            font-size: 17.9852px;
+            line-height: 22px;
+            color: #12609E;
+          }
+          &--descr {
+            margin-top: 5px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 11.5638px;
+            line-height: 14px;
+            color: #FFA724;
+          }
+          & button {
+            margin-top: 8px;
+            width: 200px;
+            height: 31px;
+            border: none;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 11.2884px;
+            line-height: 106.52%;
+            color: #FFFFFF;
+            border: none;
+            background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
+            box-shadow: 0px 2.81769px 2.81769px rgba(0, 0, 0, 0.25);
+            border-radius: 26.0636px;
+          }
         }
         &-timer {
-          margin: 280px 0 14px 22px;
+          margin: 162px 0 14px 22px;
           &--title {
             margin: 0 0 13px 0;
             font-size: 8.40337px;
@@ -561,19 +613,46 @@ export default {
         }
       }
       &_image {
-        width: 373px;
+        width: 310px;
         height: 229px;
         &-big {
           display: none;
         }
         &-small {
           display: flex;
-          margin: 115px 0 0 -190px;
+          margin: 120px 0 0 -200px;
+          width: 310px;
         }
       }
       &_form {
         display: none;
       }
+    }
+    &__gift {
+      margin-top: 19px;
+      max-width: 600px;
+      background: url('../assets/images/catalog-gift-small.png');
+      background-size: contain;
+      justify-content: flex-start;
+      &_title {
+        max-width: 173px;
+        font-size: 18px;
+        line-height: 17px;
+        flex-wrap: wrap;
+        margin: 35px 0 35px 28px;
+        & span {
+          font-size: 32px;
+          line-height: 30px;
+        }
+      }
+    }
+    &__offers {
+      max-width: 600px;
+      padding: 0 0 36px 0;
+      justify-content: center;
+      flex-wrap: wrap;
+      background: url('../assets/images/catalog-offers-small.png') no-repeat;
+      background-size: cover;
     }
   }
 
