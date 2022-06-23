@@ -12,17 +12,16 @@
           :slides-to-show="4"
           :dots="false"
           class="carousel"
-          :style="{ 'width': '1500px', 'align-items': 'center'}"
+          :style="[scale ? { 'width': '1400px', 'align-items': 'center'}: { 'width': '300px', 'align-items': 'center'}]"
         >
           <div class="slider__item"
             v-for="item in giftsList" :key="item"
-            :class="{'slider_item-active': currentPage===item.id }"
+            :class="{'slider__item-active': currentPage===item.id }"
           >
             <div v-if="currentPage===item.id" @click="getGiftName(item.name)">
               <img :src="item.active_img">
               <div 
                 class="slider__item-active--text"
-                :style="{'display': 'flex', 'justify-content': 'center','font-family': 'Inter','font-style': 'normal', 'font-weight': 700,'font-size': '40px', 'line-height': '50px', 'color': '#000000', 'margin-bottom': '20px'}"
               >
                 {{ item.name }}
               </div>
@@ -44,6 +43,7 @@ export default {
   data() {
     return {
       choosedGift: '',
+      screenWidth: true,
       active: true,
       activeImage: 'paySystems',
       sliderPageIndex: 0,
@@ -62,10 +62,15 @@ export default {
   },
   computed: {
   currentPage() {
-      return this.sliderPageIndex 
-    }
-  // },
+    return this.sliderPageIndex 
+  },
+  scale() {
+    return window.innerWidth > 600
+  }
 },
+  created() {
+    window.addEventListener('resize', this.updateWidth);
+  },
   methods: {
     showNext() {
       this.$refs.carousel.next()
@@ -81,7 +86,12 @@ export default {
     getGiftName(name) {
       this.choosedGift = name
       alert(`ПОЗДРАВЛЯЕМ ВЫ ВЫБРАЛИ ПОДАРОК - ${name}!!!`)
-    }
+    },
+    updateWidth() {
+      if (window.innerWidth < 600) {
+        this.screenWidth = false
+      }
+    },
   }
 }
 </script>
@@ -110,30 +120,41 @@ export default {
   max-width: 300px;
   height: 300px;
   & img {
-      width: 300px;
-      height: auto;
-    }
+    width: 300px;
+    height: auto;
   }
-.slider_item-active {
-    margin: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    width: 360px;
-    height: 380px;
-    background: #FFFFFF;
-    box-shadow: 0px 5.92582px 16.296px rgba(0, 0, 0, 0.25);
-    border-radius: 66.6654px;
-    cursor: pointer;
-    & img {
+}
+.slider__item-active {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 360px;
+  height: 380px;
+  background: #FFFFFF;
+  box-shadow: 0px 5.92582px 16.296px rgba(0, 0, 0, 0.25);
+  border-radius: 66.6654px;
+  cursor: pointer;
+  & img {
     width: 320px;
     height: auto;
     -webkit-transform:scale(1.35); /* Safari and Chrome */
     -moz-transform:scale(1.35); /* Firefox */
     -ms-transform:scale(1.35); /* IE 9 */
     -o-transform:scale(1.35); /* Opera */
-     transform:scale(1.35);
+    transform:scale(1.35);
+  }
+  &--text {
+    display: flex;
+    justify-content: center;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 40px;
+    line-height: 50px;
+    color: #000000;
+    margin-bottom: 20px;
   }
 }
 .slider-wrapper {
@@ -149,10 +170,10 @@ export default {
 .slick-slide {
   display: flex;
 }
-.carousel {
-  margin: auto 0;
-  width: 1400px;
-}
+// .carousel {
+//   margin: auto 0;
+//   width: 1400px;
+// }
 .slick-slider[data-v-3d1a4f76] {
   position: relative;
   display: flex;
@@ -197,5 +218,55 @@ export default {
   background: url('../assets/images/prev-btn.png');
   background-size: contain;
   cursor: pointer;
+}
+@media ( max-width: 600px) {
+  .carousel-main {
+    margin-top: 26px;
+    &__title {
+      margin-left: 10px;
+      font-size: 12.3203px;
+      line-height: 15px;
+    }
+  }
+  .slider-wrapper {
+    margin: 15px 0 0 10px;
+    height: 105px;
+  }
+  .slider__item {
+    max-width: 46px;
+    height: 46px;
+    border-radius: 13.5155px;
+    & img {
+      width: 46px;
+      height: auto;
+    }
+  }
+  .slider__item-active {
+    margin: 5px 0;
+    width: 75px;
+    height: 85px;
+    background: #FFFFFF;
+    box-shadow: 0px 1.20138px 3.30379px rgba(0, 0, 0, 0.25);
+    border-radius: 13.5155px;
+    & img {
+      width: 65px;
+      height: auto;
+    }
+    &--text {
+      font-size: 9.32089px;
+      line-height: 11px;
+    }
+  }
+  .carousel {
+    width: 326px;
+  }
+  .next-btn {
+    width: 32px;
+    height: 32px;
+  }
+  .prev-btn {
+    width: 32px;
+    height: 32px;
+  }
 }
 </style>

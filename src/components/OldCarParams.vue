@@ -2,10 +2,11 @@
   <div class="oldcar-params">
     <div class="oldcar-params__left">
       <div class="oldcar-params__left_num">{{ blockNum }}</div>
-      <div class="oldcar-params__left_border"></div>
+      <div class="oldcar-params__left_border-y"></div>
     </div>
     <div class="oldcar-params__right">
       <div class="oldcar-params__right_title">СТАРЫЙ АВТОМОБИЛЬ</div>
+      <div class="oldcar-params__left_border-x"></div>
       <div class="oldcar-params__right_main">
         <div class="oldcar-params__right_main-left">
           <CustomSelect 
@@ -13,16 +14,13 @@
             @select="oldSelect" 
             :selected="selectedOld" 
             :defSelected="defSelectOld"
-            :style="{'margin-bottom': '70px',  'width': '638px', 'height': '75px'}" 
-
             :disable="false"
           />
           <CustomSelect 
             :options="yearsList" 
             @select="yearSelect" 
             :selected="selectedYear" 
-            :defSelected="defSelectYear" 
-            :style="{'margin-bottom': '70px',  'width': '638px', 'height': '75px'}" 
+            :defSelected="defSelectYear"  
             :disable="disableYears"
           />
         </div>
@@ -32,8 +30,6 @@
             @select="waySelect" 
             :selected="selectedWay" 
             :defSelected="defSelectWay"
-            :style="{'margin-bottom': '70px',  'width': '638px', 'height': '75px'}" 
-
             :disable="false"
           />
           <CustomSelect 
@@ -41,7 +37,6 @@
             @select="transSelect" 
             :selected="selectedTrans" 
             :defSelected="defSelectTrans" 
-            :style="{'margin-bottom': '70px',  'width': '638px', 'height': '75px'}" 
             :disable="disableTrans"
           />
         </div>
@@ -145,10 +140,17 @@ export default {
       box-shadow: 0px 3.14081px 21.2005px rgba(0, 0, 0, 0.25);
       border-radius: 52px;
     }
-    &_border {
+    &_border-y {
       width: 3px;
       height: 408px;
       background: linear-gradient(to top,  #FFF 0%, #FFA724  80%);
+    }
+    &_border-x {
+      display: none;
+      width: 408px;
+      height: 2px;
+      background: linear-gradient(to left,  #FFF 0%, #FFA724  80%);
+      margin-left: -12px;
     }
   }
   &__right {
@@ -191,5 +193,47 @@ export default {
     }
   }
 }
+@media ( max-width: 600px) {
+  .oldcar-params {
+    &__left {
+      margin: 8px 0 0 17px;
+      &_num {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        font-size: 29.5654px;
+        line-height: 36px;
+      }
+      &_border-y {
+        display: none;
+      }
+      &_border-x {
+        display: flex;
+        width: 290px;
+        margin: 4px 0 0 -2px;
+      }
+    }
+    &__right {
+      margin-top: 18px;
+      &_title {
+        margin-left: 6px;
+        font-size: 11.9048px;
+        line-height: 14px;
+      }
+      &_main {
+        margin: 25px 0 0 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        &-left {
+          width: 100%;
+        }
+        &-right {
+          margin-left: 0;
+          width: 100%;
+        }
+      }
+    }
+  } 
 
+}
 </style>

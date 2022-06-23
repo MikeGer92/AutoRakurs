@@ -2,10 +2,11 @@
   <div class="choise">
     <div class="choise__left">
       <div class="choise__left_num">{{ blockNum }}</div>
-      <div class="choise__left_border"></div>
+      <div class="choise__left_border-y"></div>
     </div>
     <div class="choise__right">
       <div class="choise__right_title">ВЫБЕРИТЕ СВОЙ АВТОМОБИЛЬ</div>
+      <div class="oldcar-params__left_border-x"></div>
       <div class="choise__right_main">
         <div class="choise__right_main-left">
           <CustomSelect 
@@ -13,7 +14,6 @@
             @select="carSelect" 
             :selected="selectedCar" 
             :defSelected="defSelectCar" 
-            :style="`margin-bottom: 76px`"
             :disable="false"
           />
           <CustomSelect 
@@ -21,7 +21,6 @@
             @select="modelSelect" 
             :selected="selectedModel"
             :defSelected="defSelectModel" 
-            :style="`margin-bottom: 76px`"
             :disable="disableModel"
           />
           <CustomSelect 
@@ -35,9 +34,24 @@
         <div class="choise__right_main-right">
           <div class="choise__right_main-right--image"><img src="@/assets/images/credit-car.png"></div>
           <div class="choise__right_main-right--compl">
-            <div class="choise__right_main-right--compl_drive"><img src="@/assets/images/credit-drive.png"></div>
-            <div class="choise__right_main-right--compl_power"><img src="@/assets/images/credit-power.png"></div>
-            <div class="choise__right_main-right--compl_eng"><img src="@/assets/images/credit-eng.png"></div>
+            <div class="choise__right_main-right--compl_drive">
+              <div class="choise__right_main-right--compl_drive-icon">
+                <img src="@/assets/images/credit-drive.png">
+              </div>
+              <div class="choise__right_main-right--compl_drive-descr">ПРИВОД</div>
+            </div>
+            <div class="choise__right_main-right--compl_power">
+              <div class="choise__right_main-right--compl_power-icon">
+                <img src="@/assets/images/credit-power.png">
+              </div>
+              <div class="choise__right_main-right--compl_power-descr">МОЩНОСТЬ Л.С.</div>
+            </div>
+            <div class="choise__right_main-right--compl_eng">
+              <div class="choise__right_main-right--compl_eng-icon">
+                <img src="@/assets/images/credit-eng.png">
+              </div>
+              <div class="choise__right_main-right--compl_eng-descr">ТРАНСМИССИЯ</div>
+            </div>
           </div>
         </div>
       </div>
@@ -134,10 +148,17 @@ export default {
       box-shadow: 0px 3.14081px 21.2005px rgba(0, 0, 0, 0.25);
       border-radius: 52px;
     }
-    &_border {
+    &_border-y {
       width: 3px;
       height: 408px;
       background: linear-gradient(to top,  #FFF 0%, #FFA724  80%);
+    }
+    &_border-x {
+      display: none;
+      width: 408px;
+      height: 2px;
+      background: linear-gradient(to left,  #FFF 0%, #FFA724  80%);
+      margin-left: -12px;
     }
   }
   &__right {
@@ -178,13 +199,97 @@ export default {
           display: flex;
           justify-content: space-around;
           &_drive, &_power, &_eng {
-            width: 94px;
-            height: 94px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            &-icon {
+              width: 94px;
+              height: 94px;
+              & img {
+                width: 100%;
+                height: auto;
+              }
+            }
+            &-descr {
+              margin: 23px 0 0 0;
+              font-family: 'Inter';
+              font-style: normal;
+              font-weight: 400;
+              font-size: 20.7454px;
+              line-height: 25px;
+              text-align: center;
+              color: #000000;
+            }
           }
         }
       }
     }
   }
 }
+@media ( max-width: 600px) {
+  .choise {
+    &__left {
+      margin: 8px 0 0 17px;
+      &_num {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        font-size: 29.5654px;
+        line-height: 36px;
+      }
+      &_border-y {
+        display: none;
+      }
+      &_border-x {
+        display: flex;
+        width: 290px;
+        margin: 4px 0 0 -2px;
+      }
+    }
+    &__right {
+      margin-top: 18px;
+      &_title {
+        margin-left: 6px;
+        font-size: 11.9048px;
+        line-height: 14px;
+      }
+      &_main {
+        flex-wrap: wrap;
+        justify-content: center;
+        &-left {
+          width: 100%;
+          margin: 25px 0 0 10px;
+        }
+        &-right {
+          margin-left: 0;
+          width: 100%;
+          &--image {
+            width: 373px;
+            height: 211px;
+            margin: 60px 0 0 -60px;
+          }
+          &--compl {
+            margin-left: -60px;
+            &_drive, &_power, &_eng {
+              &-icon {
+                width: 51px;
+                height: 51px;
+                & img {
+                  width: 100%;
+                  height: auto;
+                }
+              }
+              &-descr {
+                margin: 17px 0 34px 0;
+                font-size: 11.4929px;
+                line-height: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+  } 
 
+}
 </style>

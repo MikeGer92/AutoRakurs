@@ -74,6 +74,7 @@ export default {
   display: flex;
   width: 544px;
   height: 77px;
+  margin-bottom: 79px;
   flex-direction: column;
   &__field {
     width: 100%;
@@ -126,5 +127,30 @@ export default {
     }
   }
 }
-
+@media ( max-width: 600px) { 
+  .select-main {
+    width: 238px;
+    height: 34px;
+    margin-bottom: 34px;
+    &__field {
+      border-radius: 55.6151px;
+      &_text {
+        font-size: 14.7224px;
+        line-height: 18px;
+      }
+      &_icon {
+        width: 25px;
+        height: 13px;
+        margin-right: 11px;
+      }
+    }
+    &__options {
+      top: 35px;
+      &_option {
+        font-size: 14.7224px;
+        line-height: 18px;
+      }
+    }
+  }
+}
 </style>

@@ -170,5 +170,47 @@ export default {
     }
   }
 }
+@media ( max-width: 600px) {
+  .person {
+    &__left {
+      margin: 8px 0 0 17px;
+      &_num {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        font-size: 29.5654px;
+        line-height: 36px;
+      }
+      &_border-y {
+        display: none;
+      }
+      &_border-x {
+        display: flex;
+        width: 290px;
+        margin: 4px 0 0 -2px;
+      }
+    }
+    &__right {
+      margin-top: 18px;
+      &_title {
+        margin-left: 6px;
+        font-size: 11.9048px;
+        line-height: 14px;
+      }
+      &_main {
+        margin: 25px 0 0 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        &-left {
+          width: 100%;
+        }
+        &-right {
+          margin-left: 0;
+          width: 100%;
+        }
+      }
+    }
+  } 
 
+}
 </style>
