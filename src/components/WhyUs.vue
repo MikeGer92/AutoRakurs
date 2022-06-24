@@ -29,7 +29,9 @@
         <div class="whyus__divider_text">ПОЧЕМУ ВЫБИРАЮТ ИМЕННО НАС</div>
         <div class="whyus__divider_line"></div>
     </div>
-    <MarketBlock />
+    <MarketBlock 
+      class="whyus__market"
+    />
 
   </div>
   
@@ -52,8 +54,7 @@ export default {
     display: block;
     flex-direction: column;
     text-align: center;
-    width: 1892px;
-    height: 94px;
+    max-width: 1892px;
     &_line {
       display: flex;
       width: 100%;
@@ -133,5 +134,43 @@ export default {
     }
   }
 }
-
+@media ( max-width: 600px) {
+  .whyus {
+    &__divider {
+      display: none;
+    }
+    &__subtitle {
+      margin-top: 8px;
+      font-size: 10.9677px;
+      line-height: 13px;
+    }
+    &__title {
+      font-size: 14.0044px;
+      line-height: 17px;
+    }
+    &__advants {
+      margin: 14px 31px 28px 42px;
+      &_clients, &_banks, &_time {
+        &-image {
+          width: 61px;
+          height: 61px;
+        }
+        &-title {
+          margin-top: 8px;
+          font-size: 9.02154px;
+          line-height: 11px;
+        }
+        &-descr {
+          margin: 6px 0 8px 0;
+          max-width: 102px;
+          font-size: 5.22609px;
+          line-height: 6px;
+        }
+      }
+    }
+    &__market {
+      display: none;
+    }
+  }
+}
 </style>

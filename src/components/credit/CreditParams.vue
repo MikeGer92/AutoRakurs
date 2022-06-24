@@ -2,10 +2,11 @@
   <div class="credit-params">
     <div class="credit-params__left">
       <div class="credit-params__left_num">{{ blockNum }}</div>
-      <div class="credit-params__left_border"></div>
+      <div class="credit-params__left_border-y"></div>
     </div>
     <div class="credit-params__right">
       <div class="credit-params__right_title">УСТАНОВИТЕ СВОИ КРЕДИТНЫЕ УСЛОВИЯ</div>
+      <div class="credit-params__left_border-x"></div>
       <div class="credit-params__right_main">
         <div class="credit-params__right_main-left">
           <div class="credit-params__right_main-left--title">СРОК КРЕДИТА</div>
@@ -149,10 +150,17 @@ export default {
       box-shadow: 0px 3.14081px 21.2005px rgba(0, 0, 0, 0.25);
       border-radius: 52px;
     }
-    &_border {
+    &_border-y {
       width: 3px;
       height: 408px;
       background: linear-gradient(to top,  #FFF 0%, #FFA724  80%);
+    }
+    &_border-x {
+      display: none;
+      width: 408px;
+      height: 2px;
+      background: linear-gradient(to left,  #FFF 0%, #FFA724  80%);
+      margin-left: -12px;
     }
   }
   &__right {
@@ -245,7 +253,7 @@ export default {
           }
         }
         &--scale {
-          margin-top: 44px;
+          margin: 44px 0 0 0;
           width: 740px;
           display: flex;
           justify-content: space-between;
@@ -265,5 +273,94 @@ export default {
     }
   }
 }
+@media ( max-width: 600px) {
+  .credit-params {
+    &__left {
+      margin: 8px 0 0 17px;
+      &_num {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        font-size: 29.5654px;
+        line-height: 36px;
+      }
+      &_border-y {
+        display: none;
+      }
+      &_border-x {
+        display: flex;
+        width: 290px;
+        margin: 4px 0 0 -2px;
+      }
+    }
+    &__right {
+      margin-top: 18px;
+      &_title {
+        margin-left: 6px;
+        font-size: 11.9048px;
+        line-height: 14px;
+      }
+      &_main {
+        margin: 25px 0 0 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        &-left, &-right {
+          width: 100%;
+          &--title {
+            font-size: 12.3203px;
+            line-height: 15px;
+          }
+          &--display {
+            width: 303px;
+            height: 28px;
+            margin: 6px 0 18px;
+            &_num, &_text {
+              font-size: 12.3203px;
+              line-height: 15px;
+              margin: 0 12px;
+            }
+            &_err {
+              display: flex;
+              font-size: 10px;
+              color: red;
+            }
+          }
+          &--time, &--payment {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            input[type='range'] {
+              width: 297px;
+              -webkit-appearance: none !important;
+              background:linear-gradient(to right, #12609E, #348AD2, #FFF);
+              height:4px;
+              &::-webkit-slider-thumb {
+                -webkit-appearance: none !important;
+                width: 9px;
+                height: 9px;
+                border-radius: 100%;
+                background: #12609E;
+                border: 3px solid #F0F0F0;
+                cursor: pointer;
+                &:active {
+                  width: 14px;
+                  height: 14px;
+                }
+              }
+            }
+          }
+          &--scale {
+            margin: 18px 0 34px 0;
+            width: 297px;
+            &_item {
+              font-size: 12.3203px;
+              line-height: 15px;
+            }
+          }
+        }
+      }
+    }
+  } 
 
+}
 </style>
