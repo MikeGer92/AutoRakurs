@@ -23,7 +23,8 @@
       <div class="credit__main">
         <div class="credit__divider">
           <div class="credit__divider_line"></div>
-          <div class="credit__divider_text">ОФОРМИТЕ ВЫГОДНЫЙ АВТОКРЕДИТ</div>
+          <div class="credit__divider_text-big">ОФОРМИТЕ ВЫГОДНЫЙ АВТОКРЕДИТ</div>
+          <div class="credit__divider_text-small">АВТОКРЕДИТ</div>
           <div class="credit__divider_line"></div>
         </div>
         <div class="credit__options">
@@ -127,16 +128,15 @@ export default {
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    width: 1892px;
-    height: 94px;
-    margin: 0 auto;
+    width: 100%;
+    max-width: 1892px;
     &_line {
       display: flex;
       width: 100%;
       height: 3px;
       background: linear-gradient(to right,  #FFF 0%, #10205E  20%, #FFF 100%);
     }
-    &_text {
+    &_text-big, &_text-small {
       font-family: 'Inter';
       font-style: normal;
       font-weight: 700;
@@ -144,11 +144,15 @@ export default {
       line-height: 54px;
       color: #10205E;
     }
+    &_text-small {
+      display: none;
+    }
   }
   &__options {
     display: flex;
+    width: 100%;
+    max-width: 2065px;
     flex-direction: column;
-    margin: 0 auto;
     &_choise {
       display: flex;
       &-left {
@@ -241,6 +245,62 @@ export default {
           }
         }
       }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .credit {
+    &__header {
+      height: 337px;
+      background: url('../assets/images/credit-main-small.png') no-repeat;
+      background-size: cover;
+      &_title {
+        margin-left: 20px;
+        font-size: 46.2161px;
+        line-height: 56px;
+      }
+      &_subtitle {
+        margin-left: 20px;
+        font-size: 20.3853px;
+        line-height: 25px;
+      }
+      &_options {
+        margin: 75px 0 0 20px;
+        &-bank, &-perc, &-gift {
+          margin-bottom: 27px;
+          &:last-child {
+          margin-bottom: 29px;
+        }
+          &--image {
+            width: 23px;
+            height: 23px;
+          }
+          &--text {
+            margin-left: 8px;
+            font-weight: 700;
+            font-size: 9.18676px;
+            line-height: 11px;
+          }
+        }
+      }
+    }
+    &__divider {
+      margin-top: 8px;
+      &_line {
+        height: 1px;
+      }
+      &_text-big {
+        display: none;
+      }
+      &_text-small {
+        display: flex;
+        font-size: 15px;
+        line-height: 18px;
+        justify-content: center;
+      }
+    }
+    &__options {
+      max-width: 390px;
     }
   }
 }

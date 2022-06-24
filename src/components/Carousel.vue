@@ -233,6 +233,7 @@ export default {
     height: 105px;
   }
   .slider__item {
+    margin: 20px;
     max-width: 46px;
     height: 46px;
     border-radius: 13.5155px;
@@ -242,9 +243,10 @@ export default {
     }
   }
   .slider__item-active {
+    display: flex;
     margin: 5px 0;
-    width: 75px;
-    height: 85px;
+    width: 80px;
+    height: 90px;
     background: #FFFFFF;
     box-shadow: 0px 1.20138px 3.30379px rgba(0, 0, 0, 0.25);
     border-radius: 13.5155px;
