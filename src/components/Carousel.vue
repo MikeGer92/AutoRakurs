@@ -170,23 +170,22 @@ export default {
 .slick-slide {
   display: flex;
 }
-// .carousel {
-//   margin: auto 0;
-//   width: 1400px;
-// }
 .slick-slider[data-v-3d1a4f76] {
   position: relative;
   display: flex;
   box-sizing: border-box;
+  padding: 0;
 }
 .slick-prev {
   display: none;
   border: none;
+  background: transparent;
   font-size: 0;
 }
 .slick-next {
   display: none;
   border: none;
+  background: transparent;
   font-size: 0;
 }
 .slick-dots {
@@ -220,8 +219,70 @@ export default {
   cursor: pointer;
 }
 @media ( max-width: 600px) {
+  div[data-v-3d1a4f76] {
+    padding: 0;
+  }
+  .slick-initialized .slick-slide[data-v-e4caeaf8] {
+    width: 300px;
+    justify-content: space-around;
+  }
+  .slick-list {
+    width: 300px;
+    padding: 0 0px;
+  }
+  .slick-list[data-v-3d1a4f76] {
+    padding: 0 0px;
+  }
+  .slick-slider[data-v-3d1a4f76] {
+    display: block;
+    padding: 0;
+  }
+  .slider__item {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    // margin: 0 20px;
+    // width: 70px;
+    height: 46px;
+    margin: 5px 0;
+    & img {
+      width: 46px;
+      height: 46px;
+      margin: 0 30px;
+    }
+  }
+  .slider__item-active {
+    width: 100px;
+    height: 84px;
+    background: #FFFFFF;
+    box-shadow: 0px 1.20138px 3.30379px rgba(0, 0, 0, 0.25);
+    border-radius: 13.5155px;
+    & img {
+      width: 60px;
+      height: auto;
+      margin: 0 10px;
+    }
+    &--text {
+      display: flex;
+      font-size: 9.32089px;
+      line-height: 11px;
+      margin: 10px 0;
+      text-align: center;
+    }
+  }
+.slick-prev {
+  display: none;
+  border: none;
+  font-size: 0;
+}
+.slick-next {
+  display: none;
+  border: none;
+  font-size: 0;
+}
   .carousel-main {
     margin-top: 26px;
+    width: 1200px;
     &__title {
       margin-left: 10px;
       font-size: 12.3203px;
@@ -229,35 +290,8 @@ export default {
     }
   }
   .slider-wrapper {
-    margin: 15px 0 0 10px;
+    margin: 15px 0 0 -40px;
     height: 105px;
-  }
-  .slider__item {
-    margin: 20px;
-    max-width: 46px;
-    height: 46px;
-    border-radius: 13.5155px;
-    & img {
-      width: 46px;
-      height: auto;
-    }
-  }
-  .slider__item-active {
-    display: flex;
-    margin: 5px 0;
-    width: 80px;
-    height: 90px;
-    background: #FFFFFF;
-    box-shadow: 0px 1.20138px 3.30379px rgba(0, 0, 0, 0.25);
-    border-radius: 13.5155px;
-    & img {
-      width: 65px;
-      height: auto;
-    }
-    &--text {
-      font-size: 9.32089px;
-      line-height: 11px;
-    }
   }
   .carousel {
     width: 326px;
