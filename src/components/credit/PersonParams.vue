@@ -2,10 +2,11 @@
     <div class="person">
     <div class="person__left">
       <div class="person__left_num">{{ blockNum }}</div>
-      <div class="person__left_border"></div>
+      <div class="person__left_border-y"></div>
     </div>
     <div class="person__right">
       <div class="person__right_title">ЗАПОЛНИТЕ ПЕРСОНАЛЬНЫЕ ДАННЫЕ</div>
+      <div class="credit-params__left_border-x"></div>
       <div class="person__right_main">
         <div class="person__right_main-left">
 
@@ -74,10 +75,17 @@ export default {
       box-shadow: 0px 3.14081px 21.2005px rgba(0, 0, 0, 0.25);
       border-radius: 52px;
     }
-    &_border {
+    &_border-y {
       width: 3px;
       height: 408px;
       background: linear-gradient(to top,  #FFF 0%, #FFA724  80%);
+    }
+    &_border-x {
+      display: none;
+      width: 408px;
+      height: 2px;
+      background: linear-gradient(to left,  #FFF 0%, #FFA724  80%);
+      margin-left: -12px;
     }
   }
   &__right {
@@ -197,11 +205,12 @@ export default {
         line-height: 14px;
       }
       &_main {
-        margin: 25px 0 0 10px;
+        margin: 25px 0 0 -10px;
         flex-wrap: wrap;
         justify-content: center;
         &-left {
           width: 100%;
+          margin-right: 0;
         }
         &-right {
           margin-left: 0;
@@ -210,6 +219,7 @@ export default {
       }
     }
     &__howget {
+      margin-top: 15px;
       width: 290px;
       &_info, &_req {
         font-size: 12.8012px;
