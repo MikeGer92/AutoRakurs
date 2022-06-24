@@ -108,7 +108,6 @@ export default {
   }
   &__howget {
     width: 740px;
-    height: 814px;
     display: flex;
     flex-direction: column;
     &_info, &_req {
@@ -208,6 +207,37 @@ export default {
           margin-left: 0;
           width: 100%;
         }
+      }
+    }
+    &__howget {
+      width: 290px;
+      &_info, &_req {
+        font-size: 12.8012px;
+        line-height: 192.02%;
+        color: #000000;
+      }
+      &_docs {
+        font-size: 12.8012px;
+        line-height: 192.02%;
+        color: #12609E;
+      }
+      & ol {
+        padding-inline-start: 0;
+        & li {
+          font-size: 12.8012px;
+          line-height: 154.02%;
+          margin-bottom: 0;
+          margin-left: 0;
+          & ul {
+            padding-inline-start: 20px;
+          }
+        }
+      }
+      &_divider {
+        margin-top: 0px;
+        margin-bottom: 20px;
+        width: 230px;
+        height: 1px;
       }
     }
   } 

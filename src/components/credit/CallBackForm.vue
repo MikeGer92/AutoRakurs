@@ -141,5 +141,40 @@ export default {
 
     }
   }
-
+@media (max-width: 605px) {
+  .person-form {
+    width: 332px;
+    height: 360px;
+    box-shadow: 0px 2px 6.05612px rgba(0, 0, 0, 0.25);
+    border-radius: 21.4717px;
+    &__title {
+      margin: 26px 0 26px 28px;
+      font-size: 22.0223px;
+      line-height: 27px;
+    }
+    &__name, &__phone {
+      width: 285px;
+      height: 40px;
+      margin: 0 22px 10px 22px;
+      font-size: 16.0857px;
+      line-height: 19px;
+      padding: 0 0 0 13px;
+    }
+    &__btn {
+      margin: 26px 0 26px 22px;
+      width: 285px;
+      height: 44px;
+      font-size: 16.0857px;
+      line-height: 106.52%;
+      box-shadow: 0px 4.01515px 4.01515px rgba(0, 0, 0, 0.25);
+      border-radius: 37.1401px;
+    }
+    &__info {
+      margin: 0 37px 26px 25px;
+      font-size: 8.16217px;
+      line-height: 106.52%;
+      text-align: left;
+    }
+  }
+}
 </style>

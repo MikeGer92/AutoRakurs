@@ -39,7 +39,7 @@ export default {
         width: 44px;
         height: 44px;
         background: #F0F0F0;
-        border-radius: 22px;
+        border-radius: 50%;
         margin-left: 50px;
       }
       &:checked {
@@ -61,6 +61,7 @@ export default {
     }
     &_text {
       margin-left: 24px;
+      text-align: left;
       font-family: 'Inter';
       font-style: normal;
       font-weight: 300;
@@ -74,5 +75,43 @@ export default {
     }
   }
 }
-
+@media (max-width: 605px) { 
+  .radio-main {
+    &__radio {
+      margin-top: 15px;
+      width: 254px;
+      height: 25px;
+      &_btn {
+        width: 20px;
+        height: 20px;
+        margin-left: 22px;
+        +span {
+          width: 20px;
+          height: 20px;
+          margin-left: 22px;
+        }
+        &:checked {
+          +span {
+            &::before {
+              content: "";
+              width: 12px;
+              height: 12px;
+              background: #12609E;
+            }
+          }
+        }
+      }
+      & span {
+        width: 20px;
+        height: 20px;
+      }
+      &_text {
+        margin-left: 15px;
+        font-size: 8.16217px;
+        line-height: 106.52%;
+        
+      }
+    }
+  }
+}
 </style>
