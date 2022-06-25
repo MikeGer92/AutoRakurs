@@ -12,10 +12,10 @@
           :slides-to-show="4"
           :dots="false"
           class="carousel"
-          :style="[scale ? { 'width': '1400px', 'align-items': 'center'}: { 'width': '300px', 'align-items': 'center'}]"
+          :style="[scale ? { 'width': '1400px', 'align-items': 'center'}: { 'width': '300px', 'align-items': 'center', 'overflow': 'hidden','padding': '0 15px'}]"
         >
           <div class="slider__item"
-            v-for="item in giftsList" :key="item"
+            v-for="item in giftsList" :key="item.id"
             :class="{'slider__item-active': currentPage===item.id }"
           >
             <div v-if="currentPage===item.id" @click="getGiftName(item.name)">
@@ -227,28 +227,25 @@ export default {
     justify-content: space-around;
   }
   .slick-list {
-    width: 300px;
-    padding: 0 0px;
+    width: 285px;
+    padding: 0 5px;
   }
   .slick-list[data-v-3d1a4f76] {
-    padding: 0 0px;
+    padding: 0 5px;
   }
   .slick-slider[data-v-3d1a4f76] {
     display: block;
-    padding: 0;
+    padding: 0 5px;
   }
   .slider__item {
     display: flex;
     flex-direction:column;
     align-items: center;
-    // margin: 0 20px;
-    // width: 70px;
     height: 46px;
-    margin: 5px 0;
     & img {
       width: 46px;
       height: 46px;
-      margin: 0 30px;
+      padding: 0 5px;
     }
   }
   .slider__item-active {
@@ -260,7 +257,7 @@ export default {
     & img {
       width: 60px;
       height: auto;
-      margin: 0 10px;
+      margin: 0 5px;
     }
     &--text {
       display: flex;
