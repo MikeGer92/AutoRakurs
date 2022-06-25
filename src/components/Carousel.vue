@@ -12,10 +12,10 @@
           :slides-to-show="4"
           :dots="false"
           class="carousel"
-          :style="[scale ? { 'width': '1400px', 'align-items': 'center'}: { 'width': '300px', 'align-items': 'center'}]"
+          :style="[scale ? { 'width': '1400px', 'align-items': 'center'}: { 'width': '300px', 'align-items': 'center', 'overflow': 'hidden','padding': '0 15px'}]"
         >
           <div class="slider__item"
-            v-for="item in giftsList" :key="item"
+            v-for="item in giftsList" :key="item.id"
             :class="{'slider__item-active': currentPage===item.id }"
           >
             <div v-if="currentPage===item.id" @click="getGiftName(item.name)">
@@ -46,7 +46,7 @@ export default {
       screenWidth: true,
       active: true,
       activeImage: 'paySystems',
-      sliderPageIndex: 0,
+      sliderPageIndex: 7,
       gift: '',
       giftsList: [
         {id:0, name: 'КЕШБЭК', img: require('@/assets/images/card.png'), active_img: require('@/assets/images/card-active.png')},
@@ -62,7 +62,7 @@ export default {
   },
   computed: {
   currentPage() {
-    return this.sliderPageIndex 
+    return this.sliderPageIndex>=0 ? this.sliderPageIndex: 7
   },
   scale() {
     return window.innerWidth > 600
@@ -81,7 +81,7 @@ export default {
       console.log(this.currentPage)
     },
     afterPageChange(page) {
-      this.sliderPageIndex = page;
+      this.sliderPageIndex = page-1;
     }, 
     getGiftName(name) {
       this.choosedGift = name
@@ -129,7 +129,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  // justify-content: space-around;
   width: 360px;
   height: 380px;
   background: #FFFFFF;
@@ -137,8 +137,9 @@ export default {
   border-radius: 66.6654px;
   cursor: pointer;
   & img {
-    width: 320px;
+    width: 260px;
     height: auto;
+    margin: 0 20px;
     -webkit-transform:scale(1.35); /* Safari and Chrome */
     -moz-transform:scale(1.35); /* Firefox */
     -ms-transform:scale(1.35); /* IE 9 */
@@ -154,7 +155,7 @@ export default {
     font-size: 40px;
     line-height: 50px;
     color: #000000;
-    margin-bottom: 20px;
+    margin: 20px 0;
   }
 }
 .slider-wrapper {
@@ -170,23 +171,22 @@ export default {
 .slick-slide {
   display: flex;
 }
-// .carousel {
-//   margin: auto 0;
-//   width: 1400px;
-// }
 .slick-slider[data-v-3d1a4f76] {
   position: relative;
   display: flex;
   box-sizing: border-box;
+  padding: 0;
 }
 .slick-prev {
   display: none;
   border: none;
+  background: transparent;
   font-size: 0;
 }
 .slick-next {
   display: none;
   border: none;
+  background: transparent;
   font-size: 0;
 }
 .slick-dots {
@@ -220,8 +220,67 @@ export default {
   cursor: pointer;
 }
 @media ( max-width: 600px) {
+  div[data-v-3d1a4f76] {
+    padding: 0;
+  }
+  .slick-initialized .slick-slide[data-v-e4caeaf8] {
+    width: 300px;
+    justify-content: space-around;
+  }
+  .slick-list {
+    width: 285px;
+    padding: 0 5px;
+  }
+  .slick-list[data-v-3d1a4f76] {
+    padding: 0 5px;
+  }
+  .slick-slider[data-v-3d1a4f76] {
+    display: block;
+    padding: 0 5px;
+  }
+  .slider__item {
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    height: 46px;
+    & img {
+      width: 46px;
+      height: 46px;
+      padding: 0 5px;
+    }
+  }
+  .slider__item-active {
+    width: 100px;
+    height: 84px;
+    background: #FFFFFF;
+    box-shadow: 0px 1.20138px 3.30379px rgba(0, 0, 0, 0.25);
+    border-radius: 13.5155px;
+    & img {
+      width: 60px;
+      height: auto;
+      margin: 0 5px;
+    }
+    &--text {
+      display: flex;
+      font-size: 9.32089px;
+      line-height: 11px;
+      margin: 10px 0;
+      text-align: center;
+    }
+  }
+.slick-prev {
+  display: none;
+  border: none;
+  font-size: 0;
+}
+.slick-next {
+  display: none;
+  border: none;
+  font-size: 0;
+}
   .carousel-main {
     margin-top: 26px;
+    width: 1200px;
     &__title {
       margin-left: 10px;
       font-size: 12.3203px;
@@ -229,33 +288,8 @@ export default {
     }
   }
   .slider-wrapper {
-    margin: 15px 0 0 10px;
+    margin: 15px 0 0 -40px;
     height: 105px;
-  }
-  .slider__item {
-    max-width: 46px;
-    height: 46px;
-    border-radius: 13.5155px;
-    & img {
-      width: 46px;
-      height: auto;
-    }
-  }
-  .slider__item-active {
-    margin: 5px 0;
-    width: 75px;
-    height: 85px;
-    background: #FFFFFF;
-    box-shadow: 0px 1.20138px 3.30379px rgba(0, 0, 0, 0.25);
-    border-radius: 13.5155px;
-    & img {
-      width: 65px;
-      height: auto;
-    }
-    &--text {
-      font-size: 9.32089px;
-      line-height: 11px;
-    }
   }
   .carousel {
     width: 326px;

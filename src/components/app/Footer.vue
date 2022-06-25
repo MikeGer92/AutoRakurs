@@ -82,9 +82,19 @@ export default {
         {name: 'HYUNDAI', logo: '../assets/images/brands-logo/hundai.svg'}
       ]
     }
+  },
+  mounted() {
+    this.getShowBrands()
+  },
+  methods: {
+    getShowBrands() {
+      if (window.innerWidth < 600 ) {
+        this.showBrands = false
+      }
+    }
   }
-  
 }
+
 </script>
 
 <style lang="scss">
@@ -161,8 +171,6 @@ export default {
         font-size: 29.0757px;
         line-height: 35px;
         color: #FFFFFF;
-        &--wrapp {
-        }
         &--img {
           display: none;
         }
@@ -249,8 +257,6 @@ export default {
         order: 1;
         &-title {
           margin-top: 23px;
-          &--wrapp {
-          }
           &--img {
             display: inline-flex;
             margin-left: 9px;

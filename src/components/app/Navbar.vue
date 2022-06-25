@@ -324,7 +324,7 @@ export default {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      margin-left: 30px;
+      margin-left: 0px;
       &_contact {
         display: flex;
         align-items: center;
