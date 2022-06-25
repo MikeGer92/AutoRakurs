@@ -129,7 +129,7 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  // justify-content: space-around;
   width: 360px;
   height: 380px;
   background: #FFFFFF;
@@ -137,8 +137,9 @@ export default {
   border-radius: 66.6654px;
   cursor: pointer;
   & img {
-    width: 320px;
+    width: 260px;
     height: auto;
+    margin: 0 20px;
     -webkit-transform:scale(1.35); /* Safari and Chrome */
     -moz-transform:scale(1.35); /* Firefox */
     -ms-transform:scale(1.35); /* IE 9 */
@@ -154,7 +155,7 @@ export default {
     font-size: 40px;
     line-height: 50px;
     color: #000000;
-    margin-bottom: 20px;
+    margin: 20px 0;
   }
 }
 .slider-wrapper {
