@@ -46,7 +46,7 @@ export default {
       screenWidth: true,
       active: true,
       activeImage: 'paySystems',
-      sliderPageIndex: 0,
+      sliderPageIndex: 7,
       gift: '',
       giftsList: [
         {id:0, name: 'КЕШБЭК', img: require('@/assets/images/card.png'), active_img: require('@/assets/images/card-active.png')},
@@ -62,7 +62,7 @@ export default {
   },
   computed: {
   currentPage() {
-    return this.sliderPageIndex 
+    return this.sliderPageIndex>=0 ? this.sliderPageIndex: 7
   },
   scale() {
     return window.innerWidth > 600
@@ -81,7 +81,7 @@ export default {
       console.log(this.currentPage)
     },
     afterPageChange(page) {
-      this.sliderPageIndex = page;
+      this.sliderPageIndex = page-1;
     }, 
     getGiftName(name) {
       this.choosedGift = name
