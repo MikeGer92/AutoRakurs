@@ -264,7 +264,7 @@
       <div class="brandpage__image_content"></div>
     </div>
     <MarketBlock 
-    class="brandpage__market-block"
+      class="brandpage__market"
       :style="{'margin': '85px 0 0 0'}" 
     />
     <div class="brandpage__divider">
@@ -1084,7 +1084,6 @@ export default {
           width: 100%;
           max-width: 600px;
           height: 471px;
-          // padding-bottom: 50px;
           flex-wrap: wrap;
           background: url('../assets/images/brand-small-main-back.png') no-repeat;
           background-size: cover;
@@ -1378,7 +1377,7 @@ export default {
       height: 291px;
       background-size: cover;
       overflow-x: scroll;
-      margin: 0 0 0 280px;
+      margin-left: 280px;
       &_content {
         width: 704px;
         height: 291px;
@@ -1386,7 +1385,7 @@ export default {
         overflow: hidden;
       }
     }
-    &__market-block {
+    &__market {
       display: none;
     }
     &__similar {
