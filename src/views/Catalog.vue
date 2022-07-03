@@ -205,21 +205,24 @@ export default {
       giftsList: [
         {
           title: 'КАСКО',
-          descr: 'При покупке автомобиля в кредит',
+          event: 'При покупке',
+          descr: 'автомобиля в кредит',
           image: require('../assets/images/kasko.png'),
           image_small: require('../assets/images/kasko-small.png'),
           button: 'Получить подарок'
         },
         {
-          title: 'ТРИ ТО',
-          descr: 'При покупке автомобиля в кредит',
+          title: 'З ТО',
+          event: 'При покупке',
+          descr: 'автомобиля в кредит',
           image: require('../assets/images/three-to.png'),
           image_small: require('../assets/images/three-to-small.png'),
           button: 'Получить подарок'
         },
         {
-          title: 'ТРИ ПЛАТЕЖА ПО КРЕДИТУ',
-          descr: 'При покупке автомобиля в кредит',
+          title: 'З ПЛАТЕЖА ПО КРЕДИТУ',
+          event: 'При покупке',
+          descr: 'автомобиля в кредит',
           image: require('../assets/images/three-payments.png'),
           image_small: require('../assets/images/three-payments-small.png'),
           button: 'Получить подарок'

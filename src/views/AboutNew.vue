@@ -1,96 +1,50 @@
 <template>
-  <div class="about">
-    <Loader v-if="showLoader" />
-    <div class="about__divider">
-      <div class="about__divider_line"></div>
-      <div class="about__divider_text">О КОМПАНИИ</div>
-      <div class="about__divider_line"></div>
-    </div>
-    <div class="about__main">
-      <div class="about__main_wrapper">
-        <div class="about__main_left">
-          <div class="about__main_left-title">Автоцентр "Авторакурс"</div>
-          <div class="about__main_left-subtitle">КОНТАКТНАЯ ИНФОРМАЦИЯ</div>
-          <div class="about__main_left-operate">
-            <div class="about__main_left-operate--title">Мы работаем ежедневно</div>
-            <div class="about__main_left-operate--hours">С 8:00 ДО 21:00</div>
-          </div>
-          <div class="about__main_left-contacts">
-            <div class="about__main_left-contacts--phone">
-              <img src="@/assets/images/about-phone.png">
-              <div class="about__main_left-contacts--phone_text">+7 (495) 085-71-54</div>
-            </div>
-            <div class="about__main_left-contacts--addr">
-              <img src="@/assets/images/about-place.png">
-              <div class="about__main_left-contacts--addr_text">Россия, г. Москва, Ближние Прудищи, вл. 1, стр. 1</div>
-            </div>
-            <div class="about__main_left-contacts--mail">
-              <img src="@/assets/images/about-mail.png">
-              <div class="about__main_left-contacts--mail_text">info@auto-racurs.ru</div>
-            </div>
-          </div>
-        </div>
-        <div class="about__main_right">
-          <yandex-map 
-            :settings="mySet"
-            ref="map"
-            :coords="[55.576874, 37.697145]"
-            zoom="16"
-            :style="{'width': '1150px',  'height': '570px'}"
-            :controls="[]"
-          >
-            <ymap-marker 
-              marker-type="placemark"
-              :coords="mapCoordsStart"
-              marker-id="1" 
-              :icon="marker"
-            >
-            </ymap-marker>
-          </yandex-map>
-        </div>
-      </div>
-    </div>
-    <div class="about__main_btn">
-      <button type="button">ПОСТРОИТЬ МАРШРУТ</button>
-    </div>
+  <div id="app">
+    <yandex-map
+      ref="map"
+      :coords="[55.576874, 37.697145]"
+      zoom="14"
+      style="width: 100%; height: 600px;"
+      :controls="[]"
+    >
+      <ymap-marker
+        v-for="n in markers"
+        :key="n.id"
+        :marker-id="n.id"
+        marker-type="placemark"
+        :coords="n.coord"
+        :balloon="{ body: n.text }"
+      ></ymap-marker>
+    </yandex-map>
   </div>
 </template>
 
-
 <script>
 import { yandexMap, ymapMarker } from 'vue-yandex-maps'
-import Loader from '@/components/app/Loader.vue'
+
 export default {
-  name: 'About',
-  components: { Loader, yandexMap, ymapMarker  },
+  name: "App",
+  components: {
+    yandexMap, ymapMarker
+  },
   data() {
     return {
-      showLoader: false,
-      mapCoordsStart: [55.576874, 37.697145],
-      mySet: {
-        apiKey: '',
-        lang: 'ru_RU',
-        coordorder: 'latlong',
-        enterprise: false,
-        version: '2.1',
-        coords: [55.576874, 37.697145]
-      },
-      marker: {
-        layout: 'default#image',
-        imageHref: require('../assets/images/about-map-place.png'),
-        imageSize: [139, 139],
-        imageOffset: [-70, -115],
-      }
-    }
+      markers: [
+        { coord: [55.576874, 37.697145], text: 'hello, world!!' },
+        // { coord: [55.6, 37.5], text: 'fuck the world' },
+        // { coord: [55.7, 37.7], text: 'fuck everything' },
+      ].map((n, i) => ({ ...n, id: i + 1 })),
+    };
   },
-  mounted() {
-    console.log(window.location.href);
-    console.log(this.$route.path);
-    console.log(this.$router.history);
+  methods: {
+    onClick(m) {
+      this.$refs.map.myMap.balloon.open(m.coord, m.text);
+    },
   },
-}
+};
 </script>
 <style lang="scss">
+// coords="[55.576874, 37.697145]"
 [class*="ymaps-2"][class*="-ground-pane"] {
 filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
 /* Firefox 3.5+ */

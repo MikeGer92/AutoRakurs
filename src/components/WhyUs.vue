@@ -75,7 +75,7 @@ export default {
     margin-top: 92px;
     font-family: 'Montserrat';
     font-style: normal;
-    font-weight: 400;
+    font-weight: 500;
     font-size: 25.8009px;
     line-height: 31px;
     text-align: center;

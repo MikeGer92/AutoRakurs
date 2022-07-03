@@ -74,7 +74,7 @@ export default {
 .count {
   display: flex;
   max-width: 375px;
-  max-height: 121px;
+  height: 121px;
   justify-content: space-around;
   align-items: center;
   background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);

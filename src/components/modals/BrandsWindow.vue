@@ -154,7 +154,7 @@ export default {
           }
           &_name {
             width: 120px;
-            // margin-left: 15px;
+            margin-left: 10px;
             font-family: 'Inter';
             font-style: normal;
             font-weight: 900;

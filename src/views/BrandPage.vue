@@ -184,10 +184,10 @@
               </ul> -->
             </div>
           <div class="brandpage__tradein_form-person">
-            <input type="text" class="brandpage__tradein_form-person--name" placeholder="ИМЯ" v-model="formName">
-            <input type="phone" 
+            <input type="text" class="brandpage__tradein_form-person--name" placeholder="Имя" v-model="formName">
+            <input type="phone"
               class="brandpage__tradein_form-person--phone" 
-              placeholder="ТЕЛЕФОН" 
+              placeholder="Телефон" 
               v-model="formPhone" required
               v-phone
             >
@@ -296,8 +296,8 @@ export default {
       actionFinish: ['2022','09','20','23','59','59'],
       showLoader: false,
       activeColor: 'black',
-      formName: '',
-      formPhone: '',
+      formName: 'Имя',
+      formPhone: 'Телефон',
       errors: [],
       colors: [
         {id: 1, name: 'black', color: '#000'},
@@ -379,7 +379,7 @@ export default {
         {name: '2.0 AT LUXE', value: '2.0 AT LUXE'},
       ],
       disableGifts: true,
-      defSelectGift: 'ВЫБЕРИТЕ ПОДАРОК',
+      defSelectGift: 'Выберите подарок',
       selectedGift: '',
       giftsList: [
         {name: '3 ТО', value: '3 ТО'},

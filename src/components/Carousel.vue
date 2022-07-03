@@ -16,9 +16,10 @@
         >
           <div class="slider__item"
             v-for="item in giftsList" :key="item.id"
-            :class="{'slider__item-active': currentPage===item.id }"
+            @click="changeActiveSlide(item.id, item.name)"
+            :class="{'slider__item-active': currentPage===item.id}"
           >
-            <div v-if="currentPage===item.id" @click="getGiftName(item.name)">
+            <div v-if="currentPage===item.id" @click="getGiftName(item.id, item.name)">
               <img :src="item.active_img">
               <div 
                 class="slider__item-active--text"
@@ -72,6 +73,15 @@ export default {
     window.addEventListener('resize', this.updateWidth);
   },
   methods: {
+    changeActiveSlide(id, name) {
+      this.sliderPageIndex = id
+      this.choosedGift = name
+    },
+    // customGift(id, name, function: name(params) {
+      
+    // }) {
+
+    // },
     showNext() {
       this.$refs.carousel.next()
       console.log(this.currentPage)
@@ -83,7 +93,8 @@ export default {
     afterPageChange(page) {
       this.sliderPageIndex = page-1;
     }, 
-    getGiftName(name) {
+    getGiftName(id, name) {
+      this.sliderPageIndex = id
       this.choosedGift = name
       alert(`ПОЗДРАВЛЯЕМ ВЫ ВЫБРАЛИ ПОДАРОК - ${name}!!!`)
     },

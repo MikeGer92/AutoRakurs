@@ -3,6 +3,7 @@
     <div class="benefit" :style="{'background': `url(${benefitCard.image}) no-repeat`}">
       <div class="benefit__header">
         <div class="benefit__header_title">{{ benefitCard.title }}</div>
+        <div class="benefit__header_descr">{{ benefitCard.event }}</div>
         <div class="benefit__header_descr">{{ benefitCard.descr }}</div>
       </div>
       <div class="benefit__button">{{ benefitCard.button }}</div>
