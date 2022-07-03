@@ -3,7 +3,7 @@
     <div class="benefit" :style="{'background': `url(${benefitCard.image}) no-repeat`}">
       <div class="benefit__header">
         <div class="benefit__header_title">{{ benefitCard.title }}</div>
-        <div class="benefit__header_descr">{{ benefitCard.event }}</div>
+        <div class="benefit__header_event">{{ benefitCard.event }}</div>
         <div class="benefit__header_descr">{{ benefitCard.descr }}</div>
       </div>
       <div class="benefit__button">{{ benefitCard.button }}</div>
@@ -11,6 +11,7 @@
     <div class="benefit-small" :style="{'background': `url(${benefitCard.image_small}) no-repeat`, 'background-size': 'contain'}">
       <div class="benefit-small__header">
         <div class="benefit-small__header_title">{{ benefitCard.title }}</div>
+        <div class="benefit-small__header_event">{{ benefitCard.event }}</div>
         <div class="benefit-small__header_descr">{{ benefitCard.descr }}</div>
       </div>
       <div class="benefit-small__button">{{ benefitCard.button }}</div>
@@ -77,7 +78,7 @@ export default {
       line-height: 37px;
       color: #000000;
     }
-    &_descr {
+    &_descr, &_event {
       max-width: 290px;
       margin-left: 32px;
       font-family: 'Inter';
@@ -127,7 +128,7 @@ export default {
         font-size: 19.8621px;
         line-height: 23px;
       }
-      &_descr {
+      &_descr, &_event {
         font-size: 11.5862px;
         line-height: 14px;
         max-width: 130px;
