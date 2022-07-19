@@ -161,7 +161,7 @@ export default {
     display: flex;
     flex-direction: column;
     &_contact {
-      margin: 0 8px 0 17px;
+      margin: 0 0px 13px 17px;
       display: flex;
       justify-content: space-between;
       &-left, &-right {
@@ -230,6 +230,59 @@ export default {
 }
 .header-small {
   display: none;
+}
+@media (min-width: 1280px) and (max-width: 1920px) {
+  .active {
+    height: 58px;
+    border-radius: 33.3801px;
+  }
+  .header {
+    max-width: 1534px;
+    height: 115px;
+    margin: 41px 203px 42px 183px;
+    &__logo {
+      width: 96px;
+      height: 96px;
+      margin: 11px 35px 10px 22px;
+    }
+    &__wrapper {
+      justify-content: center;
+      &_contact {
+        &-info {
+          font-size: 9.64313px;
+          line-height: 12px;
+          margin: 0;
+        }
+      }
+      &_pages {
+        &-link {
+          height: 57px;
+          margin-left: 14px; // не оригинальный отступ
+          font-size: 11.8685px;
+          line-height: 20px;
+        }
+        &-icon {
+          width: 15.58px;
+          height: 6.68px;
+          margin: 0 20px;
+        }
+      }
+      &_callback {
+        height: 53px;
+        border-radius: 33.3801px;
+        &-img {
+          width: 23px;
+          height: 23px;
+          margin: 0 10px 0 18px;
+
+        }
+        &-info {
+          font-size: 13.163px;
+          line-height: 16px;
+        }
+      }
+    }
+  }
 }
 @media (max-width: 605px) {
   .active {
