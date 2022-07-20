@@ -1,5 +1,5 @@
 <template>
-  <div class="brands-window">
+  <div class="brands-window" @click="isShow">
     <div class="brands-window__main">
       <div class="brands-window__main_button">ВСЕ МАШИНЫ</div>
       <div class="brands-window__main_wrapper">
@@ -72,6 +72,11 @@ export default {
       ],
       // car: {name: 'KIA', logo: require('@/assets/images/brands-logo/kia.svg')},
 
+    }
+  },
+  methods: {
+    isShow() {
+      this.$emit('isShow')
     }
   }
 }
@@ -174,5 +179,60 @@ export default {
   }
 
 }
-
+@media (min-width: 1280px) and (max-width: 1920px) {
+  .brands-window {
+    max-width: 1523px;
+    margin: 0 auto;
+    &__main {
+      // margin-top: -41px;
+      height: 805px;
+      &_button {
+        width: 188px;
+        height: 36px;
+        margin: 41px 0 0 24px;
+        font-size: 11.7663px;
+        line-height: 14px;
+        border-radius: 81.7652px;
+        cursor: pointer;
+      }
+      &_left {
+        width: 282px;
+        height: 290px;
+        &-carstypes {
+          &--item {
+            margin: 12px 0;
+            font-size: 11.7663px;
+            line-height: 14px;
+            margin: 23px 0 0 67px;
+            cursor: pointer;
+          }
+        }
+        &-divider {
+          display: block;
+          width: 2.21px;
+          height: 286px;
+          margin-left: 69px;
+        }
+      }
+      &_right {
+        &-carsbrands {
+          max-width: 1242px;
+          margin: -42px 124px 0 87px;
+          justify-content: space-between;
+          &--item {
+            cursor: pointer;
+            &_name {
+              margin-left: 20px;
+              font-size: 17.9282px;
+              line-height: 22px;
+            }
+          }
+        }
+      }
+    }
+    &__add {
+      min-width: 1920px;
+    }
+  }
+}
 </style>

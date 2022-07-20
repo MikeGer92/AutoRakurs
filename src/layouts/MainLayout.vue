@@ -1,10 +1,19 @@
 <template>
 	<div class="main-layout-body">
     <ModalWindow v-if="showModal"/>
-    <Navbar @modal="changeModal"></Navbar>
-    <BrandsWindow v-if="showModal"/>
+    <Navbar 
+      @modal="changeModal"
+      
+    >
+    </Navbar>
+    <BrandsWindow 
+      v-if="showModal"
+      @isShow="changeModal"
+    />
     <router-view v-else></router-view>
-    <Footer :brands="brandList" />
+    <Footer 
+      :brands="brandList"
+    />
 	</div>
 </template>
 
@@ -76,5 +85,9 @@ export default {
   flex-direction: column;
 	background: #FFF
 }
-	
+@media (min-width: 1280px) and (max-width: 1920px) {
+  .main-layout-body {
+    max-width: 1920px;
+  }
+}	
 </style>
