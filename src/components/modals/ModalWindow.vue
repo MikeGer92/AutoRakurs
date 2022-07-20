@@ -27,7 +27,7 @@ export default {
   background: rgba(0, 0, 0, 0.5);
   overflow: hidden;
 }
-@media (min-width: 1280px) and (max-width: 1920px) {
+@media (min-width: 1280px) and (max-width: 1921px) {
   .modal {
     max-width: 1920px;
     top: 206px;

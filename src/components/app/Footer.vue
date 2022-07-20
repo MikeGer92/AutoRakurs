@@ -194,7 +194,7 @@ export default {
   }
   &__bottom {
     width: 100%;
-    min-width: 2065px;
+    max-width: 2065px;
     border-top: 1px solid #FFFFFF;
     display: flex;
     justify-content: space-between;
@@ -233,6 +233,67 @@ export default {
       color: #FFFFFF;
     }
   }
+}
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .footer {
+    max-width: 1920px;
+    &__main {
+      &_left {
+        &-salon {
+          margin: 41px 0 0 108px;
+          &--info, &--contact, &--credits {
+            &_title {
+              font-size: 27.0199px;
+              line-height: 33px;
+            }
+            & ul {
+              font-size: 14.6758px;
+              line-height: 18px;
+              & li {
+                margin: 22px 0;
+              }
+            }
+          }
+        }
+      }
+      &_right {
+        &-title {
+          margin-left: 100px;
+        }
+        &-list {
+          margin: 11px 0 64px 100px;
+          &--item {
+            font-size: 14.6758px;
+            line-height: 18px;
+            margin: 11px 0;
+          }
+
+        }
+      }
+    }
+    &__bottom {
+      max-width: 1920px;
+      &_left {
+        max-width: 402px;
+        margin: 24px 0 60px 112px;
+        &-title {
+          font-size: 14.6736px;
+          line-height: 18px;
+        }
+        &-confid, &-confirm {
+          font-size: 14.6736px;
+          line-height: 18px;
+        }
+      }
+      &_right {
+        max-width: 954px;
+        margin: 43px 97px 0 65px;
+        font-size: 14.6736px;
+        line-height: 18px;
+      }
+    }
+  }
+
 }
 @media (max-width: 605px) {
   .footer {

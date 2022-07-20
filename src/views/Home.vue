@@ -423,6 +423,18 @@ export default {
     }
   }
 }
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .home {
+    &__wrapper {
+      max-width: 1920px;
+    }
+    &__header {
+      max-width: 1920px;
+      max-height: 168px;
+      margin: 0 0 6px 0;
+    }
+  }
+}
 @media (max-width: 605px) {
   .home {
     width: 100%;
