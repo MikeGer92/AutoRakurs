@@ -149,7 +149,7 @@ export default {
       border-radius: 52px;
     }
     &_border-y {
-      width: 3px;
+      width: 7px;
       height: 408px;
       background: linear-gradient(to top,  #FFF 0%, #FFA724  80%);
     }

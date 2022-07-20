@@ -35,7 +35,7 @@
             :settings="mySet"
             ref="map"
             :coords="[55.576874, 37.697145]"
-            zoom="14"
+            zoom="16"
             :style="{'width': '1150px',  'height': '570px'}"
             :controls="[]"
           >
@@ -79,7 +79,7 @@ export default {
         layout: 'default#image',
         imageHref: require('../assets/images/about-map-place.png'),
         imageSize: [139, 139],
-        imageOffset: [0, 0],
+        imageOffset: [-70, -115],
       }
     }
   },

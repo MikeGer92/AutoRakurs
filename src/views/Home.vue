@@ -128,21 +128,24 @@ export default {
       benefitsList: [
         {
           title: 'КАСКО',
-          descr: 'При покупке автомобиля в кредит',
+          event: 'При покупке',
+          descr: 'автомобиля в кредит',
           image: require('../assets/images/kasko.png'),
           image_small: require('../assets/images/kasko-small.png'),
           button: 'Получить подарок'
         },
         {
-          title: 'ТРИ ТО',
-          descr: 'При покупке автомобиля в кредит',
+          title: 'З ТО',
+          event: 'При покупке',
+          descr: 'автомобиля в кредит',
           image: require('../assets/images/three-to.png'),
           image_small: require('../assets/images/three-to-small.png'),
           button: 'Получить подарок'
         },
         {
-          title: 'ТРИ ПЛАТЕЖА ПО КРЕДИТУ',
-          descr: 'При покупке автомобиля в кредит',
+          title: 'З ПЛАТЕЖА ПО КРЕДИТУ',
+          event: 'При покупке',
+          descr: 'автомобиля в кредит',
           image: require('../assets/images/three-payments.png'),
           image_small: require('../assets/images/three-payments-small.png'),
           button: 'Получить подарок'
@@ -253,7 +256,7 @@ export default {
     width: 100%;
     max-width: 2065px;
     flex-direction: column;
-    background: url('../assets/images/home-banner.png') no-repeat;
+    background: url('../assets/images/Frame_212.png') no-repeat;
     background-size: cover;
     &_title {
       margin: 84px 0 0 60px;
@@ -422,6 +425,7 @@ export default {
 }
 @media (max-width: 605px) {
   .home {
+    width: 100%;
     &__header {
       margin: 12px 0 0 0;
       max-height: 38px;
@@ -535,7 +539,7 @@ export default {
       background: url('../assets/images/benefit-back.png') no-repeat;
       background-size: cover;
       &_wrapper {
-        margin: 0 36px 38px 36px;
+        margin: 0;
       }
       &_divider {
         margin: 45px 0 0 0;

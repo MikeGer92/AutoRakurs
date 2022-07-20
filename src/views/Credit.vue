@@ -124,6 +124,7 @@ export default {
     }
   }
   &__divider {
+    margin: 21px 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
