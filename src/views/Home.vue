@@ -213,6 +213,7 @@ export default {
 </script>
 <style lang="scss">
 .home {
+  width: 100%;
   display: flex;
   margin: 0 auto;
   padding: 0 auto;
@@ -379,7 +380,6 @@ export default {
   }
   &__cars {
     width: 100%;
-    max-width: 1420px;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
@@ -532,6 +532,26 @@ export default {
         height: 740px;
         background: url('../assets/images/home-main-car.png') right 0px no-repeat;
         background-size: contain;
+      }
+    }
+    &__cars {
+      width: 1420px;
+    }
+    &__bottom-divider {
+      max-width: 1534px;
+      height: 44px;
+      margin: 91px auto 110px auto;
+    }
+    &__benefit {
+      width: 100%;
+      max-width: 1920px;
+      background: #D7E8F6;
+      &_block, &_options {
+        // max-width: 1460px;
+        margin: 0 auto;
+      }
+      &_divider {
+        margin: 0 0 26px 0;
       }
     }
   }
