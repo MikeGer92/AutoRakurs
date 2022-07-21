@@ -379,6 +379,7 @@ export default {
   }
   &__cars {
     width: 100%;
+    max-width: 1420px;
     margin: 0 auto;
     display: flex;
     justify-content: space-around;
