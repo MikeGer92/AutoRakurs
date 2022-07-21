@@ -179,7 +179,7 @@ export default {
   }
 
 }
-@media (min-width: 1280px) and (max-width: 1920px) {
+@media (min-width: 1280px) and (max-width: 1921px) {
   .brands-window {
     max-width: 1523px;
     margin: 0 auto;

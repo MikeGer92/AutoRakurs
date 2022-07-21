@@ -2,7 +2,7 @@
   <div class="home">
     <Loader v-if="showLoader" />
     <div class="home__wrapper">
-      <div class="home__header" :style="{'background': `url(${require('../assets/images/home-mask.png')}) no-repeat`, 'background-size': 'cover'}">
+      <div class="home__header">
         <div class="home__header_block">
           <h1 class="home__header_title">НОВЫЕ АВТО <br />ПО СТАРЫМ ЦЕНАМ</h1>
           <div class="home__header_timer">
@@ -14,12 +14,19 @@
         </div>
       </div>
       <div class="home__main">
-        <h2 class="home__main_title">ВРЕМЯ <span class="home__main_title-orange">ВКЛАДЫВАТЬСЯ</span><br><span class="home__main_title-blue">В АВТОМОБИЛЬ</span></h2>
-        <p class="home__main_oldprice">
-        <span class="home__main_oldprice-black">Успейте забрать по старой цене и получите<br></span>
-        <span class="home__main_oldprice-orange">ДОПОЛНИТЕЛЬНОЕ<br>ОБОРУДОВАНИЕ</span>        
-        <span class="home__main_oldprice-blue">ДОПОЛНИТЕЛЬНОЕ<br>ОБОРУДОВАНИЕ</span></p>
-        <p class="home__main_gift">НА <span class="home__main_gift-blue">50 000</span><br>В ПОДАРОК<span class="home__main_gift-black">*</span></p>
+        <div class="home__main_rakurs">
+          <div class="home__main_filter">
+            <div class="home__main_text">
+              <h2 class="home__main_title">ВРЕМЯ <span class="home__main_title-orange">ВКЛАДЫВАТЬСЯ</span><br><span class="home__main_title-blue">В АВТОМОБИЛЬ</span></h2>
+              <p class="home__main_oldprice">
+              <span class="home__main_oldprice-black">Успейте забрать по старой цене и получите<br></span>
+              <span class="home__main_oldprice-orange">ДОПОЛНИТЕЛЬНОЕ<br>ОБОРУДОВАНИЕ</span>        
+              <span class="home__main_oldprice-blue">ДОПОЛНИТЕЛЬНОЕ<br>ОБОРУДОВАНИЕ</span></p>
+              <p class="home__main_gift">НА <span class="home__main_gift-blue">50 000</span><br>В ПОДАРОК<span class="home__main_gift-black">*</span></p>
+            </div>
+          </div>
+        </div>
+        <div class="home__main_car"></div>
       </div>
       <div class="home__divider">
         <div class="home__divider_line"></div>
@@ -206,6 +213,7 @@ export default {
 </script>
 <style lang="scss">
 .home {
+  width: 100%;
   display: flex;
   margin: 0 auto;
   padding: 0 auto;
@@ -221,6 +229,8 @@ export default {
     max-width: 2065px;
     max-height: 180px;
     margin: 22px 0 11px 0;
+    background: url('../assets/images/home-mask.png') no-repeat;
+    background-size: cover;
     &_block {
       display: flex;
       width: 100%;
@@ -242,7 +252,7 @@ export default {
       justify-content: center;
       align-items: center;
       &-title {
-      margin: 0 0 6px 0;
+      margin: 7px 0 5px 0;
       font-style: normal;
       font-weight: 700;
       font-size: 24.4694px;
@@ -258,6 +268,15 @@ export default {
     flex-direction: column;
     background: url('../assets/images/Frame_212.png') no-repeat;
     background-size: cover;
+    &_rakurs, &_filter {
+      width: 100%;
+      height: 740px;
+    }
+    &_text {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+    }
     &_title {
       margin: 84px 0 0 60px;
       font-family: 'Montserrat';
@@ -312,7 +331,7 @@ export default {
       }
     }
     &_gift {
-      margin: 54px 0 0 60px;
+      margin: 54px 0 134px 60px;
       font-family: 'Montserrat';
       font-style: normal;
       font-weight: 900;
@@ -423,6 +442,128 @@ export default {
     }
   }
 }
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .home {
+    &__wrapper {
+      max-width: 1920px;
+    }
+    &__header {
+      max-width: 1920px;
+      max-height: 168px;
+      margin: 0 0 6px 0;
+      background-size: cover;
+      background-position: 50% 100%;
+      &_block {
+        max-width: 1534px;
+        margin: 0 auto;
+      }
+      &_title {
+        margin-left: 22px;
+        font-size: 29.3724px;
+        line-height: 36px;
+        align-items: center;
+      }
+      &_timer {
+        &-title {
+          font-size: 22.7512px;
+          line-height: 28px;
+        }
+      }
+    }
+    &__main {
+      position: relative;
+      max-width: 1920px;
+      height: 740px;
+      // margin: calc((-50px - (1920px - 100vw)/4)) auto 0 auto;
+      background: linear-gradient(180deg, rgba(52, 138, 210, 0.17) 95%, #FFFFFF 100%);
+      // background-size: cover;
+      overflow: hidden;
+      &_rakurs {
+        // position: absolute;
+        // top: calc(25% - ((100vw - 1280px)/4));
+        max-width: 1748px;
+        margin: 0 auto;
+        // margin: calc((0px + (1920px - 100vw)/4)) auto 0 auto;
+        background: url('../assets/images/home-rakurs.png') center 60px/contain no-repeat;
+      }
+      &_filter {
+        // background: url('../assets/images/frame333.png') no-repeat;
+        background-size: cover;
+      }
+      &_text {
+        // position: absolute;
+        // margin: calc((-0px - (1920px - 100vw)/4)) auto 0 auto;
+        max-width: 1548px;
+        max-height: 740px;
+        margin: 0 auto;
+        // background: url('../assets/images/home-main-car.png') right bottom no-repeat;
+        background-size: contain;
+      }
+      &_title {
+        margin: 65px 0 0 22px;
+        font-size: 33.3805px;
+        line-height: 41px;
+        &-orange, &-blue {
+          font-size: 54.0046px;
+          line-height: 66px;
+        }
+      }
+      &_oldprice {
+        margin: 118px 0 0 22px;
+        &-black {
+          font-size: 21.9937px;
+        }
+      }
+      &_gift {
+        margin: 27px 0 132px 22px;
+        font-size: 66.5699px;
+        line-height: 81px;
+        &-black {
+          font-size: 39.3367px;
+          line-height: 48px;
+        }
+      }
+      &_car {
+        position: absolute;
+        top: calc(25% - ((100vw - 1280px)/4));
+        left: 190px;
+        display: block;
+        width: calc(100vw - 205px);
+        // min-width: 1000px;
+        height: 740px;
+        background: url('../assets/images/home-main-car.png') right 0px no-repeat;
+        background-size: contain;
+      }
+    }
+    &__cars {
+      max-width: 1420px;
+    }
+    &__bottom-divider {
+      max-width: 1534px;
+      height: 44px;
+      margin: 91px auto 110px auto;
+    }
+    &__benefit {
+      width: 100%;
+      max-width: 1920px;
+      background: #D7E8F6;
+      &_block, &_options {
+        // max-width: 1460px;
+        margin: 0 auto;
+      }
+      &_divider {
+        margin: 0 0 26px 0;
+      }
+    }
+  }
+}
+// @media (min-width: 1280px) and (max-width: 1670px) {
+//   .home {
+//     &__main {
+//       background-size: contain;
+//     }
+//   }
+// }
 @media (max-width: 605px) {
   .home {
     width: 100%;

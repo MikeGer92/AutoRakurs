@@ -231,7 +231,7 @@ export default {
 .header-small {
   display: none;
 }
-@media (min-width: 1280px) and (max-width: 1920px) {
+@media (min-width: 1280px) and (max-width: 1921px) {
   .active {
     height: 58px;
     border-radius: 33.3801px;
@@ -239,7 +239,7 @@ export default {
   .header {
     max-width: 1534px;
     height: 115px;
-    margin: 41px 203px 42px 183px;
+    margin: 11px auto 22px auto; // оригинальные отступы сверху и снизу 41 и 42
     &__logo {
       width: 96px;
       height: 96px;
@@ -264,7 +264,7 @@ export default {
         &-icon {
           width: 15.58px;
           height: 6.68px;
-          margin: 0 20px;
+          margin: 0 14px;
         }
       }
       &_callback {

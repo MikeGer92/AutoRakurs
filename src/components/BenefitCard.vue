@@ -1,6 +1,6 @@
 <template>
   <div class="benefit-wrapper">
-    <div class="benefit" :style="{'background': `url(${benefitCard.image}) no-repeat`}">
+    <div class="benefit" :style="{'background': `url(${benefitCard.image}) no-repeat`, 'background-size': 'contain'}">
       <div class="benefit__header">
         <div class="benefit__header_title">{{ benefitCard.title }}</div>
         <div class="benefit__header_event">{{ benefitCard.event }}</div>
@@ -111,6 +111,34 @@ export default {
 }
 .benefit-small {
   display: none;
+}
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .benefit {
+    margin: 61px 29px;
+    width: 449px;
+    height: 310px;
+    border-radius: 17.5915px;
+    &__header {
+      &_title {
+        margin: 20px 0 14px 24px;
+        font-size: 23.4553px;
+        line-height: 28px;
+      }
+      &_descr, &_event {
+        font-size: 13.6823px;
+        line-height: 17px;
+      }
+    }
+    &__button {
+      width: 239px;
+      height: 41px;
+      margin: 0 24px 20px 0;
+      font-size: 14.6507px;
+      line-height: 18px;
+      box-shadow: 0px 3.90922px 3.90922px rgba(0, 0, 0, 0.25);
+      border-radius: 77.207px;
+    }
+  }
 }
 @media (max-width: 605px) {
   .benefit {
