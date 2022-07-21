@@ -528,7 +528,7 @@ export default {
         top: calc(25% - ((100vw - 1280px)/4));
         left: 190px;
         display: block;
-        width: calc(100vw - 205px);
+        width: calc(100vw - 225px);
         // min-width: 1000px;
         height: 740px;
         background: url('../assets/images/home-main-car.png') right 0px no-repeat;
