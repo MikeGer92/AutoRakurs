@@ -477,6 +477,7 @@ export default {
       // margin: calc((-50px - (1920px - 100vw)/4)) auto 0 auto;
       background: linear-gradient(180deg, rgba(52, 138, 210, 0.17) 95%, #FFFFFF 100%);
       // background-size: cover;
+      overflow: hidden;
       &_rakurs {
         // position: absolute;
         // top: calc(25% - ((100vw - 1280px)/4));
@@ -535,7 +536,7 @@ export default {
       }
     }
     &__cars {
-      width: 1420px;
+      max-width: 1420px;
     }
     &__bottom-divider {
       max-width: 1534px;
