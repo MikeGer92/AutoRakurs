@@ -261,7 +261,7 @@ export default {
           margin-left: 100px;
         }
         &-list {
-          margin: 11px 0 64px 100px;
+          margin: 11px 0 41px 100px;
           &--item {
             font-size: 14.6758px;
             line-height: 18px;
@@ -287,7 +287,7 @@ export default {
       }
       &_right {
         max-width: 954px;
-        margin: 43px 97px 0 65px;
+        margin: 43px 97px 0 ;
         font-size: 14.6736px;
         line-height: 18px;
       }

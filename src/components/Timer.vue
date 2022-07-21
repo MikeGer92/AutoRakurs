@@ -105,6 +105,28 @@ export default {
     }
   }
 }
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .count {
+    max-width: 348px;
+    height: 113px;
+    background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
+    box-shadow: 0px 5.77049px 5.77049px rgba(0, 0, 0, 0.25);
+    border-radius: 34.55px;
+    margin-bottom: 15px;
+    &__item {
+      border-right: 1.19px solid #FFF;
+      &_num {
+        font-size: 40.0266px;
+        line-height: 48px;
+      }
+      &_descr {
+        font-size: 13.4784px;
+        line-height: 16px;
+      }
+    }
+  }
+
+}
 @media (max-width: 605px) {
   .count {
     max-width: 80px;
