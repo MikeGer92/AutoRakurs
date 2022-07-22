@@ -2,20 +2,22 @@
   <div class="catalog">
     <Loader v-if="showLoader" />
     <div class="catalog__main">
-      <div class="catalog__logo">
-        <img class="catalog__logo_big" src="@/assets/images/kia-logo.png">
-        <img class="catalog__logo_small" src="@/assets/images/kia-logo-small.png">
-        <div class="catalog__logo_timer">
-          <div class="catalog__logo_timer-title">До конца акции осталось:</div>
-          <CatalogTimer :deadline="actionEnd" />
+      <div class="catalog__main_filter"></div>
+      <div class="catalog__main_wrapper">
+        <div class="catalog__logo">
+          <img class="catalog__logo_big" src="@/assets/images/kia-logo.png">
+          <img class="catalog__logo_small" src="@/assets/images/kia-logo-small.png">
+          <div class="catalog__logo_timer">
+            <div class="catalog__logo_timer-title">До конца акции осталось:</div>
+            <CatalogTimer :deadline="actionEnd" />
+          </div>
         </div>
+        <div class="catalog__image_big"><img src="@/assets/images/kia-car.png"></div>
+        <div class="catalog__image_small"><img src="@/assets/images/kia-car-small.png"></div>
+        <CatalogPersonForm
+          class="catalog__person-form" 
+        />
       </div>
-      <div class="catalog__image_big"><img src="@/assets/images/kia-car.png"></div>
-      <div class="catalog__image_small"><img src="@/assets/images/kia-car-small.png"></div>
-      <CatalogPersonForm
-        class="catalog__person-form" 
-        :style="{'margin': '32px 111px 32px 0'}"
-      />
       <div class="catalog__main-bottom">
         <div class="catalog__main-bottom_title">Ваше персональное предложение на покупку автомобиля уже ждет Вас!</div>
         <button type="button" class="catalog__main-bottom_btn">Получить предложение</button>
@@ -41,29 +43,30 @@
     </div>
     <MarketBlock 
       class="catalog__market-block"
-      :style="{'margin': '61px 0 191px 0'}"
     />
     <div class="catalog__bottom">
-      <div class="catalog__bottom_logo">
-        <img class="catalog__bottom_logo-img" src="@/assets/images/mits-logo.png">
-        <div class="catalog__bottom_logo-header">
-          <div class="catalog__bottom_logo-header--title">УЛУЧШИМ ЛЮБЫЕ УСЛОВИЯ КОНКУРЕНТОВ!</div>
-          <div class="catalog__bottom_logo-header--descr">Оставьте заявку и получите самое выгодное предложение на рынке!</div>
-          <button type="button">Получить предложение</button>
+      <div class="catalog__bottom_filter"></div>
+      <div class="catalog__bottom_wrapper">
+        <div class="catalog__bottom_logo">
+          <img class="catalog__bottom_logo-img" src="@/assets/images/mits-logo.png">
+          <div class="catalog__bottom_logo-header">
+            <div class="catalog__bottom_logo-header--title">УЛУЧШИМ ЛЮБЫЕ УСЛОВИЯ КОНКУРЕНТОВ!</div>
+            <div class="catalog__bottom_logo-header--descr">Оставьте заявку и получите самое выгодное предложение на рынке!</div>
+            <button type="button">Получить предложение</button>
+          </div>
+          <div class="catalog__bottom_logo-timer">
+            <div class="catalog__bottom_logo-timer--title">До конца акции осталось:</div>
+            <CatalogTimer :deadline="actionEnd" />
+          </div>
         </div>
-        <div class="catalog__bottom_logo-timer">
-          <div class="catalog__bottom_logo-timer--title">До конца акции осталось:</div>
-          <CatalogTimer :deadline="actionEnd" />
-        </div>
+        <div class="catalog__bottom_image">
+          <img class="catalog__bottom_image-big" src="@/assets/images/mits-car.png">
+          <img class="catalog__bottom_image-small" src="@/assets/images/mits-car-small.png"></div>
+        <BestOfferForm
+          class="catalog__bottom_form" 
+        />
+        <img class="catalog__bottom_logo-img--small" src="@/assets/images/mits-logo.png">
       </div>
-      <div class="catalog__bottom_image">
-        <img class="catalog__bottom_image-big" src="@/assets/images/mits-car.png">
-        <img class="catalog__bottom_image-small" src="@/assets/images/mits-car-small.png"></div>
-      <BestOfferForm
-        class="catalog__bottom_form" 
-        :style="{'margin': '31px 0 33px 130px'}"
-      />
-      <img class="catalog__bottom_logo-img--small" src="@/assets/images/mits-logo.png">
     </div>
     <div class="catalog__gift">
       <div class="catalog__gift_title">ВРЕМЯ ВЫБИРАТЬ <span>ПОДАРКИ!</span></div>
@@ -260,17 +263,32 @@ export default {
   max-width: 2065px;
   align-items: center;
   &__main {
+    position: relative;
     display: flex;
     width: 100%;
     height: 450px;
-    background: url('../assets/images/catalog-banner.png');
+    background: url('../assets/images/catalog-main.png') no-repeat;
+    &_filter {
+      position: absolute;
+      width: 735px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      background: url('../assets/images/catalog-add-filter.png') 0px 0px/ contain no-repeat;
+      z-index: 1;
+    }
+    &_wrapper {
+      display: flex;
+      width: 100%;
+      z-index: 2;
+    }
   }
   &__logo {
     margin: 45px 0 0 83px;
     display: flex;
     flex-direction: column;
     width: 284px;
-    height: 114px;
+    max-height: 114px;
     &_small {
       display: none;
     }
@@ -295,6 +313,11 @@ export default {
     margin-left: 160px;
     &_small {
       display: none;
+    }
+  }
+  &__person {
+    &-form {
+      margin: 32px 111px 32px 0;
     }
   }
   &__main-bottom {
@@ -355,12 +378,20 @@ export default {
   &__divider-bottom {
     display: none;
   }
+  &__market-block {
+    margin: 61px 0 191px 0;
+  }
   &__bottom {
     display: flex;
     width: 100%;
     max-width: 2065px;
     height: 450px;
-    background: url('../assets/images/catalog-bottom-banner.png');
+    background: url('../assets/images/catalog-bottom-main.png') no-repeat;
+    background-size: cover;
+    &_wrapper {
+      display: flex;
+      width: 100%;
+    }
     &_logo {
       display: flex;
       flex-direction: column;
@@ -431,6 +462,104 @@ export default {
     width: 100%;
     max-width: 2065px;
     background: #D9D9D9;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .catalog {
+    max-width: 1920px;
+    &__main {
+      max-width: 1920px;
+      height: 420px;
+      background-size: cover;
+      &_wrapper {
+        max-width: 1534px;
+        margin: 0 auto;
+        justify-content: space-between;
+      }
+    }
+    &__logo {
+      margin: 48px 0 0 22px;
+      width: 17.25%;
+      max-width: 284px;
+      max-height: 5.53%;
+      &_timer {
+        width: 276px;
+        &--title {
+          font-size: 18.5956px;
+          line-height: 23px;
+        }
+      }
+    }
+    &__image {
+      &_big {
+        display: flex;
+        width: 800px;
+        height: auto;
+        margin-left: 0px;
+      }
+    }
+    &__person {
+      &-form {
+        margin: 0;
+        align-self: center;
+      }
+    }
+    &__divider {
+      margin: 50px 0 20px 0;
+    }
+    &__models {
+      max-width: 1490px;
+      margin-top: 0px;
+    }
+    &__market-block {
+      max-width: 1490px;
+      margin: 41px auto 84px auto;
+    }
+    &__bottom {
+      position: relative;
+      max-width: 1920px;
+      height: 420px;
+      &_wrapper {
+        max-width: 1534px;
+        margin: 0 auto;
+        z-index: 2;
+      }
+      &_filter {
+        position: absolute;
+        width: 700px;
+        height: 100%;
+        background: url('../assets/images/catalog-bpttom-add-shad.png') no-repeat;
+        z-index: 1;
+      }
+      &_logo {
+        display: flex;
+        width: 34%;
+        object-fit: contain;
+        height: 51.6%;
+        & img {
+          width: 100%;
+          height: auto;
+          margin-left: -30px;
+        }
+      }
+      &_image {
+        &-big {
+          margin-left: -90px;
+          display: flex;
+          width: 800px;
+          height: auto;
+        }
+      }
+    }
+    &__gift {
+      margin-top: 53px;
+    }
+    &__offers {
+      padding: 0;
+      background: #D7E8F6;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
   }
 }
 @media (max-width: 605px) {

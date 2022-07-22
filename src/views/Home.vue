@@ -15,15 +15,14 @@
       </div>
       <div class="home__main">
         <div class="home__main_rakurs">
-          <div class="home__main_filter">
-            <div class="home__main_text">
-              <h2 class="home__main_title">ВРЕМЯ <span class="home__main_title-orange">ВКЛАДЫВАТЬСЯ</span><br><span class="home__main_title-blue">В АВТОМОБИЛЬ</span></h2>
-              <p class="home__main_oldprice">
-              <span class="home__main_oldprice-black">Успейте забрать по старой цене и получите<br></span>
-              <span class="home__main_oldprice-orange">ДОПОЛНИТЕЛЬНОЕ<br>ОБОРУДОВАНИЕ</span>        
-              <span class="home__main_oldprice-blue">ДОПОЛНИТЕЛЬНОЕ<br>ОБОРУДОВАНИЕ</span></p>
-              <p class="home__main_gift">НА <span class="home__main_gift-blue">50 000</span><br>В ПОДАРОК<span class="home__main_gift-black">*</span></p>
-            </div>
+          <div class="home__main_filter"></div>
+          <div class="home__main_text">
+            <h2 class="home__main_title">ВРЕМЯ <span class="home__main_title-orange">ВКЛАДЫВАТЬСЯ</span><br><span class="home__main_title-blue">В АВТОМОБИЛЬ</span></h2>
+            <p class="home__main_oldprice">
+            <span class="home__main_oldprice-black">Успейте забрать по старой цене и получите<br></span>
+            <span class="home__main_oldprice-orange">ДОПОЛНИТЕЛЬНОЕ<br>ОБОРУДОВАНИЕ</span>        
+            <span class="home__main_oldprice-blue">ДОПОЛНИТЕЛЬНОЕ<br>ОБОРУДОВАНИЕ</span></p>
+            <p class="home__main_gift">НА <span class="home__main_gift-blue">50 000</span><br>В ПОДАРОК<span class="home__main_gift-black">*</span></p>
           </div>
         </div>
         <div class="home__main_car"></div>
@@ -482,16 +481,25 @@ export default {
         // position: absolute;
         // top: calc(25% - ((100vw - 1280px)/4));
         max-width: 1748px;
-        margin: 0 auto;
+        // margin: 0 auto;
         // margin: calc((0px + (1920px - 100vw)/4)) auto 0 auto;
-        background: url('../assets/images/home-rakurs.png') center 60px/contain no-repeat;
+        background: url('../assets/images/home-filter.png') 0px 0px/cover no-repeat,
+                    url('../assets/images/home-rakurs.png') 0px 60px/contain no-repeat;
+        backdrop-filter: blur(5px);          
       }
       &_filter {
-        // background: url('../assets/images/frame333.png') no-repeat;
-        background-size: cover;
+        margin: 0 0 0 80px;
+        height: 0;
+        width: 490px;
+        // border-left: 0px solid transparent;
+        // border-right: 180px solid transparent;
+        // border-top: 740px solid rgba(255, 255, 255, 0.1);
+        background: url('../assets/images/home-rakurs.png') 0px 60px/contain no-repeat;
+        border: 2.44616px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0px 0px 122.308px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(5px);
       }
       &_text {
-        // position: absolute;
         // margin: calc((-0px - (1920px - 100vw)/4)) auto 0 auto;
         max-width: 1548px;
         max-height: 740px;
@@ -528,7 +536,7 @@ export default {
         top: calc(25% - ((100vw - 1280px)/4));
         left: 190px;
         display: block;
-        width: calc(100vw - 225px);
+        width: calc(100vw - 205px);
         // min-width: 1000px;
         height: 740px;
         background: url('../assets/images/home-main-car.png') right 0px no-repeat;

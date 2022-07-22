@@ -89,7 +89,7 @@ export default {
   &__item {
     padding: 0 18px 0 0;
     display: flex;
-    width: 114px;
+    width: 108px;
     flex-direction: column;
     align-items: center;
     &_number {
@@ -128,6 +128,33 @@ export default {
       font-size: 13.9337px;
       line-height: 17px;
       color: #FFFFFF;
+    }
+  }
+}
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .catalog-count {
+    max-width: 443px;
+    &__item {
+      padding: 0 16px 0 0;
+      // &:first-child {
+      //   padding: 0 16px 0 16px;
+      // }
+      &_number {
+        &-num {
+          width: 40px;
+          height: 53px;
+          font-size: 31.2378px;
+          line-height: 38px;
+          box-shadow: 0px 4.50343px 4.50343px rgba(0, 0, 0, 0.25);
+          border-radius: 8.36804px;
+        }
+      }
+      &_descr {
+        font-size: 12.9553px;
+        line-height: 16px;
+        margin-left: -10px;
+        align-self: center;
+      }
     }
   }
 }
