@@ -212,23 +212,70 @@ export default {
   align-items: center;
 }
 .next-btn {
-  width: 104px;
+  width: 208px;
   height: 104px;
-  border-radius: 100%;
+  border-radius: 50%;
   border: none;
-  background: url('../assets/images/next-btn.png');
-  background-size: contain;
+  background: url('../assets/images/Group182.png') center 0px/ contain no-repeat;
   cursor: pointer;
 }
 .prev-btn {
   display: flex;
-  width: 104px;
+  width: 208px;
   height: 104px;
-  border-radius: 100%;
+  border-radius: 50%;
   border: none;
-  background: url('../assets/images/prev-btn.png');
-  background-size: contain;
+  background: url('../assets/images/Group183.png') center 0px/ contain no-repeat;
   cursor: pointer;
+}
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .carousel-main {
+    margin-top: 69px;
+    max-width: 1700px;
+    &__title {
+      font-size: 34.9938px;
+      line-height: 42px;
+    }
+  }
+  .slick-list[data-v-3d1a4f76] {
+    max-width: 1000px;
+  }
+  .slider__item {
+    max-width: 250px;
+    height: 205px;
+    & img {
+      width: 205px;
+    }
+  }
+  .slider__item-active {
+    margin: 15px 0;
+    width: 270px;
+    height: 250px;
+    box-shadow: 0px 4.51039px 12.4036px rgba(0, 0, 0, 0.25);
+    border-radius: 50.7418px;
+    & img {
+      width: 200px;
+      margin: 0 15px;
+    }
+    &--text {
+      font-size: 30px;
+      line-height: 36px;
+      margin: 5px 0;
+    }
+  }
+  .slider-wrapper {
+    margin: 30px 0 0 40px;
+    max-width: 1275px;
+    height: 330px;
+  }
+  .next-btn {
+    width: 160px;
+    height: 80px;
+  }
+  .prev-btn {
+    width: 160px;
+    height: 80px;
+  }
 }
 @media ( max-width: 600px) {
   div[data-v-3d1a4f76] {

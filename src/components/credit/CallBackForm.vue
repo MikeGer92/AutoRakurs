@@ -141,6 +141,41 @@ export default {
 
     }
   }
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .person-form {
+    width: 570px;
+    height: 620px;
+    box-shadow: 0px 3.7922px 10.4285px rgba(0, 0, 0, 0.25);
+    border-radius: 36.9739px;
+    &__title {
+      margin: 46px 0 30px 50px;
+      font-size: 37.922px;
+      line-height: 46px;
+    }
+    &__name, &__phone {
+      width: 468px;
+      height: 70px;
+      border-radius: 94.0262px;
+      font-size: 27.6993px;
+      line-height: 34px;
+      padding: 0 0 0 22;
+      margin: 0 0 16px 38px;
+    }
+    &__btn {
+      width: 490px;
+      height: 76px;
+      box-shadow: 0px 6.91402px 6.91402px rgba(0, 0, 0, 0.25);
+      border-radius: 63.9547px;
+    }
+    &__info {
+      width: 462px;
+      font-size: 14.0551px;
+      line-height: 106.52%;
+      text-align: left;
+    }
+  }
+
+}
 @media (max-width: 605px) {
   .person-form {
     width: 332px;
@@ -151,6 +186,8 @@ export default {
       margin: 26px 0 26px 28px;
       font-size: 22.0223px;
       line-height: 27px;
+      font-size: 27.6993px;
+      line-height: 106.52%;
     }
     &__name, &__phone {
       width: 285px;

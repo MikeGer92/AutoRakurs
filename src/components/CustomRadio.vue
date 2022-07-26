@@ -75,6 +75,39 @@ export default {
     }
   }
 }
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .radio-main {
+    &__radio {
+      margin-top: 28px;
+      &_btn {
+        width: 34px;
+        height: 34px;
+        + span {
+          width: 34px;
+          height: 34px;
+        }
+        &:checked {
+          + span {
+            &::before {
+              width: 19px;
+              height: 19px;
+            }
+          }
+        }
+      }
+      & span {
+        width: 34px;
+        height: 34px;
+      }
+      &_text {
+        font-size: 14.0551px;
+        line-height: 106.52%;
+        margin-left: 18px;
+      }
+    }
+
+  }
+}
 @media (max-width: 605px) { 
   .radio-main {
     &__radio {
