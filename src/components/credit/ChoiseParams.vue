@@ -226,6 +226,8 @@ export default {
     }
   }
 }
+@media (min-width: 1280px) and (max-width: 1921px) {
+}
 @media ( max-width: 600px) {
   .choise {
     &__left {

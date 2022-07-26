@@ -127,6 +127,33 @@ export default {
     }
   }
 }
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .select-main {
+    width: 498px;
+    height: 58px;
+    margin-bottom: 55px;
+    &__field {
+      border-radius: 96.6507px;
+      &_text {
+        font-size: 25.5853px;
+        line-height: 31px;
+      }
+      &_icon {
+        width: 43.66px;
+        height: 21.83px;
+        margin-right: 18px;
+      }
+    }
+    &__options {
+      top: 58px;
+      &_option {
+        font-size: 25.5853px;
+        line-height: 31px;
+      }
+      
+    }
+  }
+}
 @media ( max-width: 600px) { 
   .select-main {
     width: 238px;

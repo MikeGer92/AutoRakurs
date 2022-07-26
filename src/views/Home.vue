@@ -483,7 +483,7 @@ export default {
         max-width: 1748px;
         // margin: 0 auto;
         // margin: calc((0px + (1920px - 100vw)/4)) auto 0 auto;
-        background: url('../assets/images/home-filter.png') 0px 0px/cover no-repeat,
+        background: url('../assets/images/home-filter.png') 0px 0px/contain no-repeat,
                     url('../assets/images/home-rakurs.png') 0px 60px/contain no-repeat;
         backdrop-filter: blur(5px);          
       }

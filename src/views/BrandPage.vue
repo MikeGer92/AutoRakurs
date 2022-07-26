@@ -65,8 +65,8 @@
         <div class="brandpage__main_right-form" id="brandpage-header-form">
           <div class="brandpage__main_right-form--title">ДО КОНЦА АКЦИИ ОСТАЛОСЬ:</div>
           <Timer 
+            class="brandpage__main_right-form--timer"
             :deadline="actionFinish"
-            :style="{'margin-bottom': '53px', 'width': '371px', 'height': '119px'}"
           />
           <div class="brandpage__main_right-form--errors" v-if="errors.length">
             <b>Ошибки при заполнении формы:</b>
@@ -75,20 +75,20 @@
               </ul>
           </div>
           <CustomSelect 
+            class="brandpage__main_right-form--select"
             :options="complectations" 
             @select="complSelect" 
             :selected="selectedCompl" 
             :defSelected="defSelectCompl"
-            :style="{'margin-bottom': '25px',  'width': '375px', 'height': '65px'}" 
 
             :disable="false"
           />
           <CustomSelect 
+            class="brandpage__main_right-form--select"
             :options="giftsList" 
             @select="giftSelect" 
             :selected="selectedGift" 
             :defSelected="defSelectGift" 
-            :style="{'margin-bottom': '32px',  'width': '375px', 'height': '65px'}" 
             :disable="disableGifts"
           />
           <input type="text" class="brandpage__main_right-form--name" placeholder="ИМЯ" v-model="formName">
@@ -265,7 +265,6 @@
     </div>
     <MarketBlock 
       class="brandpage__market"
-      :style="{'margin': '85px 0 0 0'}" 
     />
     <div class="brandpage__divider">
       <div class="brandpage__divider_line"></div>
@@ -273,7 +272,9 @@
       <div class="brandpage__divider_line"></div>
     </div>
     <div class="brandpage__similar">
-      <CarCard v-for="car in thisPriceList" :key="car.id" :car="car" />
+      <CarCard 
+      class="brandpage__similar_car"
+      v-for="car in thisPriceList" :key="car.id" :car="car" />
     </div>
   </div>
 </template>
@@ -625,7 +626,7 @@ export default {
           width: 941px;
           height: 547px;
           display: flex;
-          background: url('../assets/images/creta.png') no-repeat;
+          background: url('../assets/images/creta.png')center 0px/ contain no-repeat;
         }
         &--btn {
           display: none;
@@ -648,7 +649,6 @@ export default {
         width: 100%;
         display: flex;
         justify-content: space-around;
-
         &--item {
           display: flex;
           &_wrapper {
@@ -689,8 +689,8 @@ export default {
       display: flex;
       justify-content: center;
       margin: 0 90px 0 45px;
-      background: url('../assets/images/brand-action.png') no-repeat;
-      background-size: cover;
+      background: url('../assets/images/brand-action.png')center center/ cover no-repeat;
+      // background-size: cover;
       &-form {
         display: flex;
         flex-direction: column;
@@ -704,6 +704,11 @@ export default {
           font-size: 19.2071px;
           line-height: 23px;
           color: #6C6C6C;
+        }
+        &--timer {
+          margin-bottom: 53px;
+          width: 371px;
+          height: 119px;
         }
         &--errors {
           width: 100%;
@@ -720,6 +725,12 @@ export default {
             text-align: left;
           }
         }
+        &--select {
+          margin-bottom: 25px;
+          width: 375px;
+          height: 65px; 
+        }
+
         &--name, &--phone {
           display: flex;
           max-width: 345px;
@@ -788,20 +799,19 @@ export default {
       display: flex;
       width: 15px;
       height: 31px;
-      margin-right: 40px;
+      margin: 0 40px 0 0;
     }
     &_icon {
       width: 15px;
       height: 8px;
       display: flex;
       margin: 0 16px;
-      }
-
+    }
   }
   &__divider {
-    margin-top: 80px;
     width: 100%;
     max-width: 1891px;
+    margin: 80px auto 0 auto;
     text-align: center;
     &_line {
       width: 100%;
@@ -1066,11 +1076,348 @@ export default {
       background: url('../assets/images/brand-footer-banner.png') no-repeat;
     }
   }
+  &__market {
+    margin: 85px 0 0 0;
+  }
   &__similar {
     width: 100%;
     max-width: 2065px;
     display: flex;
     justify-content: space-around;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .brandpage {
+    max-width: 1920px;
+    &__main {
+      max-width: 1534px;
+      margin: 0 auto;
+      &_left {
+        margin: 0 54px 0 22px;
+        &-head {
+          width: 100%;
+          max-width: 1114px;
+          height: 452px;
+          background-size: cover;
+          &--wrapp {
+            margin: 0;
+            padding: 35px 22px;
+          }
+          &--info {
+            &_hot {
+              margin: 0 0 0 -10px;
+              width: 262px;
+              height: 41px;
+              font-size: 15.6623px;
+              line-height: 19px;
+              background-size: cover;
+            }
+            &_title {
+              width: 100%;
+              margin-top: 18px;
+              font-size: 42.5171px;
+              line-height: 51px;
+            }
+            &_border {
+              width: 77%;
+              // text-align: left;
+            }
+            &_price {
+              margin-top: 8px;
+              font-size: 25.5103px;
+              line-height: 31px;
+            }
+          }
+          &--colors {
+            margin: 50px 22px 0 -20px;
+            width: 374px;
+            height: 58px;
+            backdrop-filter: blur(23.3844px);
+            border-radius: 64.8386px;
+            &-item {
+              width: 41px;
+              height: 41px;
+              &--active {
+                border: 1.5px solid #12609E;
+              }
+              &--black {
+                width: 19px;
+                height: 19px;
+                border: 9px solid #FFFFFF;
+                &_active {
+                  width: 27px;
+                  height: 27px;
+                  border: 5px solid #FFFFFF;
+                }
+              }
+            }
+          }
+          &--image {
+            margin: 30px 0 0 -80px;
+            width: 100%;
+            max-width: 792px;
+            height: auto;
+            background: url('../assets/images/creta.png')center 0px/ contain no-repeat;
+          }
+        }
+        &-gifts {
+          margin-top: 10px;
+          &--item {
+            &_wrapper {
+              margin: 0 35px;
+            }
+            &_text {
+              font-size: 16.5743px;
+              line-height: 20px;
+              width: 152px;
+            }
+            &_border {
+              height: 127px;
+            }
+          }
+        }
+      }
+      &_right {
+        margin: 0;
+        width: 340px;
+        height: 589px;
+        // background-size: cover;
+        &-form {
+          width: 100%;
+          &--title {
+            margin: 30px 0 21px 0;
+            font-size: 15.6745px;
+            line-height: 19px;
+          }
+          &--timer {
+            margin-bottom: 43px;
+            max-width: 303px;
+            border-radius: 30.8561px;
+            & .count__item {
+              padding: 0 7px;
+              &_num {
+                font-size: 35.7472px;
+                line-height: 43px;
+              }
+              &_descr {
+                font-size: 12.0373px;
+                line-height: 15px;
+              }
+            }
+          }
+          &--select {
+            width: 306px;
+            height: 53px;
+            margin-bottom: 20px;
+            & .select-main__field_text {
+              font-size: 16.9732px;
+              line-height: 21px;
+            }
+            & .select-main__field_icon {
+              width: 19.15px;
+              height: 11.7px;
+              margin-right: 21px;
+            }
+          }
+          &--name, &--phone {
+            width: 278px;
+            height: 53px;
+            font-size: 16.9732px;
+            line-height: 21px;
+            margin: 6px 0 20px 0;
+          }
+          & button {
+            margin-bottom: 34px;
+            width: 286px;
+            height: 40px;
+            font-size: 14.8255px;
+            line-height: 18px;
+          }
+        }
+      }
+    }
+    &__choise {
+      max-width: 1510px;
+      margin:  41px auto 60px auto;
+      justify-content: space-between;
+      &_link {
+        font-size: 14.4911px;
+        line-height: 18px;
+        margin: 0 10px;
+        &-active {
+          border-radius: 60.5215px;
+          margin-right: 20px;
+        }
+      }
+      &_prev {
+        margin: 0 20px;
+      }
+    }
+    &__divider {
+      margin: 20px auto 0 auto;
+
+    }
+    &__complectations {
+      max-width: 1534px;
+      margin: 79px auto 0 auto;
+    }
+    &__special {
+      max-width: 1655px;
+      margin: 58px auto 37px auto;
+      &_left, &_right { 
+        margin-left: 136px;
+      }
+      &_line {
+        height: 369px;
+        // margin-left: 136px;
+      }
+    }
+    &__benefit {
+      max-width: 1322px;
+      margin: 34px auto 36px auto;
+      &_title {
+        font-size: 17.2481px;
+        line-height: 21px;
+        margin-left: 22px;
+      }
+      &_total {
+        justify-content: space-between;
+        &-sum {
+          font-size: 99.7637px;
+          line-height: 121px;
+          margin-right: 205px;
+        }
+        & button {
+          width: 504px;
+          height: 58px;
+        }
+      }
+    }
+    &__tradein {
+      max-width: 1519px;
+      height: 514px;
+      margin: 0 auto;
+      background-size: cover;
+      &_form {
+        margin-right: 60px;
+        width: 475px;
+        box-shadow: 0px 3.11271px 45.1342px rgba(0, 0, 0, 0.25);
+        border-radius: 31.9052px;
+        &-wrapper {
+          margin: 28px 26px 6px 26px;
+        }
+        &-model {
+          width: 211px;
+          height: 30px;
+          border-radius: 49.364px;
+          font-size: 10.1151px;
+          line-height: 12px;
+        }
+        &-params {
+          margin-top: 23px;
+          justify-content: space-between;
+          &--way, &--type, &--year {
+            width: 117px;
+            height: 26px;
+            border-radius: 49.364px;
+            padding-left: 10px;
+            font-size: 10.1151px;
+            line-height: 12px;
+          }
+        }
+        &-yourprice {
+          margin: 23px 0 0 0;
+          padding-left: 10px;
+          width: 211px;
+          height: 30px;
+          font-size: 10.1151px;
+          line-height: 12px;
+        }
+        &-person {
+          justify-content: space-between;
+          &--name, &--phone {
+            margin: 28px 0 0 0;
+            font-size: 10.1151px;
+            line-height: 12px;
+            padding-left: 10px;
+            width: 185px;
+            height: 27px;
+          }
+        }
+        & button {
+          margin-top: 23px;
+          width: 195px;
+          height: 27px;
+          box-shadow: 0px 3.51612px 3.51612px rgba(0, 0, 0, 0.25);
+          border-radius: 32.5241px;
+          font-size: 10.1151px;
+          line-height: 12px;
+        }
+      }
+    }
+    &__technical {
+      max-width: 1754px;
+      margin: 36px auto;
+      &_head, &_bottom {
+        &-size, &-eng, &-chas, &-petr {
+          margin: 25px 0;
+          font-size: 38.0241px;
+          line-height: 46px;
+          &--item {
+            margin-top: 28px;
+          }
+          &--icon {
+            width: 19px;
+            height: 19px;
+          }
+          &--text {
+            font-size: 18.2798px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+    &__image {
+      max-width: 1521px;
+      margin: 0 auto;
+      &_content {
+        width: 100%;
+        height: 629px;
+        background-size: cover;
+        margin: 96px 0;
+      }
+    }
+    &__market {
+      margin: 0 0 50px 0;
+      max-width: 1521px;
+      & .market__item_text {
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+    &__similar {
+      max-width: 1521px;
+      margin: 0 auto;
+      justify-content: space-between;
+      &_car {
+        width: 475px;
+        & .homecar-main{
+          max-width: 475px;
+        }
+        & .car {
+          width: 475px;
+          height: 730px;
+          background-size: cover;
+        }
+        & .homecar-buttons {
+          width: 475px;
+        }
+          &_btn {
+              max-width: 230px;
+              height: 42px;
+            }
+      }
+    }
   }
 }
 @media (max-width: 605px) {
