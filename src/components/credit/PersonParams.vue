@@ -177,6 +177,64 @@ export default {
     }
   }
 }
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .person {
+    margin: 0 0 37px 22px;
+    &__left {
+      margin: 33px 0 0 10px;
+      &_num {
+        width: 80px;
+        height: 80px;
+        font-size: 61.844px;
+        line-height: 75px;
+        box-shadow: 0px 2.3906px 16.1366px rgba(0, 0, 0, 0.25);
+      }
+      &_border-y {
+        width: 3px;
+        height: 310px;
+      }
+    }
+    &__right {
+      margin-top: 56px;
+      &_title {
+        margin-left: 76px;
+        font-size: 34.9938px;
+        line-height: 42px;
+      }
+      &_main {
+        margin: 48px 0 67px 76px;
+        &-left {
+          margin-right: 88px;
+        }
+      }
+    }
+    &__howget {
+      width: 540px;
+      &_info, &_req {
+        font-size: 23.7928px;
+        line-height: 52px;
+      }
+      &_docs {
+        font-size: 23.7928px;
+        line-height: 52px;
+      }
+      & ol {
+        & li {
+          font-size: 23px;
+          line-height: 52px;
+          margin-bottom: 75px;
+          margin-left: 18px;
+        }
+      }
+      &_divider {
+        margin-top: 15px;
+        width: 427px;
+        height: 5px;
+      }
+    }
+  }
+
+}
 @media ( max-width: 600px) {
   .person {
     &__left {

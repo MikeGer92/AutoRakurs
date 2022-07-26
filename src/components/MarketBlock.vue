@@ -52,5 +52,16 @@ export default {
     }
   }
 }
-
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .market {
+    margin: 10px 0 84px 0;
+    &__item {
+      margin: 9px 0;
+      &_text {
+        font-size: 30.2143px;
+        line-height: 36px;
+      }
+    }
+  }
+}
 </style>

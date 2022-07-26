@@ -128,7 +128,7 @@ export default {
 .choise {
   display: flex;
   &__left {
-    margin-top: 40px;
+    margin: 40px 0 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -224,6 +224,63 @@ export default {
         }
       }
     }
+  }
+}
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .choise {
+    margin: 0 0 0 22px;
+    &__left {
+      margin: 33px 0 0 10px;
+      &_num {
+        width: 80px;
+        height: 80px;
+        font-size: 61.844px;
+        line-height: 75px;
+        box-shadow: 0px 2.3906px 16.1366px rgba(0, 0, 0, 0.25);
+      }
+      &_border-y {
+        width: 3px;
+        height: 310px;
+      }
+    }
+    &__right {
+      margin-top: 56px;
+      &_title {
+        margin-left: 76px;
+        font-size: 34.9938px;
+        line-height: 42px;
+      }
+      &_main {
+        &-left {
+          margin: 38px 0 0 76px;
+        }
+        &-right {
+          margin: -115px 0 0 0;
+          &--image {
+            width: 656px;
+            height: 369px;
+            margin-top: 30px;
+          }
+          &--compl {
+            margin-top: -30px;
+            &_drive, &_power, &_eng {
+              width: 175px;;
+              &-icon {
+                width: 71px;
+                height: 71px;
+              }
+              &-descr {
+                margin: 17px 0 0 0;
+                font-size: 16.1957px;
+                line-height: 20px;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
   }
 }
 @media ( max-width: 600px) {

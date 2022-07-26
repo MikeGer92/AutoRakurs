@@ -3,32 +3,35 @@
     <Loader v-if="showLoader" />
     <div class="tradein__main">
       <div class="tradein__main_wrapper">
-        <div class="tradein__main_title">TRADE-IN</div>
-        <div class="tradein__main_subtitle">В ВАШУ ПОЛЬЗУ</div>
-          <div class="tradein__main_info">
-          <div class="tradein__main_benefit">
-            <div class="tradein__main_benefit-icon"><img src="../assets/images/tradein-benef.png"></div>
-            <div class="tradein__main_benefit-text--big">
-              <div class="tradein__main_benefit-text--big_str">ВЫГОДА&nbsp;<span>200 000₽*&nbsp;</span>НА ПОКУПКУ</div>
-              <div class="tradein__main_benefit-text--big_str">НОВОГО АВТОМОБИЛЯ</div>
+        <div class="tradein__main_textwrapp">
+          <div class="tradein__main_title">TRADE-IN</div>
+          <div class="tradein__main_subtitle">В ВАШУ ПОЛЬЗУ</div>
+            <div class="tradein__main_info">
+            <div class="tradein__main_benefit">
+              <div class="tradein__main_benefit-icon"><img src="../assets/images/tradein-benef.png"></div>
+              <div class="tradein__main_benefit-text--big">
+                <div class="tradein__main_benefit-text--big_str">ВЫГОДА&nbsp;<span>200 000₽*&nbsp;</span>НА ПОКУПКУ</div>
+                <div class="tradein__main_benefit-text--big_str">НОВОГО АВТОМОБИЛЯ</div>
+              </div>
+              <div class="tradein__main_benefit-text--small">
+                <div class="tradein__main_benefit-text--small_str">ВЫГОДА&nbsp;<span>200 000₽*&nbsp;</span></div>
+                <div class="tradein__main_benefit-text--small_str">НА ПОКУПКУ НОВОГО<br>АВТОМОБИЛЯ</div>
+              </div>
             </div>
-            <div class="tradein__main_benefit-text--small">
-              <div class="tradein__main_benefit-text--small_str">ВЫГОДА&nbsp;<span>200 000₽*&nbsp;</span></div>
-              <div class="tradein__main_benefit-text--small_str">НА ПОКУПКУ НОВОГО<br>АВТОМОБИЛЯ</div>
-            </div>
-          </div>
-          <div class="tradein__main_credit">
-            <div class="tradein__main_credit-icon"><img src="../assets/images/tradein-rent.png"></div>
-            <div class="tradein__main_credit-text--big">
-              <div class="tradein__main_credit-text--big_str">СТАВКА ОТ<span>&nbsp;8%*</span></div>
-            </div>
-            <div class="tradein__main_credit-text--small">
-              <div class="tradein__main_credit-text--small_circ">
-                <div class="tradein__main_credit-text--small_str">СТАВКА<br>ОТ<span>8%*</span></div>
+            <div class="tradein__main_credit">
+              <div class="tradein__main_credit-icon"><img src="../assets/images/tradein-rent.png"></div>
+              <div class="tradein__main_credit-text--big">
+                <div class="tradein__main_credit-text--big_str">СТАВКА ОТ<span>&nbsp;8%*</span></div>
+              </div>
+              <div class="tradein__main_credit-text--small">
+                <div class="tradein__main_credit-text--small_circ">
+                  <div class="tradein__main_credit-text--small_str">СТАВКА<br>ОТ<span>8%*</span></div>
+                </div>
               </div>
             </div>
           </div>
         </div>
+        <div class="tradein__main_image"></div>
       </div>
     </div>
     <div class="tradein__divider">
@@ -36,17 +39,19 @@
         <div class="tradein__divider_text">TRADE-IN</div>
         <div class="tradein__divider_line"></div>
     </div>
+    <div class="tradein__blocks">
+      <OldCarParams :blockNum="'1'" />
 
-    <OldCarParams :blockNum="'1'" />
+      <ChoiseParams :blockNum="'2'" />
 
-    <ChoiseParams :blockNum="'2'" />
+      <CreditParams :blockNum="'3'" />
 
-    <CreditParams :blockNum="'3'" />
+      <PersonParams :blockNum="'4'" />
 
-    <PersonParams :blockNum="'4'" />
+    </div>
 
     <WhyUs />
-
+    
   </div>
 </template>
 
@@ -84,8 +89,12 @@ export default {
     width: 100%;
     max-width: 2065px;
     height: 464px;
-    background: url('../assets/images/tradein-banner.png') no-repeat;
+    background: url('../assets/images/trade-main-max.png') no-repeat;
+    background-size: cover;
     &_wrapper {
+      display: flex;
+    }
+    &_textwrapp {
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -154,9 +163,16 @@ export default {
         flex-direction: row;
       }
     }
+    &_image {
+      display: flex;
+      width: 1109px;
+      height: auto;
+      margin: 70px 0 0 -20px;
+      background: url('../assets/images/tradein_car.png') center 0px/ contain no-repeat;
+    }
   }
   &__divider {
-    margin-top: 27px;
+    margin: 27px 0 0 0;
     width: 100%;
     max-width: 1891px;
     text-align: center;
@@ -173,6 +189,65 @@ export default {
       font-size: 44.7037px;
       line-height: 54px;
       color: #10205E;
+    }
+  }
+  &__blocks {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .select-main {
+    width: 498px;
+    height: 58px;
+    margin-bottom: 55px;
+  }
+  .tradein {
+    &__main {
+      max-width: 1920px;
+      height: 342px;
+      background: url('../assets/images/tradein-main.png') center 0px/ cover no-repeat;
+      &_wrapper {
+        width: 1534px;
+        margin: 0 auto;
+      }
+      &_textwrapp {
+        margin: 0 0 0 22px;
+      }
+      &_title {
+        font-size: 93.4283px;
+        line-height: 114px;
+      }
+      &_subtitle {
+        font-size: 30.9785px;
+        line-height: 38px;
+        margin-bottom: 40px;
+      }
+      &_benefit, &_credit {
+        margin-bottom: 22px;
+        &-icon {
+          width: 36px;
+          height: 36px;
+        }
+        &-text {
+          &--big {
+            margin-left: 10px;
+            font-size: 20.956px;
+            line-height: 26px;
+          }
+        }
+      }
+      &_image {
+        width: 817px;
+        margin: 0px 0 0 -20px;
+      }
+    }
+    &__divider {
+      margin: 43px auto;
+    }
+    &__blocks {
+      max-width: 1520px;
+      margin: 0 auto;
     }
   }
 }

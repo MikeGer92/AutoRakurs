@@ -135,5 +135,35 @@ export default {
       cursor: pointer;
     }
   }
-
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .catalog-form {
+    max-width: 349px;
+    max-height: 316px;
+    margin: 0;
+    box-shadow: 0px 4.49339px 4.94272px rgba(0, 0, 0, 0.25);
+    border-radius: 17.5242px;
+    &__wrapper {
+      margin: 27px 23px 22px 30px;
+    }
+    &__title {
+      font-size: 17.7377px;
+      line-height: 21px;
+    }
+    &__name, &__phone {
+      width: 275px;
+      height: 32px;
+      border-radius: 44.5648px;
+      font-size: 13.1284px;
+      line-height: 16px;
+    }
+    &__btn {
+      width: 290px;
+      height: 36px;
+      font-size: 13.1284px;
+      line-height: 106.52%;
+      box-shadow: 0px 3.27698px 3.27698px rgba(0, 0, 0, 0.25);
+      border-radius: 30.3121px;
+    }
+  }
+}
 </style>

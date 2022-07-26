@@ -189,7 +189,7 @@ export default {
       &_button {
         width: 188px;
         height: 36px;
-        margin: 41px 0 0 24px;
+        margin: 75px 0 0 24px;
         font-size: 11.7663px;
         line-height: 14px;
         border-radius: 81.7652px;

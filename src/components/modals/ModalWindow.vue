@@ -31,7 +31,7 @@ export default {
   .modal {
     max-width: 1920px;
     top: 206px;
-    height: 150%;
+    height: 140%;
   }
 }
 </style>

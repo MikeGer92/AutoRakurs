@@ -9,14 +9,14 @@
       <div class="oldcar-params__left_border-x"></div>
       <div class="oldcar-params__right_main">
         <div class="oldcar-params__right_main-left">
-          <CustomSelect 
+          <CustomSelect
             :options="oldCarList" 
             @select="oldSelect" 
             :selected="selectedOld" 
             :defSelected="defSelectOld"
             :disable="false"
           />
-          <CustomSelect 
+          <CustomSelect
             :options="yearsList" 
             @select="yearSelect" 
             :selected="selectedYear" 
@@ -32,7 +32,7 @@
             :defSelected="defSelectWay"
             :disable="false"
           />
-          <CustomSelect 
+          <CustomSelect
             :options="transList" 
             @select="transSelect" 
             :selected="selectedTrans" 
@@ -120,7 +120,7 @@ export default {
 .oldcar-params {
   display: flex;
   &__left {
-    margin-top: 40px;
+    margin: 40px 0 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -138,7 +138,7 @@ export default {
       color: #FFFFFF;
       background: linear-gradient(145.18deg, #12609E 5.86%, #10205E 93.37%);
       box-shadow: 0px 3.14081px 21.2005px rgba(0, 0, 0, 0.25);
-      border-radius: 52px;
+      border-radius: 50%;
     }
     &_border-y {
       width: 3px;
@@ -154,7 +154,7 @@ export default {
     }
   }
   &__right {
-    margin-top: 70px;
+    margin: 70px 0 0 0;
     display: flex;
     flex-direction: column;
     &_title {
@@ -189,6 +189,35 @@ export default {
       }
       &-right {
         margin-left: 85px;
+      }
+    }
+  }
+}
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .oldcar-params {
+    margin: 0 0 0 22px;
+    &__left {
+      margin: 24px 0 0 10px;
+      &_num {
+        width: 80px;
+        height: 80px;
+        font-size: 61.844px;
+        line-height: 75px;
+        box-shadow: 0px 2.3906px 16.1366px rgba(0, 0, 0, 0.25);
+      }
+      &_border-y {
+        height: 245px;
+      }
+    }
+    &__right {
+      margin: 47px 0 0 0;
+      &_title {
+        font-size: 34.9938px;
+        line-height: 42px;
+        margin-left: 76px;
+      }
+      &_main {
+        margin: 38px 0 0 76px;
       }
     }
   }

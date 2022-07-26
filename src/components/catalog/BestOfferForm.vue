@@ -154,5 +154,45 @@ export default {
       color: #000000;
     }
   }
-
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .bestoffer-form {
+    max-width: 288px;
+    // max-height: 312px;
+    align-self: center;
+    &__wrapper {
+      margin: 11px 32px 11px 22px;
+    }
+    &__title {
+      font-size: 17.197px;
+      line-height: 21px;
+      margin-bottom: 12px;
+    }
+    &__subtitle {
+      margin-bottom: 8px;
+      font-size: 8.08541px;
+      line-height: 10px;
+    }
+    &__name, &__phone {
+      font-size: 13.9329px;
+      line-height: 17px;
+      width: 233px;
+      height: 35px;
+      margin: 8px 0 0 0;
+    }
+    &__btn {
+      margin-top: 25px;
+      width: 247px;
+      height: 38px;
+      box-shadow: 0px 3.47779px 3.47779px rgba(0, 0, 0, 0.25);
+      border-radius: 32.1695px;
+      font-size: 13.9329px;
+      line-height: 106.52%;
+    }
+    &__info {
+      margin-top: 16px;
+      font-size: 7.0698px;
+      line-height: 106.52%;
+    }
+  }
+}
 </style>
