@@ -142,13 +142,13 @@ export default {
       font-family: 'Montserrat';
       font-style: normal;
       font-weight: 500;
-      font-size: 21px;
+      font-size: 18px;
       line-height: 25px;
       text-align: center;
       color: #000000;
     }
     &__title {
-      font-size: 44.6842px;
+      font-size: 46.6842px;
       line-height: 54px;
     }
     &__advants {

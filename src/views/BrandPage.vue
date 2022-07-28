@@ -1239,7 +1239,7 @@ export default {
     &__choise {
       max-width: 1510px;
       margin:  41px auto 60px auto;
-      justify-content: space-between;
+      justify-content: space-around;
       &_link {
         font-size: 14.4911px;
         line-height: 18px;

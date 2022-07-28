@@ -76,8 +76,8 @@ export default {
     height: 717px;
     display: flex;
     flex-direction: column;
-    background: url('../assets/images/credit-banner.png') no-repeat;
-    background-size: contain;
+    background: url('../assets/images/credit-banner.png') center no-repeat;
+    background-size: cover;
     &_title {
       margin: 35px 0 0 76px;
       font-family: 'Montserrat';
@@ -88,7 +88,7 @@ export default {
       color: #FFFFFF;
     }
     &_subtitle {
-      margin-left: 76px;
+      margin:  0 0 0 76px;
       font-family: 'Montserrat';
       font-style: normal;
       font-weight: 700;
@@ -243,6 +243,37 @@ export default {
                 height: 94px;
               }
             }
+          }
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .credit {
+    max-width: 1920px;
+    &__header {
+      height: 667px;
+      &_title {
+        margin: 33px 0 0 199px;
+        font-size: 123.071px;
+        line-height: 150px;
+      }
+      &_subtitle {
+        font-size: 54.2848px;
+        line-height: 66px;
+        margin: 0 0 0 199px;
+      }
+      &_options {
+        margin: 67px 0 0 199px;
+        &-bank, &-perc, &-gift {
+          margin-bottom: 30px;
+          &--image {
+            width: 69px;
+          }
+          &--text {
+            font-size: 27.8556px;
+            line-height: 34px;
           }
         }
       }
