@@ -228,7 +228,7 @@ export default {
     max-width: 2065px;
     max-height: 180px;
     margin: 22px 0 11px 0;
-    background: url('../assets/images/home-mask.png') no-repeat;
+    background: url('../assets/images/home-mask.png') center no-repeat;
     background-size: cover;
     &_block {
       display: flex;
@@ -572,24 +572,24 @@ export default {
     }
     &__header {
       max-width: 1280px;
-      max-height: 168px;
+      max-height: 112px;
       margin: 0 0 6px 0;
       background-size: cover;
       background-position: 50% 100%;
       &_block {
-        max-width: 1534px;
+        max-width: 1023px;
         margin: 0 auto;
       }
       &_title {
-        margin-left: 22px;
-        font-size: 29.3724px;
-        line-height: 36px;
+        margin-left: 15px;
+        font-size: 19.5795px;
+        line-height: 24px;
         align-items: center;
       }
       &_timer {
         &-title {
-          font-size: 22.7512px;
-          line-height: 28px;
+          font-size: 15.1658px;
+          line-height: 18px;
         }
       }
     }
