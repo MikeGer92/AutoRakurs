@@ -565,13 +565,130 @@ export default {
     }
   }
 }
-// @media (min-width: 1280px) and (max-width: 1670px) {
-//   .home {
-//     &__main {
-//       background-size: contain;
-//     }
-//   }
-// }
+@media (min-width: 768px) and (max-width: 1281px) {
+  .home {
+    &__wrapper {
+      max-width: 1280px;
+    }
+    &__header {
+      max-width: 1280px;
+      max-height: 168px;
+      margin: 0 0 6px 0;
+      background-size: cover;
+      background-position: 50% 100%;
+      &_block {
+        max-width: 1534px;
+        margin: 0 auto;
+      }
+      &_title {
+        margin-left: 22px;
+        font-size: 29.3724px;
+        line-height: 36px;
+        align-items: center;
+      }
+      &_timer {
+        &-title {
+          font-size: 22.7512px;
+          line-height: 28px;
+        }
+      }
+    }
+    &__main {
+      position: relative;
+      max-width: 1920px;
+      height: 740px;
+      // margin: calc((-50px - (1920px - 100vw)/4)) auto 0 auto;
+      background: linear-gradient(180deg, rgba(52, 138, 210, 0.17) 95%, #FFFFFF 100%);
+      // background-size: cover;
+      overflow: hidden;
+      &_rakurs {
+        // position: absolute;
+        // top: calc(25% - ((100vw - 1280px)/4));
+        max-width: 1748px;
+        // margin: 0 auto;
+        // margin: calc((0px + (1920px - 100vw)/4)) auto 0 auto;
+        background: url('../assets/images/home-filter.png') 0px 0px/contain no-repeat,
+                    url('../assets/images/home-rakurs.png') 0px 60px/contain no-repeat;
+        backdrop-filter: blur(5px);          
+      }
+      &_filter {
+        margin: 0 0 0 80px;
+        height: 0;
+        width: 490px;
+        // border-left: 0px solid transparent;
+        // border-right: 180px solid transparent;
+        // border-top: 740px solid rgba(255, 255, 255, 0.1);
+        background: url('../assets/images/home-rakurs.png') 0px 60px/contain no-repeat;
+        border: 2.44616px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0px 0px 122.308px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(5px);
+      }
+      &_text {
+        // margin: calc((-0px - (1920px - 100vw)/4)) auto 0 auto;
+        max-width: 1548px;
+        max-height: 740px;
+        margin: 0 auto;
+        // background: url('../assets/images/home-main-car.png') right bottom no-repeat;
+        background-size: contain;
+      }
+      &_title {
+        margin: 65px 0 0 22px;
+        font-size: 33.3805px;
+        line-height: 41px;
+        &-orange, &-blue {
+          font-size: 54.0046px;
+          line-height: 66px;
+        }
+      }
+      &_oldprice {
+        margin: 118px 0 0 22px;
+        &-black {
+          font-size: 21.9937px;
+        }
+      }
+      &_gift {
+        margin: 27px 0 132px 22px;
+        font-size: 66.5699px;
+        line-height: 81px;
+        &-black {
+          font-size: 39.3367px;
+          line-height: 48px;
+        }
+      }
+      &_car {
+        position: absolute;
+        top: calc(25% - ((100vw - 1280px)/4));
+        left: 190px;
+        display: block;
+        width: calc(100vw - 205px);
+        // min-width: 1000px;
+        height: 740px;
+        background: url('../assets/images/home-main-car.png') right 0px no-repeat;
+        background-size: contain;
+      }
+    }
+    &__cars {
+      max-width: 1420px;
+    }
+    &__bottom-divider {
+      max-width: 1534px;
+      height: 44px;
+      margin: 91px auto 110px auto;
+    }
+    &__benefit {
+      width: 100%;
+      max-width: 1920px;
+      background: #D7E8F6;
+      &_block, &_options {
+        // max-width: 1460px;
+        margin: 0 auto;
+      }
+      &_divider {
+        margin: 0 0 26px 0;
+      }
+    }
+  }
+}
 @media (max-width: 605px) {
   .home {
     width: 100%;
