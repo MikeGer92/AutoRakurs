@@ -1420,6 +1420,376 @@ export default {
     }
   }
 }
+@media (min-width: 768px) and (max-width: 1281px) {
+  .brandpage {
+    max-width: 1280px;
+    &__main {
+      max-width: 1023px;
+      margin: 0 auto;
+      &_left {
+        margin: 0 37px 0 15px;
+        width: 744px;
+        &-head {
+          width: 100%;
+          max-width: 744px;
+          height: 302px;
+          background-size: cover;
+          &--wrapp {
+            margin: 0;
+            padding: 29px 10px;
+          }
+          &--info {
+            margin-left: 5px;
+            &_hot {
+              margin: 0 0 0 -10px;
+              width: 175px;
+              height: 27px;
+              font-size: 10.4506px;
+              line-height: 13px;
+              background-size: cover;
+            }
+            &_title {
+              width: 100%;
+              margin-top: 12px;
+              font-size: 28.3695px;
+              line-height: 34px;
+            }
+            &_border {
+              width: 57%;
+              // text-align: left;
+            }
+            &_price {
+              margin-top: 6px;
+              font-size: 17.0217px;
+              line-height: 21px;
+            }
+          }
+          &--colors {
+            margin: 33px 18px 0 -15px;
+            width: 249px;
+            height: 39px;
+            backdrop-filter: blur(15.6032px);
+            border-radius: 43.2635px;
+            &-item {
+              width: 27px;
+              height: 27px;
+              &--active {
+                border: 1px solid #12609E;
+              }
+              &--black {
+                width: 13px;
+                height: 13px;
+                border: 6px solid #FFFFFF;
+                &_active {
+                  width: 19px;
+                  height: 19px;
+                  border: 3px solid #FFFFFF;
+                }
+              }
+            }
+          }
+          &--image {
+            margin: 35px 0 0 -90px;
+            width: 100%;
+            max-width: 529px;
+            height: auto;
+            background: url('../assets/images/creta.png')center 0px/ contain no-repeat;
+          }
+        }
+        &-gifts {
+          margin-top: 10px;
+          &--item {
+            &_wrapper {
+              margin: 0 18px;
+            }
+            &_img {
+              width: 28px;
+              height: 25px;
+            }
+            &_text {
+              margin-top: 25px;
+              font-size: 11px;
+              line-height: 13px;
+              width: 118px;
+            }
+            &_border {
+              height: 84px;
+            }
+          }
+        }
+      }
+      &_right {
+        margin: 0;
+        width: 228px;
+        height: 393px;
+        // background-size: cover;
+        &-form {
+          width: 228px;
+          &--title {
+            margin: 21px 0 13px 0;
+            font-size: 10.4588px;
+            line-height: 13px;
+          }
+          &--timer {
+            margin-bottom: 29px;
+            max-width: 203px;
+            box-shadow: 0px 3.43869px 3.43869px rgba(0, 0, 0, 0.25);
+            border-radius: 20.5887px;
+            & .count__item {
+              padding: 0 7px;
+              &_num {
+                font-size: 23.8523px;
+                line-height: 29px;
+              }
+              &_descr {
+                font-size: 8.03189px;
+                line-height: 10px;
+              }
+            }
+          }
+          &--select {
+            width: 205px;
+            height: 35px;
+            margin-bottom: 14px;
+            & .select-main__field_text {
+              font-size: 11.3253px;
+              line-height: 14px;
+              margin-left: 10px;
+            }
+            & .select-main__field_icon {
+              width: 13px;
+              height: 8px;
+              margin-right: 14px;
+            }
+            & .select-main__options {
+              top: 35px;
+              &_option {
+                font-size: 11.3253px;
+                line-height: 14px;
+              }
+            }
+          }
+          &--name, &--phone {
+            max-width: 193px;
+            // height: 45px;
+            font-size: 14.1452px;
+            line-height: 17px;
+            margin: 0;
+            padding-left: 10px;
+            border-radius: 48.2769px;
+          }
+          &--phone {
+            margin: 14px 0 12px 0;
+          }
+          & button {
+            margin-bottom: 22px;
+            width: 191px;
+            font-size: 9.89234px;
+            line-height: 12px;
+            box-shadow: 0px 3.43869px 3.43869px rgba(0, 0, 0, 0.25);
+            border-radius: 31.8079px;
+          }
+        }
+      }
+    }
+    &__choise {
+      max-width: 1014px;
+      margin:  14px auto 53px auto;
+      justify-content: space-around;
+      &_link {
+        height: 32px;
+        font-size: 9.66916px;
+        line-height: 12px;
+        margin: 0 10px;
+        &-active {
+          border-radius: 40.383px;
+          margin-right: 20px;
+        }
+      }
+      &_icon {
+        width: 9px;
+        height: 5px;
+        margin: 0 10px;
+      }
+      &_prev {
+        margin: 0 15px;
+      }
+    }
+    &__divider {
+      margin: 0px auto;
+      &_line {
+        height: 2px;
+      }
+      &_text {
+        margin: 12px 0;
+        font-size: 29.8285px;
+        line-height: 36px;
+      }
+
+    }
+    &__complectations {
+      max-width: 1534px;
+      margin: 79px auto 0 auto;
+    }
+    &__special {
+      max-width: 1655px;
+      margin: 58px auto 37px auto;
+      &_left, &_right { 
+        margin-left: 136px;
+      }
+      &_line {
+        height: 369px;
+        // margin-left: 136px;
+      }
+    }
+    &__benefit {
+      max-width: 1322px;
+      margin: 34px auto 36px auto;
+      &_title {
+        font-size: 17.2481px;
+        line-height: 21px;
+        margin-left: 22px;
+      }
+      &_total {
+        justify-content: space-between;
+        &-sum {
+          font-size: 99.7637px;
+          line-height: 121px;
+          margin-right: 205px;
+        }
+        & button {
+          width: 504px;
+          height: 58px;
+        }
+      }
+    }
+    &__tradein {
+      max-width: 1519px;
+      height: 514px;
+      margin: 0 auto;
+      background-size: cover;
+      &_form {
+        margin-right: 60px;
+        width: 475px;
+        box-shadow: 0px 3.11271px 45.1342px rgba(0, 0, 0, 0.25);
+        border-radius: 31.9052px;
+        &-wrapper {
+          margin: 28px 26px 6px 26px;
+        }
+        &-model {
+          width: 211px;
+          height: 30px;
+          border-radius: 49.364px;
+          font-size: 10.1151px;
+          line-height: 12px;
+        }
+        &-params {
+          margin-top: 23px;
+          justify-content: space-between;
+          &--way, &--type, &--year {
+            width: 117px;
+            height: 26px;
+            border-radius: 49.364px;
+            padding-left: 10px;
+            font-size: 10.1151px;
+            line-height: 12px;
+          }
+        }
+        &-yourprice {
+          margin: 23px 0 0 0;
+          padding-left: 10px;
+          width: 211px;
+          height: 30px;
+          font-size: 10.1151px;
+          line-height: 12px;
+        }
+        &-person {
+          justify-content: space-between;
+          &--name, &--phone {
+            margin: 28px 0 0 0;
+            font-size: 10.1151px;
+            line-height: 12px;
+            padding-left: 10px;
+            width: 185px;
+            height: 27px;
+          }
+        }
+        & button {
+          margin-top: 23px;
+          width: 195px;
+          height: 27px;
+          box-shadow: 0px 3.51612px 3.51612px rgba(0, 0, 0, 0.25);
+          border-radius: 32.5241px;
+          font-size: 10.1151px;
+          line-height: 12px;
+        }
+      }
+    }
+    &__technical {
+      max-width: 1754px;
+      margin: 36px auto;
+      &_head, &_bottom {
+        &-size, &-eng, &-chas, &-petr {
+          margin: 25px 0;
+          font-size: 38.0241px;
+          line-height: 46px;
+          &--item {
+            margin-top: 28px;
+          }
+          &--icon {
+            width: 19px;
+            height: 19px;
+          }
+          &--text {
+            font-size: 18.2798px;
+            line-height: 22px;
+          }
+        }
+      }
+    }
+    &__image {
+      max-width: 1521px;
+      margin: 0 auto;
+      &_content {
+        width: 100%;
+        height: 629px;
+        background-size: cover;
+        margin: 96px 0;
+      }
+    }
+    &__market {
+      margin: 0 0 50px 0;
+      max-width: 1521px;
+      & .market__item_text {
+        font-size: 32px;
+        line-height: 40px;
+      }
+    }
+    &__similar {
+      max-width: 1521px;
+      margin: 0 auto;
+      justify-content: space-between;
+      &_car {
+        width: 475px;
+        & .homecar-main{
+          max-width: 475px;
+        }
+        & .car {
+          width: 475px;
+          height: 730px;
+          background-size: cover;
+        }
+        & .homecar-buttons {
+          width: 475px;
+        }
+          &_btn {
+              max-width: 230px;
+              height: 42px;
+            }
+      }
+    }
+  }
+}
 @media (max-width: 605px) {
   .brandpage {
     margin: 0;
