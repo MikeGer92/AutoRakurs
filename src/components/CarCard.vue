@@ -256,6 +256,78 @@ export default {
     }
   }
 }
+@media (min-width: 768px) and (max-width: 1281px) {
+  .homecar-main {
+    width: 295px;
+    margin-top: 64px;
+  }
+  .car {
+    width: 100%;
+    &__brand {
+      margin: 6px 17px 0 17px ;
+      font-size: 56.4696px;
+      line-height: 68px;
+      align-self: center;
+      text-align: center;
+    }
+    &__model {
+      margin: -10px 0 0 30px;
+      font-size: 34.5008px;
+      line-height: 42px;
+    }
+    &__image {
+      max-width: 443px;
+    }
+    &__offer {
+      &_day {
+        width: 115px;
+        margin: 10px 5px 18px 12px;
+        border: 2.02739px solid #FFA724;
+        border-radius: 32.4382px;
+        &-off {
+          padding: 11px 0 0 12px;
+          font-size: 8.9779px;
+          line-height: 11px;       
+        }
+        &-disc {
+          padding: 5px 0 11px 12px;
+          font-size: 8.9779px;
+          line-height: 11px;
+        }   
+      }
+      &_payment {
+        width: 139px;
+        margin-right: 20px;
+        &-sum {
+          font-size: 20.9075px;
+          line-height: 21px;
+        }
+        &-period {
+          font-size: 16.2191px;
+          line-height: 16px;
+        }
+      }
+    }
+    &__coast {
+      margin: 6px 11px 7px 11px;
+      font-size: 33.6953px;
+      line-height: 41px;
+    }
+  }
+  .homecar-buttons {
+    margin: 12px 0 0 0;
+    &_btn {
+      max-width: 143px;
+      height: 26px;
+      box-shadow: 0px 4.85773px 4.85773px rgba(0, 0, 0, 0.25);
+      border-radius: 44.934px;
+      &-credit, &-compl {
+        font-size: 8.02344px;
+        line-height: 10px;
+      }
+    }
+  }
+}
 @media (max-width: 605px) {
   .homecar-main {
     max-width: 336px;

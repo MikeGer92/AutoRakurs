@@ -590,13 +590,14 @@ export default {
         &-title {
           font-size: 15.1658px;
           line-height: 18px;
+          margin: 5px 0 4px 0;
         }
       }
     }
     &__main {
       position: relative;
-      max-width: 1920px;
-      height: 740px;
+      max-width: 1280px;
+      height: 495px;
       // margin: calc((-50px - (1920px - 100vw)/4)) auto 0 auto;
       background: linear-gradient(180deg, rgba(52, 138, 210, 0.17) 95%, #FFFFFF 100%);
       // background-size: cover;
@@ -604,7 +605,7 @@ export default {
       &_rakurs {
         // position: absolute;
         // top: calc(25% - ((100vw - 1280px)/4));
-        max-width: 1748px;
+        max-width: 1280px;
         // margin: 0 auto;
         // margin: calc((0px + (1920px - 100vw)/4)) auto 0 auto;
         background: url('../assets/images/home-filter.png') 0px 0px/contain no-repeat,
@@ -625,39 +626,44 @@ export default {
       }
       &_text {
         // margin: calc((-0px - (1920px - 100vw)/4)) auto 0 auto;
-        max-width: 1548px;
-        max-height: 740px;
+        max-width: 1023px;
+        max-height: 495px;
         margin: 0 auto;
         // background: url('../assets/images/home-main-car.png') right bottom no-repeat;
         background-size: contain;
       }
       &_title {
-        margin: 65px 0 0 22px;
-        font-size: 33.3805px;
-        line-height: 41px;
+        margin: 53px 0 0 15px;
+        font-size: 22.3232px;
+        line-height: 27px;
         &-orange, &-blue {
-          font-size: 54.0046px;
-          line-height: 66px;
+          font-size: 36.1156px;
+          line-height: 44px;
         }
       }
       &_oldprice {
-        margin: 118px 0 0 22px;
+        margin: 75px 0 0 15px;
         &-black {
-          font-size: 21.9937px;
+          font-size: 14.7083px;
+          line-height: 141.9%;
+        }
+        &-orange {
+          font-size: 21.4303px;
+          line-height: 141.9%;
         }
       }
       &_gift {
-        margin: 27px 0 132px 22px;
-        font-size: 66.5699px;
-        line-height: 81px;
+        margin: 18px 0 132px 15px;
+        font-size: 44.5186px;
+        line-height: 54px;
         &-black {
-          font-size: 39.3367px;
-          line-height: 48px;
+          font-size: 26.31px;
+          line-height: 32.07px;
         }
       }
       &_car {
         position: absolute;
-        top: calc(25% - ((100vw - 1280px)/4));
+        top: calc(5% - ((100vw - 1280px)/4));
         left: 190px;
         display: block;
         width: calc(100vw - 205px);
@@ -667,24 +673,45 @@ export default {
         background-size: contain;
       }
     }
+    &__divider {
+      &_line {
+        height: 2px;
+      }
+      &_text {
+        font-size: 29.7993px;
+        line-height: 36px;
+      }
+    }
     &__cars {
-      max-width: 1420px;
+      max-width: 946px;
     }
     &__bottom-divider {
-      max-width: 1534px;
-      height: 44px;
-      margin: 91px auto 110px auto;
+      max-width: 1023px;
+      height: 32px;
+      margin: 65px auto 68px auto;
     }
     &__benefit {
       width: 100%;
-      max-width: 1920px;
+      max-width: 1280px;
       background: #D7E8F6;
+      &_wrapper {
+        margin: 74px 0 74px 0;
+      }
       &_block, &_options {
         // max-width: 1460px;
         margin: 0 auto;
       }
       &_divider {
-        margin: 0 0 26px 0;
+        margin: 40px 0 40px 0;
+        &-line {
+          height: 2px;
+        }
+        &-text {
+          font-size: 22.2198px;
+          line-height: 27px;
+          margin: 18px 0;
+        }
+        
       }
     }
   }
