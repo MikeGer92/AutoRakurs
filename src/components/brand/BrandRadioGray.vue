@@ -136,6 +136,48 @@ export default {
     }
   }
 }
+@media (min-width: 768px) and (max-width: 1281px) {
+  .radio-main-gray {
+    &__radio {
+      margin-top: 35px;
+      &_btn {
+        width: 46px;
+        height: 46px;
+        margin-left: 30px;
+        + span {
+          width: 27px;
+          height: 27px;
+          border-radius: 50%;
+          margin-left: 20px;
+        }
+        &:checked {
+          + span {
+            &::before {
+              content: "";
+              width: 16px;
+              height: 16px;
+            }
+          }
+        }
+      }
+      & span {
+        width: 31px;
+        height: 31px;
+      }
+      &_text {
+        margin-left: 15px;
+        &-title {
+          font-size: 11.5088px;
+          line-height: 14px;
+        }
+        &-benef {
+          font-size: 23.9395px;
+          line-height: 29px;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 605px) {
   .radio-main-gray {
     &__radio {

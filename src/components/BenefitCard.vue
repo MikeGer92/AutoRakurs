@@ -80,7 +80,7 @@ export default {
     }
     &_descr, &_event {
       max-width: 290px;
-      margin-left: 32px;
+      margin: 0 0 0 32px;
       font-family: 'Inter';
       font-style: normal;
       font-weight: 400;
@@ -137,6 +137,36 @@ export default {
       line-height: 18px;
       box-shadow: 0px 3.90922px 3.90922px rgba(0, 0, 0, 0.25);
       border-radius: 77.207px;
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1281px) {
+  .benefit {
+    margin: 20px 29px;
+    width: 300px;
+    height: 208px;
+    border-radius: 11.7264px;
+    &__header {
+      &_title {
+        margin: 13px 0 5px 10px;
+        font-size: 15.6352px;
+        line-height: 18px;
+      }
+      &_descr, &_event {
+        width: 151px;
+        margin: 0 0 0 10px;
+        font-size: 9px;
+        line-height: 11px;
+      }
+    }
+    &__button {
+      width: 159px;
+      height: 27px;
+      margin: 0 16px 13px 0;
+      font-size: 9.77198px;
+      line-height: 12px;
+      box-shadow: 0px 3.90922px 3.90922px rgba(0, 0, 0, 0.25);
+      border-radius: 52px;
     }
   }
 }

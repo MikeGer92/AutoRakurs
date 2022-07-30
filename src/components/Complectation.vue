@@ -277,6 +277,82 @@ export default {
     }
   }
 }
+@media (min-width: 768px) and (max-width: 1281px) {
+  .complect {
+    margin: 0 auto;
+    &__main {
+      width: 230px;
+      height: 155px;
+      margin-bottom: 14px;
+      &_title {
+        margin: 10px 0 7px 0;
+        font-size: 22.9162px;
+        line-height: 28px;
+      }
+      &_divider {
+        &-line {
+          width: 200px;
+          height: 1px;
+        }
+        &-block {
+          &--item {
+            margin: 10px 0;
+            font-size: 6.1515px;
+            line-height: 7px;
+          }
+          &--border {
+            height: 12px;
+          }
+        }
+      }
+      &_about {
+        margin: 8px 0;
+        &-image {
+          width: 17px;
+          height: 17px;
+          margin-right: 11px;
+        }
+        &-text {
+          font-size: 11.4996px;
+          line-height: 14px;
+        }
+      }
+      &_detail {
+        margin-bottom: 6px;
+        &-item {
+          width: 70px;
+          height: 14px;
+          border-radius: 50px;
+          font-size: 5px;
+          line-height: 7px;
+          text-align: center;
+        }
+      }
+      &_price {
+        font-size: 33px;
+        line-height: 38px;
+        margin: 0 0 4px 0;
+      }
+    }
+    &__buttons {
+      width: 230px;
+      height: 27px;
+      justify-content: space-evenly;
+      box-shadow: 0px 3.6398px 3.6398px rgba(0, 0, 0, 0.25);
+      border-radius: 33.6681px;
+      margin-bottom: 47px;
+      &_getspecial, &_getcredit {
+        font-size: 6.01181px;
+        line-height: 7px;
+      }
+      &_divider {
+        width: 1px;
+        height: 26px;
+
+      }
+    }
+  }
+}
 @media (max-width: 605px) {
   .complect {
     &__main {

@@ -231,6 +231,65 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
     }
   }
 }
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .about {
+    &__divider {
+      margin: 48px auto;
+    }
+    &__main {
+      max-width: 1520px;
+      &_left {
+        max-width: 507px;
+        &-title {
+          margin-top: 28px;
+          font-size: 40.4601px;
+          line-height: 49px;
+        }
+        &-subtitle {
+          margin-top: 9px;
+          font-size: 18.7795px;
+          line-height: 23px;
+        }
+        &-operate, &-contacts {
+          margin-top: 10px;
+          &--title {
+            font-size: 18.7795px;
+            line-height: 23px;
+          }
+          &--hours {
+            margin: 8px 0 29px;
+            font-size: 29.4137px;
+            line-height: 36px;
+          }
+          &--phone, &--addr, &--mail {
+            margin-top: 10px;
+            & img {
+              width: 23px;
+            }
+            &_text {
+              font-size: 18.7795px;
+              line-height: 23px;
+            }
+          }
+        }
+      }
+      &_right {
+        max-width: 846px;
+      }
+      &_btn {
+        & button {
+          width: 370px;
+          height: 56px;
+          box-shadow: 0px 8.83726px 8.83726px rgba(0, 0, 0, 0.25);
+          border-radius: 81.7447px;   
+          font-size: 20.7888px;
+          line-height: 25px;
+          margin: -250px 0 0 220px;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 605px) {
   .about {
     &__divider {

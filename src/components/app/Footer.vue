@@ -164,7 +164,7 @@ export default {
       max-width: 1132px;
       &-title {
         display: flex;
-        margin-top: 44px;
+        margin: 44px 0 0 0;
         font-family: 'Inter';
         font-style: normal;
         font-weight: 900;
@@ -258,7 +258,7 @@ export default {
       }
       &_right {
         &-title {
-          margin-left: 100px;
+          margin: 27px 0 0 100px;
         }
         &-list {
           margin: 11px 0 41px 100px;
@@ -290,6 +290,72 @@ export default {
         margin: 43px 97px 0 ;
         font-size: 14.6736px;
         line-height: 18px;
+      }
+    }
+  }
+
+}
+@media (min-width: 768px) and (max-width: 1281px) {
+  .footer {
+    max-width: 1280px;
+    &__main {
+      &_left {
+        &-salon {
+          margin: 27px 0 0 72px;
+          max-width: 360px;
+          &--info, &--contact, &--credits {
+            &_title {
+              font-size: 18.0113px;
+              line-height: 22px;
+            }
+            & ul {
+              font-size: 9.78281px;
+              line-height: 12px;
+              & li {
+                margin: 15px 0;
+              }
+            }
+          }
+        }
+      }
+      &_right {
+        max-width: 832px;
+        &-title {
+          margin-left: 80px;
+          font-size: 18.0113px;
+          line-height: 22px;
+        }
+        &-list {
+          margin: 11px 0 27px 80px;
+          &--item {
+            width: 148px;
+            font-size: 9.78281px;
+            line-height: 12px;
+            margin: 11px 0;
+          }
+
+        }
+      }
+    }
+    &__bottom {
+      max-width: 1280px;
+      &_left {
+        max-width: 267px;
+        margin: 16px 0 40px 74px;
+        &-title {
+          font-size: 9.78135px;
+          line-height: 12px;
+        }
+        &-confid, &-confirm {
+          font-size: 9.78135px;
+          line-height: 12px;
+        }
+      }
+      &_right {
+        max-width: 636px;
+        margin: 28px 64px 0 ;
+        font-size: 9.78281px;
+        line-height: 12px;
       }
     }
   }

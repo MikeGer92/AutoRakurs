@@ -228,7 +228,7 @@ export default {
     max-width: 2065px;
     max-height: 180px;
     margin: 22px 0 11px 0;
-    background: url('../assets/images/home-mask.png') no-repeat;
+    background: url('../assets/images/home-mask.png') center no-repeat;
     background-size: cover;
     &_block {
       display: flex;
@@ -565,13 +565,157 @@ export default {
     }
   }
 }
-// @media (min-width: 1280px) and (max-width: 1670px) {
-//   .home {
-//     &__main {
-//       background-size: contain;
-//     }
-//   }
-// }
+@media (min-width: 768px) and (max-width: 1281px) {
+  .home {
+    &__wrapper {
+      max-width: 1280px;
+    }
+    &__header {
+      max-width: 1280px;
+      max-height: 112px;
+      margin: 0 0 6px 0;
+      background-size: cover;
+      background-position: 50% 100%;
+      &_block {
+        max-width: 1023px;
+        margin: 0 auto;
+      }
+      &_title {
+        margin-left: 15px;
+        font-size: 19.5795px;
+        line-height: 24px;
+        align-items: center;
+      }
+      &_timer {
+        &-title {
+          font-size: 15.1658px;
+          line-height: 18px;
+          margin: 5px 0 4px 0;
+        }
+      }
+    }
+    &__main {
+      position: relative;
+      max-width: 1280px;
+      height: 495px;
+      // margin: calc((-50px - (1920px - 100vw)/4)) auto 0 auto;
+      background: linear-gradient(180deg, rgba(52, 138, 210, 0.17) 95%, #FFFFFF 100%);
+      // background-size: cover;
+      overflow: hidden;
+      &_rakurs {
+        // position: absolute;
+        // top: calc(25% - ((100vw - 1280px)/4));
+        max-width: 1280px;
+        // margin: 0 auto;
+        // margin: calc((0px + (1920px - 100vw)/4)) auto 0 auto;
+        background: url('../assets/images/home-filter.png') 0px 0px/contain no-repeat,
+                    url('../assets/images/home-rakurs.png') 0px 60px/contain no-repeat;
+        backdrop-filter: blur(5px);          
+      }
+      &_filter {
+        margin: 0 0 0 80px;
+        height: 0;
+        width: 490px;
+        // border-left: 0px solid transparent;
+        // border-right: 180px solid transparent;
+        // border-top: 740px solid rgba(255, 255, 255, 0.1);
+        background: url('../assets/images/home-rakurs.png') 0px 60px/contain no-repeat;
+        border: 2.44616px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0px 0px 122.308px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(5px);
+      }
+      &_text {
+        // margin: calc((-0px - (1920px - 100vw)/4)) auto 0 auto;
+        max-width: 1023px;
+        max-height: 495px;
+        margin: 0 auto;
+        // background: url('../assets/images/home-main-car.png') right bottom no-repeat;
+        background-size: contain;
+      }
+      &_title {
+        margin: 53px 0 0 15px;
+        font-size: 22.3232px;
+        line-height: 27px;
+        &-orange, &-blue {
+          font-size: 36.1156px;
+          line-height: 44px;
+        }
+      }
+      &_oldprice {
+        margin: 75px 0 0 15px;
+        &-black {
+          font-size: 14.7083px;
+          line-height: 141.9%;
+        }
+        &-orange {
+          font-size: 21.4303px;
+          line-height: 141.9%;
+        }
+      }
+      &_gift {
+        margin: 18px 0 132px 15px;
+        font-size: 44.5186px;
+        line-height: 54px;
+        &-black {
+          font-size: 26.31px;
+          line-height: 32.07px;
+        }
+      }
+      &_car {
+        position: absolute;
+        top: calc(5% - ((100vw - 1280px)/4));
+        left: 190px;
+        display: block;
+        width: calc(100vw - 205px);
+        // min-width: 1000px;
+        height: 740px;
+        background: url('../assets/images/home-main-car.png') right 0px no-repeat;
+        background-size: contain;
+      }
+    }
+    &__divider {
+      &_line {
+        height: 2px;
+      }
+      &_text {
+        font-size: 29.7993px;
+        line-height: 36px;
+      }
+    }
+    &__cars {
+      max-width: 946px;
+    }
+    &__bottom-divider {
+      max-width: 1023px;
+      height: 32px;
+      margin: 65px auto 68px auto;
+    }
+    &__benefit {
+      width: 100%;
+      max-width: 1280px;
+      background: #D7E8F6;
+      &_wrapper {
+        margin: 74px 0 74px 0;
+      }
+      &_block, &_options {
+        // max-width: 1460px;
+        margin: 0 auto;
+      }
+      &_divider {
+        margin: 40px 0 40px 0;
+        &-line {
+          height: 2px;
+        }
+        &-text {
+          font-size: 22.2198px;
+          line-height: 27px;
+          margin: 18px 0;
+        }
+        
+      }
+    }
+  }
+}
 @media (max-width: 605px) {
   .home {
     width: 100%;

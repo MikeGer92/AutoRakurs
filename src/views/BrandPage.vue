@@ -1239,7 +1239,7 @@ export default {
     &__choise {
       max-width: 1510px;
       margin:  41px auto 60px auto;
-      justify-content: space-between;
+      justify-content: space-around;
       &_link {
         font-size: 14.4911px;
         line-height: 18px;
@@ -1415,6 +1415,383 @@ export default {
           &_btn {
               max-width: 230px;
               height: 42px;
+            }
+      }
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1281px) {
+  .brandpage {
+    max-width: 1280px;
+    &__main {
+      max-width: 1023px;
+      margin: 0 auto;
+      &_left {
+        margin: 0 37px 0 15px;
+        width: 744px;
+        &-head {
+          width: 100%;
+          max-width: 744px;
+          height: 302px;
+          background-size: cover;
+          &--wrapp {
+            margin: 0;
+            padding: 29px 10px;
+          }
+          &--info {
+            margin-left: 5px;
+            &_hot {
+              margin: 0 0 0 -10px;
+              width: 175px;
+              height: 27px;
+              font-size: 10.4506px;
+              line-height: 13px;
+              background-size: cover;
+            }
+            &_title {
+              width: 100%;
+              margin-top: 12px;
+              font-size: 28.3695px;
+              line-height: 34px;
+            }
+            &_border {
+              width: 57%;
+              // text-align: left;
+            }
+            &_price {
+              margin-top: 6px;
+              font-size: 17.0217px;
+              line-height: 21px;
+            }
+          }
+          &--colors {
+            margin: 33px 18px 0 -15px;
+            width: 249px;
+            height: 39px;
+            backdrop-filter: blur(15.6032px);
+            border-radius: 43.2635px;
+            &-item {
+              width: 27px;
+              height: 27px;
+              &--active {
+                border: 1px solid #12609E;
+              }
+              &--black {
+                width: 13px;
+                height: 13px;
+                border: 6px solid #FFFFFF;
+                &_active {
+                  width: 19px;
+                  height: 19px;
+                  border: 3px solid #FFFFFF;
+                }
+              }
+            }
+          }
+          &--image {
+            margin: 35px 0 0 -90px;
+            width: 100%;
+            max-width: 529px;
+            height: auto;
+            background: url('../assets/images/creta.png')center 0px/ contain no-repeat;
+          }
+        }
+        &-gifts {
+          margin-top: 10px;
+          &--item {
+            &_wrapper {
+              margin: 0 18px;
+            }
+            &_img {
+              width: 28px;
+              height: 25px;
+            }
+            &_text {
+              margin-top: 25px;
+              font-size: 11px;
+              line-height: 13px;
+              width: 118px;
+            }
+            &_border {
+              height: 84px;
+            }
+          }
+        }
+      }
+      &_right {
+        margin: 0;
+        width: 228px;
+        height: 393px;
+        // background-size: cover;
+        &-form {
+          width: 228px;
+          &--title {
+            margin: 21px 0 13px 0;
+            font-size: 10.4588px;
+            line-height: 13px;
+          }
+          &--timer {
+            margin-bottom: 29px;
+            max-width: 203px;
+            box-shadow: 0px 3.43869px 3.43869px rgba(0, 0, 0, 0.25);
+            border-radius: 20.5887px;
+            & .count__item {
+              padding: 0 7px;
+              &_num {
+                font-size: 23.8523px;
+                line-height: 29px;
+              }
+              &_descr {
+                font-size: 8.03189px;
+                line-height: 10px;
+              }
+            }
+          }
+          &--select {
+            width: 205px;
+            height: 35px;
+            margin-bottom: 14px;
+            & .select-main__field_text {
+              font-size: 11.3253px;
+              line-height: 14px;
+              margin-left: 10px;
+            }
+            & .select-main__field_icon {
+              width: 13px;
+              height: 8px;
+              margin-right: 14px;
+            }
+            & .select-main__options {
+              top: 35px;
+              &_option {
+                font-size: 11.3253px;
+                line-height: 14px;
+              }
+            }
+          }
+          &--name, &--phone {
+            max-width: 193px;
+            // height: 45px;
+            font-size: 14.1452px;
+            line-height: 17px;
+            margin: 0;
+            padding-left: 10px;
+            border-radius: 48.2769px;
+          }
+          &--phone {
+            margin: 14px 0 12px 0;
+          }
+          & button {
+            margin-bottom: 22px;
+            width: 191px;
+            font-size: 9.89234px;
+            line-height: 12px;
+            box-shadow: 0px 3.43869px 3.43869px rgba(0, 0, 0, 0.25);
+            border-radius: 31.8079px;
+          }
+        }
+      }
+    }
+    &__choise {
+      max-width: 1014px;
+      margin:  14px auto 53px auto;
+      justify-content: space-around;
+      &_link {
+        height: 32px;
+        font-size: 9.66916px;
+        line-height: 12px;
+        margin: 0 10px;
+        &-active {
+          border-radius: 40.383px;
+          margin-right: 20px;
+        }
+      }
+      &_icon {
+        width: 9px;
+        height: 5px;
+        margin: 0 10px;
+      }
+      &_prev {
+        margin: 0 15px;
+      }
+    }
+    &__divider {
+      margin: 0px auto;
+      &_line {
+        height: 2px;
+      }
+      &_text {
+        margin: 12px 0;
+        font-size: 29.8285px;
+        line-height: 36px;
+      }
+
+    }
+    &__complectations {
+      max-width: 1022px;
+      margin: 53px auto 0 auto;
+    }
+    &__special {
+      max-width: 1104px;
+      margin: 29px auto 24px auto;
+      &_left, &_right { 
+        margin-left: 90px;
+        width: 42%;
+      }
+      &_line {
+        height: 240px;
+        // margin-left: 136px;
+        margin-top: 25px;
+      }
+    }
+    &__benefit {
+      max-width: 1022px;
+      margin: 23px auto 36px auto;
+      &_title {
+      font-size: 11.5088px;
+      line-height: 14px;
+        margin-left: 15px;
+      }
+      &_total {
+        justify-content: space-between;
+        &-sum {
+          font-size: 66.5673px;
+          line-height: 81px;
+          margin-right: 137px;
+        }
+        & button {
+          width: 337px;
+          height: 39px;
+          box-shadow: 0px 5.32326px 5.32326px rgba(0, 0, 0, 0.25);
+          border-radius: 49.2402px;
+          font-size: 13.6702px;
+          line-height: 17px;
+        }
+      }
+    }
+    &__tradein {
+      max-width: 1014px;
+      height: 342px;
+      margin: 0 auto 53px auto;
+      background-size: cover;
+      &_form {
+        margin-right: 40px;
+        width: 317px;
+        box-shadow: 0px 2.07695px 30.1158px rgba(0, 0, 0, 0.25);
+        border-radius: 21.2888px;
+        &-wrapper {
+          margin: 19px 18px 5px 18px;
+        }
+        &-model {
+          width: 141px;
+          height: 20px;
+          border-radius: 32.9381px;
+          font-size: 6.74928px;
+          line-height: 8px;
+        }
+        &-params {
+          margin-top: 15px;
+          justify-content: space-between;
+          &--way, &--type, &--year {
+            width: 85px;
+            height: 18px;
+            border-radius: 32.9381px;
+            padding-left: 8px;
+            font-size: 6.74928px;
+            line-height: 8px;
+          }
+        }
+        &-yourprice {
+          margin: 15px 0 0 0;
+          padding-left: 8px;
+          width: 141px;
+          height: 20px;
+          border-radius: 32.9381px;
+          font-size: 6.74928px;
+          line-height: 8px;
+        }
+        &-person {
+          justify-content: space-between;
+          &--name, &--phone {
+            margin: 18px 0 0 0;
+            font-size: 6.74928px;
+            line-height: 8px;
+            padding-left: 8px;
+            width: 130px;
+            height: 18px;
+          }
+        }
+        & button {
+          margin-top: 15px;
+          width: 130px;
+          height: 18px;
+          box-shadow: 0px 2.34613px 2.34613px rgba(0, 0, 0, 0.25);
+          border-radius: 21.7017px;
+          font-size: 6.74928px;
+          line-height: 8px;
+        }
+      }
+    }
+    &__technical {
+      max-width: 1754px;
+      margin: 10px auto;
+      &_head, &_bottom {
+        &-size, &-eng, &-chas, &-petr {
+          margin: 25px 0;
+          font-size: 25.3716px;
+          line-height: 31px;
+          &--item {
+            margin-top: 18px;
+          }
+          &--icon {
+            width: 13px;
+            height: 13px;
+          }
+          &--text {
+            font-size: 12.1972px;
+            line-height: 15px;
+          }
+        }
+      }
+    }
+    &__image {
+      max-width: 1015px;
+      margin: 0 auto;
+      &_content {
+        width: 100%;
+        height: 420px;
+        background-size: cover;
+        margin: 64px 0;
+      }
+    }
+    &__market {
+      margin: 0 0 50px 0;
+      max-width: 1015px;
+      & .market__item_text {
+        font-size: 21px;
+        line-height: 27px;
+      }
+    }
+    &__similar {
+      max-width: 1015px;
+      margin: 0 auto;
+      justify-content: space-between;
+      &_car {
+        width: 318px;
+        & .homecar-main{
+          max-width: 318px;
+        }
+        & .car {
+          width: 318px;
+          height: 487px;
+          background-size: cover;
+        }
+        & .homecar-buttons {
+          width: 318px;
+        }
+          &_btn {
+              max-width: 154px;
+              height: 27px;
             }
       }
     }

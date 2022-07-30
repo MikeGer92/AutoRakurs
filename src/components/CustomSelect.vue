@@ -154,6 +154,34 @@ export default {
     }
   }
 }
+@media (min-width: 768px) and (max-width: 1281px) {
+  .select-main {
+    width: 205px;
+    height: 35px;
+    margin-bottom: 14px;
+    &__field {
+      width: 205px;
+      height: 35px;
+      border-radius: 96.6507px;
+      &_text {
+        font-size: 11.3253px;
+        line-height: 14px;
+      }
+      &_icon {
+        width: 13px;
+        height: 8px;
+        margin-right: 11px;
+      }
+    }
+    &__options {
+      top: 35px;
+      &_option {
+        font-size: 11.3253px;
+        line-height: 14px;
+      }
+    }
+  }
+}
 @media ( max-width: 600px) { 
   .select-main {
     width: 238px;

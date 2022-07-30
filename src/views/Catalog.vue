@@ -69,7 +69,7 @@
       </div>
     </div>
     <div class="catalog__gift">
-      <div class="catalog__gift_title">ВРЕМЯ ВЫБИРАТЬ <span>ПОДАРКИ!</span></div>
+      <div class="catalog__gift_title">ВРЕМЯ ВЫБИРАТЬ<span>&#160;ПОДАРКИ!</span></div>
     </div>
     <div class="catalog__offers">
       <BenefitCard v-for="gift in giftsList" :key="gift.title" :benefitCard="gift"/>
@@ -553,6 +553,11 @@ export default {
     }
     &__gift {
       margin-top: 53px;
+      &_title {
+        font-size: 38.9973px;
+        line-height: 46px;
+        margin-left: 110px;
+      }
     }
     &__offers {
       padding: 0;
