@@ -282,7 +282,7 @@ export default {
     margin: 0 auto;
     &__main {
       width: 230px;
-      height: 149px;
+      height: 155px;
       margin-bottom: 14px;
       &_title {
         margin: 10px 0 7px 0;
@@ -331,6 +331,7 @@ export default {
       &_price {
         font-size: 33px;
         line-height: 38px;
+        margin: 0 0 4px 0;
       }
     }
     &__buttons {
