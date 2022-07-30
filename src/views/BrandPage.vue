@@ -1628,163 +1628,170 @@ export default {
 
     }
     &__complectations {
-      max-width: 1534px;
-      margin: 79px auto 0 auto;
+      max-width: 1022px;
+      margin: 53px auto 0 auto;
     }
     &__special {
-      max-width: 1655px;
-      margin: 58px auto 37px auto;
+      max-width: 1104px;
+      margin: 29px auto 24px auto;
       &_left, &_right { 
-        margin-left: 136px;
+        margin-left: 90px;
+        width: 42%;
       }
       &_line {
-        height: 369px;
+        height: 240px;
         // margin-left: 136px;
+        margin-top: 25px;
       }
     }
     &__benefit {
-      max-width: 1322px;
-      margin: 34px auto 36px auto;
+      max-width: 1022px;
+      margin: 23px auto 36px auto;
       &_title {
-        font-size: 17.2481px;
-        line-height: 21px;
-        margin-left: 22px;
+      font-size: 11.5088px;
+      line-height: 14px;
+        margin-left: 15px;
       }
       &_total {
         justify-content: space-between;
         &-sum {
-          font-size: 99.7637px;
-          line-height: 121px;
-          margin-right: 205px;
+          font-size: 66.5673px;
+          line-height: 81px;
+          margin-right: 137px;
         }
         & button {
-          width: 504px;
-          height: 58px;
+          width: 337px;
+          height: 39px;
+          box-shadow: 0px 5.32326px 5.32326px rgba(0, 0, 0, 0.25);
+          border-radius: 49.2402px;
+          font-size: 13.6702px;
+          line-height: 17px;
         }
       }
     }
     &__tradein {
-      max-width: 1519px;
-      height: 514px;
-      margin: 0 auto;
+      max-width: 1014px;
+      height: 342px;
+      margin: 0 auto 53px auto;
       background-size: cover;
       &_form {
-        margin-right: 60px;
-        width: 475px;
-        box-shadow: 0px 3.11271px 45.1342px rgba(0, 0, 0, 0.25);
-        border-radius: 31.9052px;
+        margin-right: 40px;
+        width: 317px;
+        box-shadow: 0px 2.07695px 30.1158px rgba(0, 0, 0, 0.25);
+        border-radius: 21.2888px;
         &-wrapper {
-          margin: 28px 26px 6px 26px;
+          margin: 19px 18px 5px 18px;
         }
         &-model {
-          width: 211px;
-          height: 30px;
-          border-radius: 49.364px;
-          font-size: 10.1151px;
-          line-height: 12px;
+          width: 141px;
+          height: 20px;
+          border-radius: 32.9381px;
+          font-size: 6.74928px;
+          line-height: 8px;
         }
         &-params {
-          margin-top: 23px;
+          margin-top: 15px;
           justify-content: space-between;
           &--way, &--type, &--year {
-            width: 117px;
-            height: 26px;
-            border-radius: 49.364px;
-            padding-left: 10px;
-            font-size: 10.1151px;
-            line-height: 12px;
+            width: 85px;
+            height: 18px;
+            border-radius: 32.9381px;
+            padding-left: 8px;
+            font-size: 6.74928px;
+            line-height: 8px;
           }
         }
         &-yourprice {
-          margin: 23px 0 0 0;
-          padding-left: 10px;
-          width: 211px;
-          height: 30px;
-          font-size: 10.1151px;
-          line-height: 12px;
+          margin: 15px 0 0 0;
+          padding-left: 8px;
+          width: 141px;
+          height: 20px;
+          border-radius: 32.9381px;
+          font-size: 6.74928px;
+          line-height: 8px;
         }
         &-person {
           justify-content: space-between;
           &--name, &--phone {
-            margin: 28px 0 0 0;
-            font-size: 10.1151px;
-            line-height: 12px;
-            padding-left: 10px;
-            width: 185px;
-            height: 27px;
+            margin: 18px 0 0 0;
+            font-size: 6.74928px;
+            line-height: 8px;
+            padding-left: 8px;
+            width: 130px;
+            height: 18px;
           }
         }
         & button {
-          margin-top: 23px;
-          width: 195px;
-          height: 27px;
-          box-shadow: 0px 3.51612px 3.51612px rgba(0, 0, 0, 0.25);
-          border-radius: 32.5241px;
-          font-size: 10.1151px;
-          line-height: 12px;
+          margin-top: 15px;
+          width: 130px;
+          height: 18px;
+          box-shadow: 0px 2.34613px 2.34613px rgba(0, 0, 0, 0.25);
+          border-radius: 21.7017px;
+          font-size: 6.74928px;
+          line-height: 8px;
         }
       }
     }
     &__technical {
       max-width: 1754px;
-      margin: 36px auto;
+      margin: 10px auto;
       &_head, &_bottom {
         &-size, &-eng, &-chas, &-petr {
           margin: 25px 0;
-          font-size: 38.0241px;
-          line-height: 46px;
+          font-size: 25.3716px;
+          line-height: 31px;
           &--item {
-            margin-top: 28px;
+            margin-top: 18px;
           }
           &--icon {
-            width: 19px;
-            height: 19px;
+            width: 13px;
+            height: 13px;
           }
           &--text {
-            font-size: 18.2798px;
-            line-height: 22px;
+            font-size: 12.1972px;
+            line-height: 15px;
           }
         }
       }
     }
     &__image {
-      max-width: 1521px;
+      max-width: 1015px;
       margin: 0 auto;
       &_content {
         width: 100%;
-        height: 629px;
+        height: 420px;
         background-size: cover;
-        margin: 96px 0;
+        margin: 64px 0;
       }
     }
     &__market {
       margin: 0 0 50px 0;
-      max-width: 1521px;
+      max-width: 1015px;
       & .market__item_text {
-        font-size: 32px;
-        line-height: 40px;
+        font-size: 21px;
+        line-height: 27px;
       }
     }
     &__similar {
-      max-width: 1521px;
+      max-width: 1015px;
       margin: 0 auto;
       justify-content: space-between;
       &_car {
-        width: 475px;
+        width: 318px;
         & .homecar-main{
-          max-width: 475px;
+          max-width: 318px;
         }
         & .car {
-          width: 475px;
-          height: 730px;
+          width: 318px;
+          height: 487px;
           background-size: cover;
         }
         & .homecar-buttons {
-          width: 475px;
+          width: 318px;
         }
           &_btn {
-              max-width: 230px;
-              height: 42px;
+              max-width: 154px;
+              height: 27px;
             }
       }
     }
