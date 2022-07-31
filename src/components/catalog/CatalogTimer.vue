@@ -158,6 +158,39 @@ export default {
     }
   }
 }
+@media (min-width: 768px) and (max-width: 1281px) {
+  .catalog-count {
+    width: 295px;
+    &__item {
+      padding: 0 9px 0 0;
+      // &:first-child {
+      //   padding: 0 16px 0 16px;
+      // }
+      &_number {
+        &-num {
+          margin-right: 5px;
+          width: 27px;
+          height: 35px;
+          font-size: 20.8476px;
+          line-height: 25px;
+          box-shadow: 0px 3.00552px 3.00552px rgba(0, 0, 0, 0.25);
+          border-radius: 5.5847px;
+        }
+        &-div {
+          margin-left: 6px;
+          width: 1px;
+          height: 42px;
+        }
+      }
+      &_descr {
+        font-size: 8.64621px;
+        line-height: 10px;
+        margin-left: -8px;
+        align-self: center;
+      }
+    }
+  }
+}
 @media (max-width: 605px) {
   .catalog-count {
     width: 218px;
