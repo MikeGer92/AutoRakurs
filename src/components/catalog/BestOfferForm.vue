@@ -195,4 +195,47 @@ export default {
     }
   }
 }
+@media (min-width: 768px) and (max-width: 12801px) {
+  .bestoffer-form {
+    max-width: 191px;
+    max-height: 207px;
+    align-self: center;
+    &__wrapper {
+      margin: 11px 32px 11px 12px;
+    }
+    &__title {
+      margin:0px 0px 8px 3px;
+      font-size: 10.7px;
+      line-height: 14px;
+    }
+    &__subtitle {
+      margin-left: 5px;
+      margin-bottom: 5px;
+      font-size: 5.39608px;
+      line-height: 7px;
+    }
+    &__name, &__phone {
+      padding: 0 0 0 7px;
+      font-size: 9.29859px;
+      line-height: 11px;
+      width: 164px;
+      height: 23px;
+      margin: 2px 0 0 0px;
+    }
+    &__btn {
+      margin: 0px 0px  0  0px;
+      width: 164px;
+      height: 25px;
+      box-shadow: 0px 2.32102px 2.32102px rgba(0, 0, 0, 0.25);
+      border-radius: 21.4695px;
+      font-size: 9.29859px;
+      line-height: 106.52%;
+    }
+    &__info {
+      margin-top: 10px;
+      font-size: 4.70999px;
+      line-height: 106.52%;
+    }
+  }
+}
 </style>
