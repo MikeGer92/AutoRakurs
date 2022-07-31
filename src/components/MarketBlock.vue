@@ -66,7 +66,8 @@ export default {
 }
 @media (min-width: 768px) and (max-width: 1281px) {
   .market {
-    margin: 10px 0 84px 0;
+    width: 1036px;
+    margin: 10px auto 84px auto;
     &__item {
       margin: 0px 0;
       &_text {

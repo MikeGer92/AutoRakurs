@@ -233,7 +233,64 @@ export default {
       }
     }
   }
-
+}
+@media (min-width: 768px) and (max-width: 1281px) {
+  .person {
+    margin: 0 0 25px 15px;
+    &__left {
+      margin: 25px 0 0 6px;
+      &_num {
+        width: 53px;
+        height: 53px;
+        font-size: 41.2294px;
+        line-height: 50px;
+        box-shadow: 0px 1.59373px 10.7577px rgba(0, 0, 0, 0.25);
+      }
+      &_border-y {
+        width: 3px;
+        height: 207px;
+      }
+    }
+    &__right {
+      margin-top: 37px;
+      &_title {
+        margin-left: 50px;
+        font-size: 23.3292px;
+        line-height: 28px;
+      }
+      &_main {
+        margin: 48px 0 0px 50px;
+        &-left {
+          margin-right: 88px;
+        }
+      }
+    }
+    &__howget {
+      width: 354px;
+      &_info, &_req {
+        font-size: 15.8619px;
+        line-height: 34px;
+      }
+      &_docs {
+        font-size: 15.8619px;
+        line-height: 34px;
+      }
+      & ol {
+        padding-inline-start: 10px;
+        & li {
+          font-size: 15px;
+          line-height: 34px;
+          margin-bottom: 52px;
+          margin-left: -20px;
+        }
+      }
+      &_divider {
+        margin-top: 10px;
+        width: 285px;
+        height: 3px;
+      }
+    }
+  }
 }
 @media ( max-width: 600px) {
   .person {

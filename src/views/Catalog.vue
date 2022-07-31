@@ -443,7 +443,7 @@ export default {
     width: 100%;
     max-width: 2065px;
     height: 123px;
-    background: url('../assets/images/catalog-gift.png') center 0px/contain no-repeat ;
+   background: url('../assets/images/catalog-gift.png') center 0px/contain no-repeat ;
     &_title {
       display: flex;
       font-family: 'Abhaya Libre SemiBold', sans-serif;
@@ -621,7 +621,6 @@ export default {
         font-size: 29.8346px;
         line-height: 36px;
         margin: 12px 0 14px 0;
-
       }
     }
     &__models {

@@ -403,7 +403,6 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
               font-size: 12.3452px;
               line-height: 15px;
             }
-
           }
         }
       }
