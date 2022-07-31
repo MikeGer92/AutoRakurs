@@ -193,7 +193,35 @@ export default {
     }
   }
 }
-
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .oldcar-params {
+    margin: 0 0 0 22px;
+    &__left {
+      margin: 24px 0 0 10px;
+      &_num {
+        width: 80px;
+        height: 80px;
+        font-size: 61.844px;
+        line-height: 75px;
+        box-shadow: 0px 2.3906px 16.1366px rgba(0, 0, 0, 0.25);
+      }
+      &_border-y {
+        height: 245px;
+      }
+    }
+    &__right {
+      margin: 47px 0 0 0;
+      &_title {
+        font-size: 34.9938px;
+        line-height: 42px;
+        margin-left: 76px;
+      }
+      &_main {
+        margin: 38px 0 0 76px;
+      }
+    }
+  }
+}
 @media (min-width: 768px) and (max-width: 1281px) {
   .oldcar-params {
     margin: 0 0 0 15px;

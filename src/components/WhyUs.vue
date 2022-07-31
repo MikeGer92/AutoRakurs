@@ -55,6 +55,7 @@ export default {
     flex-direction: column;
     text-align: center;
     max-width: 1892px;
+    // margin: 0 auto;
     &_line {
       display: flex;
       width: 100%;
@@ -136,7 +137,7 @@ export default {
 }
 @media (min-width: 1280px) and (max-width: 1921px) {
   .whyus {
-    margin: 37px 0 0 22px;
+    margin: 37px auto 22px auto;
     &__subtitle {
       margin-top: 80px;
       font-family: 'Montserrat';
@@ -176,7 +177,7 @@ export default {
 @media (min-width: 768px) and (max-width: 1281px) {
   .whyus {
     max-width: 1023px;
-    margin: 20px 0 0 15px;
+    margin: 20px auto;
     &__divider {
       &_line {
         height: 2px;

@@ -228,7 +228,55 @@ export default {
   background: url('../assets/images/Group183.png') center 0px/ contain no-repeat;
   cursor: pointer;
 }
-
+@media (min-width: 1280px) and (max-width: 1921px) {
+  .carousel-main {
+    margin-top: 69px;
+    max-width: 1700px;
+    &__title {
+      font-size: 34.9938px;
+      line-height: 42px;
+    }
+  }
+  .slick-list[data-v-3d1a4f76] {
+    max-width: 1000px;
+  }
+  .slider__item {
+    max-width: 250px;
+    height: 205px;
+    & img {
+      width: 205px;
+    }
+  }
+  .slider__item-active {
+    margin: 15px 0;
+    width: 270px;
+    height: 250px;
+    box-shadow: 0px 4.51039px 12.4036px rgba(0, 0, 0, 0.25);
+    border-radius: 50.7418px;
+    & img {
+      width: 200px;
+      margin: 0 15px;
+    }
+    &--text {
+      font-size: 30px;
+      line-height: 36px;
+      margin: 5px 0;
+    }
+  }
+  .slider-wrapper {
+    margin: 30px 0 0 40px;
+    max-width: 1275px;
+    height: 330px;
+  }
+  .next-btn {
+    width: 160px;
+    height: 80px;
+  }
+  .prev-btn {
+    width: 160px;
+    height: 80px;
+  }
+}
 @media (min-width: 768px) and (max-width: 1281px) {
   .slick-initialized .slick-slide[data-v-e4caeaf8] {
     width: 1000px;
@@ -243,7 +291,7 @@ export default {
     }
   }
   .slider-wrapper {
-    margin: 23px 0 0 32px;
+    margin: 23px 0 0 0px;
     width: 100%;
     height: 200px;
   }

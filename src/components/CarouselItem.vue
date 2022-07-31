@@ -17,15 +17,15 @@ export default {
 </script>
 
 <style lang="scss">
-// .carousel-item {
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   width: 285px;
-//   height: 100%;
-//   & img {
-//     width: auto;
-//     height: 100%;
-//   }
-// }
+.carousel-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 285px;
+  height: 100%;
+  & img {
+    width: auto;
+    height: 100%;
+  }
+}
 </style>
