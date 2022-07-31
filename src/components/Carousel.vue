@@ -173,7 +173,7 @@ export default {
   margin: 45px 0 0 60px;
   display: flex;
   align-items: center;
-  height: 420px;
+  height: 250px;
 }
 .slick-initialized .slick-slide[data-v-e4caeaf8] {
   display: flex;
@@ -228,53 +228,60 @@ export default {
   background: url('../assets/images/Group183.png') center 0px/ contain no-repeat;
   cursor: pointer;
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+
+@media (min-width: 768px) and (max-width: 1281px) {
+  .slick-initialized .slick-slide[data-v-e4caeaf8] {
+    width: 1000px;
+    justify-content: space-around;
+  }
   .carousel-main {
-    margin-top: 69px;
-    max-width: 1700px;
+    margin-top: 45px;
+    max-width: 1100px;
     &__title {
-      font-size: 34.9938px;
-      line-height: 42px;
+      font-size: 23.3292px;
+      line-height: 28px;
     }
   }
+  .slider-wrapper {
+    margin: 23px 0 0 32px;
+    width: 100%;
+    height: 200px;
+  }
   .slick-list[data-v-3d1a4f76] {
-    max-width: 1000px;
+    width: 690px;
+    padding: 0px 30px;
   }
   .slider__item {
-    max-width: 250px;
-    height: 205px;
+    max-width: 160px;
+    height: 130px;
+    margin: 0 20px;
     & img {
-      width: 205px;
+      width: 110px;
     }
   }
   .slider__item-active {
     margin: 15px 0;
-    width: 270px;
-    height: 250px;
-    box-shadow: 0px 4.51039px 12.4036px rgba(0, 0, 0, 0.25);
-    border-radius: 50.7418px;
+    width: 180px;
+    height: 165px;
+    box-shadow: 0px 3.00692px 8.26904px rgba(0, 0, 0, 0.25);
+    border-radius: 33.8279px;
     & img {
-      width: 200px;
-      margin: 0 15px;
+      width: 120px;
+      margin: 0 10px;
     }
     &--text {
-      font-size: 30px;
-      line-height: 36px;
+      font-size: 14px;
+      line-height: 18px;
       margin: 5px 0;
     }
   }
-  .slider-wrapper {
-    margin: 30px 0 0 40px;
-    max-width: 1275px;
-    height: 330px;
-  }
   .next-btn {
-    width: 160px;
-    height: 80px;
+    width: 106px;
+    height: 53px;
   }
   .prev-btn {
-    width: 160px;
-    height: 80px;
+    width: 106px;
+    height: 53px;
   }
 }
 @media ( max-width: 600px) {
@@ -326,16 +333,16 @@ export default {
       text-align: center;
     }
   }
-.slick-prev {
-  display: none;
-  border: none;
-  font-size: 0;
-}
-.slick-next {
-  display: none;
-  border: none;
-  font-size: 0;
-}
+  .slick-prev {
+    display: none;
+    border: none;
+    font-size: 0;
+  }
+  .slick-next {
+    display: none;
+    border: none;
+    font-size: 0;
+  }
   .carousel-main {
     margin-top: 26px;
     width: 1200px;

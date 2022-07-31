@@ -283,6 +283,63 @@ export default {
 
   }
 }
+@media (min-width: 768px) and (max-width: 1281px) {
+  .choise {
+    margin: 0 0 0 15px;
+    &__left {
+      margin: 15px 0 0 6px;
+      &_num {
+        width: 53px;
+        height: 53px;
+        font-size: 41.2294px;
+        line-height: 50px;
+        box-shadow: 0px 1.59373px 10.7577px rgba(0, 0, 0, 0.25);
+      }
+      &_border-y {
+        width: 3px;
+        height: 207px;
+      }
+    }
+    &__right {
+      margin-top: 27px;
+      &_title {
+        margin-left: 50px;
+        font-size: 23.3292px;
+        line-height: 28px;
+      }
+      &_main {
+        &-left {
+          margin: 25px 0 0 50px;
+        }
+        &-right {
+          margin: -115px 0 0 50px;
+          &--image {
+            width: 437px;
+            height: 246px;
+            margin-top: 30px;
+          }
+          &--compl {
+            margin-top: -10px;
+            &_drive, &_power, &_eng {
+              width: 86px;;
+              &-icon {
+                width: 48px;
+                height: 48px;
+              }
+              &-descr {
+                margin: 12px 0 0 0;
+                font-size: 10.7971px;
+                line-height: 13px;
+              }
+            }
+          }
+        }
+      }
+
+    }
+
+  }
+}
 @media ( max-width: 600px) {
   .choise {
     &__left {

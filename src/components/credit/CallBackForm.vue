@@ -176,6 +176,43 @@ export default {
   }
 
 }
+@media (min-width: 768px) and (max-width: 1281px) {
+  .person-form {
+    width: 380px;
+    height: 412px;
+    box-shadow: 0px 2.52813px 6.95236px rgba(0, 0, 0, 0.25);
+    border-radius: 24.6493px;
+    &__title {
+      margin: 31px 0 20px 32px;
+      font-size: 25.2813px;
+      line-height: 31px;
+    }
+    &__name, &__phone {
+      width: 302px;
+      height: 46px;
+      border-radius: 62.6841px;
+      font-size: 18.4662px;
+      line-height: 22px;
+      padding: 0 0 0 14;
+      margin: 0 0 11px 25px;
+    }
+    &__btn {
+      width: 302px;
+      height: 50px;
+      box-shadow: 0px 4.60935px 4.60935px rgba(0, 0, 0, 0.25);
+      border-radius: 42.6365px;
+      font-size: 18.4662px;
+      line-height: 106.52%;
+    }
+    &__info {
+      width: 308px;
+      font-size: 9.37009px;
+      line-height: 106.52%;
+      text-align: left;
+    }
+  }
+
+}
 @media (max-width: 605px) {
   .person-form {
     width: 332px;

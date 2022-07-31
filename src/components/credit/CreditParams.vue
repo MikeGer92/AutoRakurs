@@ -334,6 +334,68 @@ export default {
     }
   }
 }
+@media (min-width: 768px) and (max-width: 1281px) {
+  .credit-params {
+    margin: 0 0 0 15px;
+    &__left {
+      margin: 25px 0 0 6px;
+      &_num {
+        width: 53px;
+        height: 53px;
+        font-size: 41.2294px;
+        line-height: 50px;
+        box-shadow: 0px 2.3906px 16.1366px rgba(0, 0, 0, 0.25);
+      }
+      &_border-y {
+        width: 3px;
+        height: 207px;
+      }
+    }
+    &__right {
+      max-width: 905px;
+      margin-top: 37px;
+      &_title {
+        margin-left: 50px;
+        font-size: 23.3292px;
+        line-height: 28px;
+      }
+      &_main {
+        margin: 27px 0 0 50px;
+        &-left, &-right {
+          &--title {
+            font-size: 15.5712px;
+            line-height: 19px;
+          }
+          &--display {
+            margin: 8px 0 23px 0;
+            width: 384px;
+            height: 36px;
+            border-radius: 58.8214px;
+            &_num, &_text {
+              font-size: 15.5712px;
+              line-height: 19px;
+            }
+          }
+          &--time, &--payment {
+            width: 384px;
+            input[type='range'] {
+              width: 384px;
+              height: 5.56px;
+            }
+          }
+          &--scale {
+            margin: 23px 0 0 0;
+            width: 384px;
+            &_item {
+              font-size: 15.5712px;
+              line-height: 19px;
+            }
+          }
+        }
+      }  
+    }
+  }
+}
 @media ( max-width: 600px) {
   .credit-params {
     &__left {

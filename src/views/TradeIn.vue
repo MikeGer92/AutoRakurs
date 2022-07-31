@@ -147,15 +147,13 @@ export default {
           &_str {
             display: flex;
           }
-        & span {
-          color: #FFA724;
-          
-        }
+          & span {
+            color: #FFA724; 
+          }
         }
         &--small {
           display: none;
         }
-
       }
     }
     &_credit {
@@ -247,6 +245,91 @@ export default {
     }
     &__blocks {
       max-width: 1520px;
+      margin: 0 auto;
+    }
+  }
+}
+@media (min-width: 768px) and (max-width: 1281px) {
+  .select-main {
+    width: 333px;
+    height: 40px;
+    margin-bottom: 37px;
+    &__field {
+      width: 333px;
+      height: 40px;
+      &_text {
+        font-size: 17.0569px;
+        line-height: 21px;
+        margin: 0 14px;
+      }
+      &_icon {
+        width: 29px;
+        height: 15px;
+      }
+    }
+    &__options {
+      top: 42px;
+      &_option {
+        margin-left: 14px;
+        font-size: 17.0569px;
+        line-height: 21px;
+
+      }
+    }
+  }
+  .tradein {
+    &__main {
+      max-width: 1280px;
+      height: 228px;
+      background: url('../assets/images/tradein-main.png') center 0px/ cover no-repeat;
+      &_wrapper {
+        width: 1023px;
+        margin: 0 auto;
+      }
+      &_textwrapp {
+        margin: 0 0 0 15px;
+      }
+      &_title {
+        font-size: 62.2855px;
+        line-height: 76px;
+      }
+      &_subtitle {
+        font-size: 20.6524px;
+        line-height: 25px;
+        margin-bottom: 27px;
+      }
+      &_benefit, &_credit {
+        margin-bottom: 15px;
+        &-icon {
+          width: 24px;
+          height: 24px;
+        }
+        &-text {
+          &--big {
+            margin-left: 10px;
+            font-size: 13.9707px;
+            line-height: 17px
+          }
+        }
+      }
+      &_image {
+        width: 544px;
+        margin: 0px 0 0 -20px;
+      }
+    }
+    &__divider {
+      margin: 29px auto;
+      &_line {
+        height: 2px;
+      }
+      &_text {
+        font-size: 29.8px;
+        line-height: 36px;
+        margin: 13px 0;
+      }
+    }
+    &__blocks {
+      max-width: 1013px;
       margin: 0 auto;
     }
   }
