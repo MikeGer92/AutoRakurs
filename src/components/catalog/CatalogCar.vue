@@ -262,6 +262,82 @@ export default {
     }
   }
 }
+@media (min-width: 768px) and (max-width: 1281px) {
+  .catalogcar-main {
+    max-width: 232px;
+    margin: 0 0 68px 0;
+  }
+  .catalogcar {
+    background-position: 0 0;
+    &__brand {
+      font-size: 44.5437px;
+      line-height: 54px; 
+    }
+    &__model {
+      margin-top: -10px;
+      font-size: 27.0045px;
+      line-height: 33px;
+    }
+    &__image {
+      width: 232px;
+      height: auto;
+    }
+    &__offer {
+      &_day {
+        margin: 8px;
+        width: 90px;
+        height: 35.1px;
+        border: 1.58688px solid #FFA724;
+        border-radius: 25.3901px;
+        &-off {
+          padding: 6px 3px 3px 6px;
+          font-size: 7.02719px;
+          line-height: 9px;
+        }
+        &-disc {
+          padding: 3px 3px 6px 6px;
+          font-size: 7.71354px;
+          line-height: 9px;
+        }
+      }
+      &_payment {
+        margin-right: 13px;
+        &-sum {
+          font-size: 16.3648px;
+          line-height: 16px;
+        }
+        &-period {
+          font-size: 12.695px;
+          line-height: 13px;
+        }
+      }
+    }
+    &__divider {
+      margin: 13px 0 3px 0;
+      width: 230px;
+      height: 1px;
+    }
+    &__coast {
+      margin: 0px 13px 9px 13px;
+      font-size: 25px;
+      line-height: 32px;
+    }
+    &__buttons {
+      max-width: 346px;
+      margin-top: 14px;
+      &_btn {
+        width: 112px;
+        height: 19px;
+        box-shadow: 0px 3.80225px 3.80225px rgba(0, 0, 0, 0.25);
+        border-radius: 35.1708px;
+        &-credit, &-compl {
+          font-size: 6.28012px;
+          line-height: 8px;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 605px) { 
   .catalogcar-main {
     max-width: 336px;
