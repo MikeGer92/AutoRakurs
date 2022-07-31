@@ -1421,6 +1421,39 @@ export default {
   }
 }
 @media (min-width: 768px) and (max-width: 1281px) {
+  .select-main {
+  &__field {
+    width: 204px;
+    height: 35px;
+    &_text {
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20.7984px;
+      line-height: 25px;
+      color: #6C6C6C;
+    }
+  }
+  &__options {
+    width: 100%;
+    position: absolute;
+    top: 37px;
+    z-index: 2;
+    background: #FFF;
+    &_option {
+      margin-left: 10px;
+      font-family: 'Inter';
+      font-style: normal;
+      font-weight: 700;
+      font-size: 20px;
+      line-height: 25px;
+      color: #000;
+      &:hover {
+        background: #F0F0F0;
+      }
+    }
+  }
+}
   .brandpage {
     max-width: 1280px;
     &__main {
