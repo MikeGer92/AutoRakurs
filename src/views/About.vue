@@ -32,11 +32,11 @@
         </div>
         <div class="about__main_right">
           <yandex-map 
+            class="about__main_right-maps"
             :settings="mySet"
             ref="map"
             :coords="[55.576874, 37.697145]"
             zoom="16"
-            :style="{'width': '1150px',  'height': '570px'}"
             :controls="[]"
           >
             <ymap-marker 
@@ -209,6 +209,10 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
       max-width: 1150px;
       // height: 570px;
       // filter: grayscale(1);
+      &-maps {
+        width: 1150px;
+        height: 570px;
+      }
     }
     &_btn {
       display: flex;
@@ -241,14 +245,14 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
       &_left {
         max-width: 507px;
         &-title {
-          margin-top: 28px;
-          font-size: 40.4601px;
-          line-height: 49px;
+        margin-top: 28px;
+        font-size: 40.4601px;
+        line-height: 49px;
         }
         &-subtitle {
-          margin-top: 9px;
-          font-size: 18.7795px;
-          line-height: 23px;
+        margin-top: 9px;
+        font-size: 18.7795px;
+        line-height: 23px;
         }
         &-operate, &-contacts {
           margin-top: 10px;
@@ -257,14 +261,14 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
             line-height: 23px;
           }
           &--hours {
-            margin: 8px 0 29px;
+              margin: 8px 0 29px;
             font-size: 29.4137px;
             line-height: 36px;
           }
           &--phone, &--addr, &--mail {
             margin-top: 10px;
             & img {
-              width: 23px;
+                width: 23px;
             }
             &_text {
               font-size: 18.7795px;
@@ -399,7 +403,6 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
               font-size: 12.3452px;
               line-height: 15px;
             }
-
           }
         }
       }
