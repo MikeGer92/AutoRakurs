@@ -290,6 +290,78 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
     }
   }
 }
+@media (min-width: 768px) and (max-width: 1281px) {
+  .about {
+    &__divider {
+      margin: 32px auto;
+      &_line {
+        height: 2px;
+      }
+      &_text {
+        margin: 8px 0 8px 0;
+        font-size: 30.0529px;
+        line-height: 36px;
+      }
+    }
+    &__main {
+      max-width: 1020px;
+      margin-bottom: 60px;
+      &_left {
+      max-width: 400px;
+      &-title {
+        margin-top: 18px;
+        font-size: 27.2024px;
+        line-height: 33px;
+      }
+      &-subtitle {
+        margin-top: 5px;
+        font-size: 12.6259px;
+        line-height: 15px;
+      }
+      &-operate, &-contacts {
+          margin-top: 8px;
+          &--title {
+              font-size: 12.6259px;
+              line-height: 15px;
+          }
+          &--hours {
+              margin: 5px 0 19px;
+              font-size: 19.7756px;
+              line-height: 24px;
+          }
+          &--phone, &--addr, &--mail {
+          margin-top: 4px;
+          & img {
+            width: 14px;
+          }
+          &_text {
+            font-size: 12.6259px;
+            line-height: 15px;
+          }
+        }
+      }
+    }
+    &_right {
+      max-width: 568px;
+      &-maps, & .ymap-container {
+        width: 568px;
+        height: 293px;
+      }
+    }
+    &_btn {
+      & button {
+          width: 247.9px;
+          height: 37.94px;
+          box-shadow: 0px 5.94151px 5.94151px rgba(0, 0, 0, 0.25);
+          border-radius: 54.959px;  
+          font-size: 13.9769px;
+          line-height: 17px;
+          margin: -160px 0 0 140px;
+      }
+    }
+    }
+  }
+}
 @media (max-width: 605px) {
   .about {
     &__divider {
