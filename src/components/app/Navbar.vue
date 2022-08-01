@@ -341,7 +341,7 @@ export default {
     }
   }
 }
-@media (min-width: 605px) and (max-width: 769px) {
+@media (min-width: 606px) and (max-width: 769px) {
   .active {
     height: 23px;
     background: linear-gradient(266.93deg, #FFFFFF -1.96%, #12609E 92.96%);

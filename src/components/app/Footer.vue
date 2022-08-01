@@ -426,7 +426,7 @@ export default {
   }
 
 }
-@media (min-width: 605px) and (max-width: 768px) {
+@media (min-width: 606px) and (max-width: 769px) {
   .footer {
     max-width: 768px;
     &__main {
