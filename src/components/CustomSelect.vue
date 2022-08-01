@@ -154,30 +154,31 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+
+@media (min-width: 606px) and (max-width: 768px) {
   .select-main {
-    width: 205px;
-    height: 35px;
-    margin-bottom: 14px;
+    width: 140px;
+    height: 24px;
+    margin-bottom: 9px;
     &__field {
-      width: 205px;
-      height: 35px;
+      width: 140px;
+      height: 24px;
       border-radius: 96.6507px;
       &_text {
-        font-size: 11.3253px;
-        line-height: 14px;
+        font-size: 7.79468px;
+        line-height: 9px;
       }
       &_icon {
-        width: 13px;
-        height: 8px;
-        margin-right: 11px;
+        width: 9px;
+        height: 5px;
+        margin-right: 8px;
       }
     }
     &__options {
-      top: 35px;
+      top: 26px;
       &_option {
-        font-size: 11.3253px;
-        line-height: 14px;
+        font-size: 7.79468px;
+        line-height: 9px;
       }
     }
   }
