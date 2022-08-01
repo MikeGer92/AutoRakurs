@@ -341,6 +341,63 @@ export default {
     }
   }
 }
+@media (min-width: 605px) and (max-width: 769px) {
+  .active {
+    height: 23px;
+    background: linear-gradient(266.93deg, #FFFFFF -1.96%, #12609E 92.96%);
+    backdrop-filter: blur(3.59245px);
+    border-radius: 13.4717px;
+  }
+  .header {
+    max-width: 620px;
+    height: 78px;
+    margin: 9px auto 17px auto; // оригинальные отступы сверху и снизу 41 и 42
+    &__logo {
+      width: 39px;
+      height: 39px;
+      margin: 5px 14px 4px 9px;
+    }
+    &__wrapper {
+      justify-content: center;
+      &_contact {
+        &-info {
+          font-size: 3.89182px;
+          line-height: 5px;
+          margin: 0;
+        }
+      }
+      &_pages {
+        &-link {
+          height: 23px;
+          margin-left: 9px; // не оригинальный отступ
+          font-size: 4.78993px;
+          line-height: 6px;
+        }
+        &-icon {
+          width: 7px;
+          height: 3px;
+          margin: 0 7px;
+        }
+      }
+      &_callback {
+        height: 21px;
+        background: linear-gradient(266.93deg, #FFFFFF -1.96%, #12609E 92.96%);
+        backdrop-filter: blur(3.59245px);
+        border-radius: 13.4717px;
+        &-img {
+          width: 10px;
+          height: 10px;
+          margin: 0 4px 0 8px;
+
+        }
+        &-info {
+          font-size: 5.31236px;
+          line-height: 6px;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 605px) {
   .active {
     height: 38px;
