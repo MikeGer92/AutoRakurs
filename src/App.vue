@@ -1,31 +1,37 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-    <div class="home__title">ВЫБЕРИТЕ СВОЙ АВТОМОБИЛЬ</div>
-    <div class="home__title_price">123 456 780 ₽</div>
+    <MainLayout />
+      <!-- <router-view/> -->
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MainLayout from '@/layouts/MainLayout.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+    MainLayout
+  },
+  data() {
+    return {
+      showLoader: true
+    }
+  },
 }
+
 </script>
 
 <style lang="scss">
+// @import 'assets/index';
 #app {
   font-family: Inter;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
+  width: 100%;
+  max-width: 2065px;
+  margin: 0 auto;
   color: #2c3e50;
-  margin-top: 60px;
 }
 .home__title {
   font-style: normal;
@@ -38,6 +44,11 @@ export default {
     font-size: 62.2653px;
     line-height: 75px;
     color: #12609E;
+  }
+}
+@media (min-width: 1280px) and (max-width: 1921px) {
+  #app {
+    max-width: 1920px;
   }
 }
 </style>
