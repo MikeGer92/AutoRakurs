@@ -334,6 +334,91 @@ export default {
     }
   }
 }
+@media (min-width: 606px) and (max-width: 768px) {
+  .select-main {
+    width: 200px;
+    height: 24px;
+    margin-bottom: 22px;
+    &__field {
+      width: 200px;
+      height: 24px;
+      &_text {
+        font-size: 10.2341px;
+        line-height: 12px;
+        margin: 0 10px;
+      }
+      &_icon {
+        width: 17px;
+        height: 9px;
+      }
+    }
+    &__options {
+      top: 26px;
+      &_option {
+        margin-left: 10px;
+        font-size: 10.2341px;
+        line-height: 12px;
+
+      }
+    }
+  }
+  .tradein {
+    &__main {
+      max-width: 768px;
+      height: 137px;
+      background: url('../assets/images/tradein-main.png') center 0px/ cover no-repeat;
+      &_wrapper {
+        width: 620px;
+        margin: 0 auto;
+      }
+      &_textwrapp {
+        margin: 0 0 0 9px;
+      }
+      &_title {
+        font-size: 37.3711px;
+        line-height: 46px;
+      }
+      &_subtitle {
+        font-size: 12.3913px;
+        line-height: 15px;
+        margin-bottom: 17px;
+      }
+      &_benefit, &_credit {
+        margin-bottom: 12px;
+        &-icon {
+          width: 16px;
+          height: 16px;
+        }
+        &-text {
+          &--big {
+            margin-left: 6px;
+            font-size: 8.38236px;
+            line-height: 10px;
+          }
+        }
+      }
+      &_image {
+        width: 327px;
+        margin: 0px 0 0 0px;
+      }
+    }
+    &__divider {
+      margin: 17px auto;
+      &_line {
+        height: 1.5px;
+      }
+      &_text {
+        font-size: 17.8799px;
+        line-height: 22px;
+        margin: 8px 0;
+      }
+    }
+    &__blocks {
+      max-width: 610px;
+      margin: 0 auto;
+    }
+  }
+}
 @media ( max-width: 600px) {
   .select-main {
     width: 238px;

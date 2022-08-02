@@ -224,6 +224,56 @@ export default {
     }
   }
 }
+@media (min-width: 606px) and (max-width: 768px) {
+  .whyus {
+    max-width: 620px;
+    margin: 20px auto 0 auto;
+    &__divider {
+      &_line {
+        height: 1.5px;
+      }
+      &_text {
+        margin: 8px 0;
+        font-size: 17.8814px;
+        line-height: 22px;
+      }
+    }
+    &__subtitle {
+      margin-top: 32px;
+      font-family: 'Montserrat';
+      font-style: normal;
+      font-weight: 500;
+      font-size: 6.66997px;
+      line-height: 8px;
+      text-align: center;
+      color: #000000;
+    }
+    &__title {
+      font-size: 17.8736px;
+      line-height: 22px;
+    }
+    &__advants {
+      width: 460px;
+      margin: 29px auto;
+      &_clients, &_banks, &_time {
+        width: 130px;
+        &-image {
+          width: 78px;
+          height: 78px;
+        }
+        &-title {
+          font-size: 11.514px;
+          line-height: 14px;   
+        }
+        &-descr {
+          margin: 8px 0 0 0;
+          font-size: 6.66997px;
+          line-height: 8px;
+        }
+      }
+    }
+  }
+}
 @media ( max-width: 600px) {
   .whyus {
     &__divider {

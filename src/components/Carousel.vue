@@ -332,6 +332,64 @@ export default {
     height: 53px;
   }
 }
+@media (min-width: 606px) and (max-width: 768px) {
+  div[data-v-3d1a4f76] {
+    padding: 0 40px;
+  }
+  .slick-initialized .slick-slide[data-v-e4caeaf8] {
+    width: 510px;
+    justify-content: space-around;
+  }
+  .carousel-main {
+    margin-top: 10px;
+    max-width: 510px;
+    &__title {
+      font-size: 13.9975px;
+      line-height: 17px;
+    }
+  }
+  .slider-wrapper {
+    margin: 10px 0 0 0px;
+    width: 500px;
+    height: 150px;
+  }
+  .slick-list[data-v-3d1a4f76] {
+    width: 320px;
+   padding: 0px 20px;
+  }
+  .slider__item {
+    max-width: 130px;
+    height: 80px;
+    margin: 0 0px;
+    & img {
+      width: 70px;
+    }
+  }
+  .slider__item-active {
+    margin: 15px 0;
+    width: 130px;
+    height: 110px;
+    box-shadow: 0px 1.80415px 4.9614px rgba(0, 0, 0, 0.25);
+    border-radius: 20.2966px;
+    & img {
+      width: 90px;
+      margin: 0 10px;
+    }
+    &--text {
+      font-size: 13px;
+      line-height: 16px;
+      margin: 5px 0;
+    }
+  }
+  .next-btn {
+    width: 64px;
+    height: 32px;
+  }
+  .prev-btn {
+    width: 64px;
+    height: 32px;
+  }
+}
 @media ( max-width: 600px) {
   div[data-v-3d1a4f76] {
     padding: 0;
