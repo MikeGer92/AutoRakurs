@@ -358,21 +358,21 @@ export default {
    padding: 0px 20px;
   }
   .slider__item {
-    max-width: 130px;
+    max-width: 110px;
     height: 80px;
     margin: 0 0px;
     & img {
-      width: 70px;
+      width: 75px;
     }
   }
   .slider__item-active {
     margin: 15px 0;
-    width: 130px;
+    width: 115px;
     height: 110px;
     box-shadow: 0px 1.80415px 4.9614px rgba(0, 0, 0, 0.25);
     border-radius: 20.2966px;
     & img {
-      width: 90px;
+      width: 80px;
       margin: 0 10px;
     }
     &--text {
