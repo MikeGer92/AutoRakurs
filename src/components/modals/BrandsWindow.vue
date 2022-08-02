@@ -292,4 +292,65 @@ export default {
     }
   }
 }
+@media (min-width: 606px) and (max-width: 768px) {
+  .brands-window {
+    max-width: 610px;
+    margin: 0 auto;
+    &__main {
+      // margin-top: -41px;
+      height: 400px;
+      &_button {
+        width: 75px;
+        height: 15px;
+        margin: 16px 0 0 10px;
+        font-size: 4.69725px;
+        line-height: 6px;
+        border-radius: 32.6417px;
+        cursor: pointer;
+      }
+      &_left {
+        width: 190px;
+        height: 112px;
+        &-carstypes {
+          margin: 8px 0 0 27px;
+          &--item {
+            margin: 5px 0;
+            font-size: 4.69725px;
+            line-height: 6px;
+            cursor: pointer;
+          }
+        }
+        &-divider {
+          display: block;
+          width: 1px;
+          height: 115px;
+          margin-left: 28px;
+        }
+      }
+      &_right {
+        &-carsbrands {
+          max-width: 450px;
+          margin: -27px 30px 0 27px;
+          justify-content: space-between;
+          &--item {
+            max-width: 100px;
+            height: 20px;
+            cursor: pointer;
+            & img {
+              width: 30%;
+            }
+            &_name {
+              margin-left: 5px;
+              font-size: 7.15714px;
+              line-height: 9px;
+            }
+          }
+        }
+      }
+    }
+    &__add {
+      min-width: 1920px;
+    }
+  }
+}
 </style>
