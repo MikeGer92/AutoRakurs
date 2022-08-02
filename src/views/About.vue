@@ -366,6 +366,82 @@ filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><
     }
   }
 }
+@media (min-width: 606px) and (max-width: 768px) {
+  .about {
+    &__divider {
+      margin: 10px auto;
+      &_line {
+        height: 1.5px;
+      }
+      &_text {
+        margin: 4px 0 4px 0;
+        font-size: 17.8892px;
+        line-height: 22px;
+      }
+    }
+    &__main {
+      max-width: 610px;
+      margin-bottom: 16px;
+      &_wrapper {
+        margin: 0 9px;
+      }
+      &_left {
+      max-width: 210px;
+      &-title {
+        margin-top: 11px;
+        font-size: 16.1924px;
+        line-height: 20px;
+      }
+      &-subtitle {
+        margin-top: 3px;
+        font-size: 7.51567px;
+        line-height: 9px;
+      }
+      &-operate, &-contacts {
+          margin-top: 5px;
+          &--title {
+              font-size: 7.51567px;
+              line-height: 9px;
+          }
+          &--hours {
+              margin: 5px 0 19px;
+              font-size: 11.7715px;
+              line-height: 14px;
+          }
+          &--phone, &--addr, &--mail {
+          margin-top: 4px;
+          & img {
+            width: 9px;
+          }
+          &_text {
+            font-size: 7.51567px;
+            line-height: 9px;
+          }
+        }
+      }
+    }
+    &_right {
+      max-width: 350px;
+      padding: 11px 0 0 0;
+      &-maps, & .ymap-container {
+        width: 349px;
+        height: 208px;
+      }
+    }
+    &_btn {
+      & button {
+          width: 148px;
+          height: 23px;
+          box-shadow: 0px 3.53672px 3.53672px rgba(0, 0, 0, 0.25);
+          border-radius: 32.7147px; 
+          font-size: 8.31981px;
+          line-height: 10px;
+          margin: -60px 0 0 80px;
+      }
+    }
+    }
+  }
+}
 @media (max-width: 605px) {
   .about {
     &__divider {
