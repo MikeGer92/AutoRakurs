@@ -328,6 +328,54 @@ export default {
     }
   }
 }
+@media (min-width: 606px) and (max-width: 768px) {
+  .credit {
+    max-width: 768px;
+    &__header {
+      height: 267px;
+      &_title {
+        margin: 14px 0 0 71px;
+        font-size: 49.21px;
+        line-height: 60px;
+      }
+      &_subtitle {
+        font-size: 21.7058px;
+        line-height: 26px;
+        margin: 0 0 0 71px;
+      }
+      &_options {
+        margin: 27px 0 0 71px;
+        &-bank, &-perc, &-gift {
+          margin-bottom: 20px;
+          &--image {
+            width: 27px;
+            & img {
+              width: 100%;
+              height: auto;
+            }
+          }
+          &--text {
+            margin-left: 14px;
+            font-size: 11.1381px;
+            line-height: 14px;
+          }
+        }
+      }
+    }
+    &__divider {
+      &_line {
+        height: 1.5px;
+      }
+      &_text {
+        &-big {
+          margin: 8px 0;
+          font-size: 17.8733px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 600px) {
   .credit {
     &__header {
