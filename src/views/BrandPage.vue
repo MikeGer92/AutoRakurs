@@ -568,6 +568,7 @@ export default {
               text-align: center;
               color: #000000;
               & span {
+                margin-top: 10px;
                 font-family: 'Inter';
                 font-style: normal;
                 font-weight: 700;
@@ -2237,20 +2238,20 @@ export default {
         margin: 0;
         &-head {
           width: 100%;
-          max-width: 600px;
+          max-width: 604px;
           height: 471px;
           flex-wrap: wrap;
           background: url('../assets/images/brand-small-main-back.png') no-repeat;
-          background-size: cover;
+          background-size: contain;
           &--wrapp {
             margin: 15px;
             flex-direction: row;
           }
           &--image {
-            margin: -35px 0px 0 -20px;
+            margin: -65px 0px 0 -65px;
             width: 100%;
-            max-width: 595px;
-            height: 243px;
+            max-width: 585px;
+            height: 233px;
             background-size: contain;
           }
           &--btn {
