@@ -74,8 +74,24 @@ export default {
         font-size: 21px;
         line-height: 27px;
         &:nth-child(2) {
-        margin: 0 15px;
+          margin: 0 15px;
+        }
       }
+    }
+  }
+}
+@media (min-width: 606px) and (max-width: 768px) {
+  .market {
+    width: 620px;
+    margin: 10px auto 44px auto;
+    &__item {
+      margin: 0px 0;
+      &_text {
+        font-size: 13px;
+        line-height: 16px;
+        &:nth-child(2) {
+          margin: 0 10px;
+        }
       }
     }
   }

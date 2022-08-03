@@ -722,8 +722,12 @@ export default {
     &__header {
       margin: 12px 0 0 0;
       max-height: 38px;
+      margin: 0 0 0px 0;
+      background-size: cover;
+      background-position: 50% 100%;
       &_block {
-        margin: 5px;
+        max-width: 98%;
+        margin: 0 auto;
       }
       &_title {
         max-width: 116px;
@@ -732,13 +736,52 @@ export default {
       }
       &_timer {
         max-width: 80px;
-        &-title {margin: 0 0 2px 0;
+        &-title {
+          margin: 0 0 2px 0;
           font-size: 4.48606px;
           line-height: 5px;
         }
       }
     }
     &__main {
+      position: relative;
+      max-width: 100%;
+      height: 100%;
+      max-height: 150px;
+      // margin: calc((-50px - (1920px - 100vw)/4)) auto 0 auto;
+      background: linear-gradient(180deg, rgba(52, 138, 210, 0.17) 95%, #FFFFFF 100%);
+      // background-size: cover;
+      overflow: hidden;
+      &_rakurs {
+        // position: absolute;
+        // top: calc(25% - ((100vw - 1280px)/4));
+        max-width: 100%;
+        // margin: 0 auto;
+        // margin: calc((0px + (1920px - 100vw)/4)) auto 0 auto;
+        background: url('../assets/images/home-filter.png') 0px 0px/contain no-repeat,
+                    url('../assets/images/home-rakurs.png') 0px 15px/contain no-repeat;
+        backdrop-filter: blur(5px);          
+      }
+      &_filter {
+        margin: 0 0 0 55px;
+        height: 0;
+        width: 299px;
+        // border-left: 0px solid transparent;
+        // border-right: 180px solid transparent;
+        // border-top: 740px solid rgba(255, 255, 255, 0.1);
+        background: url('../assets/images/home-rakurs.png') 0px 40px/contain no-repeat;
+        // border: 2.44616px solid rgba(255, 255, 255, 0.5);
+        box-shadow: 0px 0px 122.308px rgba(0, 0, 0, 0.25);
+        backdrop-filter: blur(5px);
+      }
+      &_text {
+        // margin: calc((-0px - (1920px - 100vw)/4)) auto 0 auto;
+        max-width: 620px;
+        // max-height: 299px;
+        margin: 0 auto;
+        // background: url('../assets/images/home-main-car.png') right bottom no-repeat;
+        background-size: contain;
+      }
       &_title {
         margin: 5px 0 0 8px;
         max-width: 130px;
@@ -782,6 +825,16 @@ export default {
           top: 0;
           left: 0;
         }
+      }
+      &_car {
+        position: absolute;
+        top: calc(5% - ((100vw - 390px)/4));
+        left: 50px;
+        display: block;
+        width: calc(100vw - 70px);
+        height: 740px;
+        background: url('../assets/images/home-main-car.png') right 0px no-repeat;
+        background-size: contain;
       }
     }
     &__divider {

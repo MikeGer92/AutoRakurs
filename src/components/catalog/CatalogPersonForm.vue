@@ -200,4 +200,38 @@ export default {
     }
   }
 }
+@media (min-width: 606px) and (max-width: 768px) {
+  .catalog-form {
+    max-width: 141px;
+    height: 129px;
+    margin: 0;
+    box-shadow: 0px 1.81208px 1.99329px rgba(0, 0, 0, 0.25);
+    border-radius: 7.06711px;
+    &__wrapper {
+      margin: 11px 10px 10px 12px;
+    }
+    &__title {
+      font-size: 7.15323px;
+      line-height: 9px;
+      margin-bottom: 7px;
+    }
+    &__name, &__phone {
+      padding: 0 0 0 9px;
+      width: 111px;
+      height: 14px;
+      border-radius: 17.972px;
+      font-size: 5.29438px;
+      line-height: 6px;
+    }
+    &__btn {
+      margin-top: 0px;
+      width: 121px;
+      height: 14px;
+      font-size: 5.29438px;
+      line-height: 106.52%;
+      box-shadow: 0px 1.32153px 1.32153px rgba(0, 0, 0, 0.25);
+      border-radius: 12.2242px;
+    }
+  }
+}
 </style>

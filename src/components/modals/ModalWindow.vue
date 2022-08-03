@@ -34,4 +34,18 @@ export default {
     height: 140%;
   }
 }
+@media (min-width: 769px) and (max-width: 1281px) {
+  .modal {
+    max-width: 1280px;
+    top: 136px;
+    height: 126%;
+  }
+}
+@media (min-width: 606px) and (max-width: 768px) {
+  .modal {
+    max-width: 768px;
+    top: 112px;
+    height: 74.6%;
+  }
+}
 </style>

@@ -191,6 +191,41 @@ export default {
     }
   }
 }
+@media (min-width: 606px) and (max-width: 768px) {
+  .catalog-count {
+    width: 190px;
+    height: 27px;
+    &__item {
+      padding: 0 4px 0 0;
+      // &:first-child {
+      //   padding: 0 16px 0 16px;
+      // }
+      &_number {
+        margin: 6px 0 0 0;
+        &-num {
+          margin-right: 3px;
+          width: 17px;
+          height: 22px;
+          font-size: 12.5975px;
+          line-height: 15px;
+          box-shadow: 0px 1.81613px 1.81613px rgba(0, 0, 0, 0.25);
+          border-radius: 3.37464px;
+        }
+        &-div {
+          margin-left: 3px;
+          width: 1px;
+          height: 26px;
+        }
+      }
+      &_descr {
+        font-size: 5.2246px;
+        line-height: 6px;
+        margin-left: -4px;
+        align-self: center;
+      }
+    }
+  }
+}
 @media (max-width: 605px) {
   .catalog-count {
     width: 218px;

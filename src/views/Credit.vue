@@ -280,12 +280,107 @@ export default {
     }
   }
 }
+@media (min-width: 768px) and (max-width: 1281px) {
+  .credit {
+    max-width: 1280px;
+    &__header {
+      height: 445px;
+      &_title {
+        margin: 23px 0 0 136px;
+        font-size: 82.0167px;
+        line-height: 100px;
+      }
+      &_subtitle {
+        font-size: 36.1764px;
+        line-height: 44px;
+        margin: 0 0 0 136px;
+      }
+      &_options {
+        margin: 44px 0 0 136px;
+        &-bank, &-perc, &-gift {
+          margin-bottom: 20px;
+          &--image {
+            width: 46px;
+            & img {
+              width: 100%;
+              height: auto;
+            }
+          }
+          &--text {
+            margin-left: 29px;
+            font-size: 18.5635px;
+            line-height: 23px;
+          }
+        }
+      }
+    }
+    &__divider {
+      &_line {
+        height: 2px;
+      }
+      &_text {
+        &-big {
+          margin: 13px 0;
+          font-size: 29.7889px;
+          line-height: 36px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 606px) and (max-width: 768px) {
+  .credit {
+    max-width: 768px;
+    &__header {
+      height: 267px;
+      &_title {
+        margin: 14px 0 0 71px;
+        font-size: 49.21px;
+        line-height: 60px;
+      }
+      &_subtitle {
+        font-size: 21.7058px;
+        line-height: 26px;
+        margin: 0 0 0 71px;
+      }
+      &_options {
+        margin: 27px 0 0 71px;
+        &-bank, &-perc, &-gift {
+          margin-bottom: 20px;
+          &--image {
+            width: 27px;
+            & img {
+              width: 100%;
+              height: auto;
+            }
+          }
+          &--text {
+            margin-left: 14px;
+            font-size: 11.1381px;
+            line-height: 14px;
+          }
+        }
+      }
+    }
+    &__divider {
+      &_line {
+        height: 1.5px;
+      }
+      &_text {
+        &-big {
+          margin: 8px 0;
+          font-size: 17.8733px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}
 @media (max-width: 600px) {
   .credit {
     &__header {
       height: 337px;
-      background: url('../assets/images/credit-main-small.png') no-repeat;
-      background-size: cover;
+      background: url('../assets/images/credit-main-small.png') 0px 0px/cover no-repeat;
       &_title {
         margin-left: 20px;
         font-size: 46.2161px;

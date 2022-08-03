@@ -213,6 +213,45 @@ export default {
   }
 
 }
+@media (min-width: 606px) and (max-width: 768px) {
+  .person-form {
+    width: 229px;
+    height: 248px;
+    box-shadow: 0px 1.51687px 4.17139px rgba(0, 0, 0, 0.25);
+    border-radius: 14.7895px;
+    &__title {
+      margin: 19px 0 12px 20px;
+      font-size: 15.1687px;
+      line-height: 18px;
+    }
+    &__name, &__phone {
+      width: 176px;
+      height: 37px;
+      border-radius: 37.6103px;
+      font-size: 11.0797px;
+      line-height: 13px;
+      padding: 0 0 0 10px;
+      margin: 0 0 11px 20px;
+    }
+    &__btn {
+      margin: 12px 0 0 20px;
+      width: 176px;
+      height: 31px;
+      box-shadow: 0px 2.7656px 2.7656px rgba(0, 0, 0, 0.25);
+      border-radius: 25.5818px;
+      font-size: 11.0797px;
+      line-height: 106.52%;
+    }
+    &__info {
+      margin: 14px 0 0 20px;
+      width: 185px;
+      font-size: 5.62202px;
+      line-height: 106.52%;
+      text-align: left;
+    }
+  }
+
+}
 @media (max-width: 605px) {
   .person-form {
     width: 332px;

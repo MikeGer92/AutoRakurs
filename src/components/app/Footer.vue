@@ -321,7 +321,7 @@ export default {
       &_right {
         max-width: 832px;
         &-title {
-          margin-left: 80px;
+          margin: 27px 0 0 80px;
           font-size: 18.0113px;
           line-height: 22px;
         }
@@ -359,7 +359,76 @@ export default {
       }
     }
   }
+}
+@media (min-width: 606px) and (max-width: 769px) {
+  .footer {
+    max-width: 768px;
+    &__main {
+      &_left {
+        &-salon {
+          margin: 17px 0 15px 44px;
+          max-width: 250px;
+          &--info, &--contact, &--credits {
+            &_title {
+              font-size: 10.9048px;
+              line-height: 13px;
+            }
+            & ul {
+              font-size: 5.92293px;
+              line-height: 7px;
+              & li {
+                margin: 9px 0;
+              }
+            }
+          }
+          &--contact {
+            &_title {
+              margin-top: 37px;
+            }
+          }
+        }
+      }
+      &_right {
+        max-width: 450px;
+        &-title {
+          margin: 17px 0 0 44px;
+          font-size: 10.9048px;
+          line-height: 13px;
+        }
+        &-list {
+          margin: 4.5px 0 0px 44px;
+          &--item {
+            width: 72px;
+            font-size: 5.92293px;
+            line-height: 7px;
+            margin: 4.5px 0;
+          }
 
+        }
+      }
+    }
+    &__bottom {
+      max-width: 768px;
+      &_left {
+        max-width: 161px;
+        margin: 10px 0 30px 44px;
+        &-title {
+          font-size: 5.92204px;
+          line-height: 7px;
+        }
+        &-confid, &-confirm {
+          font-size: 5.92204px;
+          line-height: 7px;
+        }
+      }
+      &_right {
+        max-width: 385px;
+        margin: 15px 44px 30px 0;
+        font-size: 5.92293px;
+        line-height: 7px;
+      }
+    }
+  }
 }
 @media (max-width: 605px) {
   .footer {
