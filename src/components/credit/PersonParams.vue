@@ -385,6 +385,7 @@ export default {
         &-left {
           width: 100%;
           margin-right: 0;
+          margin-left: -50px;
         }
         &-right {
           margin-left: 0;

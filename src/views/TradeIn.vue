@@ -25,7 +25,7 @@
               </div>
               <div class="tradein__main_credit-text--small">
                 <div class="tradein__main_credit-text--small_circ">
-                  <div class="tradein__main_credit-text--small_str">СТАВКА<br>ОТ<span>8%*</span></div>
+                  <div class="tradein__main_credit-text--small_circ-str">СТАВКА<br>ОТ<span>8%*</span></div>
                 </div>
               </div>
             </div>
@@ -421,18 +421,21 @@ export default {
 }
 @media ( max-width: 600px) {
   .select-main {
-    width: 238px;
+    width: 248px;
     height: 34px;
     margin-bottom: 34px;
   }
   .tradein {
     &__main {
       height: 322px;
-      background: url('../assets/images/tradein-main-small2.png') no-repeat;
-      background-size: cover;
+      background: url('../assets/images/tradein-small-full.png') center 0px/ contain no-repeat;
+      // background-size: cover;
       &_wrapper {
-        margin: 11px 0 0 11px;
+        margin: 5px 0 0 5px;
         width: 100%;
+      }
+      &_textwrapp {
+        margin: 10px 0 0 0px;
       }
       &_title {
         font-size: 42.7669px;
@@ -441,12 +444,17 @@ export default {
       &_subtitle {
         font-size: 17.3867px;
         line-height: 21px;
-        margin-bottom: 6px;
+        margin-bottom: 15px;
       }
       &_info {
         width: 100%;
         flex-direction: row;
         justify-content: space-between;
+      }
+      &_image {
+        display: none;
+        width: 327px;
+        margin: 0px 0 0 0px;
       }
       &_benefit, &_credit {
         margin-bottom: 0;
@@ -468,17 +476,23 @@ export default {
               color: #FFA724;
               // white-space: normal;
             }
+          //   // &_circ {
+          //   //   display: none;
+          //   //   margin-right: 6px;
+          //   //   display: flex;
+          //   //   justify-content: center;
+          //   //   align-items: center;
+          //   //   width: 78px;
+          //   //   height: 78px;
+          //   //   background: #12609E;
+          //   //   box-shadow: 0px 5.47368px 19.1579px rgba(0, 0, 0, 0.25);
+          //   //   border-radius: 50%;
+          //   //   text-align: center;
+          //   // }
             &_circ {
-              margin-right: 6px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              width: 78px;
-              height: 78px;
-              background: #12609E;
-              box-shadow: 0px 5.47368px 19.1579px rgba(0, 0, 0, 0.25);
-              border-radius: 50%;
-              text-align: center;
+              &-str {
+                display: none;
+              } 
             }
           }
         }
@@ -494,6 +508,10 @@ export default {
         font-size: 15px;
         line-height: 18px;
       }
+    }
+    &__blocks {
+      max-width: 390px;
+      margin: 0 auto;
     }
   }
 }

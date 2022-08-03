@@ -436,6 +436,7 @@ export default {
             margin: 60px 0 0 -60px;
           }
           &--compl {
+            max-width: 390px;
             margin-left: -60px;
             &_drive, &_power, &_eng {
               &-icon {
