@@ -857,12 +857,23 @@ export default {
       background: url('../assets/images/catalog-main-small.png') no-repeat;
       background-size: cover;
       flex-wrap: wrap;
+      &_filter {
+        width: 155px;
+        height: 70%;
+        background: url('../assets/images/catalog-filter-small.png') 0px 0px/ contain no-repeat;
+      }
+      &_wrapper {
+        max-width: 620px;
+        margin: 0 auto;
+        justify-content: space-between;
+      }   
     }
     &__logo {
       flex-direction: row;
       margin: 21px 0 0 21px;
-      width: 80px;
-      height: 32px;
+      width: 22.25%;
+      max-width: 142px;
+      max-height: 12.9%;
       &_big {
         display: none;
       }
@@ -891,7 +902,7 @@ export default {
         display: flex;
         width: 366px;
         height: 213px;
-        margin: 10px 0 0 15px;
+        margin: 60px 0 0 -150px;
         background-image: no-repeat;
       }
     }
@@ -967,21 +978,37 @@ export default {
       display: none;
     }
     &__bottom {
+      position: relative;
       margin-top: 36px;
-      max-width: 600px;
+      max-width: 604px;
       height: 360px;
       background: url('../assets/images/catalog-bottom-small.png') no-repeat;
       background-size: cover;
+      &_wrapper {
+        max-width: 620px;
+        margin: 0 auto;
+        z-index: 2;
+      }
+      &_filter {
+        position: absolute;
+        // width: 212px;
+        height: 50%;
+        background: url('../assets/images/catalog-bpttom-add-shad.png') center 0px/ cover no-repeat;
+        z-index: 1;
+      }
       &_logo {
+        display: flex;
+        width: 30.212%;
+        object-fit: contain;
+        height: 49.6%;
         &-img {
           display: none;
           &--small {
             display: flex;
-            width: 130px;
-            height: 52px;
-            margin: 315px 0 0 -90px;
+            width: 49%;
+            height: 14.6%;
+            margin: 315px 0px 0 -75px;
           }
-
         }
         &-header {
           display: flex;
@@ -998,6 +1025,7 @@ export default {
             color: #12609E;
           }
           &--descr {
+            width: 240px;
             margin-top: 5px;
             font-family: 'Inter';
             font-style: normal;
@@ -1026,6 +1054,7 @@ export default {
         &-timer {
           margin: 162px 0 14px 22px;
           &--title {
+            width: 115px;
             margin: 0 0 13px 0;
             font-size: 8.40337px;
             line-height: 10px;
@@ -1033,15 +1062,16 @@ export default {
         }
       }
       &_image {
-        width: 310px;
+        width: 373px;
         height: 229px;
         &-big {
           display: none;
         }
         &-small {
+          // width: 100%;
           display: flex;
-          margin: 120px 0 0 -200px;
-          width: 310px;
+          margin: 110px 0 0 -100px;
+          // width: 310px;
           background-image: no-repeat;
         }
       }
