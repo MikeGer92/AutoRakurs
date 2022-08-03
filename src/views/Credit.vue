@@ -380,8 +380,7 @@ export default {
   .credit {
     &__header {
       height: 337px;
-      background: url('../assets/images/credit-main-small.png') no-repeat;
-      background-size: cover;
+      background: url('../assets/images/credit-main-small.png') 0px 0px/cover no-repeat;
       &_title {
         margin-left: 20px;
         font-size: 46.2161px;
