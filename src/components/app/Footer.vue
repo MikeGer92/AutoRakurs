@@ -433,6 +433,7 @@ export default {
 @media (max-width: 605px) {
   .footer {
     &__main {
+      max-width: 525px;
       flex-direction: column;
       margin: 24px 0 0 45px;
       &_left {
@@ -440,12 +441,15 @@ export default {
         &-salon {
           margin: 42px 0 0 0;
           &--contact, &--credits {
-            margin: 16px 0 0 0;
+            margin: 0px 0 0 0;
             & ul {
               & li {
                 max-width: 281px;
               }
             }
+          }
+          &--credits {
+            margin-right: 50px;
           }
         }
       }
