@@ -111,7 +111,8 @@ export default {
 @media (min-width: 769px) and (max-width: 1280px) {
   .radio-main {
     &__radio {
-      margin-top: 28px;
+      margin-top: 17px;
+      height: 24px;
       &_btn {
         width: 22px;
         height: 22px;

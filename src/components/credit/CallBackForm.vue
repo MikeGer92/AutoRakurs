@@ -63,7 +63,7 @@ export default {
 <style lang="scss">
  .person-form {
     width: 750px;
-    height: 814px;
+    // height: 814px;
     display: flex;
     flex-direction: column;
     background: #FFFFFF;
@@ -144,7 +144,6 @@ export default {
 @media (min-width: 1281px) and (max-width: 1920px) {
   .person-form {
     width: 570px;
-    height: 620px;
     box-shadow: 0px 3.7922px 10.4285px rgba(0, 0, 0, 0.25);
     border-radius: 36.9739px;
     &__title {
@@ -179,7 +178,6 @@ export default {
 @media (min-width: 769px) and (max-width: 1280px) {
   .person-form {
     width: 380px;
-    height: 412px;
     box-shadow: 0px 2.52813px 6.95236px rgba(0, 0, 0, 0.25);
     border-radius: 24.6493px;
     &__title {
@@ -197,6 +195,7 @@ export default {
       margin: 0 0 11px 25px;
     }
     &__btn {
+      margin: 20px 0 0 25px;
       width: 302px;
       height: 50px;
       box-shadow: 0px 4.60935px 4.60935px rgba(0, 0, 0, 0.25);
@@ -205,6 +204,7 @@ export default {
       line-height: 106.52%;
     }
     &__info {
+      margin: 22px 0 0 30px;
       width: 308px;
       font-size: 9.37009px;
       line-height: 106.52%;
@@ -216,13 +216,18 @@ export default {
 @media (min-width: 606px) and (max-width: 768px) {
   .person-form {
     width: 229px;
-    height: 248px;
     box-shadow: 0px 1.51687px 4.17139px rgba(0, 0, 0, 0.25);
     border-radius: 14.7895px;
     &__title {
       margin: 19px 0 12px 20px;
       font-size: 15.1687px;
       line-height: 18px;
+    }
+    &__errors {
+      font-size: 8px;
+      & ul {
+        padding-inline-start: 0px;
+      }
     }
     &__name, &__phone {
       width: 176px;
@@ -244,6 +249,7 @@ export default {
     }
     &__info {
       margin: 14px 0 0 20px;
+      height: 16px;
       width: 185px;
       font-size: 5.62202px;
       line-height: 106.52%;
