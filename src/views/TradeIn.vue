@@ -81,13 +81,14 @@ export default {
   margin-bottom: 71px;
 }
 .tradein {
+  width: 100%;
+  max-width: 2065px;
   display: flex;
   flex-direction: column;
   text-align: center;
   &__main {
     display: flex;
     width: 100%;
-    max-width: 2065px;
     height: 464px;
     background: url('../assets/images/trade-main-max.png') no-repeat;
     background-size: cover;
