@@ -105,7 +105,7 @@ export default {
     }
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .count {
     max-width: 348px;
     height: 113px;
@@ -126,7 +126,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .count {
     max-width: 232px;
     height: 75px;
@@ -148,7 +148,7 @@ export default {
     }
   }
 }
-@media (min-width: 606px) and (max-width: 769px) {
+@media (min-width: 606px) and (max-width: 768px) {
   .count {
     max-width: 141px;
     height: 46px;

@@ -536,7 +536,7 @@ export default {
         }
         &--params {
           display: flex;
-          margin-left: 15px;
+          margin-left: 5px;
         }
         &--technics {
           display: none;
@@ -1087,7 +1087,7 @@ export default {
     justify-content: space-around;
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .brandpage {
     max-width: 1920px;
     &__main {
@@ -1421,7 +1421,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .select-main {
   &__field {
     width: 204px;
@@ -2255,7 +2255,7 @@ export default {
             background-size: contain;
           }
           &--btn {
-            margin: 0 0 20px 15px;
+            margin: 0 0 20px 5px;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -2293,7 +2293,7 @@ export default {
             margin-top: 30px;
           }
           &--colors {
-            margin: 105px 0 0 -115px;
+            margin: 105px 0 0 -120px;
             width: 239px;
             height: 37px;
             transform: rotate(90deg);

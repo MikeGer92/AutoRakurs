@@ -135,7 +135,7 @@ export default {
       cursor: pointer;
     }
   }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .catalog-form {
     max-width: 349px;
     max-height: 316px;
@@ -166,7 +166,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .catalog-form {
     max-width: 232px;
     max-height: 195px;

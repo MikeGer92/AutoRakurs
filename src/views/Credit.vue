@@ -249,7 +249,7 @@ export default {
     }
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .credit {
     max-width: 1920px;
     &__header {
@@ -280,7 +280,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .credit {
     max-width: 1280px;
     &__header {
@@ -376,15 +376,15 @@ export default {
     }
   }
 }
-@media (max-width: 600px) {
+@media (max-width: 605px) {
   .credit {
     &__header {
       height: 337px;
       background: url('../assets/images/credit-main-small.png') 0px 0px/cover no-repeat;
       &_title {
         margin-left: 20px;
-        font-size: 46.2161px;
-        line-height: 56px;
+        font-size: 42px;
+        line-height: 52px;
       }
       &_subtitle {
         margin-left: 20px;

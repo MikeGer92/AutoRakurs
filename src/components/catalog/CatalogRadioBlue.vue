@@ -73,7 +73,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .catalog-radio-blue {
     display: flex;
     flex-direction: column;

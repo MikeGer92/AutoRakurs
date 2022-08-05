@@ -228,7 +228,7 @@ export default {
   background: url('../assets/images/Group183.png') center 0px/ contain no-repeat;
   cursor: pointer;
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .carousel-main {
     margin-top: 69px;
     max-width: 1700px;
@@ -277,7 +277,7 @@ export default {
     height: 80px;
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .slick-initialized .slick-slide[data-v-e4caeaf8] {
     width: 1000px;
     justify-content: space-around;
@@ -390,12 +390,13 @@ export default {
     height: 32px;
   }
 }
-@media ( max-width: 600px) {
+@media ( max-width: 605px) {
   div[data-v-3d1a4f76] {
+    width: 290px;
     padding: 0;
   }
   .slick-initialized .slick-slide[data-v-e4caeaf8] {
-    width: 300px;
+    width: 290px;
     justify-content: space-around;
   }
   .slick-list {
@@ -403,9 +404,11 @@ export default {
     padding: 0 5px;
   }
   .slick-list[data-v-3d1a4f76] {
+    width: 290px;
     padding: 0 5px;
   }
   .slick-slider[data-v-3d1a4f76] {
+    width: 290px;
     display: block;
     padding: 0 5px;
   }
@@ -463,15 +466,15 @@ export default {
     height: 105px;
   }
   .carousel {
-    width: 326px;
+    width: 320px;
   }
   .next-btn {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
   }
   .prev-btn {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
   }
 }
 </style>

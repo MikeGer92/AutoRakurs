@@ -464,7 +464,7 @@ export default {
     background: #D9D9D9;
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .catalog {
     max-width: 1920px;
     &__main {
@@ -567,7 +567,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .catalog {
     max-width: 1280px;
     &__main {
@@ -883,7 +883,7 @@ export default {
       &_timer {
         width: 218px;
         height: 74px;
-        margin: -8px 24px 0 46px;
+        margin: -8px 24px 0 40px;
         &-title {
           width: 100%;
           font-size: 13.3231px;
@@ -925,7 +925,7 @@ export default {
       }
       &_btn {
         margin: 12px 19px 29px 0px;
-        width: 358px;
+        width: 338px;
         height: 33px;
         background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
         box-shadow: 0px 1.76795px 1.76795px rgba(0, 0, 0, 0.25);
@@ -1005,9 +1005,9 @@ export default {
           display: none;
           &--small {
             display: flex;
-            width: 49%;
-            height: 14.6%;
-            margin: 315px 0px 0 -75px;
+            width: 30%;
+            height: 12.6%;
+            margin: 315px 0px 0 -70px;
           }
         }
         &-header {

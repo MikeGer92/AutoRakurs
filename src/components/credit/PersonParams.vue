@@ -177,7 +177,7 @@ export default {
     }
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .person {
     margin: 0 0 37px 22px;
     &__left {
@@ -234,7 +234,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .person {
     margin: 0 0 25px 15px;
     &__left {
@@ -292,7 +292,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 606px) and (max-width: 768px) {
   .person {
     margin: 0 0 25px 9px;
  &__left {
@@ -351,7 +351,7 @@ export default {
     }
   }
 }
-@media ( max-width: 600px) {
+@media ( max-width: 605px) {
   .person {
     &__left {
       margin: 8px 0 0 17px;

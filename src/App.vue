@@ -46,7 +46,7 @@ export default {
     color: #12609E;
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   #app {
     max-width: 1920px;
   }

@@ -141,7 +141,7 @@ export default {
 
     }
   }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .person-form {
     width: 570px;
     height: 620px;
@@ -176,7 +176,7 @@ export default {
   }
 
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .person-form {
     width: 380px;
     height: 412px;
@@ -254,10 +254,12 @@ export default {
 }
 @media (max-width: 605px) {
   .person-form {
-    width: 332px;
+    width: 100%;
+    max-width: 330px;
     height: 360px;
     box-shadow: 0px 2px 6.05612px rgba(0, 0, 0, 0.25);
     border-radius: 21.4717px;
+    margin-left: -10px;
     &__title {
       margin: 26px 0 26px 28px;
       font-size: 22.0223px;

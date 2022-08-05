@@ -249,7 +249,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .select-main {
     width: 333px;
     height: 40px;
@@ -419,7 +419,7 @@ export default {
     }
   }
 }
-@media ( max-width: 600px) {
+@media ( max-width: 605px) {
   .select-main {
     width: 248px;
     height: 34px;

@@ -94,7 +94,7 @@ export default {
     }
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .radio-main-orange {
     &__radio {
       margin: 54px 0 0 0;
@@ -136,7 +136,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .radio-main-orange {
     &__radio {
       margin: 35px 0 0 0;

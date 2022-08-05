@@ -187,7 +187,7 @@ export default {
     }
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .homecar-main {
     max-width: 444px;
     margin-top: 80px;
@@ -256,7 +256,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .homecar-main {
     width: 295px;
     margin-top: 64px;
@@ -271,7 +271,7 @@ export default {
       text-align: center;
     }
     &__model {
-      margin: -10px 0 0 30px;
+      margin: 0px 0 0 40px;
       font-size: 34.5008px;
       line-height: 42px;
     }
@@ -281,7 +281,7 @@ export default {
     &__offer {
       &_day {
         width: 115px;
-        margin: 10px 5px 18px 12px;
+        margin: 10px 5px 25px 12px;
         border: 2.02739px solid #FFA724;
         border-radius: 32.4382px;
         &-off {

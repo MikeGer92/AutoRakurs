@@ -273,7 +273,7 @@ export default {
     }
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .credit-params {
     margin: 0 0 0 22px;
     &__left {
@@ -334,7 +334,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .credit-params {
     margin: 0 0 0 15px;
     &__left {
@@ -458,7 +458,7 @@ export default {
     }
   }
 }
-@media ( max-width: 600px) {
+@media ( max-width: 605px) {
   .credit-params {
     &__left {
       margin: 8px 0 0 17px;

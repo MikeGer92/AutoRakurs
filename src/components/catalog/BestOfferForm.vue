@@ -154,7 +154,7 @@ export default {
       color: #000000;
     }
   }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .bestoffer-form {
     max-width: 288px;
     // max-height: 312px;
@@ -195,7 +195,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .bestoffer-form {
     max-width: 191px;
     max-height: 207px;

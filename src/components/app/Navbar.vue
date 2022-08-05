@@ -231,7 +231,7 @@ export default {
 .header-small {
   display: none;
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .active {
     height: 58px;
     border-radius: 33.3801px;
@@ -284,7 +284,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .active {
     height: 38px;
     background: linear-gradient(266.93deg, #FFFFFF -1.96%, #12609E 92.96%);
@@ -341,7 +341,7 @@ export default {
     }
   }
 }
-@media (min-width: 606px) and (max-width: 769px) {
+@media (min-width: 606px) and (max-width: 768px) {
   .active {
     height: 23px;
     background: linear-gradient(266.93deg, #FFFFFF -1.96%, #12609E 92.96%);
