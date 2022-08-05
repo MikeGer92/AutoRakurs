@@ -434,6 +434,7 @@ export default {
             height: 21px;
             border-radius: 35.2927px;
             &_num, &_text {
+              margin: 0px 10px 0 12px;
               font-size: 9.34265px;
               line-height: 11px;
             }

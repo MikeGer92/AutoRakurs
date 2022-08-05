@@ -177,7 +177,7 @@
             <input class="brandpage__tradein_form-params--year" placeholder="ГОД ВЫПУСКА">
           </div>
           <input class="brandpage__tradein_form-yourprice" placeholder="ВАША ЦЕНА">
-          <div class="brandpage__main_right-form--errors" v-if="errors.length">
+          <div class="brandpage__main_right-form--errors_tradein" v-if="errors.length">
             <b>Ошибки при заполнении формы:</b>
               <!-- <ul>
                 <li v-for="error in errors" :key="error">{{ error }}</li>
@@ -716,6 +716,8 @@ export default {
           display: flex;
           flex-direction: column;
           align-self: center;
+          text-align: center;
+          margin-top: -20px;
           & b {
             font-weight: 900;
             color: red;
@@ -1206,6 +1208,12 @@ export default {
               }
             }
           }
+          &--errors {
+            &_tradein {
+              margin-top: 15px;
+              color: red;
+            }
+          }
           &--select {
             width: 306px;
             height: 53px;
@@ -1581,6 +1589,13 @@ export default {
               }
             }
           }
+          &--errors {
+            &_tradein {
+              margin-top: 10px;
+              color: red;
+              font-size: 12px;
+            }
+          }
           &--select {
             width: 205px;
             height: 35px;
@@ -1910,7 +1925,7 @@ export default {
           }
         }
         &-gifts {
-          margin-top: 5px;
+          margin-top: 20px;
           &--item {
             &_wrapper {
               margin: 0 8px;
@@ -1958,6 +1973,15 @@ export default {
                 font-size: 5.52796px;
                 line-height: 7px;
               }
+            }
+          }
+          &--errors {
+            font-size: 8px;
+            margin-top: -10px;
+            &_tradein {
+              margin-top: 10px;
+              color: red;
+              font-size: 8px;
             }
           }
           &--select {
@@ -2050,6 +2074,7 @@ export default {
     &__complectations {
       max-width: 620px;
       margin: 24px auto 0 auto;
+      justify-content: center;
     }
     &__special {
       max-width: 662px;

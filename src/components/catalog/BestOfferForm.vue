@@ -66,7 +66,6 @@ export default {
 <style lang="scss">
  .bestoffer-form {
     max-width: 356px;
-    // max-height: 386px;
     display: flex;
     flex-direction: column;
     background: #FFFFFF;
@@ -157,7 +156,6 @@ export default {
 @media (min-width: 1281px) and (max-width: 1920px) {
   .bestoffer-form {
     max-width: 288px;
-    // max-height: 312px;
     align-self: center;
     &__wrapper {
       margin: 11px 32px 11px 22px;
@@ -171,6 +169,9 @@ export default {
       margin-bottom: 8px;
       font-size: 8.08541px;
       line-height: 10px;
+    }
+    &__errors {
+      font-size: 12px;
     }
     &__name, &__phone {
       font-size: 13.9329px;
@@ -198,7 +199,6 @@ export default {
 @media (min-width: 769px) and (max-width: 1280px) {
   .bestoffer-form {
     max-width: 191px;
-    max-height: 207px;
     align-self: center;
     &__wrapper {
       margin: 11px 32px 11px 12px;
@@ -213,6 +213,10 @@ export default {
       margin-bottom: 5px;
       font-size: 5.39608px;
       line-height: 7px;
+    }
+    &__errors {
+      font-size: 8px;
+      margin-bottom: 8px;
     }
     &__name, &__phone {
       padding: 0 0 0 7px;
@@ -241,7 +245,6 @@ export default {
 @media (min-width: 606px) and (max-width: 768px) {
   .bestoffer-form {
     max-width: 143px;
-    max-height: 155px;
     box-shadow: 0px 2.37542px 2.61296px rgba(0, 0, 0, 0.25);
     border-radius: 9.26412px;
     align-self: center;
@@ -258,6 +261,10 @@ export default {
       margin-bottom: 8px;
       font-size: 4.02753px;
       line-height: 5px;
+    }
+    &__errors {
+      font-size: 6px;
+      margin-bottom: 5px;
     }
     &__name, &__phone {
       padding: 0 0 0 5px;

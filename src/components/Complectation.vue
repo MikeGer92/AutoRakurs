@@ -277,7 +277,7 @@ export default {
     }
   }
 }
-@media (min-width: 769px) and (max-width: 1280px) {
+@media (min-width: 606px) and (max-width: 1280px) {
   .complect {
     margin: 0 auto;
     &__main {

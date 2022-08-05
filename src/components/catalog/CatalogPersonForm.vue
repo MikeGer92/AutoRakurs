@@ -65,7 +65,6 @@ export default {
 <style lang="scss">
  .catalog-form {
     max-width: 458px;
-    // max-height: 386px;
     display: flex;
     flex-direction: column;
     background: #FFFFFF;
@@ -138,7 +137,6 @@ export default {
 @media (min-width: 1281px) and (max-width: 1920px) {
   .catalog-form {
     max-width: 349px;
-    max-height: 316px;
     margin: 0;
     box-shadow: 0px 4.49339px 4.94272px rgba(0, 0, 0, 0.25);
     border-radius: 17.5242px;
@@ -148,6 +146,9 @@ export default {
     &__title {
       font-size: 17.7377px;
       line-height: 21px;
+    }
+    &__errors {
+      margin-bottom: 15px;
     }
     &__name, &__phone {
       width: 275px;
@@ -169,7 +170,6 @@ export default {
 @media (min-width: 769px) and (max-width: 1280px) {
   .catalog-form {
     max-width: 232px;
-    max-height: 195px;
     margin: 0;
     box-shadow: 0px 4.49339px 4.94272px rgba(0, 0, 0, 0.25);
     border-radius: 17.5242px;
@@ -180,6 +180,10 @@ export default {
      font-size: 11.8379px;
      line-height: 14px;
      margin-bottom: 11px;
+    }
+    &__errors {
+      font-size: 10px;
+      margin-bottom: 8px;
     }
     &__name, &__phone {
       padding: 0 0 0 9px;
@@ -203,7 +207,6 @@ export default {
 @media (min-width: 606px) and (max-width: 768px) {
   .catalog-form {
     max-width: 141px;
-    height: 129px;
     margin: 0;
     box-shadow: 0px 1.81208px 1.99329px rgba(0, 0, 0, 0.25);
     border-radius: 7.06711px;
@@ -214,6 +217,10 @@ export default {
       font-size: 7.15323px;
       line-height: 9px;
       margin-bottom: 7px;
+    }
+    &__errors {
+      font-size: 7px;
+      margin-bottom: 8px;
     }
     &__name, &__phone {
       padding: 0 0 0 9px;
