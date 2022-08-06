@@ -52,7 +52,7 @@ export default {
     }
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .market {
     margin: 10px 0 84px 0;
     &__item {
@@ -64,7 +64,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .market {
     width: 1036px;
     margin: 10px auto 84px auto;
@@ -74,8 +74,24 @@ export default {
         font-size: 21px;
         line-height: 27px;
         &:nth-child(2) {
-        margin: 0 15px;
+          margin: 0 15px;
+        }
       }
+    }
+  }
+}
+@media (min-width: 606px) and (max-width: 768px) {
+  .market {
+    width: 620px;
+    margin: 10px auto 44px auto;
+    &__item {
+      margin: 0px 0;
+      &_text {
+        font-size: 13px;
+        line-height: 16px;
+        &:nth-child(2) {
+          margin: 0 10px;
+        }
       }
     }
   }

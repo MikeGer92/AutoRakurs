@@ -25,7 +25,7 @@
               </div>
               <div class="tradein__main_credit-text--small">
                 <div class="tradein__main_credit-text--small_circ">
-                  <div class="tradein__main_credit-text--small_str">СТАВКА<br>ОТ<span>8%*</span></div>
+                  <div class="tradein__main_credit-text--small_circ-str">СТАВКА<br>ОТ<span>8%*</span></div>
                 </div>
               </div>
             </div>
@@ -81,13 +81,14 @@ export default {
   margin-bottom: 71px;
 }
 .tradein {
+  width: 100%;
+  max-width: 2065px;
   display: flex;
   flex-direction: column;
   text-align: center;
   &__main {
     display: flex;
     width: 100%;
-    max-width: 2065px;
     height: 464px;
     background: url('../assets/images/trade-main-max.png') no-repeat;
     background-size: cover;
@@ -249,7 +250,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .select-main {
     width: 333px;
     height: 40px;
@@ -334,20 +335,108 @@ export default {
     }
   }
 }
-@media ( max-width: 600px) {
+@media (min-width: 606px) and (max-width: 768px) {
   .select-main {
-    width: 238px;
+    width: 200px;
+    height: 24px;
+    margin-bottom: 22px;
+    &__field {
+      width: 200px;
+      height: 24px;
+      &_text {
+        font-size: 10.2341px;
+        line-height: 12px;
+        margin: 0 10px;
+      }
+      &_icon {
+        width: 17px;
+        height: 9px;
+      }
+    }
+    &__options {
+      top: 26px;
+      &_option {
+        margin-left: 10px;
+        font-size: 10.2341px;
+        line-height: 12px;
+
+      }
+    }
+  }
+  .tradein {
+    &__main {
+      max-width: 768px;
+      height: 137px;
+      background: url('../assets/images/tradein-main.png') center 0px/ cover no-repeat;
+      &_wrapper {
+        width: 620px;
+        margin: 0 auto;
+      }
+      &_textwrapp {
+        margin: 0 0 0 9px;
+      }
+      &_title {
+        font-size: 37.3711px;
+        line-height: 46px;
+      }
+      &_subtitle {
+        font-size: 12.3913px;
+        line-height: 15px;
+        margin-bottom: 17px;
+      }
+      &_benefit, &_credit {
+        margin-bottom: 12px;
+        &-icon {
+          width: 16px;
+          height: 16px;
+        }
+        &-text {
+          &--big {
+            margin-left: 6px;
+            font-size: 8.38236px;
+            line-height: 10px;
+          }
+        }
+      }
+      &_image {
+        width: 327px;
+        margin: 0px 0 0 0px;
+      }
+    }
+    &__divider {
+      margin: 17px auto;
+      &_line {
+        height: 1.5px;
+      }
+      &_text {
+        font-size: 17.8799px;
+        line-height: 22px;
+        margin: 8px 0;
+      }
+    }
+    &__blocks {
+      max-width: 610px;
+      margin: 0 auto;
+    }
+  }
+}
+@media ( max-width: 605px) {
+  .select-main {
+    width: 248px;
     height: 34px;
     margin-bottom: 34px;
   }
   .tradein {
     &__main {
       height: 322px;
-      background: url('../assets/images/tradein-main-small2.png') no-repeat;
-      background-size: cover;
+      background: url('../assets/images/tradein-small-full.png') center 0px/ contain no-repeat;
+      // background-size: cover;
       &_wrapper {
-        margin: 11px 0 0 11px;
+        margin: 5px 0 0 5px;
         width: 100%;
+      }
+      &_textwrapp {
+        margin: 10px 0 0 0px;
       }
       &_title {
         font-size: 42.7669px;
@@ -356,12 +445,17 @@ export default {
       &_subtitle {
         font-size: 17.3867px;
         line-height: 21px;
-        margin-bottom: 6px;
+        margin-bottom: 15px;
       }
       &_info {
         width: 100%;
         flex-direction: row;
         justify-content: space-between;
+      }
+      &_image {
+        display: none;
+        width: 327px;
+        margin: 0px 0 0 0px;
       }
       &_benefit, &_credit {
         margin-bottom: 0;
@@ -383,17 +477,23 @@ export default {
               color: #FFA724;
               // white-space: normal;
             }
+          //   // &_circ {
+          //   //   display: none;
+          //   //   margin-right: 6px;
+          //   //   display: flex;
+          //   //   justify-content: center;
+          //   //   align-items: center;
+          //   //   width: 78px;
+          //   //   height: 78px;
+          //   //   background: #12609E;
+          //   //   box-shadow: 0px 5.47368px 19.1579px rgba(0, 0, 0, 0.25);
+          //   //   border-radius: 50%;
+          //   //   text-align: center;
+          //   // }
             &_circ {
-              margin-right: 6px;
-              display: flex;
-              justify-content: center;
-              align-items: center;
-              width: 78px;
-              height: 78px;
-              background: #12609E;
-              box-shadow: 0px 5.47368px 19.1579px rgba(0, 0, 0, 0.25);
-              border-radius: 50%;
-              text-align: center;
+              &-str {
+                display: none;
+              } 
             }
           }
         }
@@ -409,6 +509,10 @@ export default {
         font-size: 15px;
         line-height: 18px;
       }
+    }
+    &__blocks {
+      max-width: 390px;
+      margin: 0 auto;
     }
   }
 }

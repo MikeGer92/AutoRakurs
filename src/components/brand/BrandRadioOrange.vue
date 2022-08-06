@@ -28,7 +28,7 @@ export default {
   display: flex;
   flex-direction: column;
   &__radio {
-    margin-top: 65px;
+    margin: 65px 0 0 0;
     display: flex;
     align-items: center;
     cursor: pointer;
@@ -94,10 +94,10 @@ export default {
     }
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .radio-main-orange {
     &__radio {
-      margin-top: 54px;
+      margin: 54px 0 0 0;
       &_btn {
         width: 46px;
         height: 46px;
@@ -136,13 +136,13 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .radio-main-orange {
     &__radio {
-      margin-top: 35px;
+      margin: 35px 0 0 0;
       &_btn {
-        width: 46px;
-        height: 46px;
+        width: 32px;
+        height: 32px;
         margin-left: 30px;
         + span {
           width: 27px;
@@ -173,6 +173,48 @@ export default {
         &-benef {
           font-size: 23.9395px;
           line-height: 29px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 606px) and (max-width: 768px) {
+  .radio-main-orange {
+    &__radio {
+      margin: 10px 0 16px 0;
+      &_btn {
+        width: 18px;
+        height: 18px;
+        margin-left: 30px;
+        + span {
+          width: 16px;
+          height: 16px;
+          border-radius: 50%;
+          margin-left: 10px;
+        }
+        &:checked {
+          + span {
+            &::before {
+              content: "";
+              width: 10px;
+              height: 10px;
+            }
+          }
+        }
+      }
+      & span {
+        width: 18px;
+        height: 18px;
+      }
+      &_text {
+        margin-left: 11px;
+        &-title {
+          font-size: 6.90283px;
+          line-height: 8px;
+        }
+        &-benef {
+          font-size: 14.3586px;
+          line-height: 17px;
         }
       }
     }

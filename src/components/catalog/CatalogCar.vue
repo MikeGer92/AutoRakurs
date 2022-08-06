@@ -190,7 +190,7 @@ export default {
     }
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .catalogcar-main {
     max-width: 347px;
     margin: 50px 0;
@@ -262,7 +262,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .catalogcar-main {
     max-width: 232px;
     margin: 0 0 68px 0;
@@ -333,6 +333,82 @@ export default {
         &-credit, &-compl {
           font-size: 6.28012px;
           line-height: 8px;
+        }
+      }
+    }
+  }
+}
+@media (min-width: 606px) and (max-width: 768px) {
+  .catalogcar-main {
+    max-width: 180px;
+    margin: 0 0 32px 0;
+  }
+  .catalogcar {
+    background-position: 0 0;
+    &__brand {
+      font-size: 34.1891px;
+      line-height: 41px;
+    }
+    &__model {
+      margin-top: -10px;
+      font-size: 20.8882px;
+      line-height: 25px;
+    }
+    &__image {
+      width: 179px;
+      height: auto;
+    }
+    &__offer {
+      &_day {
+        margin: 6px;
+        width: 70px;
+        height: 27px;
+        border: 1.22746px solid #FFA724;
+        border-radius: 19.6394px;
+        &-off {
+          padding: 5px 2px 2px 5px;
+          font-size: 5.4356px;
+          line-height: 7px;
+        }
+        &-disc {
+          padding: 2px 2px 5px 5px;
+          font-size: 5.96649px;
+          line-height: 7px;
+        }
+      }
+      &_payment {
+        margin-right: 11px;
+        &-sum {
+          font-size: 12.6583px;
+          line-height: 13px;
+        }
+        &-period {
+          font-size: 9.81972px;
+          line-height: 10px;
+        }
+      }
+    }
+    &__divider {
+      margin: 13px 0 3px 0;
+      width: 177px;
+      height: 1px;
+    }
+    &__coast {
+      margin: 0px 7px 4px 7px;
+      font-size: 20.4006px;
+      line-height: 25px;
+    }
+    &__buttons {
+      max-width: 180px;
+      margin-top: 8px;
+      &_btn {
+        width: 87px;
+        height: 16px;
+        box-shadow: 0px 2.94107px 2.94107px rgba(0, 0, 0, 0.25);
+        border-radius: 27.2049px;
+        &-credit, &-compl {
+          font-size: 4.85773px;
+          line-height: 6px;
         }
       }
     }

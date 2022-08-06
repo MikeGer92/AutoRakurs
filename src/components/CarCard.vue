@@ -187,7 +187,7 @@ export default {
     }
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .homecar-main {
     max-width: 444px;
     margin-top: 80px;
@@ -256,7 +256,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .homecar-main {
     width: 295px;
     margin-top: 64px;
@@ -271,7 +271,7 @@ export default {
       text-align: center;
     }
     &__model {
-      margin: -10px 0 0 30px;
+      margin: 0px 0 0 40px;
       font-size: 34.5008px;
       line-height: 42px;
     }
@@ -281,7 +281,7 @@ export default {
     &__offer {
       &_day {
         width: 115px;
-        margin: 10px 5px 18px 12px;
+        margin: 10px 5px 25px 12px;
         border: 2.02739px solid #FFA724;
         border-radius: 32.4382px;
         &-off {
@@ -324,6 +324,78 @@ export default {
       &-credit, &-compl {
         font-size: 8.02344px;
         line-height: 10px;
+      }
+    }
+  }
+}
+@media (min-width: 606px) and (max-width: 768px) {
+  .homecar-main {
+    width: 180px;
+    margin-top: 39px;
+  }
+  .car {
+    width: 100%;
+    &__brand {
+      margin: 4px 10px 0 10px ;
+      font-size: 34.1891px;
+      line-height: 41px;
+      align-self: center;
+      text-align: center;
+    }
+    &__model {
+      margin: 0px 0 0 25px;
+      font-size: 20.8882px;
+      line-height: 25px;
+    }
+    &__image {
+      max-width: 443px;
+    }
+    &__offer {
+      &_day {
+        width: 70px;
+        margin: 7px 4px 11px 8px;
+        border: 1.22746px solid #FFA724;
+        border-radius: 19.6394px;
+        &-off {
+          padding: 7px 0 0 8px;
+          font-size: 5.4356px;
+          line-height: 7px;      
+        }
+        &-disc {
+          padding: 3px 0 7px 8px;
+          font-size: 5.96649px;
+          line-height: 7px;
+        }   
+      }
+      &_payment {
+        width: 84px;
+        margin-right: 8px;
+        &-sum {
+          font-size: 12.6583px;
+          line-height: 13px;
+        }
+        &-period {
+          font-size: 9.81972px;
+          line-height: 10px;
+        }
+      }
+    }
+    &__coast {
+      margin: 4px 7px;
+      font-size: 20.4006px;
+      line-height: 25px;
+    }
+  }
+  .homecar-buttons {
+    margin: 7px 0 0 0;
+    &_btn {
+      max-width: 87px;
+      height: 16px;
+      box-shadow: 0px 2.94107px 2.94107px rgba(0, 0, 0, 0.25);
+      border-radius: 27.2049px;
+      &-credit, &-compl {
+        font-size: 4.85773px;
+        line-height: 6px;
       }
     }
   }

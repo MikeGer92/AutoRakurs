@@ -112,7 +112,7 @@ export default {
 .benefit-small {
   display: none;
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .benefit {
     margin: 61px 29px;
     width: 449px;
@@ -140,7 +140,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .benefit {
     margin: 20px 29px;
     width: 300px;
@@ -167,6 +167,36 @@ export default {
       line-height: 12px;
       box-shadow: 0px 3.90922px 3.90922px rgba(0, 0, 0, 0.25);
       border-radius: 52px;
+    }
+  }
+}
+@media (min-width: 606px) and (max-width: 768px) {
+  .benefit {
+    margin: 10px 11px;
+    width: 181px;
+    height: 126px;
+    border-radius: 7.09964px;
+    &__header {
+      &_title {
+        margin: 8px 0 5px 10px;
+        font-size: 9.46619px;
+        line-height: 11px;
+      }
+      &_descr, &_event {
+        width: 86px;
+        margin: 0 0 0 10px;
+        font-size: 5.52194px;
+        line-height: 7px;
+      }
+    }
+    &__button {
+      width: 96px;
+      height: 17px;
+      margin: 0 10px 8px 0;
+      font-size: 5.91637px;
+      line-height: 7px;
+      box-shadow: 0px 3.90922px 3.90922px rgba(0, 0, 0, 0.25);
+      border-radius: 32px;
     }
   }
 }

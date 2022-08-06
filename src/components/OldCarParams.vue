@@ -193,7 +193,7 @@ export default {
     }
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .oldcar-params {
     margin: 0 0 0 22px;
     &__left {
@@ -222,7 +222,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .oldcar-params {
     margin: 0 0 0 15px;
     &__left {
@@ -252,7 +252,37 @@ export default {
     }
   }
 }
-@media ( max-width: 600px) {
+@media (min-width: 606px) and (max-width: 768px) {
+  .oldcar-params {
+    margin: 0 0 0 9px;
+    &__left {
+      margin: 10px 0 0 4px;
+      &_num {
+        width: 32px;
+        height: 32px;
+        font-size: 24.7375px;
+        line-height: 30px;
+        box-shadow: 0px 0.956236px 6.45459px rgba(0, 0, 0, 0.25);
+      }
+      &_border-y {
+        height: 99px;
+        width: 2.23px;
+      }
+    }
+    &__right {
+      margin: 17px 0 0 0;
+      &_title {
+        font-size: 13.9975px;
+        line-height: 17px;
+        margin-left: 30px;
+      }
+      &_main {
+        margin: 25px 0 0 30px;
+      }
+    }
+  }
+}
+@media ( max-width: 605px) {
   .oldcar-params {
     &__left {
       margin: 8px 0 0 17px;
@@ -293,6 +323,5 @@ export default {
       }
     }
   } 
-
 }
 </style>

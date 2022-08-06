@@ -105,7 +105,7 @@ export default {
     }
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .count {
     max-width: 348px;
     height: 113px;
@@ -126,7 +126,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .count {
     max-width: 232px;
     height: 75px;
@@ -144,6 +144,28 @@ export default {
       &_descr {
         font-size: 8.9846px;
         line-height: 11px;
+      }
+    }
+  }
+}
+@media (min-width: 606px) and (max-width: 768px) {
+  .count {
+    max-width: 141px;
+    height: 46px;
+    margin-bottom: 9px;
+    background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
+    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.25);
+    border-radius: 16px;
+    &__item {
+      padding: 0 7px;
+      border-right: 1px solid #FFF;
+      &_num {
+        font-size: 16.1541px;
+        line-height: 20px;
+      }
+      &_descr {
+        font-size: 5.43965px;
+        line-height: 7px;
       }
     }
   }

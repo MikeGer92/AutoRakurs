@@ -177,7 +177,7 @@ export default {
     }
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .person {
     margin: 0 0 37px 22px;
     &__left {
@@ -234,7 +234,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .person {
     margin: 0 0 25px 15px;
     &__left {
@@ -292,7 +292,66 @@ export default {
     }
   }
 }
-@media ( max-width: 600px) {
+@media (min-width: 606px) and (max-width: 768px) {
+  .person {
+    margin: 0 0 25px 9px;
+ &__left {
+      margin: 10px 0 0 4px;
+      &_num {
+        width: 32px;
+        height: 32px;
+        font-size: 24.7375px;
+        line-height: 30px;
+        box-shadow: 0px 0.956236px 6.45459px rgba(0, 0, 0, 0.25);
+      }
+      &_border-y {
+        height: 124px;
+        width: 2.23px;
+      }
+    }
+    &__right {
+      margin-top: 17px;
+      &_title {
+        margin-left: 30px;
+        font-size: 13.9975px;
+        line-height: 17px;
+      }
+      &_main {
+        margin: 20px 0 0px 30px;
+        &-left {
+          margin-right: 35px;
+        }
+      }
+    }
+    &__howget {
+      width: 211px;
+      &_info, &_req {
+        font-size: 9.51708px;
+        line-height: 21px;
+      }
+      &_docs {
+        font-size: 9.51708px;
+        line-height: 21px;
+      }
+      & ol {
+        padding-inline-start: 40px;
+        margin: 8px 0;
+        & li {
+          font-size: 9.51708px;
+          line-height: 21px;
+          margin-bottom: 10px;
+          margin-left: -20px;
+        }
+      }
+      &_divider {
+        margin-top: 5px;
+        width: 170px;
+        height: 2px;
+      }
+    }
+  }
+}
+@media ( max-width: 605px) {
   .person {
     &__left {
       margin: 8px 0 0 17px;
@@ -320,12 +379,13 @@ export default {
         line-height: 14px;
       }
       &_main {
-        margin: 25px 0 0 -10px;
+        margin: 25px 0 0 0px;
         flex-wrap: wrap;
         justify-content: center;
         &-left {
           width: 100%;
           margin-right: 0;
+          margin-left: -50px;
         }
         &-right {
           margin-left: 0;

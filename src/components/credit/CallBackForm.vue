@@ -63,7 +63,7 @@ export default {
 <style lang="scss">
  .person-form {
     width: 750px;
-    height: 814px;
+    // height: 814px;
     display: flex;
     flex-direction: column;
     background: #FFFFFF;
@@ -141,10 +141,9 @@ export default {
 
     }
   }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .person-form {
     width: 570px;
-    height: 620px;
     box-shadow: 0px 3.7922px 10.4285px rgba(0, 0, 0, 0.25);
     border-radius: 36.9739px;
     &__title {
@@ -176,10 +175,9 @@ export default {
   }
 
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .person-form {
     width: 380px;
-    height: 412px;
     box-shadow: 0px 2.52813px 6.95236px rgba(0, 0, 0, 0.25);
     border-radius: 24.6493px;
     &__title {
@@ -197,6 +195,7 @@ export default {
       margin: 0 0 11px 25px;
     }
     &__btn {
+      margin: 20px 0 0 25px;
       width: 302px;
       height: 50px;
       box-shadow: 0px 4.60935px 4.60935px rgba(0, 0, 0, 0.25);
@@ -205,6 +204,7 @@ export default {
       line-height: 106.52%;
     }
     &__info {
+      margin: 22px 0 0 30px;
       width: 308px;
       font-size: 9.37009px;
       line-height: 106.52%;
@@ -213,12 +213,59 @@ export default {
   }
 
 }
+@media (min-width: 606px) and (max-width: 768px) {
+  .person-form {
+    width: 229px;
+    box-shadow: 0px 1.51687px 4.17139px rgba(0, 0, 0, 0.25);
+    border-radius: 14.7895px;
+    &__title {
+      margin: 19px 0 12px 20px;
+      font-size: 15.1687px;
+      line-height: 18px;
+    }
+    &__errors {
+      font-size: 8px;
+      & ul {
+        padding-inline-start: 0px;
+      }
+    }
+    &__name, &__phone {
+      width: 176px;
+      height: 37px;
+      border-radius: 37.6103px;
+      font-size: 11.0797px;
+      line-height: 13px;
+      padding: 0 0 0 10px;
+      margin: 0 0 11px 20px;
+    }
+    &__btn {
+      margin: 12px 0 0 20px;
+      width: 176px;
+      height: 31px;
+      box-shadow: 0px 2.7656px 2.7656px rgba(0, 0, 0, 0.25);
+      border-radius: 25.5818px;
+      font-size: 11.0797px;
+      line-height: 106.52%;
+    }
+    &__info {
+      margin: 14px 0 0 20px;
+      height: 16px;
+      width: 185px;
+      font-size: 5.62202px;
+      line-height: 106.52%;
+      text-align: left;
+    }
+  }
+
+}
 @media (max-width: 605px) {
   .person-form {
-    width: 332px;
+    width: 100%;
+    max-width: 330px;
     height: 360px;
     box-shadow: 0px 2px 6.05612px rgba(0, 0, 0, 0.25);
     border-radius: 21.4717px;
+    margin-left: -10px;
     &__title {
       margin: 26px 0 26px 28px;
       font-size: 22.0223px;

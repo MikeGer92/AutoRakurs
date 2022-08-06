@@ -85,7 +85,7 @@ export default {
   flex-direction: column;
 	background: #FFF
 }
-@media (min-width: 1280px) and (max-width: 1920px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .main-layout-body {
     max-width: 1920px;
   }

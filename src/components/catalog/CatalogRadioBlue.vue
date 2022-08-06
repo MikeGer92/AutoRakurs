@@ -73,7 +73,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .catalog-radio-blue {
     display: flex;
     flex-direction: column;
@@ -121,6 +121,65 @@ export default {
         font-style: normal;
         font-weight: 300;
         font-size: 5px;
+        line-height: 106.52%;
+        color: #000000;
+        & span {
+          color: #12609E;
+          text-decoration: underline;
+        }
+      }
+    }
+  }  
+}
+@media (min-width: 606px) and (max-width: 768px) {
+  .catalog-radio-blue {
+    display: flex;
+    flex-direction: column;
+    &__radio {
+      margin-top: 5px;
+      display: flex;
+      width: 108px;
+      height: 9px;
+      cursor: pointer;
+      &_btn {
+        display: flex;
+        width: 8px;
+        height: 8px;
+        margin-left: 5px;
+        display: none;
+        + span {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 8px;
+          height: 8px;
+          background: #F0F0F0;
+          border-radius: 50%;
+        }
+        &:checked {
+          + span {
+            &::before {
+              content: "";
+              display: block;
+              width: 4px;
+              height: 4px;
+              border-radius: 50%;
+              background: #12609E;
+            }
+          }
+        }
+      }
+      & span {
+        width: 8px;
+        height: 8px;
+      }
+      &_text {
+        margin-left: 5px;
+        width: 92px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 300;
+        font-size: 2.68647px;
         line-height: 106.52%;
         color: #000000;
         & span {

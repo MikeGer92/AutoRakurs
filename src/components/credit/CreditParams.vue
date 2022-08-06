@@ -273,7 +273,7 @@ export default {
     }
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .credit-params {
     margin: 0 0 0 22px;
     &__left {
@@ -334,7 +334,7 @@ export default {
     }
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .credit-params {
     margin: 0 0 0 15px;
     &__left {
@@ -396,7 +396,70 @@ export default {
     }
   }
 }
-@media ( max-width: 600px) {
+@media (min-width: 606px) and (max-width: 768px) {
+  .credit-params {
+    margin: 0 0 0 9px;
+    &__left {
+      margin: 10px 0 0 4px;
+      &_num {
+        width: 32px;
+        height: 32px;
+        font-size: 24.7375px;
+        line-height: 30px;
+        box-shadow: 0px 0.956236px 6.45459px rgba(0, 0, 0, 0.25);
+      }
+      &_border-y {
+        height: 124px;
+        width: 2.23px;
+      }
+    }
+    &__right {
+      max-width: 610px;
+      margin-top: 17px;
+      &_title {
+        margin-left: 30px;
+        font-size: 13.9975px;
+        line-height: 17px;
+      }
+      &_main {
+        margin: 17px 0 0 30px;
+        &-left, &-right {
+          &--title {
+            font-size: 9.34265px;
+            line-height: 11px;
+          }
+          &--display {
+            margin: 5px 0 14px 0;
+            width: 230px;
+            height: 21px;
+            border-radius: 35.2927px;
+            &_num, &_text {
+              margin: 0px 10px 0 12px;
+              font-size: 9.34265px;
+              line-height: 11px;
+            }
+          }
+          &--time, &--payment {
+            width: 230px;
+            input[type='range'] {
+              width: 230px;
+              height: 4px;
+            }
+          }
+          &--scale {
+            margin: 14px 0 0 0;
+            width: 230px;
+            &_item {
+              font-size: 9.34265px;
+              line-height: 11px
+            }
+          }
+        }
+      }  
+    }
+  }
+}
+@media ( max-width: 605px) {
   .credit-params {
     &__left {
       margin: 8px 0 0 17px;

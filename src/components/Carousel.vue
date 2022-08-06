@@ -228,7 +228,7 @@ export default {
   background: url('../assets/images/Group183.png') center 0px/ contain no-repeat;
   cursor: pointer;
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .carousel-main {
     margin-top: 69px;
     max-width: 1700px;
@@ -277,7 +277,7 @@ export default {
     height: 80px;
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .slick-initialized .slick-slide[data-v-e4caeaf8] {
     width: 1000px;
     justify-content: space-around;
@@ -332,12 +332,71 @@ export default {
     height: 53px;
   }
 }
-@media ( max-width: 600px) {
+@media (min-width: 606px) and (max-width: 768px) {
   div[data-v-3d1a4f76] {
+    padding: 0 40px;
+  }
+  .slick-initialized .slick-slide[data-v-e4caeaf8] {
+    width: 510px;
+    justify-content: space-around;
+  }
+  .carousel-main {
+    margin-top: 10px;
+    max-width: 510px;
+    &__title {
+      font-size: 13.9975px;
+      line-height: 17px;
+    }
+  }
+  .slider-wrapper {
+    margin: 10px 0 0 0px;
+    width: 500px;
+    height: 150px;
+  }
+  .slick-list[data-v-3d1a4f76] {
+    width: 320px;
+   padding: 0px 20px;
+  }
+  .slider__item {
+    max-width: 110px;
+    height: 80px;
+    margin: 0 0px;
+    & img {
+      width: 75px;
+    }
+  }
+  .slider__item-active {
+    margin: 15px 0;
+    width: 115px;
+    height: 110px;
+    box-shadow: 0px 1.80415px 4.9614px rgba(0, 0, 0, 0.25);
+    border-radius: 20.2966px;
+    & img {
+      width: 80px;
+      margin: 0 10px;
+    }
+    &--text {
+      font-size: 13px;
+      line-height: 16px;
+      margin: 5px 0;
+    }
+  }
+  .next-btn {
+    width: 64px;
+    height: 32px;
+  }
+  .prev-btn {
+    width: 64px;
+    height: 32px;
+  }
+}
+@media ( max-width: 605px) {
+  div[data-v-3d1a4f76] {
+    width: 290px;
     padding: 0;
   }
   .slick-initialized .slick-slide[data-v-e4caeaf8] {
-    width: 300px;
+    width: 290px;
     justify-content: space-around;
   }
   .slick-list {
@@ -345,9 +404,11 @@ export default {
     padding: 0 5px;
   }
   .slick-list[data-v-3d1a4f76] {
+    width: 290px;
     padding: 0 5px;
   }
   .slick-slider[data-v-3d1a4f76] {
+    width: 290px;
     display: block;
     padding: 0 5px;
   }
@@ -405,15 +466,15 @@ export default {
     height: 105px;
   }
   .carousel {
-    width: 326px;
+    width: 320px;
   }
   .next-btn {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
   }
   .prev-btn {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
   }
 }
 </style>

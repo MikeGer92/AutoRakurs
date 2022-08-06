@@ -75,7 +75,7 @@ export default {
     }
   }
 }
-@media (min-width: 1280px) and (max-width: 1921px) {
+@media (min-width: 1281px) and (max-width: 1920px) {
   .radio-main {
     &__radio {
       margin-top: 28px;
@@ -108,10 +108,11 @@ export default {
 
   }
 }
-@media (min-width: 768px) and (max-width: 1281px) {
+@media (min-width: 769px) and (max-width: 1280px) {
   .radio-main {
     &__radio {
-      margin-top: 28px;
+      margin-top: 17px;
+      height: 24px;
       &_btn {
         width: 22px;
         height: 22px;
@@ -139,6 +140,40 @@ export default {
       }
     }
 
+  }
+}
+@media (min-width: 606px) and (max-width: 768px) {
+  .radio-main {
+    &__radio {
+      height: 14px;
+      margin-top: 7px;
+      &_btn {
+        width: 14px;
+        height: 14px;
+        + span {
+          width: 14px;
+          height: 14px;
+          margin-left: 20px;
+        }
+        &:checked {
+          + span {
+            &::before {
+              width: 8px;
+              height: 8px;
+            }
+          }
+        }
+      }
+      & span {
+        width: 14px;
+        height: 14px;
+      }
+      &_text {
+        font-size: 5.62202px;
+        line-height: 106.52%;
+        margin-left: 8px;
+      }
+    }
   }
 }
 @media (max-width: 605px) { 
