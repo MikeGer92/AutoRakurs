@@ -343,7 +343,7 @@ export default {
       text-align: center;
     }
     &__model {
-      margin: -10px 0 0 20px;
+      margin: 0px 0 0 25px;
       font-size: 20.8882px;
       line-height: 25px;
     }
