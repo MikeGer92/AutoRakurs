@@ -692,14 +692,19 @@ export default {
     }
     &__benefit {
       width: 100%;
-      max-width: 1280px;
+      // max-width: 1023px;
+      height: 30%;
       background: #D7E8F6;
+      justify-content: center;
       &_wrapper {
-        margin: 74px 0 74px 0;
+        max-width: 1023px;
+        margin: auto 0;
+        // margin: 74px auto 0px auto;
       }
       &_block, &_options {
-        // max-width: 1460px;
-        margin: 0 auto;
+        width: 100%;;
+        margin: 0 auto 100px auto;
+        flex-wrap: nowrap;
       }
       &_divider {
         margin: 40px 0 40px 0;
