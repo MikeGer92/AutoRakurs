@@ -39,8 +39,8 @@ export default {
   name: 'CatalogTimer',
   props: {
     deadline: {
-      type: String,
-      default:() => ''
+      type: Array,
+      default:() => []
     }
   },
   data() {

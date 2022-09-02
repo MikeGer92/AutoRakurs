@@ -427,6 +427,15 @@ export default {
 }
 </script>
 <style lang="scss">
+::-webkit-scrollbar { /* chrome based */
+    width: 0px;  /* ширина scrollbar'a */
+    background: transparent;  /* опционально */
+}
+
+html {
+    -ms-overflow-style: none;  /* IE 10+ */
+    scrollbar-width: none; /* Firefox */
+}
 .select-main {
   &__field {
     &_text {
@@ -1076,7 +1085,7 @@ export default {
       max-width: 2065px;
       height: 853px;
       // display: flex;
-      background: url('../assets/images/brand-footer-banner.png') no-repeat;
+      background: url('../assets/images/brand-footer-banner.png') 0px 0px/cover no-repeat;
     }
   }
   &__market {
@@ -2256,6 +2265,10 @@ export default {
 }
 @media (max-width: 605px) {
   .brandpage {
+    max-width: 390px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    display: flex;
     margin: 0;
     &__main {
       margin: 2px;
@@ -2388,15 +2401,16 @@ export default {
         &-active {
           display: flex;
           width: 27px;
-          height: 27px;
+          height: 32px;
           background: linear-gradient(108.07deg, #10205E -83.42%, #12609E 175.95%);
-          border-radius: 50%;
+          border-radius: 34.4274px;
+          margin-left: 8px;
           color: transparent;
         }
       }
       &_prev {
         width: 14px;
-        height: 7px;
+        height: 14px;
         margin-left: 7px;
       }
       &_icon {
@@ -2420,6 +2434,7 @@ export default {
     &__complectations {
       margin: 17px 52px -10px 52px;
       max-width: 600px;
+      justify-content: center;
     }
     &__special {
       margin: 0;
@@ -2554,16 +2569,20 @@ export default {
       }
     }
     &__image {
-      width: 704px;
-      height: 291px;
-      background-size: cover;
+      display: flex;
+      width: unset;
+      // height: 291px;
+      // background-size: cover;
       overflow-x: scroll;
-      margin-left: 280px;
+      
+      // margin-left: 280px;
       &_content {
+        display: flex;
         width: 704px;
         height: 291px;
-        background-size: contain;
-        overflow: hidden;
+        background: url('../assets/images/brand-footer-banner.png') 160px 0px/cover no-repeat;
+        // overflow-x: scroll;
+        // overflow: hidden;
       }
     }
     &__market {

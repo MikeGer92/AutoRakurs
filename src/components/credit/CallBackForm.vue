@@ -265,16 +265,16 @@ export default {
     height: 360px;
     box-shadow: 0px 2px 6.05612px rgba(0, 0, 0, 0.25);
     border-radius: 21.4717px;
-    margin-left: -10px;
+    margin: 0 auto;
     &__title {
-      margin: 26px 0 26px 28px;
+      margin: 26px 28px 26px 28px;
       font-size: 22.0223px;
       line-height: 27px;
       font-size: 27.6993px;
       line-height: 106.52%;
     }
     &__name, &__phone {
-      width: 285px;
+      width: 275px;
       height: 40px;
       margin: 0 22px 10px 22px;
       font-size: 16.0857px;

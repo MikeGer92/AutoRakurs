@@ -450,7 +450,7 @@ export default {
       }
       &_pages {
         width: 200px;
-        z-index: 2;
+        z-index: 3;
         background-color: #fff;
         position: absolute;
         left: 6px;
