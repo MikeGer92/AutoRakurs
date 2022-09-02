@@ -44,15 +44,33 @@
       <div class="home__benefit">
         <div class="home__benefit_wrapper">
           <div class="home__benefit_block">
-            <BenefitCard v-for="benefit in benefitsList" :key="benefit.title" :benefitCard="benefit"  />
+            <BenefitCard 
+              v-for="benefit in benefitsList" 
+              :key="benefit.title" 
+              :benefitCard="benefit"
+              @showPopup="showData"
+            />
           </div>
           <div class="home__benefit_divider">
             <div class="home__benefit_divider-line home__divider_line"></div>
             <div class="home__benefit_divider-text">ПРОДАЖА АВТОМОБИЛЕЙ С ОЧЕВИДНОЙ ВЫГОДНОЙ ДЛЯ ПОКУПАТЕЛЯ</div>
             <div class="home__benefit_divider-line home__divider_line"></div>
           </div>
+          <ModalWindow v-if="showModal" :style="{'top': '2800px', 'height': '200%'}">
+            <div class="popup-block"
+              v-if="popupTitle==='TRADE-IN'|| popupTitle==='З ТО'" 
+            >
+              <ThreeMonths  @closePopup="closePopup"/>
+            </div>
+          </ModalWindow>
           <div class="home__benefit_options">
-            <BenefitCard v-for="option in optionsList" :key="option.title" :benefitCard="option" />
+            <BenefitCard 
+              v-for="option in optionsList" 
+              :key="option.title" 
+              :benefitCard="option" 
+              @showPopup="showData"
+            >
+          </BenefitCard>
           </div>
         </div>
       </div>
@@ -66,15 +84,18 @@ import Loader from '@/components/app/Loader.vue'
 import Timer from '@/components/Timer.vue'
 import CarCard from '@/components/CarCard.vue'
 import BenefitCard from '@/components/BenefitCard.vue'
+import ThreeMonths from '../components/popups/ThreeMonths.vue'
+import ModalWindow from '../components/modals/ModalWindow.vue'
 export default {
   name: 'Home',
-  components: { Loader, Timer,  CarCard, BenefitCard },
+  components: { Loader, Timer, CarCard, BenefitCard, ThreeMonths, ModalWindow },
   data() {
     return {
       screenWidth: false,
       actionFinish: ['2022', '09', '30', '23', '59', '59'],
-      showModal: true,
+      showModal: false,
       showLoader: false,
+      popupTitle: '',
       carsList: [
         {
           id: 0,
@@ -206,11 +227,24 @@ export default {
       }
       console.log(window.innerWidth)
     },
+    showData(title) {
+      this.popupTitle = title
+      this.showModal = true
+    },
+    closePopup() {
+      this.showModal = false
+      this.popupTitle = ''
+    }
+
   }
 
 }
 </script>
 <style lang="scss">
+.popup-block {
+  margin: 35% auto;
+  // z-index: 10;
+}
 .home {
   width: 100%;
   display: flex;

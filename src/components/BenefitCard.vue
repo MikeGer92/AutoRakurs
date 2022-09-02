@@ -6,7 +6,7 @@
         <div class="benefit__header_event">{{ benefitCard.event }}</div>
         <div class="benefit__header_descr">{{ benefitCard.descr }}</div>
       </div>
-      <div class="benefit__button">{{ benefitCard.button }}</div>
+      <div class="benefit__button" @click="showPopup(benefitCard.title)">{{ benefitCard.button }}</div>
     </div>
     <div class="benefit-small" :style="{'background': `url(${benefitCard.image_small}) no-repeat`, 'background-size': 'contain'}">
       <div class="benefit-small__header">
@@ -14,8 +14,9 @@
         <div class="benefit-small__header_event">{{ benefitCard.event }}</div>
         <div class="benefit-small__header_descr">{{ benefitCard.descr }}</div>
       </div>
-      <div class="benefit-small__button">{{ benefitCard.button }}</div>
+      <div class="benefit-small__button" @click="showPopup(benefitCard.title)">{{ benefitCard.button }}</div>
     </div>
+    <slot></slot>
   </div> 
 </template>
 
@@ -52,6 +53,9 @@ export default {
       } else {
         return false
       }
+    },
+    showPopup(title) {
+      this.$emit('showPopup', title)
     }
   }
 }
