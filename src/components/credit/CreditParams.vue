@@ -481,13 +481,14 @@ export default {
     }
     &__right {
       margin-top: 18px;
+      max-width: 320px;
       &_title {
         margin-left: 6px;
         font-size: 11.9048px;
         line-height: 14px;
       }
       &_main {
-        margin: 25px 0 0 10px;
+        margin: 25px 0 0 -5px;
         flex-wrap: wrap;
         justify-content: center;
         &-left, &-right {

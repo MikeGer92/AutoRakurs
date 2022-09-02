@@ -1,12 +1,12 @@
 <template>
   <div class="benefit-wrapper">
-    <div class="benefit" :style="{'background': `url(${benefitCard.image}) no-repeat`, 'background-size': 'contain'}">
+    <div class="benefit" :style="{'background': `url(${benefitCard.image}) no-repeat`, 'background-size': 'cover'}">
       <div class="benefit__header">
         <div class="benefit__header_title">{{ benefitCard.title }}</div>
         <div class="benefit__header_event">{{ benefitCard.event }}</div>
         <div class="benefit__header_descr">{{ benefitCard.descr }}</div>
       </div>
-      <div class="benefit__button">{{ benefitCard.button }}</div>
+      <div class="benefit__button" @click="showPopup(benefitCard.title)">{{ benefitCard.button }}</div>
     </div>
     <div class="benefit-small" :style="{'background': `url(${benefitCard.image_small}) no-repeat`, 'background-size': 'contain'}">
       <div class="benefit-small__header">
@@ -14,8 +14,9 @@
         <div class="benefit-small__header_event">{{ benefitCard.event }}</div>
         <div class="benefit-small__header_descr">{{ benefitCard.descr }}</div>
       </div>
-      <div class="benefit-small__button">{{ benefitCard.button }}</div>
+      <div class="benefit-small__button" @click="showPopup(benefitCard.title)">{{ benefitCard.button }}</div>
     </div>
+    <slot></slot>
   </div> 
 </template>
 
@@ -52,6 +53,9 @@ export default {
       } else {
         return false
       }
+    },
+    showPopup(title) {
+      this.$emit('showPopup', title)
     }
   }
 }
@@ -142,9 +146,11 @@ export default {
 }
 @media (min-width: 769px) and (max-width: 1280px) {
   .benefit {
-    margin: 20px 29px;
-    width: 300px;
-    height: 208px;
+    margin: 0;
+    // margin: 20px 29px;
+    width: calc((100vw - 50%) /3);
+    max-width: 300px;
+    height: 250%;
     border-radius: 11.7264px;
     &__header {
       &_title {
@@ -160,8 +166,8 @@ export default {
       }
     }
     &__button {
-      width: 159px;
-      height: 27px;
+      width: 53%;
+      height: 9%;
       margin: 0 16px 13px 0;
       font-size: 9.77198px;
       line-height: 12px;

@@ -53,16 +53,19 @@
     <div class="about__main_btn">
       <button type="button">ПОСТРОИТЬ МАРШРУТ</button>
     </div>
+    <div class="popups__block">
+      <ThreeMonths />
+    </div>
   </div>
 </template>
-
 
 <script>
 import { yandexMap, ymapMarker } from 'vue-yandex-maps'
 import Loader from '@/components/app/Loader.vue'
+import ThreeMonths from '../components/popups/ThreeMonths.vue'
 export default {
   name: 'About',
-  components: { Loader, yandexMap, ymapMarker  },
+  components: { Loader, yandexMap, ymapMarker, ThreeMonths},
   data() {
     return {
       showLoader: false,
@@ -91,6 +94,11 @@ export default {
 }
 </script>
 <style lang="scss">
+.popups__block {
+  width: 100%;
+  display: flex;
+  justify-content: center
+}
 [class*="ymaps-2"][class*="-ground-pane"] {
 filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
 /* Firefox 3.5+ */

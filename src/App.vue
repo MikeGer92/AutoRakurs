@@ -33,6 +33,10 @@ export default {
   margin: 0 auto;
   color: #2c3e50;
 }
+body {
+  margin: 0;
+  padding: 0;
+}
 .home__title {
   font-style: normal;
   font-weight: 700;

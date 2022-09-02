@@ -93,7 +93,7 @@ export default {
   data() {
     return {
       fullSize: true,
-      actionEnd: ['2022', '08', '31', '23', '59', '59'],
+      actionEnd: ['2022', '10', '30', '23', '59', '59'],
       showLoader: false,
       modelsList: [
         {
