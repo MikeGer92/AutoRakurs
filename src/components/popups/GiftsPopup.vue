@@ -1,8 +1,8 @@
 <template>
     <div class="gifts-popup">
         <div class="gifts-popup__close" @click="closePopup">
-                <div class="gifts-popup__close_item"></div>
-                <div class="gifts-popup__close_item"></div>
+          <div class="gifts-popup__close_item"></div>
+          <div class="gifts-popup__close_item"></div>
         </div>
         <div class="gifts-popup__wrap">
             <div class="gifts-popup__info">
@@ -24,11 +24,7 @@
                     <div class="gifts-popup__info_options-gift--text">3 ТО</div>
                 </div>
                 </div>
-                <div class="gifts-popup__info_form">
-                    <input type="text" name="name" placeholder="Имя">
-                    <input type="phone" name="phone" placeholder="+7 (___) ___-__-__">
-                    <div class="gifts-popup__info_form-button">Выбрать подарок</div>
-                </div> 
+                <FormPopup />
             </div>
         </div>
 
@@ -36,10 +32,11 @@
 </template>
 
 <script>
+import FormPopup from './FormPopup.vue';
     export default {
-        name: 'GiftsPopup'
-        
-    }
+    name: "GiftsPopup",
+    components: { FormPopup }
+}
 </script>
 
 <style lang="scss">

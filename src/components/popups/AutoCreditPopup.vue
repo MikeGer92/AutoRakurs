@@ -25,11 +25,7 @@
                     <div class="credit-popup__info_options-gift--text"><span> КАСКО</span> в Подарок!</div>
                 </div>
                 </div>
-                <div class="credit-popup__info_form">
-                    <input type="text" name="name" placeholder="Имя">
-                    <input type="phone" name="phone" placeholder="+7 (___) ___-__-__">
-                    <div class="credit-popup__info_form-button">Получить одобрение</div>
-                </div> 
+                <FormPopup />
             </div>
         </div>
 
@@ -37,8 +33,10 @@
 </template>
 
 <script>
+    import FormPopup from './FormPopup.vue';
     export default {
-        name: 'AutoCreditPopup'
+        name: 'AutoCreditPopup',
+        components: { FormPopup }
         
     }
 </script>

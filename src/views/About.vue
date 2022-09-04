@@ -55,8 +55,10 @@
     </div>
     <div class="popups__block">
       <ThreeMonths :style="{'margin-bottom': '50px'}" />
-      <CreditPopupMob />
+      <CreditPopupMob :style="{'margin-bottom': '50px'}" />
       <KaskoPopupMob />
+      <TradeInMob/>
+      <TimeGifts/>
       <AutoCreditPopup :style="{'margin-bottom': '50px'}"/>
       <TradeInPopup :style="{'margin-bottom': '50px'}"/>
       <GiftsPopup :style="{'margin-bottom': '50px'}"/>
@@ -81,9 +83,11 @@ import TestDrive from '../components/popups/TestDrive.vue'
 import Caskogift from '../components/popups/caskogift.vue'
 import Cregift from '../components/popups/cregift.vue'
 import Thregift from '../components/popups/thregift.vue'
+import TradeInMob from '../components/popups/TradeInMob.vue'
+import TimeGifts from '../components/popups/TimeGifts.vue'
 export default {
   name: 'About',
-  components: { Loader, yandexMap, ymapMarker, ThreeMonths, CreditPopupMob, KaskoPopupMob, AutoCreditPopup, TradeInPopup, GiftsPopup, TestDrive, Caskogift, Cregift, Thregift  },
+  components: { Loader, yandexMap, ymapMarker,  ThreeMonths, CreditPopupMob, KaskoPopupMob, AutoCreditPopup, TradeInPopup, GiftsPopup, TestDrive, Caskogift, Cregift, Thregift, TradeInMob, TimeGifts  },
   data() {
     return {
       showLoader: false,

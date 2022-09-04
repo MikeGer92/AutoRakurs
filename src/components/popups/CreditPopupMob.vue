@@ -1,47 +1,46 @@
 <template>
-  <div class="credit">
-    <div class="credit__popup-small">
-      <div class="credit__popup-small_close">
-        <div class="credit__popup-small_close-item"></div>
-        <div class="credit__popup-small_close-item"></div>
+  <div class="autocredit">
+    <div class="autocredit__popup-small">
+      <div class="autocredit__popup-small_close">
+        <div class="autocredit__popup-small_close-item"></div>
+        <div class="autocredit__popup-small_close-item"></div>
       </div>
-      <div class="credit__popup-small_info">
-        <div class="credit__popup-small_info-title">АВТОКРЕДИТ</div>
-        <div class="credit__popup-small_info-subtitle">Получите одобрение за 15 минут!</div>
-        <div class="credit__popup-small_info-options">
-          <div class="credit__popup-small_info-options--cash">
+      <div class="autocredit__popup-small_info">
+        <div class="autocredit__popup-small_info-title">АВТОКРЕДИТ</div>
+        <div class="autocredit__popup-small_info-subtitle">Получите одобрение за 15 минут!</div>
+        <div class="autocredit__popup-small_info-options">
+          <div class="autocredit__popup-small_info-options--cash">
             <div class="credit__popup-small_info-options--cash_icon"><img src="../../assets/images/popup_options_icon.png"/></div>
             <div class="credit__popup-small_info-options--cash_text">Первый взнос от <span>10% = 99%</span>одобрения</div>
           </div>
-          <div class="credit__popup-small_info-options--perc">
-            <div class="credit__popup-small_info-options--perc_icon"><img src="../../assets/images/popup_options_icon.png" /></div>
-            <div class="credit__popup-small_info-options--perc_text">Ставка от <span>8%</span></div>
+          <div class="autocredit__popup-small_info-options--perc">
+            <div class="autocredit__popup-small_info-options--perc_icon"><img src="../../assets/images/popup_options_icon.png" /></div>
+            <div class="autocredit__popup-small_info-options--perc_text">Ставка от <span>8%</span></div>
           </div>
-          <div class="credit__popup-small_info-options--gift">
-            <div class="credit__popup-small_info-options--gift_icon"><img src="../../assets/images/popup_options_icon.png"/></div>
-            <div class="credit__popup-small_info-options--gift_text"><span>КАСКО</span> в Подарок!</div>
+          <div class="autocredit__popup-small_info-options--gift">
+            <div class="autocredit__popup-small_info-options--gift_icon"><img src="../../assets/images/popup_options_icon.png"/></div>
+            <div class="autocredit__popup-small_info-options--gift_text"><span>КАСКО</span> в Подарок!</div>
           </div>
         </div>
       </div>
       <FormPopup :style="{'margin-top': '19px'}" />
     </div>
-
-
   </div>
 </template>
 
 <script>
 import FormPopup from './FormPopup.vue';
   export default {
+    name : 'CreditPopupMob',
     components: { FormPopup }
 }
 </script>
 
 <style lang="scss">
-.credit {
+.autocredit {
   width: 376px;
   height: 323px;
-  background: url('../../assets/images/popup_credit-small.png') 0px 0px/cover no-repeat;
+  background: url('../../assets/images/pop-up_credit-small.png') 0px 0px/cover no-repeat;
   &__popup-small {
     display: flex;
     flex-direction: column;

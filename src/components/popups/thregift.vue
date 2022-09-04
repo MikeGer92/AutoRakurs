@@ -9,9 +9,7 @@
                 <div class="thregift-popup__info_title">З ТО <span>в подарок!</span></div> 
                 <div class="thregift-popup__info_subtitle">При покупке автомобиля в кредит</div> 
                 <div class="thregift-popup__info_form">
-                    <input type="text" name="name" placeholder="Имя">
-                    <input type="phone" name="phone" placeholder="+7 (___) ___-__-__">
-                    <div class="thregift-popup__info_form-button">Получить одобрение</div>
+                    <FormPopup/>
                 </div> 
             </div>
         </div>
@@ -20,9 +18,10 @@
 </template>
 
 <script>
+    import FormPopup from './FormPopup.vue';
     export default {
-        name: 'thregift'
-        
+        name: 'thregift',
+        components: { FormPopup }
     }
 </script>
 
@@ -124,39 +123,6 @@
         &_form {
             display: flex;
             flex-direction: column;
-            & input {
-                width: 226px;
-                height: 31px;
-                background: #FFFFFF;
-                border: 1px solid #E5E5E5;
-                box-shadow: inset 0px 3px 6px rgba(147, 147, 147, 0.25);
-                border-radius: 17px;
-                border: none;
-                padding-left: 12px;
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 400;
-                font-size: 12px;
-                line-height: 15px;
-                color: #C4C4C4;
-                margin-bottom: 8px;
-
-            }
-            &-button {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 240px;
-                height: 34px;
-                background: linear-gradient(90.43deg, #12609E 17.95%, #10205E 83.93%);
-                border-radius: 17px;
-                font-family: 'Inter';
-                font-style: normal;
-                font-weight: 700;
-                font-size: 12px;
-                line-height: 15px;
-                color: #FFFFFF;
-            }
         }
     }
 }

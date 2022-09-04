@@ -1,10 +1,7 @@
 <template>
   <div class="kasko">
     <div class="kasko__popup-small">
-      <div class="kasko__popup-small_close">
-        <div class="kasko__popup-small_close-item"></div>
-        <div class="kasko__popup-small_close-item"></div>
-      </div>
+        <ClosePopup />
       <div class="kasko__popup-small_wrap">
         <div class="kasko__popup-small_info">
           <div class="kasko__popup-small_info-title">КАСКО<br><span>в подарок!</span></div>
@@ -19,9 +16,10 @@
 
 <script>
 import FormPopup from './FormPopup.vue';
+import ClosePopup from './ClosePopup.vue';
   export default {
     name: "KaskoPopupMob",
-    components: { FormPopup }
+    components: { FormPopup, ClosePopup }
 }
 </script>
 
@@ -34,23 +32,6 @@ import FormPopup from './FormPopup.vue';
     display: flex;
     flex-direction: column;
     background: url('../../assets/images/popup_casko-small.png') 0px 0px/cover no-repeat;
-    &_close {
-      width: 12px;
-      height: 12px;
-      display: flex;
-      margin: 12px;
-      align-self: flex-end;
-      justify-content: center;
-      &-item {
-        border: 2px solid #12609E;
-        transform: rotate(45deg);
-        margin: -2px -4px -4px 0;
-        &:last-child {
-          transform: rotate(-45deg);
-          margin: -2px 2px -4px 0px;
-        }
-      }
-    }
     &_wrap {
       display: flex;
       justify-content: space-between;

@@ -9,9 +9,7 @@
                 <div class="casco-popup__info_title">КАСКО <span> в подарок! </span></div> 
                 <div class="casco-popup__info_subtitle">При покупке автомобиля в кредит</div> 
                 <div class="casco-popup__info_form">
-                    <input type="text" name="name" placeholder="Имя">
-                    <input type="phone" name="phone" placeholder="+7 (___) ___-__-__">
-                    <div class="casco-popup__info_form-button">Выбрать подарок</div>
+                    <FormPopup/>
                 </div> 
             </div>
         </div>
@@ -20,9 +18,10 @@
 </template>
 
 <script>
+     import FormPopup from './FormPopup.vue';
     export default {
-        name: 'AutoCreditPopup'
-        
+        name: 'caskogift',
+        components: { FormPopup }
     }
 </script>
 
