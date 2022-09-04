@@ -54,7 +54,16 @@
       <button type="button">ПОСТРОИТЬ МАРШРУТ</button>
     </div>
     <div class="popups__block">
-      <ThreeMonths />
+      <ThreeMonths :style="{'margin-bottom': '50px'}" />
+      <CreditPopupMob />
+      <KaskoPopupMob />
+      <AutoCreditPopup :style="{'margin-bottom': '50px'}"/>
+      <TradeInPopup :style="{'margin-bottom': '50px'}"/>
+      <GiftsPopup :style="{'margin-bottom': '50px'}"/>
+      <TestDrive :style="{'margin-bottom': '50px'}"/>
+      <Caskogift :style="{'margin-bottom': '50px'}"/>
+      <Cregift :style="{'margin-bottom': '50px'}"/>
+      <Thregift :style="{'margin-bottom': '50px'}"/>
     </div>
   </div>
 </template>
@@ -63,9 +72,18 @@
 import { yandexMap, ymapMarker } from 'vue-yandex-maps'
 import Loader from '@/components/app/Loader.vue'
 import ThreeMonths from '../components/popups/ThreeMonths.vue'
+import CreditPopupMob from '../components/popups/CreditPopupMob.vue'
+import KaskoPopupMob from '../components/popups/KaskoPopupMob.vue'
+import AutoCreditPopup from '../components/popups/AutoCreditPopup.vue'
+import TradeInPopup from '../components/popups/TradeInPopup.vue'
+import GiftsPopup from '../components/popups/GiftsPopup.vue'
+import TestDrive from '../components/popups/TestDrive.vue'
+import Caskogift from '../components/popups/caskogift.vue'
+import Cregift from '../components/popups/cregift.vue'
+import Thregift from '../components/popups/thregift.vue'
 export default {
   name: 'About',
-  components: { Loader, yandexMap, ymapMarker, ThreeMonths},
+  components: { Loader, yandexMap, ymapMarker, ThreeMonths, CreditPopupMob, KaskoPopupMob, AutoCreditPopup, TradeInPopup, GiftsPopup, TestDrive, Caskogift, Cregift, Thregift  },
   data() {
     return {
       showLoader: false,
@@ -97,7 +115,9 @@ export default {
 .popups__block {
   width: 100%;
   display: flex;
-  justify-content: center
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 [class*="ymaps-2"][class*="-ground-pane"] {
 filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
