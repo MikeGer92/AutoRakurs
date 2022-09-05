@@ -55,17 +55,20 @@
     </div>
     <div class="popups__block">
       <ThreeMonths :style="{'margin-bottom': '50px'}" />
-      <CreditPopupMob :style="{'margin-bottom': '50px'}" />
-      <KaskoPopupMob />
-      <TradeInMob/>
-      <TimeGifts/>
       <AutoCreditPopup :style="{'margin-bottom': '50px'}"/>
+      <AutoCreditPopupMob :style="{'margin-bottom': '50px'}" />
       <TradeInPopup :style="{'margin-bottom': '50px'}"/>
+      <TradeInPopupMob/>
+      <KaskoPopup :style="{'margin-bottom': '50px'}"/>
+      <KaskoPopupMob />
       <GiftsPopup :style="{'margin-bottom': '50px'}"/>
-      <TestDrive :style="{'margin-bottom': '50px'}"/>
-      <Caskogift :style="{'margin-bottom': '50px'}"/>
-      <Cregift :style="{'margin-bottom': '50px'}"/>
-      <Thregift :style="{'margin-bottom': '50px'}"/>
+      <GiftsPopupMob/>
+      <TestDrivePopup :style="{'margin-bottom': '50px'}"/>
+      <TestDrivePopupMob :style="{'margin-bottom': '50px'}"/>
+      <PaysGiftPopup :style="{'margin-bottom': '50px'}"/>
+      <PaysGiftPopupMob :style="{'margin-bottom': '50px'}"/>
+      <ThreeServePopup :style="{'margin-bottom': '50px'}"/>
+      <ThreeServePopupMob :style="{'margin-bottom': '50px'}"/>
     </div>
   </div>
 </template>
@@ -74,20 +77,24 @@
 import { yandexMap, ymapMarker } from 'vue-yandex-maps'
 import Loader from '@/components/app/Loader.vue'
 import ThreeMonths from '../components/popups/ThreeMonths.vue'
-import CreditPopupMob from '../components/popups/CreditPopupMob.vue'
-import KaskoPopupMob from '../components/popups/KaskoPopupMob.vue'
 import AutoCreditPopup from '../components/popups/AutoCreditPopup.vue'
+import AutoCreditPopupMob from '../components/popups/AutoCreditPopupMob.vue'
 import TradeInPopup from '../components/popups/TradeInPopup.vue'
+import TradeInPopupMob from '../components/popups/TradeInPopupMob.vue'
+import KaskoPopup from '../components/popups/KaskoPopup.vue'
+import KaskoPopupMob from '../components/popups/KaskoPopupMob.vue'
 import GiftsPopup from '../components/popups/GiftsPopup.vue'
-import TestDrive from '../components/popups/TestDrive.vue'
-import Caskogift from '../components/popups/caskogift.vue'
-import Cregift from '../components/popups/cregift.vue'
-import Thregift from '../components/popups/thregift.vue'
-import TradeInMob from '../components/popups/TradeInMob.vue'
-import TimeGifts from '../components/popups/TimeGifts.vue'
+import GiftsPopupMob from '../components/popups/GiftsPopupMob.vue'
+import TestDrivePopup from '../components/popups/TestDrivePopup.vue'
+import PaysGiftPopup from '../components/popups/PaysGiftPopup.vue'
+import ThreeServePopup from '../components/popups/ThreeServePopup.vue'
+import TestDrivePopupMob from '../components/popups/TestDrivePopupMob.vue'
+import PaysGiftPopupMob from '../components/popups/PaysGiftPopupMob.vue'
+import ThreeServePopupMob from '../components/popups/ThreeServePopupMob.vue'
+
 export default {
   name: 'About',
-  components: { Loader, yandexMap, ymapMarker,  ThreeMonths, CreditPopupMob, KaskoPopupMob, AutoCreditPopup, TradeInPopup, GiftsPopup, TestDrive, Caskogift, Cregift, Thregift, TradeInMob, TimeGifts  },
+  components: { Loader, yandexMap, ymapMarker, ThreeMonths, AutoCreditPopupMob, KaskoPopupMob, AutoCreditPopup, TradeInPopup, GiftsPopup, TestDrivePopup, KaskoPopup, PaysGiftPopup, ThreeServePopup, TradeInPopupMob, GiftsPopupMob, TestDrivePopupMob, PaysGiftPopupMob, ThreeServePopupMob },
   data() {
     return {
       showLoader: false,

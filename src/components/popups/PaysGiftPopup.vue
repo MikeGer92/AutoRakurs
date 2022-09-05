@@ -19,7 +19,7 @@
 
 <script>  import FormPopup from './FormPopup.vue';
     export default {
-        name: 'creditgift',
+        name: 'PaysGiftPopup',
         components: { FormPopup }
     }
 </script>

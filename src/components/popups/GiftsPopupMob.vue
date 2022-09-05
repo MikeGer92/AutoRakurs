@@ -1,25 +1,24 @@
 <template>
-    <div class="Tradein">
-      <div class="Tradein__popup-small">
-        <div class="Tradein__popup-small_close">
-          <div class="Tradein__popup-small_close-item"></div>
-          <div class="Tradein__popup-small_close-item"></div>
+    <div class="gifts">
+      <div class="gifts__popup-small">
+        <div class="gifts__popup-small_close">
+          <div class="gifts__popup-small_close-item"></div>
+          <div class="gifts__popup-small_close-item"></div>
         </div>
-        <div class="Tradein__popup-small_info">
-          <div class="Tradein__popup-small_info-title">Trade-in</div>
-          <div class="Tradein__popup-small_info-subtitle">Получите скидку до 200 000 рублей!</div>
-          <div class="Tradein__popup-small_info-options">
-            <div class="Tradein__popup-small_info-options--cash">
-              <div class="Tradein__popup-small_info-options--cash_icon"><img src="../../assets/images/popup_options_icon.png"/></div>
-              <div class="Tradein__popup-small_info-options--cash_text">Первый взнос от <span>10% = 99%</span>одобрения</div>
+        <div class="gifts__popup-small_info">
+          <div class="gifts__popup-small_info-title">Время выбирать подарки</div>
+          <div class="gifts__popup-small_info-options">
+            <div class="gifts__popup-small_info-options--cash">
+              <div class="gifts__popup-small_info-options--cash_icon"><img src="../../assets/images/popup_options_icon.png"/></div>
+              <div class="gifts__popup-small_info-options--cash_text">КАСКО</div>
             </div>
-            <div class="Tradein__popup-small_info-options--perc">
-              <div class="Tradein__popup-small_info-options--perc_icon"><img src="../../assets/images/popup_options_icon.png" /></div>
-              <div class="Tradein__popup-small_info-options--perc_text">Ставка от <span>8%</span></div>
+            <div class="gifts__popup-small_info-options--perc">
+              <div class="gifts__popup-small_info-options--perc_icon"><img src="../../assets/images/popup_options_icon.png" /></div>
+              <div class="gifts__popup-small_info-options--perc_text">3 платежа по кредиту</div>
             </div>
-            <div class="Tradein__popup-small_info-options--gift">
-              <div class="Tradein__popup-small_info-options--gift_icon"><img src="../../assets/images/popup_options_icon.png"/></div>
-              <div class="Tradein__popup-small_info-options--gift_text"><span>КАСКО</span> в Подарок!</div>
+            <div class="gifts__popup-small_info-options--gift">
+              <div class="gifts__popup-small_info-options--gift_icon"><img src="../../assets/images/popup_options_icon.png"/></div>
+              <div class="gifts__popup-small_info-options--gift_text">3 ТО</div>
             </div>
           </div>
         </div>
@@ -33,17 +32,17 @@
   <script>
   import FormPopup from './FormPopup.vue';
     export default {
-        name: 'tradeinpopupmob',
+        name: 'GiftsPopupMob',
         components: { FormPopup }
         
     }
   </script>
   
   <style lang="scss">
-  .Tradein {
+  .gifts {
     width: 376px;
     height: 323px;
-    background: url('../../assets/images/popup_tradein-small.png') 0px 0px/cover no-repeat;
+    background: url('../../assets/images/popup_gift_sall.png') 0px 0px/cover no-repeat;
     &__popup-small {
       display: flex;
       flex-direction: column;
@@ -69,14 +68,15 @@
       &_info {
         display: flex;
         flex-direction: column;
-        width: 185px;
+        width: 222px;
         &-title {
           font-family: 'Raleway';
           font-style: normal;
           font-weight: 700;
           font-size: 24px;
-          line-height: 28px;
-          color: #000000;
+          line-height: 21px;
+          color: #10205E;
+
         }
         &-subtitle {
           font-family: 'Inter';
@@ -89,7 +89,7 @@
         &-options {
           display: flex;
           flex-direction: column;
-          margin: 27px 0 8px 0;
+          margin: 17px 0 12px 0;
           &--cash, &--perc, &--gift {
             display: flex;
             margin-bottom: 4px;

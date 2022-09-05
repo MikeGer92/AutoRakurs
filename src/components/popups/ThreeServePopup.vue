@@ -20,7 +20,7 @@
 <script>
     import FormPopup from './FormPopup.vue';
     export default {
-        name: 'thregift',
+        name: 'ThreeServePopup',
         components: { FormPopup }
     }
 </script>

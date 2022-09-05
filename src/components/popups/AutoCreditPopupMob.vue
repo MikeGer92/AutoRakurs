@@ -31,7 +31,7 @@
 <script>
 import FormPopup from './FormPopup.vue';
   export default {
-    name : 'CreditPopupMob',
+    name : 'AutoCreditPopupMob',
     components: { FormPopup }
 }
 </script>

@@ -27,7 +27,7 @@
 <script>
     import FormPopup from './FormPopup.vue';
     export default {
-        name: 'TestDrive',
+        name: 'TestDrivePopup',
         components: { FormPopup }
         
     }
