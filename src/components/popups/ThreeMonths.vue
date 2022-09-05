@@ -139,7 +139,6 @@
         }
       }
       &-form {
-        
         margin-top: 9px;
         max-width: 236px;
         display: flex;
@@ -350,8 +349,9 @@
 }
 @media (min-width: 606px) and (max-width: 1920px) {
   .three-months {
+    justify-content: space-around;
     &__popup-small {
-      display: none;
+      display: flex;
     }
   }
 }
