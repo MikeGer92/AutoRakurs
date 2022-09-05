@@ -180,7 +180,6 @@
     }
   }
   &__popup-small {
-    // margin-left: 100px;
     display: flex;
     flex-direction: column;
     width: 376px;
@@ -351,7 +350,7 @@
   .three-months {
     justify-content: space-around;
     &__popup-small {
-      display: flex;
+      display: none;
     }
   }
 }

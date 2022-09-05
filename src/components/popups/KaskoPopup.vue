@@ -130,7 +130,7 @@ export default {
   &__small {
     width: 376px;
     height: 323px;
-    display: flex;
+    display: none;
     flex-direction: column;
     background: url('../../assets/images/popup_casko-small.png') 0px 0px/cover no-repeat;
     &_wrap {
@@ -164,5 +164,14 @@ export default {
     }
   }
 }
-
+@media (max-width: 605px) {
+  .kasko-popup{
+    &__main {
+      display: none;
+    }
+    &__small {
+      display: flex;
+    }
+  }
+}
 </style>

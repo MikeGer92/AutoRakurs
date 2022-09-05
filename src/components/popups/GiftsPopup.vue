@@ -163,7 +163,7 @@ import FormPopupMob from './FormPopupMob.vue';
     width: 376px;
     height: 323px;
     background: url('../../assets/images/popup_gift_sall.png') 0px 0px/cover no-repeat;
-    display: flex;
+    display: none;
     flex-direction: column;
       // align-items: flex-start;
       // margin: 12px 12px 0 22px;
@@ -223,4 +223,14 @@ import FormPopupMob from './FormPopupMob.vue';
   }
 }
 
+@media (max-width: 605px) {
+  .gifts-popup {
+    &__main {
+      display: none;
+    }
+    &__small {
+      display: flex;
+    }
+  }
+}
 </style>

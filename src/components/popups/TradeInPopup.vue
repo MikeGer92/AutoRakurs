@@ -151,7 +151,7 @@ import FormPopupMob from './FormPopupMob.vue';
     width: 376px;
     height: 323px;
     background: url('../../assets/images/popup_tradein-small.png') 0px 0px/cover no-repeat;
-    display: flex;
+    display: none;
     flex-direction: column;
       // align-items: flex-start;
       // margin: 12px 12px 0 18px;
@@ -241,6 +241,14 @@ import FormPopupMob from './FormPopupMob.vue';
     }
   }
 }
-
-
+@media (max-width: 605px) {
+  .tradein-popup {
+    &__main {
+      display: none;
+    }
+    &__small {
+      display: flex;
+    }
+  }
+}
 </style>

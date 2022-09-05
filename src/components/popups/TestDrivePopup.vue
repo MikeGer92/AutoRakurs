@@ -123,7 +123,7 @@ export default {
     }
   }
   &__small {
-    display: flex;
+    display: none;
     flex-direction: column;
     width: 376px;
     height: 323px;
@@ -132,7 +132,7 @@ export default {
       width: 12px;
       height: 12px;
       display: flex;
-      margin: 12px 18px 0 0;
+      margin: 12px 24px 0 0;
       align-self: flex-end;
       justify-content: center;
       &-item {
@@ -186,7 +186,6 @@ export default {
             }
           }
           &_text {
-            // margin: 8px 0 0 40px; // не забыть переделать в реальном макете нет
             margin-left: 5px;
             font-family: 'Inter';
             font-style: normal;
@@ -199,88 +198,15 @@ export default {
       }
     }
   }
-  &__small {
-    width: 376px;
-  height: 323px;
-  background: url('../../assets/images/popup_testdrive-small.png') 0px 0px/cover no-repeat;
-  &__popup-small {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin: 12px 12px 0 18px;
-    &_close {
-      width: 12px;
-      height: 12px;
-      display: flex;
-      margin: 0px 10px;
-      align-self: flex-end;
-      justify-content: center;
-      &-item {
-        background: #FFF;
-        border: 2px solid #FFF;
-        transform: rotate(45deg);
-        margin: -2px -4px -4px 0;
-        &:last-child {
-          transform: rotate(-45deg);
-          margin: -2px 2px -4px 0px;
-        }
-      }
+}
+@media (max-width: 605px) {
+  .testdrive-popup {
+    &__main {
+      display: none;
     }
-    &_info {
+    &__small {
       display: flex;
-      flex-direction: column;
-      width: 222px;
-      &-title {
-        font-family: 'Raleway';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 24px;
-        line-height: 28px;
-        color: #000000;
-
-      }
-      &-subtitle {
-        font-family: 'Inter';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 10px;
-        line-height: 12px;
-        color: #000000;
-      }
-      &-options {
-        display: flex;
-        flex-direction: column;
-        margin: 17px 0 12px 0;
-        &--cash, &--perc, &--gift {
-          display: flex;
-          margin-bottom: 4px;
-          &_icon {
-            display: flex;
-            width: 12px;
-            height: 12px;
-            & img {
-              width: 100%;
-              height: auto;
-            }
-          }
-          &_text {
-            margin: 8px 0 0 40px; // не забыть переделать в реальном макете нет
-            font-family: 'Inter';
-            font-style: normal;
-            font-weight: 400;
-            font-size: 8px;
-            line-height: 15px;
-            color: #000000;
-            & span {
-              color: #FFA724;
-              font-weight: 700px;
-            }
-          }
-        }
-      }
     }
-  }
   }
 }
-
 </style>

@@ -174,9 +174,9 @@ export default {
     }
   }
   &__small {
+    display: none;
     width: 376px;
     height: 323px;
-    display: flex;
     flex-direction: column;
     background: url('../../assets/images/pop-up_credit-small.png') 0px 0px/cover no-repeat;
     &_info {
@@ -234,5 +234,14 @@ export default {
     }
   }
 }
-
+@media (max-width: 605px) {
+  .credit-popup {
+    &__main {
+      display: none;
+    }
+    &__small {
+      display: flex;
+    }
+  }
+}
 </style>
