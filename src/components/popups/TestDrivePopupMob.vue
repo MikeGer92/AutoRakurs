@@ -49,6 +49,7 @@ import FormPopupMob from './FormPopupMob.vue';
       align-self: flex-end;
       justify-content: center;
       &-item {
+        background: #FFF;
         border: 2px solid #FFF;
         transform: rotate(45deg);
         margin: -2px -4px -4px 0;

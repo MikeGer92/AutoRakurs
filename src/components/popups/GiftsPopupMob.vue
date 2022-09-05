@@ -1,10 +1,7 @@
 <template>
     <div class="gifts">
       <div class="gifts__popup-small">
-        <div class="gifts__popup-small_close">
-          <div class="gifts__popup-small_close-item"></div>
-          <div class="gifts__popup-small_close-item"></div>
-        </div>
+        <ClosePopup :style="{'align-self': 'flex-end'}" />
         <div class="gifts__popup-small_info">
           <div class="gifts__popup-small_info-title">Время выбирать подарки</div>
           <div class="gifts__popup-small_info-options">
@@ -31,9 +28,10 @@
   
   <script>
 import FormPopupMob from './FormPopupMob.vue';
+import ClosePopup from './ClosePopup.vue';
     export default {
         name: 'GiftsPopupMob',
-        components: { FormPopupMob }
+        components: { FormPopupMob, ClosePopup }
         
     }
   </script>
@@ -48,27 +46,11 @@ import FormPopupMob from './FormPopupMob.vue';
       flex-direction: column;
       align-items: flex-start;
       margin: 12px 12px 0 22px;
-      &_close {
-        width: 12px;
-        height: 12px;
-        display: flex;
-        margin-left: 10px;
-        align-self: flex-end;
-        justify-content: center;
-        &-item {
-          border: 2px solid #12609E;
-          transform: rotate(45deg);
-          margin: -2px -4px -4px 0;
-          &:last-child {
-            transform: rotate(-45deg);
-            margin: -2px 2px -4px 0px;
-          }
-        }
-      }
       &_info {
         display: flex;
         flex-direction: column;
         width: 222px;
+        margin-top: -24px;
         &-title {
           font-family: 'Raleway';
           font-style: normal;

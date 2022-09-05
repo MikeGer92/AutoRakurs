@@ -1,9 +1,6 @@
 <template>
     <div class="cregift-popup">
-        <div class="cregift-popup__close">
-                <div class="cregift-popup__close_item"></div>
-                <div class="cregift-popup__close_item"></div>
-        </div>
+      <ClosePopup />
         <div class="cregift-popup__wrap">
             <div class="cregift-popup__info">
                 <div class="cregift-popup__info_title">З ПЛАТЕЖА ПО КРЕДИТУ <span>в подарок!</span></div> 
@@ -18,9 +15,10 @@
 </template>
 
 <script>  import FormPopup from './FormPopup.vue';
+import ClosePopup from './ClosePopup.vue';
     export default {
         name: 'PaysGiftPopup',
-        components: { FormPopup }
+        components: { FormPopup, ClosePopup }
     }
 </script>
 
@@ -37,27 +35,11 @@
         align-items: flex-end;
         width: 743px;
     }
-    &__close {
-        margin: 12px 10px 0 0;
-        width: 12px;
-        height: 12px;
-        display: flex;
-        align-self: flex-end;
-        &_item {
-          border: 2px solid #12609E;
-          transform: rotate(45deg);
-          margin: -2px -4px -4px 0;
-          &:last-child {
-            transform: rotate(-45deg);
-            margin: -2px 2px -4px 0px;
-          }
-      }
-    }
     &__info {
         display: flex;
         width: 222px;
         flex-direction: column;
-        margin: 0px 35px 0 0;
+        margin: -12px 35px 0 0;
         &_title {
             margin: 0 0 20px 0;
             width: 167px;

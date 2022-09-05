@@ -1,8 +1,8 @@
 <template>
     <div class="tradein-popup">
         <div class="tradein-popup__close">
-                <div class="tradein-popup__close_item"></div>
-                <div class="tradein-popup__close_item"></div>
+          <div class="tradein-popup__close_item"></div>
+          <div class="tradein-popup__close_item"></div>
         </div>
         <div class="tradein-popup__wrap">
             <div class="tradein-popup__info">
@@ -53,7 +53,8 @@ import FormPopupMob from './FormPopupMob.vue';
         display: flex;
         align-self: flex-end;
         &_item {
-          border: 2px solid #12609E;
+          background: #FFF;
+          border: 2px solid #FFF;
           transform: rotate(45deg);
           margin: -2px -4px -4px 0;
           &:last-child {

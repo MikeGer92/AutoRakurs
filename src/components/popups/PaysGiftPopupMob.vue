@@ -1,7 +1,7 @@
 <template>
   <div class="pays">
     <div class="pays__popup-small">
-        <ClosePopup />
+      <ClosePopup />
       <div class="pays__popup-small_wrap">
         <div class="pays__popup-small_info">
           <div class="pays__popup-small_info-title">3 ПЛАТЕЖА<br>ПО КРЕДИТУ<br><span>в подарок!</span></div>

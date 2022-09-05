@@ -1,9 +1,6 @@
 <template>
     <div class="credit-popup">
-        <div class="credit-popup__close">
-                <div class="credit-popup__close_item"></div>
-                <div class="credit-popup__close_item"></div>
-        </div>
+      <ClosePopup :style="{'align-self': 'flex-end'}"/>
         <div class="credit-popup__wrap">
             <div class="credit-popup__info">
                 <div class="credit-popup__info_title">АВТОКРЕДИТ</div> 
@@ -28,15 +25,15 @@
                 <FormPopup />
             </div>
         </div>
-
     </div>
 </template>
 
 <script>
     import FormPopup from './FormPopup.vue';
+import ClosePopup from './ClosePopup.vue';
     export default {
         name: 'AutoCreditPopup',
-        components: { FormPopup }
+        components: { FormPopup, ClosePopup }
         
     }
 </script>
@@ -54,27 +51,11 @@
         align-items: flex-end;
         width: 743px;
     }
-    &__close {
-        margin: 12px 10px 0 0;
-        width: 12px;
-        height: 12px;
-        display: flex;
-        align-self: flex-end;
-        &_item {
-          border: 2px solid #12609E;
-          transform: rotate(45deg);
-          margin: -2px -4px -4px 0;
-          &:last-child {
-            transform: rotate(-45deg);
-            margin: -2px 2px -4px 0px;
-          }
-      }
-    }
     &__info {
         display: flex;
         width: 246px;
         flex-direction: column;
-        margin: 0px 35px 0 0;
+        margin: -24px 35px 0 0;
         &_title {
             font-family: 'Raleway';
             font-style: normal;

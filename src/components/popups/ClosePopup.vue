@@ -26,6 +26,7 @@
       align-self: flex-end;
       justify-content: center;
       &_item {
+        background: #12609E;
         border: 2px solid #12609E;
         transform: rotate(45deg);
         margin: -2px -4px -4px 0;

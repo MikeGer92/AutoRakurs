@@ -1,7 +1,7 @@
 <template>
   <div class="kasko">
     <div class="kasko__popup-small">
-        <ClosePopup />
+      <ClosePopup />
       <div class="kasko__popup-small_wrap">
         <div class="kasko__popup-small_info">
           <div class="kasko__popup-small_info-title">КАСКО<br><span>в подарок!</span></div>

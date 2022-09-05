@@ -1,9 +1,6 @@
 <template>
     <div class="gifts-popup">
-        <div class="gifts-popup__close">
-          <div class="gifts-popup__close_item"></div>
-          <div class="gifts-popup__close_item"></div>
-        </div>
+      <ClosePopup :style="{'align-self': 'flex-end', 'margin-top': '12px'}"/>
         <div class="gifts-popup__wrap">
             <div class="gifts-popup__info">
                 <div class="gifts-popup__info_title">Время выбирать подарки</div> 
@@ -33,9 +30,10 @@
 
 <script>
 import FormPopup from './FormPopup.vue';
+import ClosePopup from './ClosePopup.vue';
     export default {
     name: "GiftsPopup",
-    components: { FormPopup }
+    components: { FormPopup, ClosePopup }
 }
 </script>
 
@@ -52,27 +50,11 @@ import FormPopup from './FormPopup.vue';
         align-items: flex-end;
         width: 743px;
     }
-    &__close {
-        margin: 12px 10px 0 0;
-        width: 12px;
-        height: 12px;
-        display: flex;
-        align-self: flex-end;
-        &_item {
-          border: 2px solid #12609E;
-          transform: rotate(45deg);
-          margin: -2px -4px -4px 0;
-          &:last-child {
-            transform: rotate(-45deg);
-            margin: -2px 2px -4px 0px;
-          }
-      }
-    }
     &__info {
         display: flex;
         width: 246px;
         flex-direction: column;
-        margin: 0px 35px 0 0;
+        margin: -24px 35px 0 0;
         &_title {
             width: 222px;
             height: 41px;    
