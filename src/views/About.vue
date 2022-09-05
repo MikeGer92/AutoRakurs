@@ -54,7 +54,21 @@
       <button type="button">ПОСТРОИТЬ МАРШРУТ</button>
     </div>
     <div class="popups__block">
-      <ThreeMonths />
+      <ThreeMonths :style="{'margin-bottom': '20px'}" />
+      <AutoCreditPopup :style="{'margin-bottom': '20px'}"/>
+      <AutoCreditPopupMob :style="{'margin-bottom': '20px'}" />
+      <TradeInPopup :style="{'margin-bottom': '20px'}"/>
+      <TradeInPopupMob :style="{'margin-bottom': '20px'}"/>
+      <KaskoPopup :style="{'margin-bottom': '20px'}"/>
+      <KaskoPopupMob :style="{'margin-bottom': '20px'}"/>
+      <GiftsPopup :style="{'margin-bottom': '20px'}"/>
+      <GiftsPopupMob :style="{'margin-bottom': '20px'}"/>
+      <TestDrivePopup :style="{'margin-bottom': '20px'}"/>
+      <TestDrivePopupMob :style="{'margin-bottom': '20px'}"/>
+      <PaysGiftPopup :style="{'margin-bottom': '20px'}"/>
+      <PaysGiftPopupMob :style="{'margin-bottom': '20px'}"/>
+      <ThreeServePopup :style="{'margin-bottom': '20px'}"/>
+      <ThreeServePopupMob :style="{'margin-bottom': '20px'}"/>
     </div>
   </div>
 </template>
@@ -63,9 +77,24 @@
 import { yandexMap, ymapMarker } from 'vue-yandex-maps'
 import Loader from '@/components/app/Loader.vue'
 import ThreeMonths from '../components/popups/ThreeMonths.vue'
+import AutoCreditPopup from '../components/popups/AutoCreditPopup.vue'
+import AutoCreditPopupMob from '../components/popups/AutoCreditPopupMob.vue'
+import TradeInPopup from '../components/popups/TradeInPopup.vue'
+import TradeInPopupMob from '../components/popups/TradeInPopupMob.vue'
+import KaskoPopup from '../components/popups/KaskoPopup.vue'
+import KaskoPopupMob from '../components/popups/KaskoPopupMob.vue'
+import GiftsPopup from '../components/popups/GiftsPopup.vue'
+import GiftsPopupMob from '../components/popups/GiftsPopupMob.vue'
+import TestDrivePopup from '../components/popups/TestDrivePopup.vue'
+import PaysGiftPopup from '../components/popups/PaysGiftPopup.vue'
+import ThreeServePopup from '../components/popups/ThreeServePopup.vue'
+import TestDrivePopupMob from '../components/popups/TestDrivePopupMob.vue'
+import PaysGiftPopupMob from '../components/popups/PaysGiftPopupMob.vue'
+import ThreeServePopupMob from '../components/popups/ThreeServePopupMob.vue'
+
 export default {
   name: 'About',
-  components: { Loader, yandexMap, ymapMarker, ThreeMonths},
+  components: { Loader, yandexMap, ymapMarker, ThreeMonths, AutoCreditPopupMob, KaskoPopupMob, AutoCreditPopup, TradeInPopup, GiftsPopup, TestDrivePopup, KaskoPopup, PaysGiftPopup, ThreeServePopup, TradeInPopupMob, GiftsPopupMob, TestDrivePopupMob, PaysGiftPopupMob, ThreeServePopupMob },
   data() {
     return {
       showLoader: false,
@@ -97,7 +126,9 @@ export default {
 .popups__block {
   width: 100%;
   display: flex;
-  justify-content: center
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 [class*="ymaps-2"][class*="-ground-pane"] {
 filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale");
