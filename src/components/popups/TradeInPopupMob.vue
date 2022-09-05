@@ -6,24 +6,21 @@
           <div class="Tradein__popup-small_close-item"></div>
         </div>
         <div class="Tradein__popup-small_info">
-          <div class="Tradein__popup-small_info-title">Trade-in</div>
-          <div class="Tradein__popup-small_info-subtitle">Получите скидку до 200 000 рублей!</div>
+          <div class="Tradein__popup-small_info-text">
+            <div class="Tradein__popup-small_info-text--title">TRADE-IN</div>
+            <div class="Tradein__popup-small_info-text--subtitle">Получите скидку до 200 000 рублей!</div>
+          </div>
           <div class="Tradein__popup-small_info-options">
-            <div class="Tradein__popup-small_info-options--cash">
-              <div class="Tradein__popup-small_info-options--cash_icon"><img src="../../assets/images/popup_options_icon.png"/></div>
-              <div class="Tradein__popup-small_info-options--cash_text">Первый взнос от <span>10% = 99%</span>одобрения</div>
-            </div>
-            <div class="Tradein__popup-small_info-options--perc">
-              <div class="Tradein__popup-small_info-options--perc_icon"><img src="../../assets/images/popup_options_icon.png" /></div>
-              <div class="Tradein__popup-small_info-options--perc_text">Ставка от <span>8%</span></div>
-            </div>
-            <div class="Tradein__popup-small_info-options--gift">
-              <div class="Tradein__popup-small_info-options--gift_icon"><img src="../../assets/images/popup_options_icon.png"/></div>
-              <div class="Tradein__popup-small_info-options--gift_text"><span>КАСКО</span> в Подарок!</div>
+            <div class="Tradein__popup-small_info-options--disc">
+              <div class="Tradein__popup-small_info-options--disc_icon"><img src="../../assets/images/popup_options_icon.png"/></div>
+              <div class="Tradein__popup-small_info-options--disc_text">
+                <div class="Tradein__popup-small_info-options--disc_text-bold">+10% к оценке авто</div>
+                <div class="Tradein__popup-small_info-options--disc_text-normal">при приезде в день<br>обращения</div>
+              </div>
             </div>
           </div>
         </div>
-        <FormPopup :style="{'margin-top': '19px'}" />
+        <FormPopupMob :style="{'margin-top': '15px'}" />
       </div>
   
   
@@ -31,12 +28,12 @@
   </template>
   
   <script>
-  import FormPopup from './FormPopup.vue';
-    export default {
-        name: 'TradeInPopupMob',
-        components: { FormPopup }
-        
-    }
+import FormPopupMob from './FormPopupMob.vue';
+  export default {
+      name: 'TradeInPopupMob',
+      components: { FormPopupMob }
+      
+  }
   </script>
   
   <style lang="scss">
@@ -48,7 +45,7 @@
       display: flex;
       flex-direction: column;
       align-items: flex-start;
-      margin: 12px 12px 0 22px;
+      margin: 12px 12px 0 18px;
       &_close {
         width: 12px;
         height: 12px;
@@ -68,50 +65,65 @@
       }
       &_info {
         display: flex;
-        flex-direction: column;
-        width: 185px;
-        &-title {
-          font-family: 'Raleway';
-          font-style: normal;
-          font-weight: 700;
-          font-size: 24px;
-          line-height: 28px;
-          color: #000000;
-        }
-        &-subtitle {
-          font-family: 'Inter';
-          font-style: normal;
-          font-weight: 400;
-          font-size: 10px;
-          line-height: 12px;
-          color: #939393;
+        align-items: baseline;
+        margin-top: 80px;
+        &-text {
+          display: flex;
+          flex-direction: column;
+          &--title {
+            font-family: 'Raleway';
+            font-style: normal;
+            font-weight: 700;
+            font-size: 24px;
+            line-height: 28px;
+            color: #12609E;
+          }
+          &--subtitle {
+            margin-top: 2px;
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 12px;
+            color: #939393;
+          }
         }
         &-options {
           display: flex;
           flex-direction: column;
           margin: 27px 0 8px 0;
-          &--cash, &--perc, &--gift {
+          &--disc {
             display: flex;
-            margin-bottom: 4px;
+            margin-left: 40px;
+            align-items: center;
             &_icon {
               display: flex;
-              width: 12px;
-              height: 12px;
+              width: 16px;
+              height: 16px;
               & img {
                 width: 100%;
                 height: auto;
               }
             }
             &_text {
-              font-family: 'Inter';
-              font-style: normal;
-              font-weight: 400;
-              font-size: 8px;
-              line-height: 15px;
-              color: #000000;
-              & span {
-                color: #FFA724;
-                font-weight: 700px;
+              display: flex;
+              flex-direction: column;
+              margin-left: 5px;
+              &-bold {
+                font-weight: 900;
+                font-family: 'Inter';
+                font-style: normal;
+                font-size: 10px;
+                line-height: 11px;
+                color: #FFFFFF;
+              }
+              &-normal {
+                font-family: 'Inter';
+                font-style: normal;
+                font-weight: 400;
+                font-size: 10px;
+                line-height: 11px;
+                color: #FFFFFF;
               }
             }
           }

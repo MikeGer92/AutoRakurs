@@ -54,21 +54,21 @@
       <button type="button">ПОСТРОИТЬ МАРШРУТ</button>
     </div>
     <div class="popups__block">
-      <ThreeMonths :style="{'margin-bottom': '50px'}" />
-      <AutoCreditPopup :style="{'margin-bottom': '50px'}"/>
-      <AutoCreditPopupMob :style="{'margin-bottom': '50px'}" />
-      <TradeInPopup :style="{'margin-bottom': '50px'}"/>
-      <TradeInPopupMob/>
-      <KaskoPopup :style="{'margin-bottom': '50px'}"/>
-      <KaskoPopupMob />
-      <GiftsPopup :style="{'margin-bottom': '50px'}"/>
-      <GiftsPopupMob/>
-      <TestDrivePopup :style="{'margin-bottom': '50px'}"/>
-      <TestDrivePopupMob :style="{'margin-bottom': '50px'}"/>
-      <PaysGiftPopup :style="{'margin-bottom': '50px'}"/>
-      <PaysGiftPopupMob :style="{'margin-bottom': '50px'}"/>
-      <ThreeServePopup :style="{'margin-bottom': '50px'}"/>
-      <ThreeServePopupMob :style="{'margin-bottom': '50px'}"/>
+      <ThreeMonths :style="{'margin-bottom': '20px'}" />
+      <AutoCreditPopup :style="{'margin-bottom': '20px'}"/>
+      <AutoCreditPopupMob :style="{'margin-bottom': '20px'}" />
+      <TradeInPopup :style="{'margin-bottom': '20px'}"/>
+      <TradeInPopupMob :style="{'margin-bottom': '20px'}"/>
+      <KaskoPopup :style="{'margin-bottom': '20px'}"/>
+      <KaskoPopupMob :style="{'margin-bottom': '20px'}"/>
+      <GiftsPopup :style="{'margin-bottom': '20px'}"/>
+      <GiftsPopupMob :style="{'margin-bottom': '20px'}"/>
+      <TestDrivePopup :style="{'margin-bottom': '20px'}"/>
+      <TestDrivePopupMob :style="{'margin-bottom': '20px'}"/>
+      <PaysGiftPopup :style="{'margin-bottom': '20px'}"/>
+      <PaysGiftPopupMob :style="{'margin-bottom': '20px'}"/>
+      <ThreeServePopup :style="{'margin-bottom': '20px'}"/>
+      <ThreeServePopupMob :style="{'margin-bottom': '20px'}"/>
     </div>
   </div>
 </template>

@@ -1,6 +1,6 @@
 <template>
     <div class="tradein-popup">
-        <div class="tradein-popup__close" @click="closePopup">
+        <div class="tradein-popup__close">
                 <div class="tradein-popup__close_item"></div>
                 <div class="tradein-popup__close_item"></div>
         </div>
@@ -16,7 +16,7 @@
                 </div>
                 </div>
                 <div class="tradein-popup__info_form">
-                    <FormPopup/>
+                    <FormPopupMob />
                 </div> 
             </div>
         </div>
@@ -25,10 +25,10 @@
 </template>
 
 <script>
-    import FormPopup from './FormPopup.vue';
+import FormPopupMob from './FormPopupMob.vue';
     export default {
         name: 'TradeInPopup',
-        components: { FormPopup }
+        components: { FormPopupMob }
         
     }
 </script>

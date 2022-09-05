@@ -8,18 +8,18 @@
           <div class="kasko__popup-small_info-subtitle">При покупке<br>
             автомобиля в кредит</div>
         </div>
-        <FormPopup :style="{'width': '183px'}"/>
+        <FormPopupMob :style="{'width': '183px'}"/>
     </div>
     </div>
   </div>
 </template>
 
 <script>
-import FormPopup from './FormPopup.vue';
 import ClosePopup from './ClosePopup.vue';
+import FormPopupMob from './FormPopupMob.vue';
   export default {
     name: "KaskoPopupMob",
-    components: { FormPopup, ClosePopup }
+    components: { ClosePopup, FormPopupMob }
 }
 </script>
 

@@ -23,16 +23,16 @@
           </div>
         </div>
       </div>
-      <FormPopup :style="{'margin-top': '19px'}" />
+      <FormPopupMob :style="{'margin-top': '19px'}" />
     </div>
   </div>
 </template>
 
 <script>
-import FormPopup from './FormPopup.vue';
+import FormPopupMob from './FormPopupMob.vue';
   export default {
     name : 'AutoCreditPopupMob',
-    components: { FormPopup }
+    components: { FormPopupMob }
 }
 </script>
 

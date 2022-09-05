@@ -1,6 +1,6 @@
 <template>
     <div class="thregift-popup">
-        <div class="thregift-popup__close" @click="closePopup">
+        <div class="thregift-popup__close">
                 <div class="thregift-popup__close_item"></div>
                 <div class="thregift-popup__close_item"></div>
         </div>

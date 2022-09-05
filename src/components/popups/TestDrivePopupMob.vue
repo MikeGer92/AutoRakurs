@@ -8,22 +8,14 @@
       <div class="testdrive__popup-small_info">
         <div class="testdrive__popup-small_info-title">Тест-Драйв</div>
         <div class="testdrive__popup-small_info-subtitle">Время попробовать новое!</div>
-        <!-- <div class="testdrive__popup-small_info-options">
+        <div class="testdrive__popup-small_info-options">
           <div class="testdrive__popup-small_info-options--cash">
-            <div class="testdrive__popup-small_info-options--cash_icon"><img src="../../assets/images/popup_options_icon.png"/></div>
-            <div class="testdrive__popup-small_info-options--cash_text">КАСКО</div>
+            <!-- <div class="testdrive__popup-small_info-options--cash_icon"><img src="../../assets/images/test_drive_icon.png"/></div> -->
+            <div class="testdrive__popup-small_info-options--cash_text">Бесплатный тест-драйв<br>в реальных словиях</div>
           </div>
-          <div class="testdrive__popup-small_info-options--perc">
-            <div class="testdrive__popup-small_info-options--perc_icon"><img src="../../assets/images/popup_options_icon.png" /></div>
-            <div class="testdrive__popup-small_info-options--perc_text">3 платежа по кредиту</div>
-          </div>
-          <div class="testdrive__popup-small_info-options--gift">
-            <div class="testdrive__popup-small_info-options--gift_icon"><img src="../../assets/images/popup_options_icon.png"/></div>
-            <div class="testdrive__popup-small_info-options--gift_text">3 ТО</div>
-          </div>
-        </div> -->
+        </div>
       </div>
-      <FormPopup :style="{'margin-top': '19px'}" />
+      <FormPopupMob :style="{'margin-top': '19px'}" />
     </div>
 
 
@@ -31,10 +23,10 @@
 </template>
 
 <script>
-import FormPopup from './FormPopup.vue';
+import FormPopupMob from './FormPopupMob.vue';
   export default {
       name: 'TestDrivePopupMob',
-      components: { FormPopup }
+      components: {  FormPopupMob }
       
   }
 </script>
@@ -48,16 +40,16 @@ import FormPopup from './FormPopup.vue';
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    margin: 12px 12px 0 22px;
+    margin: 12px 12px 0 18px;
     &_close {
       width: 12px;
       height: 12px;
       display: flex;
-      margin-left: 10px;
+      margin: 0px 10px;
       align-self: flex-end;
       justify-content: center;
       &-item {
-        border: 2px solid #12609E;
+        border: 2px solid #FFF;
         transform: rotate(45deg);
         margin: -2px -4px -4px 0;
         &:last-child {
@@ -104,6 +96,7 @@ import FormPopup from './FormPopup.vue';
             }
           }
           &_text {
+            margin: 8px 0 0 40px; // не забыть переделать в реальном макете нет
             font-family: 'Inter';
             font-style: normal;
             font-weight: 400;

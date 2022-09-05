@@ -4,22 +4,22 @@
         <ClosePopup />
       <div class="pays__popup-small_wrap">
         <div class="pays__popup-small_info">
-          <div class="pays__popup-small_info-title">КАСКО<br><span>в подарок!</span></div>
+          <div class="pays__popup-small_info-title">3 ПЛАТЕЖА<br>ПО КРЕДИТУ<br><span>в подарок!</span></div>
           <div class="pays__popup-small_info-subtitle">При покупке<br>
             автомобиля в кредит</div>
         </div>
-        <FormPopup :style="{'width': '183px'}"/>
+        <FormPopupMob :style="{'width': '183px'}"/>
     </div>
     </div>
   </div>
 </template>
 
 <script>
-import FormPopup from './FormPopup.vue';
 import ClosePopup from './ClosePopup.vue';
+import FormPopupMob from './FormPopupMob.vue';
   export default {
     name: "PaysGiftPopupMob",
-    components: { FormPopup, ClosePopup }
+    components: { ClosePopup, FormPopupMob }
 }
 </script>
 
@@ -41,18 +41,18 @@ import ClosePopup from './ClosePopup.vue';
       display: flex;
       flex-direction: column;
       &-title {
-        font-family: 'Raleway';
+        font-family: 'Inter';
         font-style: normal;
         font-weight: 700;
-        font-size: 26.1392px;
-        line-height: 89.9%;
+        font-size: 20.093px;
+        line-height: 106.4%;
         color: #000000;
         & span {
           color: #12609E;
         }
       }
       &-subtitle {
-        margin-top: 21px;
+        margin-top: 12px;
         font-family: 'Inter';
         font-style: normal;
         font-weight: 400;

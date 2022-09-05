@@ -1,9 +1,9 @@
 <template>
-  <div class="popup-radio-orange">
-    <label class="popup-radio-orange__radio">
-      <input class="popup-radio-orange__radio_btn" id="radio" type="radio" name="radio" value="1">
+  <div class="popup-radio-orange-mob">
+    <label class="popup-radio-orange-mob__radio">
+      <input class="popup-radio-orange-mob__radio_btn" id="radio" type="radio" name="radio" value="1">
       <span></span>
-      <div class="popup-radio-orange__radio_text">
+      <div class="popup-radio-orange-mob__radio_text">
         Нажимая кнопку <strong>“Получить одобрение”</strong>, Вы соглашаетесь
         с<router-link to="" class="radio-link">политикой конфиденциальности</router-link> и<router-link to="" class="radio-link">правилами обработки
         персональных данных.</router-link> 
@@ -14,19 +14,16 @@
 
 <script>
 export default {
-  name: 'PopupRadioOrange'
+  name: 'PopupRadioOrangeMob'
 }
 </script>
 
 <style lang="scss">
-.popup-radio-orange {
-  display: flex;
-  flex-direction: column;
+.popup-radio-orange-mob {
   &__radio {
     display: flex;
-    width: 250px;
-    // height: 29px;
-    align-items: center;
+    width: 220px;
+    height: 29px;
     cursor: pointer;
     &_btn {
       display: flex;
@@ -62,29 +59,30 @@ export default {
     }
     &_text {
       margin-left: 6px;
-      width: 228px;
+      width: 167px;
       font-family: 'Roboto';
       font-style: normal;
       font-weight: 400;
-      font-size: 8px;
-      line-height: 9px;
+      font-size: 6px;
+      line-height: 7px;
       color: #000000;
-      & strong {
+      & span {
         font-weight: 700px;
         // color: #12609E;
         // text-decoration: underline;
       }
-      .radio-link {
-          margin-left: 6px;
-          font-family: 'Roboto';
-          font-style: normal;
-          font-weight: 400;
-          font-size: 8px;
-          line-height: 9px;
-          color: #12609E;
-          text-decoration: underline;
-        }
+      & router-link {
+        margin-left: 6px;
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 6px;
+        line-height: 7px;
+        color: #12609E;
+        text-decoration: underline;
+      }
     }
   }
 }
+
 </style>

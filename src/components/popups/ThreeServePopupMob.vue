@@ -4,22 +4,22 @@
         <ClosePopup />
       <div class="serve__popup-small_wrap">
         <div class="serve__popup-small_info">
-          <div class="serve__popup-small_info-title">КАСКО<br><span>в подарок!</span></div>
+          <div class="serve__popup-small_info-title">З ТО<br><span>в&#8194;подарок!</span></div>
           <div class="serve__popup-small_info-subtitle">При покупке<br>
             автомобиля в кредит</div>
         </div>
-        <FormPopup :style="{'width': '183px'}"/>
+        <FormPopupMob :style="{'width': '183px'}"/>
     </div>
     </div>
   </div>
 </template>
 
 <script>
-import FormPopup from './FormPopup.vue';
 import ClosePopup from './ClosePopup.vue';
+import FormPopupMob from './FormPopupMob.vue';
   export default {
     name: "KaskoPopupMob",
-    components: { FormPopup, ClosePopup }
+    components: { ClosePopup, FormPopupMob }
 }
 </script>
 
@@ -41,14 +41,20 @@ import ClosePopup from './ClosePopup.vue';
       display: flex;
       flex-direction: column;
       &-title {
-        font-family: 'Raleway';
+        font-family: 'Inter';
         font-style: normal;
         font-weight: 700;
-        font-size: 26.1392px;
-        line-height: 89.9%;
+        font-size: 36px;
+        line-height: 30px;
+        letter-spacing: -0.1em;
         color: #000000;
         & span {
-          color: #12609E;
+          color: #FFA724;
+          font-family: 'Inter';
+          font-style: normal;
+          font-weight: 700;
+          font-size: 26px;
+          letter-spacing: -0.05em;
         }
       }
       &-subtitle {

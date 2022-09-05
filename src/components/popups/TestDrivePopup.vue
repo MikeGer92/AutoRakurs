@@ -1,21 +1,21 @@
 <template>
-    <div class="Testdrive-popup">
-        <div class="Testdrive-popup__close" @click="closePopup">
-                <div class="Testdrive-popup__close_item"></div>
-                <div class="Testdrive-popup__close_item"></div>
+    <div class="testdrive-popup">
+        <div class="testdrive-popup__close">
+                <div class="testdrive-popup__close_item"></div>
+                <div class="testdrive-popup__close_item"></div>
         </div>
-        <div class="Testdrive-popup__wrap">
-            <div class="Testdrive-popup__info">
-                <div class="Testdrive-popup__info_title">Тест-Драйв</div> 
-                <div class="Testdrive-popup__info_subtitle">Время попробовать новое!</div>  
-                <div class="Testdrive-popup__info_options">
-                <div class="Testdrive-popup__info_options-cash">
-                    <div class="Testdrive-popup__info_options-cash--icon"><img src="../../assets/images/tets_drive_icon.png" />
+        <div class="testdrive-popup__wrap">
+            <div class="testdrive-popup__info">
+                <div class="testdrive-popup__info_title">Тест-Драйв</div> 
+                <div class="testdrive-popup__info_subtitle">Время попробовать новое!</div>  
+                <div class="testdrive-popup__info_options">
+                <div class="testdrive-popup__info_options-cash">
+                    <div class="testdrive-popup__info_options-cash--icon"><img src="../../assets/images/test_drive_icon.png" />
                     </div>
-                    <div class="Testdrive-popup__info_options-cash--text">Бесплатный тест-драйв в реальных словиях </div>
+                    <div class="testdrive-popup__info_options-cash--text">Бесплатный тест-драйв в реальных словиях </div>
                 </div>
                 </div>
-                <div class="Testdrive-popup__info_form">
+                <div class="testdrive-popup__info_form">
                     <FormPopup/>
                 </div> 
             </div>
@@ -34,7 +34,7 @@
 </script>
 
 <style lang="scss">
-.Testdrive-popup {
+.testdrive-popup {
     display: flex;
     flex-direction: column;
     width: 743px;

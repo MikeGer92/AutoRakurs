@@ -1,6 +1,6 @@
 <template>
     <div class="credit-popup">
-        <div class="credit-popup__close" @click="closePopup">
+        <div class="credit-popup__close">
                 <div class="credit-popup__close_item"></div>
                 <div class="credit-popup__close_item"></div>
         </div>

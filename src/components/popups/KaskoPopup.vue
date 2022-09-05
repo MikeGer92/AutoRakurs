@@ -1,6 +1,6 @@
 <template>
     <div class="casco-popup">
-        <div class="casco-popup__close" @click="closePopup">
+        <div class="casco-popup__close">
                 <div class="casco-popup__close_item"></div>
                 <div class="casco-popup__close_item"></div>
         </div>
