@@ -1,7 +1,7 @@
 <template>
   <div class="kasko-popup">
     <div class="kasko-popup__main">
-      <ClosePopup :style="{'align-self': 'flex-end', 'margin-top': '12px'}" />
+      <ClosePopup :style="{'align-self': 'flex-end', 'margin': '12px 12px 0 0'}" @closePopup="closePopup" />
       <div class="kasko-popup__main_wrap">
         <div class="kasko-popup__main_info">
           <div class="kasko-popup__main_info-title">КАСКО <span> в подарок! </span></div> 
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="kasko-popup__small">
-      <ClosePopup />
+      <ClosePopup @closePopup="closePopup" />
       <div class="kasko-popup__small_wrap">
         <div class="kasko-popup__small_info">
           <div class="kasko-popup__small_info-title">КАСКО<br><span>в подарок!</span></div>
@@ -32,7 +32,13 @@ import ClosePopup from './ClosePopup.vue';
 import FormPopupMob from './FormPopupMob.vue';
 export default {
   name: 'KaskoPopup',
-  components: { FormPopup, ClosePopup, FormPopupMob }
+  components: { FormPopup, ClosePopup, FormPopupMob },
+  methods: {
+    closePopup() {
+      console.log('CLOSE')
+      this.$emit('closeKasko')
+    }
+  }
 }
 </script>
 

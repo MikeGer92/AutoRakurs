@@ -57,7 +57,7 @@
       <ThreeMonths :style="{'margin-bottom': '20px'}" />
       <AutoCreditPopup :style="{'margin-bottom': '20px'}"/>
       <TradeInPopup :style="{'margin-bottom': '20px'}"/>
-      <KaskoPopup :style="{'margin-bottom': '20px'}"/>
+      <KaskoPopup :style="{'margin-bottom': '20px'}" @closeKasko="closePopup"/>
       <GiftsPopup :style="{'margin-bottom': '20px'}"/>
       <TestDrivePopup :style="{'margin-bottom': '20px'}"/>
       <PaysGiftPopup :style="{'margin-bottom': '20px'}"/>
@@ -107,6 +107,11 @@ export default {
     console.log(this.$route.path);
     console.log(this.$router.history);
   },
+  methods: {
+    closePopup() {
+      console.log('Close')
+    }
+  }
 }
 </script>
 <style lang="scss">

@@ -1,7 +1,7 @@
 <template>
   <div class="tradein-popup">
     <div class="tradein-popup__main">
-      <div class="tradein-popup__main_close">
+      <div class="tradein-popup__main_close" @click="closePopup">
         <div class="tradein-popup__main_close-item"></div>
         <div class="tradein-popup__main_close-item"></div>
       </div>
@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="tradein-popup__small">
-      <div class="tradein-popup__small_close">
+      <div class="tradein-popup__small_close" @click="closePopup">
         <div class="tradein-popup__small_close-item"></div>
         <div class="tradein-popup__small_close-item"></div>
       </div>
@@ -49,11 +49,15 @@
 
 <script>
 import FormPopupMob from './FormPopupMob.vue';
-    export default {
-        name: 'TradeInPopup',
-        components: { FormPopupMob }
-        
+export default {
+  name: 'TradeInPopup',
+  components: { FormPopupMob },
+  methods: {
+    closePopup() {
+      this.$emit('closeTradeIn')
     }
+  }  
+}
 </script>
 
 <style lang="scss">

@@ -24,7 +24,7 @@
     </div>
     <div class="three-months__popup-small">
       <div class="three-months__popup-small_header">
-        <div class="three-months__popup-small_header-close">
+        <div class="three-months__popup-small_header-close" @click="closePopup">
           <div class="three-months__popup-small_header-close--item"></div>
           <div class="three-months__popup-small_header-close--item"></div>
         </div>
@@ -54,7 +54,7 @@
     components: { CatalogRadioBlue },
     methods: {
       closePopup() {
-        this.$emit('closePopup')
+        this.$emit('closeMonths')
       }
     }
   }

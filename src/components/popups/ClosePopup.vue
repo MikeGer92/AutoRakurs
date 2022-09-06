@@ -1,5 +1,5 @@
 <template>
-    <div class="close-popup">
+    <div class="close-popup" @click="closePopup">
         <div class="close-popup__elem">
         <div class="close-popup__elem_item"></div>
         <div class="close-popup__elem_item"></div>
@@ -8,10 +8,14 @@
 </template>
 
 <script>
-    export default {
-        name: 'ClosePopup'
-        
+export default {
+  name: 'ClosePopup',
+  methods: {
+    closePopup() {
+      this.$emit('closePopup')
     }
+  }
+}
 </script>
 
 <style lang="scss">

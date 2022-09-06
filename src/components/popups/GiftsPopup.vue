@@ -1,7 +1,7 @@
 <template>
   <div class="gifts-popup">
     <div class="gifts-popup__main">
-      <ClosePopup :style="{'align-self': 'flex-end', 'margin': '12px 12px 0 0'}"/>
+      <ClosePopup :style="{'align-self': 'flex-end', 'margin': '12px 12px 0 0'}" @closePopup="closePopup"/>
         <div class="gifts-popup__main_wrap">
           <div class="gifts-popup__main_info">
               <div class="gifts-popup__main_info-title">Время выбирать подарки</div> 
@@ -27,7 +27,7 @@
         </div>
     </div>
     <div class="gifts-popup__small">
-      <ClosePopup :style="{'align-self': 'flex-end', 'margin': '12px 12px 0 0'}" />
+      <ClosePopup :style="{'align-self': 'flex-end', 'margin': '12px 12px 0 0'}" @closePopup="closePopup" />
       <div class="gifts-popup__small_info">
         <div class="gifts-popup__small_info-title">Время выбирать подарки</div>
         <div class="gifts-popup__small_info-options">
@@ -54,9 +54,14 @@
 import FormPopup from './FormPopup.vue';
 import ClosePopup from './ClosePopup.vue';
 import FormPopupMob from './FormPopupMob.vue';
-    export default {
-    name: "GiftsPopup",
-    components: { FormPopup, ClosePopup, FormPopupMob }
+export default {
+  name: "GiftsPopup",
+  components: { FormPopup, ClosePopup, FormPopupMob },
+  methods: {
+    closePopup() {
+      this.$emit('closeGifts')
+    }
+  }
 }
 </script>
 

@@ -1,7 +1,7 @@
 <template>
   <div class="pays-popup">
     <div class="pays-popup__main">
-      <ClosePopup :style="{'margin': '12px 12px 0 0'}"/>
+      <ClosePopup :style="{'margin': '12px 12px 0 0'}" @closePopup="closePopup"/>
       <div class="pays-popup__main_wrap">
         <div class="pays-popup__main_info">
           <div class="pays-popup__main_info-title">З ПЛАТЕЖА ПО КРЕДИТУ <span>в подарок!</span></div> 
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="pays-popup__small">
-      <ClosePopup :style="{'margin': '12px 12px 0 0'}"/>
+      <ClosePopup :style="{'margin': '12px 12px 0 0'}" @closePopup="closePopup"/>
       <div class="pays-popup__small_wrap">
         <div class="pays-popup__small_info">
           <div class="pays-popup__small_info-title">3 ПЛАТЕЖА<br>ПО КРЕДИТУ<br><span>в подарок!</span></div>
@@ -31,7 +31,12 @@ import ClosePopup from './ClosePopup.vue';
 import FormPopupMob from './FormPopupMob.vue';
 export default {
   name: 'PaysGiftPopup',
-  components: { FormPopup, ClosePopup, FormPopupMob }
+  components: { FormPopup, ClosePopup, FormPopupMob },
+  methods: {
+    closePopup() {
+      this.$emit('closePays')
+    }
+  }
 }
 </script>
 

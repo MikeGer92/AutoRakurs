@@ -1,7 +1,7 @@
 <template>
   <div class="testdrive-popup">
     <div class="testdrive-popup__main">
-      <ClosePopup :style="{'align-self': 'flex-end', 'margin': '12px 12px 0 0'}" />
+      <ClosePopup :style="{'align-self': 'flex-end', 'margin': '12px 12px 0 0'}" @closePopup="closePopup" />
       <div class="testdrive-popup__main_wrap">
         <div class="testdrive-popup__main_info">
           <div class="testdrive-popup__main_info-title">Тест-Драйв</div> 
@@ -19,7 +19,7 @@
       </div>
   </div>
   <div class="testdrive-popup__small">
-    <div class="testdrive-popup__small_close">
+    <div class="testdrive-popup__small_close" @click="closePopup">
       <div class="testdrive-popup__small_close-item"></div>
       <div class="testdrive-popup__small_close-item"></div>
     </div>
@@ -44,7 +44,12 @@ import ClosePopup from './ClosePopup.vue';
 import FormPopupMob from './FormPopupMob.vue';
 export default {
   name: 'TestDrivePopup',
-  components: { FormPopup, ClosePopup, FormPopupMob }
+  components: { FormPopup, ClosePopup, FormPopupMob },
+  methods: {
+    closePopup() {
+      this.$emit('closeTest')
+    }
+  }
 }
 </script>
 

@@ -42,6 +42,16 @@
       <div class="home__divider_add-line"></div>
       </div>
       <div class="home__benefit">
+        <ModalWindow v-if="showModal" :style="{'position': 'fixed','top': '50%', 'left': '50%','height': '100%', 'transform': 'translate(-50%, -50%)'}">
+          <div class="popup-block">
+            <KaskoPopup v-if="popupTitle==='КАСКО'" @closeKasko="closePopup"/>
+            <ThreeServePopup v-if="popupTitle==='З ТО'" @closeServes="closePopup"/>
+            <PaysGiftPopup v-if="popupTitle==='З ПЛАТЕЖА ПО КРЕДИТУ'" @closePays="closePopup"/>
+            <AutoCreditPopup v-if="popupTitle==='ЭКСПРЕСС-КРЕДИТ'" @closeCredit="closePopup"/>
+            <TestDrivePopup v-if="popupTitle==='ТЕСТ-ДРАЙВ'" @closeTest="closePopup"/>
+            <TradeInPopup v-if="popupTitle==='TRADE-IN'" @closeTradeIn="closePopup"/>
+          </div>
+          </ModalWindow>
         <div class="home__benefit_wrapper">
           <div class="home__benefit_block">
             <BenefitCard 
@@ -56,13 +66,6 @@
             <div class="home__benefit_divider-text">ПРОДАЖА АВТОМОБИЛЕЙ С ОЧЕВИДНОЙ ВЫГОДНОЙ ДЛЯ ПОКУПАТЕЛЯ</div>
             <div class="home__benefit_divider-line home__divider_line"></div>
           </div>
-          <ModalWindow v-if="showModal" :style="{'top': '2800px', 'height': '200%'}">
-            <div class="popup-block"
-              v-if="popupTitle==='TRADE-IN'|| popupTitle==='З ТО'" 
-            >
-              <ThreeMonths  @closePopup="closePopup"/>
-            </div>
-          </ModalWindow>
           <div class="home__benefit_options">
             <BenefitCard 
               v-for="option in optionsList" 
@@ -84,11 +87,16 @@ import Loader from '@/components/app/Loader.vue'
 import Timer from '@/components/Timer.vue'
 import CarCard from '@/components/CarCard.vue'
 import BenefitCard from '@/components/BenefitCard.vue'
-import ThreeMonths from '../components/popups/ThreeMonths.vue'
 import ModalWindow from '../components/modals/ModalWindow.vue'
+import TradeInPopup from '../components/popups/TradeInPopup.vue'
+import KaskoPopup from '../components/popups/KaskoPopup.vue'
+import ThreeServePopup from '../components/popups/ThreeServePopup.vue'
+import PaysGiftPopup from '../components/popups/PaysGiftPopup.vue'
+import AutoCreditPopup from '../components/popups/AutoCreditPopup.vue'
+import TestDrivePopup from '../components/popups/TestDrivePopup.vue'
 export default {
   name: 'Home',
-  components: { Loader, Timer, CarCard, BenefitCard, ThreeMonths, ModalWindow },
+  components: { Loader, Timer, CarCard, BenefitCard, ModalWindow, TradeInPopup, KaskoPopup, ThreeServePopup, PaysGiftPopup, AutoCreditPopup, TestDrivePopup },
   data() {
     return {
       screenWidth: false,
@@ -242,7 +250,7 @@ export default {
 </script>
 <style lang="scss">
 .popup-block {
-  margin: 35% auto;
+  margin: 15% auto;
   // z-index: 10;
 }
 .home {

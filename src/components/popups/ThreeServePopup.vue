@@ -1,7 +1,7 @@
 <template>
   <div class="three-serve">
     <div class="three-serve__main">
-      <ClosePopup :style="{'align-self': 'flex-end', 'margin': '12px 12px 0 0'}"/>
+      <ClosePopup :style="{'align-self': 'flex-end', 'margin': '12px 12px 0 0'}" @closePopup="closePopup"/>
       <div class="three-serve__main_wrap">
         <div class="three-serve__main_info">
           <div class="three-serve__main_info-title">З ТО <span>в подарок!</span></div> 
@@ -13,7 +13,7 @@
       </div>
     </div>
     <div class="three-serve__small">
-      <ClosePopup :style="{'margin': '12px 12px 0 0'}"/>
+      <ClosePopup :style="{'margin': '12px 12px 0 0'}" @closePopup="closePopup"/>
       <div class="three-serve__small_wrap">
         <div class="three-serve__small_info">
           <div class="three-serve__small_info-title">З ТО<br><span>в&#8194;подарок!</span></div>
@@ -27,12 +27,17 @@
 </template>
 
 <script>
-    import FormPopup from './FormPopup.vue';
+import FormPopup from './FormPopup.vue';
 import ClosePopup from './ClosePopup.vue';
 import FormPopupMob from './FormPopupMob.vue';
 export default {
   name: 'ThreeServePopup',
-  components: { FormPopup, ClosePopup, FormPopupMob }
+  components: { FormPopup, ClosePopup, FormPopupMob },
+  methods: {
+    closePopup() {
+      this.$emit('closeServes')
+    }
+  }
 }
 </script>
 

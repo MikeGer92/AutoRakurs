@@ -1,7 +1,7 @@
 <template>
   <div class="credit-popup">
     <div class="credit-popup__main">
-      <ClosePopup :style="{'align-self': 'flex-end'}"/>
+      <ClosePopup :style="{'align-self': 'flex-end'}" @closePopup="closePopup"/>
       <div class="credit-popup__main_wrap">
         <div class="credit-popup__main_info">
           <div class="credit-popup__main_info-title">АВТОКРЕДИТ</div> 
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div class="credit-popup__small">
-      <ClosePopup :style="{'align-self': 'flex-end'}"/>
+      <ClosePopup :style="{'align-self': 'flex-end'}" @closePopup="closePopup"/>
       <div class="credit-popup__small_info">
         <div class="credit-popup__small_info-title">АВТОКРЕДИТ</div>
         <div class="credit-popup__small_info-subtitle">Получите одобрение за 15 минут!</div>
@@ -53,12 +53,17 @@
 </template>
 
 <script>
-    import FormPopup from './FormPopup.vue';
+import FormPopup from './FormPopup.vue';
 import ClosePopup from './ClosePopup.vue';
 import FormPopupMob from './FormPopupMob.vue';
 export default {
   name: 'AutoCreditPopup',
-  components: { FormPopup, ClosePopup, FormPopupMob }
+  components: { FormPopup, ClosePopup, FormPopupMob },
+  methods: {
+    closePopup() {
+      this.$emit('closeCredit')
+    }
+  }
 }
 </script>
 
