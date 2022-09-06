@@ -72,7 +72,19 @@
       <div class="catalog__gift_title">ВРЕМЯ ВЫБИРАТЬ<span>&#160;ПОДАРКИ!</span></div>
     </div>
     <div class="catalog__offers">
-      <BenefitCard v-for="gift in giftsList" :key="gift.title" :benefitCard="gift"/>
+      <ModalWindow v-if="showModal" :style="{'position': 'fixed','top': '50%', 'left': '50%','height': '100%', 'transform': 'translate(-50%, -50%)'}">
+        <div class="popup-block">
+          <KaskoPopup v-if="popupTitle==='КАСКО'" @closeKasko="closePopup"/>
+          <ThreeServePopup v-if="popupTitle==='З ТО'" @closeServes="closePopup"/>
+          <PaysGiftPopup v-if="popupTitle==='З ПЛАТЕЖА ПО КРЕДИТУ'" @closePays="closePopup"/>
+        </div>
+      </ModalWindow>
+      <BenefitCard 
+        v-for="gift in giftsList" 
+        :key="gift.title" 
+        :benefitCard="gift" 
+        @showPopup="showData"
+      />
     </div>
   </div>
 </template>
@@ -87,14 +99,19 @@ import CatalogPersonForm from '@/components/catalog/CatalogPersonForm.vue'
 import BestOfferForm from '@/components/catalog/BestOfferForm.vue'
 import CatalogTimer from '@/components/catalog/CatalogTimer.vue'
 import Loader from '@/components/app/Loader.vue'
+import KaskoPopup from '../components/popups/KaskoPopup.vue'
+import ThreeServePopup from '../components/popups/ThreeServePopup.vue'
+import PaysGiftPopup from '../components/popups/PaysGiftPopup.vue'
+import ModalWindow from '@/components/modals/ModalWindow.vue';
 export default {
   name: 'Catalog',
-  components: { Loader, CatalogCar, CarCard, MarketBlock, BenefitCard, CatalogPersonForm, BestOfferForm, CatalogTimer },
+  components: { Loader, CatalogCar, CarCard, MarketBlock, BenefitCard, CatalogPersonForm, BestOfferForm, CatalogTimer, KaskoPopup, ThreeServePopup, PaysGiftPopup, ModalWindow },
   data() {
     return {
       fullSize: true,
       actionEnd: ['2022', '10', '30', '23', '59', '59'],
       showLoader: false,
+      showModal: false,
       modelsList: [
         {
           id: 0,
@@ -251,6 +268,14 @@ export default {
       }
       console.log(window.innerWidth)
     },
+    showData(title) {
+      this.popupTitle = title
+      this.showModal = true
+    },
+    closePopup() {
+      this.showModal = false
+      this.popupTitle = ''
+    }
   }
 
 }
