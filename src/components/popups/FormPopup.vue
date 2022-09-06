@@ -55,6 +55,7 @@
       line-height: 15px;
       color: #FFFFFF;
       margin-bottom: 8px;
+      cursor: pointer;
     }
   }
 }

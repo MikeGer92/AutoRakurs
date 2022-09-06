@@ -140,6 +140,7 @@ export default {
       margin: 12px 24px 0 0;
       align-self: flex-end;
       justify-content: center;
+      cursor: pointer;
       &-item {
         background: #FFF;
         border: 2px solid #FFF;

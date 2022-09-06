@@ -22,6 +22,7 @@ export default {
 .close-popup {
     display: flex;
     justify-content: flex-end;
+    cursor: pointer;
     &__elem {
       width: 12px;
       height: 12px;

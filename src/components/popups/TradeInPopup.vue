@@ -83,6 +83,7 @@ export default {
       height: 12px;
       display: flex;
       align-self: flex-end;
+      cursor: pointer;
       &-item {
         background: #FFF;
         border: 2px solid #FFF;
@@ -157,8 +158,6 @@ export default {
     background: url('../../assets/images/popup_tradein-small.png') 0px 0px/cover no-repeat;
     display: none;
     flex-direction: column;
-      // align-items: flex-start;
-      // margin: 12px 12px 0 18px;
     &_close {
       width: 12px;
       height: 12px;
@@ -166,6 +165,7 @@ export default {
       margin: 12px 12px 0 18px;
       align-self: flex-end;
       justify-content: center;
+      cursor: pointer;
       &-item {
         background: #FFF;
         border: 2px solid #FFF;

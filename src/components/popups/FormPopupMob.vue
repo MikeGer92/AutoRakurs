@@ -54,6 +54,7 @@ import PopupRadioOrangeMob from './PopupRadioOrangeMob.vue';
       font-size: 10px;
       line-height: 12px;
       color: #FFFFFF;
+      cursor: pointer;
     }
   }
 }

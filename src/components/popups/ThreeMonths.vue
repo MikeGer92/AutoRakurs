@@ -112,6 +112,7 @@
         display: flex;
         margin-left: 10px;
         justify-content: center;
+        cursor: pointer;
         &--item {
           border: 2px solid #12609E;
           transform: rotate(45deg);
@@ -198,6 +199,7 @@
         display: flex;
         margin-left: 10px;
         justify-content: center;
+        cursor: pointer;
         &--item {
           border: 2px solid #12609E;
           transform: rotate(45deg);
